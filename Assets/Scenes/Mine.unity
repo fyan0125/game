@@ -1473,7 +1473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327343379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.89, y: -3.8, z: 3.9}
+  m_LocalPosition: {x: -4.82, y: -3.93, z: 9.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1897,7 +1897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 411173737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.79, y: -4.31, z: 10.89}
+  m_LocalPosition: {x: -6.79, y: -4.16, z: 10.89}
   m_LocalScale: {x: 0.58936, y: 0.58936, z: 0.58936}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3232,7 +3232,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690383929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.71, y: -4.31, z: 9.62}
+  m_LocalPosition: {x: -6.71, y: -4.04, z: 9.62}
   m_LocalScale: {x: 0.58936, y: 0.58936, z: 0.58936}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5510,7 +5510,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1208931160}
-  m_LocalRotation: {x: 0.16055232, y: -0.000000021084364, z: 0.0000000034296352, w: 0.98702735}
+  m_LocalRotation: {x: 0.16055231, y: 0.000000015107265, z: -0.0000000024573847, w: 0.98702735}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8262,12 +8262,12 @@ GameObject:
   - component: {fileID: 2002218828}
   - component: {fileID: 2002218827}
   - component: {fileID: 2002218826}
+  - component: {fileID: 2002218833}
   - component: {fileID: 2002218825}
+  - component: {fileID: 2002218831}
+  - component: {fileID: 2002218832}
   - component: {fileID: 2002218829}
   - component: {fileID: 2002218830}
-  - component: {fileID: 2002218831}
-  - component: {fileID: 2002218833}
-  - component: {fileID: 2002218832}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8401,6 +8401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1728564191}
   speed: 6
+  jumpSpeed: 6
   turnSmoothTime: 0.1
 --- !u!143 &2002218833
 CharacterController:
