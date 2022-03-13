@@ -4,18 +4,33 @@ using UnityEngine;
 
 public class ThridPersonChar : MonoBehaviour
 {
-    public CharacterController controller;
     public Transform cam;
     public float speed = 6f;
+    public float jumpSpeed;
 
+    private CharacterController controller;
+    private float ySpeed;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
+
+    void Start()
+    {
+        controller = GetComponent<CharacterController>();
+    }
 
     void Update()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        controller.SimpleMove(direction * direction.magnitude);
+
+        ySpeed += Physics.gravity.y * Time.deltaTime;
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            ySpeed = jumpSpeed;
+        }
 
         if (direction.magnitude >= 0.1f)
         {
@@ -26,6 +41,11 @@ public class ThridPersonChar : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+
+        Vector3 velocity = direction * direction.magnitude;
+        velocity.y = ySpeed;
+
+        controller.Move(velocity * Time.deltaTime);
     }
-    
+
 }
