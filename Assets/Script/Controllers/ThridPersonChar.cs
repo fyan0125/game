@@ -13,6 +13,8 @@ public class ThridPersonChar : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+    public LayerMask movementMask;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -48,4 +50,7 @@ public class ThridPersonChar : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
+    private void OnTriggerEnter(Collider other) {
+        other.GetComponent<ItemPickedUp>().PickUp();
+    }
 }

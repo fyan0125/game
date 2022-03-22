@@ -28,6 +28,7 @@ public class Interactable : MonoBehaviour
             }
         }
     }
+    
     public void OnFocused(Transform playerTransform)
     {
         isFocus = true;
@@ -48,7 +49,6 @@ public class Interactable : MonoBehaviour
         {
             interactionTransform = transform;
         }
-
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(interactionTransform.position, radius);
     }
