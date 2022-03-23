@@ -5,10 +5,11 @@ using Cinemachine;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
-    [SerializeField] private LayerMask lm = new LayerMask();
-    [SerializeField] private Transform dt;
+    [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
+    [SerializeField] private Transform debugTransform;
+    [SerializeField] private Transform ofBulletProjectile;
+    [SerializeField] private Transform spawnBulletPosition;
     bool boosted = false;
-    public KeyCode ActivationKey = KeyCode.LeftControl;
     private ThirdPersonChar thirdPersonChar;
 
     private void Start()
@@ -21,16 +22,15 @@ public class ThirdPersonShooterController : MonoBehaviour
         Vector3 mouseWorldPosition = Vector3.zero;
         Vector2 screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
         Ray ray = Camera.main.ScreenPointToRay(screenCenter);
-        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, lm))
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
         {
-            dt.position = raycastHit.point;
+            debugTransform.position = raycastHit.point;
             mouseWorldPosition = raycastHit.point;
         }
 
         if (Input.GetButtonDown("Aim"))
         {
-            if (!boosted) boosted = !boosted;
-            else boosted = !boosted;
+            boosted = !boosted;
         }
 
         if (boosted)
@@ -43,9 +43,13 @@ public class ThirdPersonShooterController : MonoBehaviour
 
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
         }
-        else
+        else thirdPersonChar.SetRotateOnMove(true);
+
+        if (Input.GetButtonDown("Shoot"))
         {
-            thirdPersonChar.SetRotateOnMove(true);
+            Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+            Instantiate(ofBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
         }
+
     }
 }

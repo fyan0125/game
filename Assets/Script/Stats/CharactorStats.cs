@@ -28,7 +28,7 @@ public class CharactorStats : MonoBehaviour
         damage = Mathf.Clamp(damage, 0, int.MaxValue);//防止防禦大於傷害時補血
 
         currentHealth -= damage;
-        Debug.Log(transform.name + " takes " + damage + "damages.");
+        Debug.Log(transform.name + " takes " + damage + " damages.");
 
         if (currentHealth <= 0)
         {

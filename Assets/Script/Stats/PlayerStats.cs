@@ -33,4 +33,11 @@ public class PlayerStats : CharactorStats
             damage.AddModifier(newItem.damageModifier);
         }
     }
+
+    public override void Die() 
+    {
+        base.Die();
+        
+        Destroy(gameObject);
+    }
 }
