@@ -1,14 +1,15 @@
-# 加入場景物件(人物無法走過)
+# 加入場景物件(AI無法走過)
 1. Inspector > ☑ Static  
 2. Window > AI > Navigation > Object > Walkable  
 3. Navigation > Bake > Bake  
 <br/>
-## 會移動的物件(人物無法走過)
+## 會移動的物件(AI無法走過)
 1. Add Component > Nav Mesh Obstacle > ☑ Carve  
 2. Window > AI > Navigation > Object > Walkable  
 <br/>
 # 地形
 1. Inspector > Layer > Ground
+* 最外圍要包一層牆壁，射擊才不會出問題
 <br/>
 # 可互動物件
 1. Script > Interactable  

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThridPersonChar : MonoBehaviour
+public class ThirdPersonChar : MonoBehaviour
 {
     public Transform cam;
     public float speed = 6f;
@@ -12,8 +12,7 @@ public class ThridPersonChar : MonoBehaviour
     private float ySpeed;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
-
-    public LayerMask movementMask;
+    private bool rotateOnMOve = true;
 
     void Start()
     {
@@ -38,8 +37,9 @@ public class ThridPersonChar : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
+            if(rotateOnMOve){
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            }
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
@@ -50,7 +50,12 @@ public class ThridPersonChar : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider other)
+    {
         other.GetComponent<ItemPickedUp>().PickUp();
+    }
+
+    public void SetRotateOnMove(bool newRotateOnMove){
+        rotateOnMOve = newRotateOnMove;
     }
 }

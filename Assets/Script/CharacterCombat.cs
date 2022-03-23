@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharactorStats))]
-public class ChracterCombat : MonoBehaviour
+public class CharacterCombat : MonoBehaviour
 {
     CharactorStats myStats;
 
