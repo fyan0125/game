@@ -5,11 +5,14 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     private Rigidbody bulletRigidbody;
-    public int damage = 10;
+    public int baseDamage = 10;
+    PlayerStats playerStats;
 
     private void Awake()
     {
         bulletRigidbody = GetComponent<Rigidbody>();
+        GameObject player = GameObject.Find("Player");
+        playerStats = player.GetComponent<PlayerStats>();
     }
 
     private void Start()
@@ -22,7 +25,7 @@ public class PlayerBullet : MonoBehaviour
     {
         if (other.GetComponent<Collider>().CompareTag("Enemy"))
         {
-            other.GetComponent<EnemyStats>().TakeDamage(damage);
+            other.GetComponent<EnemyStats>().TakeDamage(baseDamage + playerStats.damage.GetValue());
         }
         Destroy(gameObject);
     }
