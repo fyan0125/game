@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     private Rigidbody bulletRigidbody;
-    public int damage = 5;
+    public int damage = 10;
 
     private void Awake()
     {
@@ -20,15 +20,9 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<EnemyStats>() != null)
+        if (other.GetComponent<Collider>().CompareTag("Enemy"))
         {
-            //hit enemy
             other.GetComponent<EnemyStats>().TakeDamage(damage);
-        }
-        else
-        {
-            //hit something else
-            Debug.Log("hit something else!");
         }
         Destroy(gameObject);
     }

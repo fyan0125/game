@@ -37,7 +37,8 @@ public class ThirdPersonChar : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            if(rotateOnMOve){
+            if (rotateOnMOve)
+            {
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
             }
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
@@ -52,10 +53,14 @@ public class ThirdPersonChar : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<ItemPickedUp>().PickUp();
+        if (other.GetComponent<Collider>().CompareTag("Item"))
+        {
+            other.GetComponent<ItemPickedUp>().PickUp();
+        }
     }
 
-    public void SetRotateOnMove(bool newRotateOnMove){
+    public void SetRotateOnMove(bool newRotateOnMove)
+    {
         rotateOnMOve = newRotateOnMove;
     }
 }
