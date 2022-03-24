@@ -6,15 +6,17 @@ using Cinemachine;
 public class ThirdPersonShooterController : MonoBehaviour
 {
     [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
-    [SerializeField] private Transform debugTransform;
+    [SerializeField] private GameObject debugTransform;
     [SerializeField] private Transform ofBulletProjectile;
     [SerializeField] private Transform spawnBulletPosition;
     bool boosted = false;
     private ThirdPersonChar thirdPersonChar;
+    private SwitchSkiils switchSkiils;
 
     private void Start()
     {
         thirdPersonChar = GetComponent<ThirdPersonChar>();
+        switchSkiils = GetComponent<SwitchSkiils>();
     }
 
     private void Update()
@@ -24,11 +26,11 @@ public class ThirdPersonShooterController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(screenCenter);
         if (Physics.Raycast(ray, out RaycastHit raycastHit, 999f, aimColliderLayerMask))
         {
-            debugTransform.position = raycastHit.point;
+            debugTransform.transform.position = raycastHit.point;
             mouseWorldPosition = raycastHit.point;
         }
 
-        if (Input.GetButtonDown("Aim"))
+        if (Input.GetButtonDown("SwitchSkiils") && switchSkiils.currentSkill == 2)
         {
             boosted = !boosted;
         }
@@ -45,11 +47,18 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
         else thirdPersonChar.SetRotateOnMove(true);
 
-        if (Input.GetButtonDown("Shoot"))
+        if (switchSkiils.currentSkill == 2)
         {
-            Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-            Instantiate(ofBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            debugTransform.SetActive(true);
+            if (Input.GetButtonDown("Skill"))
+            {
+                Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
+                Instantiate(ofBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+            }
         }
-
+        else
+        {
+            debugTransform.SetActive(false);
+        }
     }
 }

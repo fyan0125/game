@@ -7,28 +7,28 @@ public class ActivateOnKeypress : MonoBehaviour
 
     Cinemachine.CinemachineVirtualCameraBase vcam;
     bool boosted = false;
+    SwitchSkiils switchSkiils;
 
     void Start()
     {
         vcam = GetComponent<Cinemachine.CinemachineVirtualCameraBase>();
+        GameObject player = GameObject.Find("Player");
+        switchSkiils = player.GetComponent<SwitchSkiils>();
     }
 
     void Update()
     {
         if (vcam != null)
         {
-            if (Input.GetButtonDown("Aim"))
+            if (Input.GetButtonDown("SwitchSkiils") && switchSkiils.currentSkill == 2 && !boosted)
             {
-                if (!boosted)
-                {
-                    vcam.Priority += PriorityBoostAmount;
-                    boosted = true;
-                }
-                else if (boosted)
-                {
-                    vcam.Priority -= PriorityBoostAmount;
-                    boosted = false;
-                }
+                vcam.Priority += PriorityBoostAmount;
+                boosted = true;
+            }
+            else if (Input.GetButtonDown("SwitchSkiils") && switchSkiils.currentSkill != 2 && boosted)
+            {
+                vcam.Priority -= PriorityBoostAmount;
+                boosted = false;
             }
         }
         if (Reticle != null)

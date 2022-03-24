@@ -5,12 +5,21 @@ using UnityEngine;
 public class MeleeController : MonoBehaviour
 {
     public Animator animator;
+    private SwitchSkiils switchSkiils;
+
+    void Start()
+    {
+        switchSkiils = GetComponent<SwitchSkiils>();
+    }
 
     void Update()
     {
-        if (Input.GetButtonDown("Melee"))
+        if (switchSkiils.currentSkill == 1)
         {
-            Melee();
+            if (Input.GetButtonDown("Skill"))
+            {
+                Melee();
+            }
         }
     }
 
@@ -18,5 +27,4 @@ public class MeleeController : MonoBehaviour
     {
         animator.SetTrigger("Melee");
     }
-
 }
