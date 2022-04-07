@@ -68,7 +68,7 @@ public class Projectile : MonoBehaviour
         }
 
         //Add a little delay, just to make sure everything works fine
-        Invoke("Delay", 0.05f);
+        Invoke("Delay", 0.1f);
     }
     private void Delay()
     {
@@ -77,8 +77,13 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(collision.collider.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
         //Count up collisions
         collisions++;
+        
 
         //Explode if bullet hits an enemy directly and explodeOnTouch is activated
         if (collision.collider.CompareTag("Player") && explodeOnTouch) Explode();
