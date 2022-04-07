@@ -21,7 +21,7 @@ public class Projectile : MonoBehaviour
     public bool useGravity;
 
     //Damage
-    public int explosionDamage;
+    public int damage;
     public float explosionRange;
     public float explosionForce;
 

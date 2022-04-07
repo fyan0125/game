@@ -40,4 +40,6 @@ public class PlayerStats : CharactorStats
         
         Destroy(gameObject);
     }
+
+  
 }

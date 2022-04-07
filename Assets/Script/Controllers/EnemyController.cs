@@ -114,7 +114,7 @@ public class EnemyController : MonoBehaviour
         if(!alreadyAttacked){
 
             //Attack Code
-            height = 0.5f;
+            height = 0.3f;
             attackPoint = new Vector3(transform.position.x, transform.position.y + height, transform.position.z );
             Rigidbody rb = Instantiate(projectile, attackPoint, Quaternion.identity).GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 35f, ForceMode.Impulse);

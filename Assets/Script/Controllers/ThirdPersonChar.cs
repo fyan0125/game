@@ -13,6 +13,7 @@ public class ThirdPersonChar : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     private bool rotateOnMOve = true;
+    public float health;
 
     void Start()
     {
@@ -49,6 +50,8 @@ public class ThirdPersonChar : MonoBehaviour
         velocity.y = ySpeed;
 
         controller.Move(velocity * Time.deltaTime);
+
+        if (health <= 0) Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,10 +60,27 @@ public class ThirdPersonChar : MonoBehaviour
         {
             other.GetComponent<ItemPickedUp>().PickUp();
         }
+        if(other.GetComponent<Collider>().CompareTag("Bullet"))
+        {
+         Debug.Log(1);
+         //a bullet has struck this enemy!
+         health -= other.gameObject.GetComponent<Projectile>().damage;
+        }
     }
 
     public void SetRotateOnMove(bool newRotateOnMove)
     {
         rotateOnMOve = newRotateOnMove;
+    }
+
+    private void OnBulletEnter(Collider what)
+    {
+        Debug.Log(2);
+     if(what.GetComponent<Collider>().CompareTag("Bullet"))
+     {
+         Debug.Log(1);
+         //a bullet has struck this enemy!
+         health -= what.gameObject.GetComponent<Projectile>().damage;
+     }
     }
 }
