@@ -68,7 +68,7 @@ public class Projectile : MonoBehaviour
         }
 
         //Add a little delay, just to make sure everything works fine
-        Invoke("Delay", 0.1f);
+        Invoke("Delay", 0.15f);
     }
     private void Delay()
     {
