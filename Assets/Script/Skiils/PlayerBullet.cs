@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBullet : MonoBehaviour
 {
     private Rigidbody bulletRigidbody;
-    public int baseDamage = 10;
+    public int baseDamage = 3;
     PlayerStats playerStats;
 
     private void Awake()

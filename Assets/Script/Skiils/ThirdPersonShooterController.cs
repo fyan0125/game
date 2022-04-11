@@ -47,7 +47,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
         else thirdPersonChar.SetRotateOnMove(true);
 
-        if (switchSkiils.currentSkill == 2)
+        if (switchSkiils.currentSkill == 3)
         {
             debugTransform.SetActive(true);
             if (Input.GetButtonDown("Skill"))
