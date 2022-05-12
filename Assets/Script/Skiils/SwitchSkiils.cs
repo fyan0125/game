@@ -20,7 +20,7 @@ public class SwitchSkiils : MonoBehaviour
             {
                 case 0:
                     currentSkill = skills[1];
-                    Debug.Log("Wolf");
+                    Debug.Log("狼(進戰)");
                     break;
                 case 1:
                     currentSkill = skills[2];

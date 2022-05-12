@@ -60,11 +60,15 @@ public class ThirdPersonChar : MonoBehaviour
         {
             other.GetComponent<ItemPickedUp>().PickUp();
         }
-        if(other.GetComponent<Collider>().CompareTag("Bullet"))
+        if (other.GetComponent<Collider>().CompareTag("Bullet"))
         {
-         Debug.Log(1);
-         //a bullet has struck this enemy!
-         health -= other.gameObject.GetComponent<Projectile>().damage;
+            Debug.Log(1);
+            //a bullet has struck this enemy!
+            health -= other.gameObject.GetComponent<Projectile>().damage;
+        }
+        if (other.GetComponent<Collider>().CompareTag("NPC"))
+        {
+            other.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
     }
 
@@ -76,11 +80,11 @@ public class ThirdPersonChar : MonoBehaviour
     private void OnBulletEnter(Collider what)
     {
         Debug.Log(2);
-     if(what.GetComponent<Collider>().CompareTag("Bullet"))
-     {
-         Debug.Log(1);
-         //a bullet has struck this enemy!
-         health -= what.gameObject.GetComponent<Projectile>().damage;
-     }
+        if (what.GetComponent<Collider>().CompareTag("Bullet"))
+        {
+            Debug.Log(1);
+            //a bullet has struck this enemy!
+            health -= what.gameObject.GetComponent<Projectile>().damage;
+        }
     }
 }

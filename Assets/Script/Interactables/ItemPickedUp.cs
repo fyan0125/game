@@ -1,15 +1,10 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
-public class ItemPickedUp : Interactable
+public class ItemPickedUp : MonoBehaviour
 {
     public Item item;
-    public override void Interact()
-    {
-        base.Interact();
-        
-        PickUp();
-    }
-
     public void PickUp()
     {
         Debug.Log("Picking up " + item.name);

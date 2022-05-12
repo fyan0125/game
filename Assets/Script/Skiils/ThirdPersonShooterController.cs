@@ -30,9 +30,15 @@ public class ThirdPersonShooterController : MonoBehaviour
             mouseWorldPosition = raycastHit.point;
         }
 
-        if (Input.GetButtonDown("SwitchSkiils") && switchSkiils.currentSkill == 2)
+        //控制玩家是否跟著滑鼠游標面向
+        if (Input.GetButtonDown("SwitchSkiils") && switchSkiils.currentSkill == 1)
         {
-            boosted = !boosted;
+            boosted = true;
+        }
+        else if (Input.GetButtonDown("SwitchSkiils"))
+        {
+            boosted = false;
+            thirdPersonChar.SetRotateOnMove(true);
         }
 
         if (boosted)
@@ -45,9 +51,8 @@ public class ThirdPersonShooterController : MonoBehaviour
 
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
         }
-        else thirdPersonChar.SetRotateOnMove(true);
 
-        if (switchSkiils.currentSkill == 3)
+        if (switchSkiils.currentSkill == 2)
         {
             debugTransform.SetActive(true);
             if (Input.GetButtonDown("Skill"))
