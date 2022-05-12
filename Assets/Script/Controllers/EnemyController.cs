@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     public GameObject[] items = new GameObject[3];
 
 
+
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet = false;
@@ -28,6 +29,10 @@ public class EnemyController : MonoBehaviour
     public float timeBetweenAttacks;
     bool alreadyAttacked;
     public GameObject projectile;
+
+    public GameObject generate;
+
+    private GenerateEnemy int_enemyCount;
     float height;
     // public Transform bulletSpawnPoint;
     // public float bulletSpeed = 10;
@@ -41,6 +46,7 @@ public class EnemyController : MonoBehaviour
         // player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         target = player.transform;
+        int_enemyCount = generate.GetComponent<GenerateEnemy>();
         // TakeDamage(10);
     }
 
@@ -151,20 +157,24 @@ public class EnemyController : MonoBehaviour
         Vector3 position = transform.position;
         if (health <= 0)
         {
-            Invoke(nameof(DestroyEnemy), 0.5f);
             foreach (GameObject item in items)
             {
                 if (item != null)
                 {
-                    Instantiate(item, position, Quaternion.identity);
+                    Instantiate(item, position + new Vector3(0.0f, 15, 0.0f), Quaternion.identity);
                 }
 
             }
+            
+            Invoke(nameof(DestroyEnemy), 0.5f);
+            
+            
         }
     }
 
     public void DestroyEnemy()
     {
+        int_enemyCount.enemyCount -= 1 ;
         Destroy(gameObject);
     }
 }

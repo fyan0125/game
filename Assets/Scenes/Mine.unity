@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theEnemy: {fileID: 505838156}
+  portal: {fileID: 0}
   xPos: 0
   zPos: 0
   enemyCount: 0
@@ -2586,6 +2587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theEnemy: {fileID: 505838156}
+  portal: {fileID: 1682775331}
   xPos: 0
   zPos: 0
   enemyCount: 0
@@ -2787,14 +2789,15 @@ MonoBehaviour:
     m_Bits: 128
   health: 9
   items:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 411173737}
+  - {fileID: 690383929}
+  - {fileID: 359355971}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
   attackPoint: {x: 0, y: 0, z: 0}
   timeBetweenAttacks: 0.5
   projectile: {fileID: 6513578121624032864, guid: 4717742d1d17142d4abad57df6b80515, type: 3}
+  generate: {fileID: 482225183}
   sightRange: 15
   attackRange: 8
   playerInSightRange: 0
@@ -8213,6 +8216,7 @@ GameObject:
   - component: {fileID: 1682775334}
   - component: {fileID: 1682775333}
   - component: {fileID: 1682775332}
+  - component: {fileID: 1682775337}
   m_Layer: 0
   m_Name: ChangeScene
   m_TagString: Untagged
@@ -8309,6 +8313,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1682775337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682775331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da2d810c6e2b4b66b6657020886648a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1700605154
 PrefabInstance:
   m_ObjectHideFlags: 0

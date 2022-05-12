@@ -5,11 +5,14 @@ using UnityEngine;
 public class GenerateEnemy : MonoBehaviour
 {
     public GameObject theEnemy;
+    public GameObject portal;
     public int xPos;
     public int zPos;
     public int enemyCount;
 
     public int maxEnemyCount;
+
+    
 
     void Start()
     {
@@ -23,6 +26,9 @@ public class GenerateEnemy : MonoBehaviour
             Instantiate(theEnemy, new Vector3(xPos, -4, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1; 
+        }
+        if(enemyCount == 0){
+            portal.SetActive(true);
         }
     }
 
