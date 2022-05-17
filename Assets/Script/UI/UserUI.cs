@@ -53,12 +53,14 @@ public class UserUI : MonoBehaviour
     {
         Time.timeScale = 1f;
         GameIsPaused = false;
+        Cursor.visible = false;
     }
 
     void Pause()
     {
         Time.timeScale = 0f;
         GameIsPaused = true;
+        Cursor.visible = true;
     }
 
     public void QuitGame()
