@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwitchSkiils : MonoBehaviour
 {
-    int[] skills = new int[4] { 0, 1, 2, 3 };
+    public int[] skills = new int[4] { 0, 1, 2, 3 };
     public int currentSkill = 0;
 
     void Start()

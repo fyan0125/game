@@ -7,6 +7,7 @@ public class ThirdPersonChar : MonoBehaviour
     public Transform cam;
     public float speed = 6f;
     public float jumpSpeed;
+    public float superJumpSpeed;
 
     private CharacterController controller;
     private float ySpeed;
@@ -14,10 +15,15 @@ public class ThirdPersonChar : MonoBehaviour
     float turnSmoothVelocity;
     private bool rotateOnMOve = true;
     public float health;
+    private SwitchSkiils jumpSkill;
+
+    
+    
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        jumpSkill = GetComponent<SwitchSkiils>();  //超級跳
     }
 
     void Update()
@@ -32,6 +38,12 @@ public class ThirdPersonChar : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             ySpeed = jumpSpeed;
+        }
+        
+        //超級跳
+        if (Input.GetButtonDown("Jump") && jumpSkill.currentSkill == jumpSkill.skills[0]) 
+        {
+            ySpeed = superJumpSpeed;
         }
 
         if (direction.magnitude >= 0.1f)
