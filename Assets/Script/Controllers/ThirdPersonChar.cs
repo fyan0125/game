@@ -20,8 +20,6 @@ public class ThirdPersonChar : MonoBehaviour
     
     
 
-    Collider npcCollider;
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -66,11 +64,6 @@ public class ThirdPersonChar : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
         if (health <= 0) Destroy(gameObject);
-
-        if (Input.GetButtonDown("Talk"))
-        {
-            TalkToNPC();
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -87,13 +80,8 @@ public class ThirdPersonChar : MonoBehaviour
         }
         if (other.GetComponent<Collider>().CompareTag("NPC"))
         {
-            npcCollider = other;
+            other.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
-    }
-
-    private void TalkToNPC()
-    {
-        npcCollider.GetComponent<DialogueTrigger>().TriggerDialogue();
     }
 
     public void SetRotateOnMove(bool newRotateOnMove)

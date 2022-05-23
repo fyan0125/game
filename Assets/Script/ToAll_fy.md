@@ -26,7 +26,11 @@
 4. Inspector(prop) > Script(ItemPickedUp) > 指定item   
 <br/>
 # 背包UI
+>script done
+* 背包底圖 : ItemParent
+* 背包格底圖 : ItemButton
 * 刪除道具叉叉 : RemoveButton(如果做把東西丟到垃圾桶,要改程式碼)  
+* 控制背包開關 : InventoryUI.cs (可改)
 <br/>
 <br/>
 <br/>

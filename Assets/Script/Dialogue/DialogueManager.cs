@@ -17,14 +17,6 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("Skill"))//任務完成
-        {
-            DisplayNextSentence();
-        }
-    }
-
     public void StartDialogue(Dialogue dialogue)
     {
         animator.SetBool("isOpened", true);
