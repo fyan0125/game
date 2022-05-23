@@ -6,6 +6,7 @@ public class SwitchSkills : MonoBehaviour
 {
     public static int getSkill = 0;
     public int currentSkill = 0;
+    public GameObject RabbitSkill;
 
     void Update()
     {
@@ -16,6 +17,16 @@ public class SwitchSkills : MonoBehaviour
                 currentSkill += 1;
             }
             else currentSkill = 0;
+        }
+
+        switch (currentSkill)
+        {
+            case 1:
+                RabbitSkill.SetActive(true);
+                break;
+            default:
+                RabbitSkill.SetActive(false);
+                break;
         }
     }
 }

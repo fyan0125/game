@@ -14,17 +14,19 @@ public class ThirdPersonChar : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
     private bool rotateOnMOve = true;
-    public float health;
+
+    private PlayerStats playerStats;
     private SwitchSkills jumpSkill;
 
-    
-    
+
+
 
     Collider npcCollider;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        playerStats = GetComponent<PlayerStats>();
         jumpSkill = GetComponent<SwitchSkills>();  //超級跳
     }
 
@@ -41,9 +43,9 @@ public class ThirdPersonChar : MonoBehaviour
         {
             ySpeed = jumpSpeed;
         }
-        
+
         //超級跳
-        if (Input.GetButtonDown("Jump") && jumpSkill.currentSkill == 1) 
+        if (Input.GetButtonDown("Jump") && jumpSkill.currentSkill == 1)
         {
             ySpeed = superJumpSpeed;
         }
@@ -65,7 +67,7 @@ public class ThirdPersonChar : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if (health <= 0) Destroy(gameObject);
+        if (playerStats.currentHealth <= 0) Destroy(gameObject);
 
         if (Input.GetButtonDown("Talk"))
         {
@@ -81,9 +83,7 @@ public class ThirdPersonChar : MonoBehaviour
         }
         if (other.GetComponent<Collider>().CompareTag("Bullet"))
         {
-            Debug.Log(1);
-            //a bullet has struck this enemy!
-            health -= other.gameObject.GetComponent<Projectile>().damage;
+            playerStats.TakeDamage(other.gameObject.GetComponent<Projectile>().damage);
         }
         if (other.GetComponent<Collider>().CompareTag("NPC"))
         {
@@ -99,16 +99,5 @@ public class ThirdPersonChar : MonoBehaviour
     public void SetRotateOnMove(bool newRotateOnMove)
     {
         rotateOnMOve = newRotateOnMove;
-    }
-
-    private void OnBulletEnter(Collider what)
-    {
-        Debug.Log(2);
-        if (what.GetComponent<Collider>().CompareTag("Bullet"))
-        {
-            Debug.Log(1);
-            //a bullet has struck this enemy!
-            health -= what.gameObject.GetComponent<Projectile>().damage;
-        }
     }
 }

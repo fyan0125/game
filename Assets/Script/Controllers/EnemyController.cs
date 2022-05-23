@@ -165,16 +165,15 @@ public class EnemyController : MonoBehaviour
                 }
 
             }
-            
+
             Invoke(nameof(DestroyEnemy), 0.5f);
-            
-            
+
         }
     }
 
     public void DestroyEnemy()
     {
-        int_enemyCount.enemyCount -= 1 ;
+        int_enemyCount.enemyCount -= 1;
         Destroy(gameObject);
     }
 }
