@@ -5,16 +5,16 @@ using UnityEngine;
 public class MeleeController : MonoBehaviour
 {
     public Animator animator;
-    private SwitchSkiils switchSkiils;
+    private SwitchSkills SwitchSkills;
 
     void Start()
     {
-        switchSkiils = GetComponent<SwitchSkiils>();
+        SwitchSkills = GetComponent<SwitchSkills>();
     }
 
     void Update()
     {
-        if (switchSkiils.currentSkill == 1)
+        if (SwitchSkills.currentSkill == 2)
         {
             if (Input.GetButtonDown("Skill"))
             {

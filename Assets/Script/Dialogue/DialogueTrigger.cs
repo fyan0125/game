@@ -8,15 +8,7 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue2;
 
     private Dialogue dialogue;
-    private int npcState = 1;
-
-    void Update()
-    {
-        if (Input.GetButtonDown("Jump"))//任務完成
-        {
-            npcState += 1;
-        }
-    }
+    public int npcState = 1;
 
     public void TriggerDialogue()
     {
@@ -24,12 +16,14 @@ public class DialogueTrigger : MonoBehaviour
         {
             case 1:
                 dialogue = dialogue1;
+                npcState += 1;
                 break;
             case 2:
                 dialogue = dialogue2;
+                npcState += 1;
                 break;
             default:
-                dialogue = dialogue1;
+                dialogue = dialogue2;
                 break;
         }
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);

@@ -15,7 +15,7 @@ public class ThirdPersonChar : MonoBehaviour
     float turnSmoothVelocity;
     private bool rotateOnMOve = true;
     public float health;
-    private SwitchSkiils jumpSkill;
+    private SwitchSkills jumpSkill;
 
     
     
@@ -25,7 +25,7 @@ public class ThirdPersonChar : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        jumpSkill = GetComponent<SwitchSkiils>();  //超級跳
+        jumpSkill = GetComponent<SwitchSkills>();  //超級跳
     }
 
     void Update()
@@ -43,7 +43,7 @@ public class ThirdPersonChar : MonoBehaviour
         }
         
         //超級跳
-        if (Input.GetButtonDown("Jump") && jumpSkill.currentSkill == jumpSkill.skills[0]) 
+        if (Input.GetButtonDown("Jump") && jumpSkill.currentSkill == 1) 
         {
             ySpeed = superJumpSpeed;
         }

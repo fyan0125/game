@@ -11,12 +11,12 @@ public class ThirdPersonShooterController : MonoBehaviour
     [SerializeField] private Transform spawnBulletPosition;
     bool boosted = false;
     private ThirdPersonChar thirdPersonChar;
-    private SwitchSkiils switchSkiils;
+    private SwitchSkills SwitchSkills;
 
     private void Start()
     {
         thirdPersonChar = GetComponent<ThirdPersonChar>();
-        switchSkiils = GetComponent<SwitchSkiils>();
+        SwitchSkills = GetComponent<SwitchSkills>();
     }
 
     private void Update()
@@ -31,11 +31,11 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
 
         //控制玩家是否跟著滑鼠游標面向
-        if (Input.GetButtonDown("SwitchSkiils") && switchSkiils.currentSkill == 1)
+        if (Input.GetButtonDown("SwitchSkills") && SwitchSkills.currentSkill == 2)
         {
             boosted = true;
         }
-        else if (Input.GetButtonDown("SwitchSkiils"))
+        else if (Input.GetButtonDown("SwitchSkills"))
         {
             boosted = false;
             thirdPersonChar.SetRotateOnMove(true);
@@ -61,7 +61,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
         /*-------------------------------------------------*/
 
-        if (switchSkiils.currentSkill == 2)
+        if (SwitchSkills.currentSkill == 3)
         {
             debugTransform.SetActive(true);
             if (Input.GetButtonDown("Skill"))
