@@ -17,10 +17,6 @@ public class ThirdPersonChar : MonoBehaviour
 
     private PlayerStats playerStats;
     private SwitchSkills jumpSkill;
-
-
-
-
     Collider npcCollider;
 
     void Start()
@@ -77,10 +73,6 @@ public class ThirdPersonChar : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Collider>().CompareTag("Item"))
-        {
-            other.GetComponent<ItemPickedUp>().PickUp();
-        }
         if (other.GetComponent<Collider>().CompareTag("Bullet"))
         {
             playerStats.TakeDamage(other.gameObject.GetComponent<Projectile>().damage);
