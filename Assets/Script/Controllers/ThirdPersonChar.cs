@@ -85,7 +85,7 @@ public class ThirdPersonChar : MonoBehaviour
 
     private void TalkToNPC()
     {
-        npcCollider.GetComponent<DialogueTrigger>().TriggerDialogue();
+        npcCollider.GetComponent<DialogueTrigger>().StartConvo();
     }
 
     public void SetRotateOnMove(bool newRotateOnMove)
