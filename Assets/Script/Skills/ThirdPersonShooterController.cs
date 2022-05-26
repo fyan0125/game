@@ -57,7 +57,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         Vector3 worldAimTarget = mouseWorldPosition;
         worldAimTarget.y = transform.position.y;
         Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
-
+        
         transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
         /*-------------------------------------------------*/
 
