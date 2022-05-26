@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [HideInInspector] public Conversation convo;
+    protected Conversation convo;
     public int npcState = 1;
+    protected npcReward NpcReward;
+
+    public virtual void Start()
+    {
+        NpcReward = GetComponent<npcReward>();
+    }
 
     public virtual void StartConvo()
     {

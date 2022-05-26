@@ -10,6 +10,11 @@ public class UserUI : MonoBehaviour
     public GameObject settingUI;
     public Transform itemsParent;
 
+    private void Awake()
+    {
+        packageUI.SetActive(false);
+    }
+
     void Update()
     {
         if (Keyboard.current.eKey.wasPressedThisFrame)

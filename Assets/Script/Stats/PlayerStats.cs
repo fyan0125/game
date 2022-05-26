@@ -9,19 +9,23 @@ public class PlayerStats : CharactorStats
     void Start()
     {
         healthBar.SetMaxHealth(maxHealth);
+        GemManager.instance.onGemChanged += OnGemChanged;
     }
 
     public override void TakeDamage(int damage)//受到傷害
     {
-        damage -= armor.GetValue();
-        damage = Mathf.Clamp(damage, 0, int.MaxValue);//防止防禦大於傷害時補血
-
-        currentHealth -= damage;
+        base.TakeDamage(damage);
         healthBar.SetHealth(currentHealth);
+    }
 
-        if (currentHealth <= 0)
+    public void OnGemChanged(Gem newItem)
+    {
+        if (newItem != null)
         {
-            Die();
+            armor.AddModifier(newItem.armorModifier);
+            damage.AddModifier(newItem.damageModifier);
+            speed.AddModifier(newItem.speedModifier);
+            health.AddModifier(newItem.healthModifier);
         }
     }
 

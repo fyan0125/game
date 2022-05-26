@@ -49,6 +49,26 @@ public class InventorySystem
         return false;
     }
 
+    public void RemoveFromInventory(InventoryItemData itemRoRemove, int amountToRemove)
+    {
+        if (ContainItem(itemRoRemove, out List<InventorySlot> invSlot))
+        {
+            foreach (var slot in invSlot)
+            {
+                if (slot.StackSize > 1)
+                {
+                    slot.RemoveFromStack(amountToRemove);
+                    OnInventorySlotChanged?.Invoke(slot);
+                }
+                else
+                {
+                    slot.ClearSlot();
+                    OnInventorySlotChanged?.Invoke(slot);
+                }
+            }
+        }
+    }
+
     public bool ContainItem(InventoryItemData itemToAdd, out List<InventorySlot> invSLot)
     {
         invSLot = InventorySlots.Where(i => i.ItemData == itemToAdd).ToList();

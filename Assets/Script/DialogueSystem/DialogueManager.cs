@@ -7,9 +7,10 @@ public class DialogueManager : MonoBehaviour
 {
     public Text speakerName, dialogue;
 
-    private int currentIndex;
+    public int currentIndex;
     private Conversation currentConvo;
     private static DialogueManager instance;
+    public bool isTalking;
 
     public Animator anim;
     private Coroutine typing;
@@ -27,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Skill"))//任務完成
+        if (Input.GetButtonDown("Skill") && isTalking == true)
         {
             ReadNext();
         }
@@ -40,14 +41,23 @@ public class DialogueManager : MonoBehaviour
         instance.currentConvo = convo;
         instance.speakerName.text = "";
         instance.dialogue.text = "";
+        instance.isTalking = true;
 
         instance.ReadNext();
     }
 
+    public static bool EndConversation()
+    {
+        if (instance.currentIndex > instance.currentConvo.GetLength()) return true;
+        else return false;
+    }
+
     public void ReadNext()
     {
-        if (currentIndex > currentConvo.GetLength())
+        EndConversation();
+        if (instance.currentIndex > instance.currentConvo.GetLength())
         {
+            instance.isTalking = false;
             instance.anim.SetBool("isOpened", false);
             return;
         }
@@ -63,8 +73,6 @@ public class DialogueManager : MonoBehaviour
             typing = null;
             typing = instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue));
         }
-
-
         currentIndex++;
     }
 

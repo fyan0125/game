@@ -15,13 +15,15 @@ public class npcRabbit : DialogueTrigger
 
     private void Update()
     {
-        if (npcState == 3)
+        if (npcState == 3 && DialogueManager.EndConversation())
         {
             rabbitbtn.interactable = true;
             rabbitIcon.SetActive(false);
             memorybtn.interactable = true;
             memoryIcon.SetActive(true);
             SwitchSkills.getSkill = 1;
+            NpcReward.GetReward();
+            npcState++;
         }
     }
 
