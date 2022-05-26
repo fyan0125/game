@@ -1,8 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
-
-/* This object manages the inventory UI. */
+using UnityEngine.InputSystem;
 
 public class UserUI : MonoBehaviour
 {
@@ -11,41 +10,26 @@ public class UserUI : MonoBehaviour
     public GameObject settingUI;
     public Transform itemsParent;
 
-    Inventory inventory;
-    InventorySlot[] slots;
-
-    void Start()
+    private void Awake()
     {
-        inventory = Inventory.instance;
-        inventory.onItemChangedCallback += UpdateUI;
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        packageUI.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Inventory"))
+        if (Keyboard.current.eKey.wasPressedThisFrame)
         {
             packageUI.SetActive(!packageUI.activeSelf);
 
-            UpdateUI();
             if (GameIsPaused) Resume();
             else Pause();
         }
-        else if (Input.GetButtonDown("Pause"))
+        if (Input.GetButtonDown("Pause"))
         {
             settingUI.SetActive(!settingUI.activeSelf);
 
             if (GameIsPaused) Resume();
             else Pause();
-        }
-    }
-
-    void UpdateUI()
-    {
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (i < inventory.items.Count) slots[i].AddItem(inventory.items[i]);
-            else slots[i].ClearSlot();
         }
     }
 

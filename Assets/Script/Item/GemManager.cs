@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class GemManager : MonoBehaviour
 {
-    #region Singleton
     public static GemManager instance;
     void Awake()
     {
         instance = this;
     }
 
-    #endregion
-
-    List<Item> gemsUsed = new List<Item>();
+    List<InventoryItemData> gemsUsed = new List<InventoryItemData>();
 
     public delegate void OnGemChanged(Gem newItem);
     public OnGemChanged onGemChanged;

@@ -1,32 +1,58 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class InventorySlot : MonoBehaviour
+[System.Serializable]
+public class InventorySlot
 {
-    public Image icon;
-    Item item;
+    [SerializeField] private InventoryItemData itemData;
+    [SerializeField] private int stackSize;
 
-    public void AddItem(Item newItem)
+    public InventoryItemData ItemData => itemData;
+    public int StackSize => stackSize;
+
+    public InventorySlot(InventoryItemData source, int amount)
     {
-        item = newItem;
+        itemData = source;
+        stackSize = amount;
+    }
 
-        icon.sprite = item.icon;
-        icon.enabled = true;
+    public InventorySlot()
+    {
+        ClearSlot();
     }
 
     public void ClearSlot()
     {
-        item = null;
-
-        icon.sprite = null;
-        icon.enabled = false;
+        itemData = null;
+        stackSize = -1;
     }
 
-    public void UseItem()
+    public void UpdateInventorySlot(InventoryItemData data, int amount){
+        itemData = data;
+        stackSize = amount;
+    }
+
+    public bool RoomLeftInStack(int amountToAdd, out int amountRemaining)
     {
-        if (item != null)
-        {
-            item.Use();
-        }
+        amountRemaining = ItemData.MaxStackSize - stackSize;
+        return RoomLeftInStack(amountToAdd);
     }
+
+    public bool RoomLeftInStack(int amountToAdd)
+    {
+        if (stackSize + amountToAdd <= itemData.MaxStackSize) return true;
+        else return false;
+    }
+
+    public void AddToStack(int amount)
+    {
+        stackSize += amount;
+    }
+
+    public void RemoveFromStack(int amount)
+    {
+        stackSize -= amount;
+    }
+
 }

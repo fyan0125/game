@@ -5,24 +5,18 @@ using UnityEngine;
 public class CharactorStats : MonoBehaviour
 {
     public int maxHealth = 100;
-    public int currentHealth { get; private set; }//其他script可讀取但不可修改
+    public int currentHealth;
     public Stat damage;
     public Stat armor;
+    public Stat speed;
+    public Stat health;
 
     void Awake()
     {
         currentHealth = maxHealth;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            TakeDamage(10);
-        }
-    }
-
-    public void TakeDamage(int damage)//受到傷害
+    public virtual void TakeDamage(int damage)//受到傷害
     {
         damage -= armor.GetValue();
         damage = Mathf.Clamp(damage, 0, int.MaxValue);//防止防禦大於傷害時補血
@@ -36,7 +30,7 @@ public class CharactorStats : MonoBehaviour
         }
     }
 
-    public virtual void Die()//某種死法(會被其他Script覆寫)
+    public virtual void Die()//某種死法
     {
         Debug.Log(transform.name + " died.");
     }
