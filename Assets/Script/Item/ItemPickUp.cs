@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class ItemPickUp : MonoBehaviour
 {
-    public float PickUpRadius = 1f;
     public InventoryItemData ItemData;
     [SerializeField] private float rotationSpeed;
 
@@ -15,18 +14,16 @@ public class ItemPickUp : MonoBehaviour
     {
         myCollider = GetComponent<SphereCollider>();
         myCollider.isTrigger = true;
-        myCollider.radius = PickUpRadius;
     }
 
     private void Update()
     {
-        transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.forward * rotationSpeed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         var inventory = other.transform.GetComponent<InventoryHolder>();
-
         if (!inventory) return;
 
         if (inventory.InventorySystem.AddToInventory(ItemData, 1))
