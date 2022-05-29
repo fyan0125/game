@@ -17,8 +17,6 @@ public class EnemyController : MonoBehaviour
 
     public GameObject[] items = new GameObject[3];
 
-
-
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet = false;

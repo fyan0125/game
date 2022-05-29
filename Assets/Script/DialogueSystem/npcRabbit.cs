@@ -13,6 +13,18 @@ public class npcRabbit : DialogueTrigger
     public GameObject rabbitIcon;
     public GameObject memoryIcon;
 
+    public UnityEngine.AI.NavMeshAgent agent;
+    public Transform player;
+    public LayerMask whatIsPlayer;
+    public float sightRange;
+    public bool playerInSightRange;
+    Transform target;
+
+    private void Awake() 
+    {
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        target = player.transform;
+    }
     private void Update()
     {
         if (npcState == 3 && DialogueManager.EndConversation())
@@ -25,6 +37,8 @@ public class npcRabbit : DialogueTrigger
             NpcReward.GetReward();
             npcState++;
         }
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        if(!playerInSightRange&& rabbitbtn.interactable) followPlayer();
     }
 
     public override void StartConvo()
@@ -44,5 +58,11 @@ public class npcRabbit : DialogueTrigger
                 break;
         }
         DialogueManager.StartConversation(convo);
+    }
+
+    public void followPlayer()
+    {
+        agent.speed = 2;
+        agent.destination = target.position;
     }
 }
