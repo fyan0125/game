@@ -19,11 +19,15 @@ public class npcRabbit : DialogueTrigger
     public float sightRange;
     public bool playerInSightRange;
     Transform target;
+    public GameObject SendPoint;
+    private showPortal sP;
 
     private void Awake() 
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         target = player.transform;
+        sP = SendPoint.GetComponent<showPortal>();
+        //SendPoint = GameObject.Find("Send Point");
     }
     private void Update()
     {
@@ -36,7 +40,10 @@ public class npcRabbit : DialogueTrigger
             SwitchSkills.getSkill = 1;
             NpcReward.GetReward();
             npcState++;
+            sP.isClear = true;
         }
+
+        //Following Player
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         if(!playerInSightRange&& rabbitbtn.interactable) followPlayer();
     }
