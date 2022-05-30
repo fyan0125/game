@@ -5,11 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "InventorySystem/InventoryItem")]
 public class InventoryItemData : ScriptableObject
 {
-    public int ID;
+    public Sprite Icon;
     public string DisplayName;
     [TextArea(4, 4)]
     public string Description;
-    public Sprite Icon;
+    [TextArea(4, 4)]
+    public string Formula;
+    public bool synthetic;
     public int MaxStackSize;
 
     public virtual void Use()

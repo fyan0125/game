@@ -19,6 +19,8 @@ public class ThirdPersonChar : MonoBehaviour
     private SwitchSkills jumpSkill;
     Collider npcCollider;
 
+    public Animator anim;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -30,20 +32,30 @@ public class ThirdPersonChar : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        if (Input.GetKey(KeyCode.W))
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-        controller.SimpleMove(direction * direction.magnitude);
+        // controller.SimpleMove(direction * direction.magnitude);
 
         ySpeed += Physics.gravity.y * Time.deltaTime;
 
         if (Input.GetButtonDown("Jump"))
         {
-            ySpeed = jumpSpeed;
-        }
-
-        //超級跳
-        if (Input.GetButtonDown("Jump") && jumpSkill.currentSkill == 1)
-        {
-            ySpeed = superJumpSpeed;
+            if (jumpSkill.currentSkill == 1)
+            {
+                ySpeed = superJumpSpeed;
+            }
+            else
+            {
+                ySpeed = jumpSpeed;
+            }
+            anim.SetTrigger("isJumping");
         }
 
         if (direction.magnitude >= 0.1f)

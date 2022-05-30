@@ -8,6 +8,7 @@ public class InventoryHolder : MonoBehaviour
 {
     [SerializeField] private int inventorySize;
     [SerializeField] protected InventorySystem inventorySystem;
+    public List<InventoryItemData> inventoryItemDatas;
 
     public InventorySystem InventorySystem => inventorySystem;
 
@@ -15,6 +16,6 @@ public class InventoryHolder : MonoBehaviour
 
     private void Awake()
     {
-        inventorySystem = new InventorySystem(inventorySize);
+        inventorySystem = new InventorySystem(inventorySize, inventoryItemDatas);
     }
 }
