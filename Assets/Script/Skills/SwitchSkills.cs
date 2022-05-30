@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwitchSkills : MonoBehaviour
 {
-    public static int getSkill = 1;
+    public static int getSkill = 0;
     public int currentSkill = 0;
     public GameObject RabbitSkill;
 
