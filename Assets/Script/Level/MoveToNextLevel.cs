@@ -16,14 +16,14 @@ public class MoveToNextLevel : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-            if(SceneManager.GetActiveScene().buildIndex == 3) /* < Change this int value to whatever your
+            if (SceneManager.GetActiveScene().buildIndex == 3) /* < Change this int value to whatever your
                                                                    last level build index is on your
                                                                    build settings */
             {
                 Debug.Log("You Completed ALL Levels");
-                
+
                 //Show Win Screen or Somethin.
             }
             else
