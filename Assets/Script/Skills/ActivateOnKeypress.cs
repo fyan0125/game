@@ -20,12 +20,12 @@ public class ActivateOnKeypress : MonoBehaviour
     {
         if (vcam != null)
         {
-            if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill == 2 && !boosted)
+            if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill == 3 && !boosted)
             {
                 vcam.Priority += PriorityBoostAmount;
                 boosted = true;
             }
-            else if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill != 2 && boosted)
+            else if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill != 3 && boosted)
             {
                 vcam.Priority -= PriorityBoostAmount;
                 boosted = false;
