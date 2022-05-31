@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class Mob_UmbrellaController : MonoBehaviour
 {
     public NavMeshAgent agent;
-
     public Transform player;
-
     public LayerMask whatIsGround, whatIsPlayer;
-
     public float health;
-
     Transform target;
-
     public GameObject[] items = new GameObject[3];
 
     //Patroling
@@ -29,15 +24,14 @@ public class EnemyController : MonoBehaviour
     public GameObject projectile;
 
     public GameObject generate;
-
     private GenerateEnemy int_enemyCount;
     float height;
-    // public Transform bulletSpawnPoint;
-    // public float bulletSpeed = 10;
 
     //States
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
+
+    public Animator anim;
 
     private void Awake()
     {
@@ -72,6 +66,7 @@ public class EnemyController : MonoBehaviour
             agent.SetDestination(walkPoint);
             walkPointSet = false;
             StartCoroutine(waiter());
+            anim.SetBool("isWalking", true);
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
@@ -80,7 +75,7 @@ public class EnemyController : MonoBehaviour
         if (distanceToWalkPoint.magnitude < 1f)
         {
             walkPointSet = false;
-
+            anim.SetBool("isWalking", false);
         }
     }
 
@@ -108,6 +103,7 @@ public class EnemyController : MonoBehaviour
     {
         agent.speed = 2;
         agent.destination = target.position;
+        anim.SetBool("isWalking", true);
         // Invoke(3);
     }
 
@@ -121,7 +117,8 @@ public class EnemyController : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-
+            anim.SetBool("isWalking", false);
+            anim.SetBool("isAttacking", true);
             //Attack Code
             height = 0.3f;
             attackPoint = new Vector3(transform.position.x, transform.position.y + height, transform.position.z);
@@ -131,9 +128,12 @@ public class EnemyController : MonoBehaviour
             // var bullet = Instantiate(projectile, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             // bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
             //
-
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        }
+        if(alreadyAttacked)
+        {
+            anim.SetBool("isAttacking", false);
         }
     }
 
@@ -142,6 +142,7 @@ public class EnemyController : MonoBehaviour
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        anim.SetBool("isWalking", false);
     }
 
     private void ResetAttack()
