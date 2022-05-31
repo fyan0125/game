@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour
+public class Mob_UmbrellaController : MonoBehaviour
 {
     public NavMeshAgent agent;
-
     public Transform player;
-
     public LayerMask whatIsGround, whatIsPlayer;
-
     public float health;
-
     Transform target;
-
     public GameObject[] items = new GameObject[3];
 
     //Patroling
@@ -29,11 +24,8 @@ public class EnemyController : MonoBehaviour
     public GameObject projectile;
 
     public GameObject generate;
-
     private GenerateEnemy int_enemyCount;
     float height;
-    // public Transform bulletSpawnPoint;
-    // public float bulletSpeed = 10;
 
     //States
     public float sightRange, attackRange;
