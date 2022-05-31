@@ -18,7 +18,7 @@ public class MoveToNextLevel : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            if(SceneManager.GetActiveScene().buildIndex == 2) /* < Change this int value to whatever your
+            if(SceneManager.GetActiveScene().buildIndex == 3) /* < Change this int value to whatever your
                                                                    last level build index is on your
                                                                    build settings */
             {

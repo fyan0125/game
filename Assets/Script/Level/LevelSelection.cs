@@ -11,7 +11,7 @@ public class LevelSelection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int levelAt = PlayerPrefs.GetInt("levelAt", 2); /* < Change this int value to whatever your
+        int levelAt = PlayerPrefs.GetInt("levelAt", 1); /* < Change this int value to whatever your
                                                              level selection build index is on your
                                                              build settings */
 
