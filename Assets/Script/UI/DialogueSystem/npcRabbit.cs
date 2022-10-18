@@ -8,6 +8,7 @@ public class npcRabbit : DialogueTrigger
     public Conversation convo1;
     public Conversation convo2;
 
+    // UI介面控制
     public Button rabbitbtn;
     public Button memorybtn;
     public GameObject rabbitIcon;
