@@ -12,6 +12,8 @@ public class Mob_LanternController : MonoBehaviour
     Transform target;
     public GameObject[] items = new GameObject[3];
 
+    private int itemNum=0;
+
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet = false;
@@ -53,6 +55,7 @@ public class Mob_LanternController : MonoBehaviour
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
         if (playerInSightRange && playerInAttackRange) AttackPlayer();
+        TakeDamage(1);
     }
 
     private void Patroling()
@@ -149,7 +152,7 @@ public class Mob_LanternController : MonoBehaviour
         alreadyAttacked = false;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         Vector3 position = transform.position;
@@ -157,9 +160,10 @@ public class Mob_LanternController : MonoBehaviour
         {
             foreach (GameObject item in items)
             {
-                if (item != null)
+                if (itemNum == 0)
                 {
-                    Instantiate(item, position + new Vector3(0.0f, 15, 0.0f), Quaternion.identity);
+                    Instantiate(item, position + new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+                    itemNum++;
                 }
 
             }
