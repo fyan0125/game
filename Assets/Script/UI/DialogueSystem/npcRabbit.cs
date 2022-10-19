@@ -32,6 +32,7 @@ public class npcRabbit : DialogueTrigger
         sP = SendPoint.GetComponent<showPortal>();
         //SendPoint = GameObject.Find("Send Point");
     }
+
     private void Update()
     {
         if (npcState == 3 && DialogueManager.EndConversation())
@@ -45,6 +46,11 @@ public class npcRabbit : DialogueTrigger
             notificationTrigger.Notice();
             npcState++;
             sP.isClear = true;
+        }
+
+        if (npcState > 3 && Input.GetButtonDown("Inventory"))
+        {
+            notificationTrigger.EndNotice();
         }
 
         //Following Player

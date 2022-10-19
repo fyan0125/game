@@ -6,7 +6,11 @@ using UnityEngine.UI;
 public class NotificationManager : MonoBehaviour
 {
     public Text notification;
-    private static NotificationManager instance;
+    public static NotificationManager instance;
+    public Text count_text;
+
+    [HideInInspector]
+    public int count;
 
     public Animator anim;
 
@@ -26,5 +30,15 @@ public class NotificationManager : MonoBehaviour
     {
         instance.anim.SetTrigger("isOpened");
         instance.notification.text = notice;
+    }
+
+    public static void EndNotice()
+    {
+        instance.anim.SetTrigger("isClosed");
+    }
+
+    public void UpdateCount()
+    {
+        count_text.text = count.ToString();
     }
 }

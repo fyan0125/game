@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Mob_UmbrellaController : MonoBehaviour
+public class MobController : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
-    public LayerMask whatIsGround, whatIsPlayer;
+    public LayerMask whatIsGround,
+        whatIsPlayer;
     public float health;
     Transform target;
     public GameObject[] items = new GameObject[3];
@@ -24,22 +25,24 @@ public class Mob_UmbrellaController : MonoBehaviour
     public GameObject projectile;
 
     public GameObject generate;
-    private GenerateEnemy int_enemyCount;
+
+    // private GenerateEnemy int_enemyCount;
     float height;
 
     //States
-    public float sightRange, attackRange;
-    public bool playerInSightRange, playerInAttackRange;
+    public float sightRange,
+        attackRange;
+    public bool playerInSightRange,
+        playerInAttackRange;
 
     public Animator anim;
 
     private void Awake()
     {
-        // player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         target = player.transform;
-        int_enemyCount = generate.GetComponent<GenerateEnemy>();
-        // TakeDamage(10);
+        // int_enemyCount = generate.GetComponent<GenerateEnemy>();
     }
 
     private void Update()
@@ -48,9 +51,12 @@ public class Mob_UmbrellaController : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
-        if (playerInSightRange && playerInAttackRange) AttackPlayer();
+        if (!playerInSightRange && !playerInAttackRange)
+            Patroling();
+        if (playerInSightRange && !playerInAttackRange)
+            ChasePlayer();
+        if (playerInSightRange && playerInAttackRange)
+            AttackPlayer();
     }
 
     private void Patroling()
@@ -59,7 +65,6 @@ public class Mob_UmbrellaController : MonoBehaviour
         {
             SearchWalkPoint();
         }
-
 
         if (walkPointSet)
         {
@@ -91,7 +96,11 @@ public class Mob_UmbrellaController : MonoBehaviour
         float randomY = Random.Range(-walkPointRange, walkPointRange);
         float randomX = Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomX, transform.position.y + randomY, transform.position.z + randomZ);
+        walkPoint = new Vector3(
+            transform.position.x + randomX,
+            transform.position.y + randomY,
+            transform.position.z + randomZ
+        );
 
         if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
         {
@@ -121,8 +130,13 @@ public class Mob_UmbrellaController : MonoBehaviour
             anim.SetBool("isAttacking", true);
             //Attack Code
             height = 0.3f;
-            attackPoint = new Vector3(transform.position.x, transform.position.y + height, transform.position.z);
-            Rigidbody rb = Instantiate(projectile, attackPoint, Quaternion.identity).GetComponent<Rigidbody>();
+            attackPoint = new Vector3(
+                transform.position.x,
+                transform.position.y + height,
+                transform.position.z
+            );
+            Rigidbody rb = Instantiate(projectile, attackPoint, Quaternion.identity)
+                .GetComponent<Rigidbody>();
             rb.AddForce(transform.forward * 35f, ForceMode.Impulse);
             rb.AddForce(transform.up * 5f, ForceMode.Impulse);
             // var bullet = Instantiate(projectile, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
@@ -131,7 +145,7 @@ public class Mob_UmbrellaController : MonoBehaviour
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
-        if(alreadyAttacked)
+        if (alreadyAttacked)
         {
             anim.SetBool("isAttacking", false);
         }
@@ -141,38 +155,16 @@ public class Mob_UmbrellaController : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(
+            transform.rotation,
+            lookRotation,
+            Time.deltaTime * 5f
+        );
         anim.SetBool("isWalking", false);
     }
 
     private void ResetAttack()
     {
         alreadyAttacked = false;
-    }
-
-    public void TakeDamage(int damage)
-    {
-        health -= damage;
-        Vector3 position = transform.position;
-        if (health <= 0)
-        {
-            foreach (GameObject item in items)
-            {
-                if (item != null)
-                {
-                    Instantiate(item, position + new Vector3(0.0f, 15, 0.0f), Quaternion.identity);
-                }
-
-            }
-
-            Invoke(nameof(DestroyEnemy), 0.5f);
-
-        }
-    }
-
-    public void DestroyEnemy()
-    {
-        int_enemyCount.enemyCount -= 1;
-        Destroy(gameObject);
     }
 }

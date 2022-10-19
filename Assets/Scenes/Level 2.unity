@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0858d27ebdd2884aaf5e58768acfd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notice: "\u524D\u5F80\u5C71\u9802\u4E00\u63A2\u7A76\u7ADF"
+  notice: "\u524D\u5F80\u5C71\u9802\u4E00\u63A2\u7A76\u7ADF\uFF0C\u5C0B\u627E\u8FF7\u4E4B\u8072\u7684\u4E3B\u4EBA"
 --- !u!1 &163377383
 GameObject:
   m_ObjectHideFlags: 0
@@ -7366,6 +7366,7 @@ GameObject:
   - component: {fileID: 611017807}
   - component: {fileID: 611017806}
   - component: {fileID: 611017804}
+  - component: {fileID: 611017805}
   m_Layer: 0
   m_Name: NPC
   m_TagString: NPC
@@ -7392,6 +7393,19 @@ MonoBehaviour:
   wolfIcon: {fileID: 1667447918}
   memoryIcon: {fileID: 1659960439}
   anim: {fileID: 192695808}
+--- !u!114 &611017805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611017803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0858d27ebdd2884aaf5e58768acfd97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notice: 
 --- !u!114 &611017806
 MonoBehaviour:
   m_ObjectHideFlags: 0

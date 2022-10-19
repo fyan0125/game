@@ -32,7 +32,9 @@ public class npcWolf : DialogueTrigger
     public override void StartConvo()
     {
         convo = convo1;
-        if(npcState == 1){
+        notificationTrigger.EndNotice();
+        if (npcState == 1)
+        {
             npcState++;
         }
         DialogueManager.StartConversation(convo);

@@ -9,6 +9,10 @@ public class EnemyStats : CharactorStats
         base.Die();
         //Add ragdoll affect / death animation
 
+        //For level 3
+        NotificationManager.instance.count++;
+        NotificationManager.instance.UpdateCount();
+
         Destroy(gameObject);
     }
 }
