@@ -25,6 +25,12 @@ public class npcWolf : DialogueTrigger
             memoryIcon.SetActive(true);
             SwitchSkills.getSkill = 2;
             NpcReward.GetReward();
+            notificationTrigger.Notice();
+            npcState++;
+        }
+        else if (npcState == 3 && Input.GetButtonDown("SwitchSkills"))
+        {
+            notificationTrigger.EndNotice();
             npcState++;
         }
     }
