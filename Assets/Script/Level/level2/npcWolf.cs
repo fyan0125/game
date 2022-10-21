@@ -13,7 +13,11 @@ public class npcWolf : DialogueTrigger
     public GameObject wolfIcon;
     public GameObject memoryIcon;
 
-    public Animator anim;
+    private void Start()
+    {
+        base.Start();
+        SwitchSkills.getSkill = 1;
+    }
 
     private void Update()
     {

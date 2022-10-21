@@ -8,6 +8,7 @@ public class ThirdPersonChar : MonoBehaviour
     public float speed = 6f;
     public float jumpSpeed;
     public float superJumpSpeed;
+    public float gravity;
 
     private CharacterController controller;
     private float ySpeed;
@@ -16,16 +17,17 @@ public class ThirdPersonChar : MonoBehaviour
     private bool rotateOnMOve = true;
 
     private PlayerStats playerStats;
-    private SwitchSkills jumpSkill;
+    private SwitchSkills switchSkill;
     Collider npcCollider;
 
-    public Animator anim;
+    private Animator anim;
 
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
         playerStats = GetComponent<PlayerStats>();
-        jumpSkill = GetComponent<SwitchSkills>();  //超級跳
+        switchSkill = GetComponent<SwitchSkills>(); //超級跳
     }
 
     void Update()
@@ -43,25 +45,23 @@ public class ThirdPersonChar : MonoBehaviour
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         // controller.SimpleMove(direction * direction.magnitude);
 
-        ySpeed += Physics.gravity.y * Time.deltaTime;
+        ySpeed += gravity * Time.deltaTime;
 
         if (Input.GetButtonDown("Jump"))
         {
-            if (jumpSkill.currentSkill == 1)
-            {
-                ySpeed = superJumpSpeed;
-            }
-            else
-            {
-                ySpeed = jumpSpeed;
-            }
-            anim.SetTrigger("isJumping");
+            Jump();
         }
 
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            float targetAngle =
+                Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(
+                transform.eulerAngles.y,
+                targetAngle,
+                ref turnSmoothVelocity,
+                turnSmoothTime
+            );
             if (rotateOnMOve)
             {
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -75,12 +75,28 @@ public class ThirdPersonChar : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        if (playerStats.currentHealth <= 0) Destroy(gameObject);
+        if (playerStats.currentHealth <= 0)
+            Destroy(gameObject);
 
         if (Input.GetButtonDown("Talk"))
         {
             TalkToNPC();
         }
+    }
+
+    private void Jump()
+    {
+        if (switchSkill.currentSkill == 1)
+        {
+            ySpeed = superJumpSpeed;
+            gravity = Physics.gravity.y * 2;
+        }
+        else
+        {
+            ySpeed = jumpSpeed;
+            gravity = Physics.gravity.y;
+        }
+        anim.SetTrigger("isJumping");
     }
 
     private void OnTriggerEnter(Collider other)

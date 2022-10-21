@@ -39,21 +39,33 @@ public class SkillUI : MonoBehaviour
                     LeanTween
                         .scale(RabbitSkillUI, new Vector3(1.0f, 1.0f, 1.0f), 0.5f)
                         .setEase(LeanTweenType.easeOutBounce);
-                    LeanTween
-                        .moveX(RabbitSkillUI, RabbitSkillUI.transform.position.x + 7.0f, 0.5f)
-                        .setEase(LeanTweenType.easeOutBounce);
                 }
                 else if (currentSkill == 0)
                 {
                     LeanTween
                         .scale(RabbitSkillUI, new Vector3(0.45f, 0.45f, 0.45f), 0.5f)
                         .setEase(LeanTweenType.easeOutBounce);
-                    LeanTween
-                        .moveX(RabbitSkillUI, RabbitSkillUI.transform.position.x - 7.0f, 0.5f)
-                        .setEase(LeanTweenType.easeOutBounce);
                 }
                 break;
             case 2:
+                if (currentSkill == 1)
+                {
+                    LeanTween
+                        .scale(RabbitSkillUI, new Vector3(1.0f, 1.0f, 1.0f), 0.5f)
+                        .setEase(LeanTweenType.easeOutBounce);
+                    LeanTween
+                        .scale(WolfSkillUI, new Vector3(0.45f, 0.45f, 0.45f), 0.5f)
+                        .setEase(LeanTweenType.easeOutBounce);
+                }
+                else if (currentSkill == 2)
+                {
+                    LeanTween
+                        .scale(RabbitSkillUI, new Vector3(0.45f, 0.45f, 0.45f), 0.5f)
+                        .setEase(LeanTweenType.easeOutBounce);
+                    LeanTween
+                        .scale(WolfSkillUI, new Vector3(1.0f, 1.0f, 1.0f), 0.5f)
+                        .setEase(LeanTweenType.easeOutBounce);
+                }
                 break;
             case 3:
                 break;

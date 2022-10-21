@@ -17,7 +17,11 @@ public class npcFox : DialogueTrigger
     public GameObject notice;
     public GameObject counter;
 
-    public Animator anim;
+    private void Start()
+    {
+        base.Start();
+        SwitchSkills.getSkill = 2;
+    }
 
     private void Update()
     {

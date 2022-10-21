@@ -5,18 +5,25 @@ using Cinemachine;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
-    [SerializeField] private LayerMask aimColliderLayerMask = new LayerMask();
-    [SerializeField] private GameObject debugTransform;
-    [SerializeField] private Transform ofBulletProjectile;
-    [SerializeField] private Transform spawnBulletPosition;
-    bool boosted = false;
+    [SerializeField]
+    private LayerMask aimColliderLayerMask = new LayerMask();
+
+    [SerializeField]
+    private GameObject debugTransform;
+
+    [SerializeField]
+    private Transform ofBulletProjectile;
+
+    [SerializeField]
+    private Transform spawnBulletPosition;
+    private bool boosted = false;
     private ThirdPersonChar thirdPersonChar;
-    private SwitchSkills SwitchSkills;
+    private SwitchSkills switchSkills;
 
     private void Start()
     {
         thirdPersonChar = GetComponent<ThirdPersonChar>();
-        SwitchSkills = GetComponent<SwitchSkills>();
+        switchSkills = GetComponent<SwitchSkills>();
     }
 
     private void Update()
@@ -31,7 +38,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
 
         //控制玩家是否跟著滑鼠游標面向
-        if (Input.GetButtonDown("SwitchSkills") && SwitchSkills.currentSkill == 2)
+        if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill == 2)
         {
             boosted = true;
         }
@@ -57,17 +64,21 @@ public class ThirdPersonShooterController : MonoBehaviour
         Vector3 worldAimTarget = mouseWorldPosition;
         worldAimTarget.y = transform.position.y;
         Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
-        
+
         transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
         /*-------------------------------------------------*/
 
-        if (SwitchSkills.currentSkill == 3)
+        if (switchSkills.currentSkill == 3)
         {
             debugTransform.SetActive(true);
             if (Input.GetButtonDown("Skill"))
             {
                 Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
-                Instantiate(ofBulletProjectile, spawnBulletPosition.position, Quaternion.LookRotation(aimDir, Vector3.up));
+                Instantiate(
+                    ofBulletProjectile,
+                    spawnBulletPosition.position,
+                    Quaternion.LookRotation(aimDir, Vector3.up)
+                );
             }
         }
         else
