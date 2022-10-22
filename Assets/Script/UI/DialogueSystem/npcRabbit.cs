@@ -14,21 +14,21 @@ public class npcRabbit : DialogueTrigger
     public GameObject rabbitIcon;
     public GameObject memoryIcon;
 
-    public UnityEngine.AI.NavMeshAgent agent;
-    public Transform player;
-    public LayerMask whatIsPlayer;
-    public float sightRange;
-    public bool playerInSightRange;
-    Transform target;
+    public UnityEngine.AI.NavMeshAgent agent;//
+    public Transform player;//
+    public LayerMask whatIsPlayer;//
+    public float sightRange;//
+    public bool playerInSightRange;//
+    Transform target;//
     public GameObject SendPoint;
     private showPortal sP;
 
-    public Animator anim;
+    public Animator anim;//
 
     private void Awake()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        target = player.transform;
+        target = player.transform;//
         sP = SendPoint.GetComponent<showPortal>();
         //SendPoint = GameObject.Find("Send Point");
     }
