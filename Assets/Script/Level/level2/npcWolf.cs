@@ -12,11 +12,14 @@ public class npcWolf : DialogueTrigger
     public Button memorybtn;
     public GameObject wolfIcon;
     public GameObject memoryIcon;
+    public GameObject SendPoint;
+    private showPortal sP;
 
     private void Start()
     {
         base.Start();
         SwitchSkills.getSkill = 1;
+        sP = SendPoint.GetComponent<showPortal>();
     }
 
     private void Update()
@@ -31,6 +34,7 @@ public class npcWolf : DialogueTrigger
             NpcReward.GetReward();
             notificationTrigger.Notice();
             npcState++;
+            sP.isClear = true;
         }
         else if (npcState == 3 && Input.GetButtonDown("SwitchSkills"))
         {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
-{
+{/*
     // Start is called before the first frame update
     public Transform player;
     public LayerMask whatIsPlayer;
@@ -40,5 +40,5 @@ public class FollowPlayer : MonoBehaviour
     {
         agent.speed = 2;
         agent.destination = target.position;
-    }
+    }*/
 }
