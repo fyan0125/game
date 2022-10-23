@@ -17,19 +17,18 @@ public class GenerateEnemy : MonoBehaviour
     void Start()
     {
         StartCoroutine(EnemyDrop());
-        randomIndex = Random.Range(0, theEnemy.Length);
     }
+    void Update(){
+        randomIndex = Random.Range(0, theEnemy.Length);
+    } 
 
     IEnumerator EnemyDrop(){
         while(enemyCount < maxEnemyCount){
-            xPos = Random.Range(-9, 4);
-            zPos = Random.Range(-11, -2);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, -4, zPos), Quaternion.identity);
+            xPos = Random.Range(-121, 114);
+            zPos = Random.Range(-121, 97);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 7, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1; 
-        }
-        if(enemyCount == 0){
-            portal.SetActive(true);
         }
     }
 
