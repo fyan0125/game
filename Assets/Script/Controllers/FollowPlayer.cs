@@ -41,7 +41,7 @@ public class FollowPlayer : MonoBehaviour
         }
     }
     public void nowFollowing(){
-        if(aM.rabbitArea.activeSelf){
+        if(aM.rabbitArea.activeSelf ){
             i=0;
         }
         else if(aM.wolfArea.activeSelf){

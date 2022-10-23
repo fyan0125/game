@@ -14,23 +14,13 @@ public class npcRabbit : DialogueTrigger
     public GameObject rabbitIcon;
     public GameObject memoryIcon;
 
-    public UnityEngine.AI.NavMeshAgent agent;//
-    public Transform player;//
-    public LayerMask whatIsPlayer;//
-    public float sightRange;//
-    public bool playerInSightRange;//
-    Transform target;//
     public GameObject SendPoint;
     private showPortal sP;
 
-    public Animator anim;//
 
     private void Awake()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        target = player.transform;//
         sP = SendPoint.GetComponent<showPortal>();
-        //SendPoint = GameObject.Find("Send Point");
     }
 
     private void Update()
@@ -52,18 +42,6 @@ public class npcRabbit : DialogueTrigger
         {
             notificationTrigger.EndNotice();
         }
-
-        //Following Player
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        if (!playerInSightRange && rabbitbtn.interactable)
-        {
-            followPlayer();
-            anim.SetBool("isWalking", true);
-        }
-        else if (playerInSightRange && rabbitbtn.interactable)
-        {
-            anim.SetBool("isWalking", false);
-        }
     }
 
     public override void StartConvo()
@@ -83,11 +61,5 @@ public class npcRabbit : DialogueTrigger
                 break;
         }
         DialogueManager.StartConversation(convo);
-    }
-
-    public void followPlayer()
-    {
-        agent.speed = 2;
-        agent.destination = target.position;
     }
 }

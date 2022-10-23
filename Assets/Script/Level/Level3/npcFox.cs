@@ -17,10 +17,15 @@ public class npcFox : DialogueTrigger
     public GameObject notice;
     public GameObject counter;
 
+    //傳送門
+    public GameObject SendPoint;
+    private showPortal sP;
+
     private void Start()
     {
         base.Start();
         SwitchSkills.getSkill = 2;
+        sP = SendPoint.GetComponent<showPortal>();
     }
 
     private void Update()
@@ -51,6 +56,7 @@ public class npcFox : DialogueTrigger
                 memoryIcon.SetActive(true);
                 NpcReward.GetReward();
                 npcState++;
+                sP.isClear = true;
             }
         }
     }
