@@ -23,6 +23,7 @@ public class MobController : MonoBehaviour
     public float timeBetweenAttacks;
     bool alreadyAttacked;
     public GameObject projectile;
+    private int randomIndex;
 
     public GameObject generate;
 
@@ -57,6 +58,8 @@ public class MobController : MonoBehaviour
             ChasePlayer();
         if (playerInSightRange && playerInAttackRange)
             AttackPlayer();
+        
+        randomIndex = Random.Range(0, items.Length);
     }
 
     private void Patroling()
