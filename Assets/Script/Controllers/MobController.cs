@@ -37,12 +37,14 @@ public class MobController : MonoBehaviour
         playerInAttackRange;
 
     public Animator anim;
+    public EnemyStats stats;
 
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         target = player.transform;
+        stats =  GetComponent<EnemyStats>();
         // int_enemyCount = generate.GetComponent<GenerateEnemy>();
     }
 
@@ -60,6 +62,16 @@ public class MobController : MonoBehaviour
             AttackPlayer();
         
         randomIndex = Random.Range(0, items.Length);
+
+        Vector3 position = transform.position;
+        if (stats.currentHealth <= 0)
+        {
+            Instantiate(
+                items[randomIndex], 
+                position + new Vector3(0.0f, 2, 0.0f), 
+                Quaternion.identity);
+        }
+
     }
 
     private void Patroling()
