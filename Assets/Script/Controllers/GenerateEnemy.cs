@@ -8,6 +8,7 @@ public class GenerateEnemy : MonoBehaviour
     public GameObject portal;
     public int xPos;
     public int zPos;
+    public int yPos;
     public int enemyCount;
 
     public int maxEnemyCount;
@@ -17,19 +18,19 @@ public class GenerateEnemy : MonoBehaviour
     void Start()
     {
         StartCoroutine(EnemyDrop());
-        randomIndex = Random.Range(0, theEnemy.Length);
+        yPos = Random.Range(7, 10);
     }
+    void Update(){
+        randomIndex = Random.Range(0, theEnemy.Length);
+    } 
 
     IEnumerator EnemyDrop(){
         while(enemyCount < maxEnemyCount){
-            xPos = Random.Range(-9, 4);
-            zPos = Random.Range(-11, -2);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, -4, zPos), Quaternion.identity);
+            xPos = Random.Range(-110, 105);
+            zPos = Random.Range(-110, 80);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 8, zPos), Quaternion.identity);
             yield return new WaitForSeconds(0.1f);
             enemyCount += 1; 
-        }
-        if(enemyCount == 0){
-            portal.SetActive(true);
         }
     }
 

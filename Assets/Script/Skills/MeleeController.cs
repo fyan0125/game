@@ -4,27 +4,36 @@ using UnityEngine;
 
 public class MeleeController : MonoBehaviour
 {
-    public Animator animator;
-    private SwitchSkills SwitchSkills;
+    private Animator anim;
+    private SwitchSkills switchSkills;
+    public GameObject weapon;
 
     void Start()
     {
-        SwitchSkills = GetComponent<SwitchSkills>();
+        anim = GetComponentInChildren<Animator>();
+        switchSkills = GetComponent<SwitchSkills>();
     }
 
     void Update()
     {
-        if (SwitchSkills.currentSkill == 2)
+        if (switchSkills.currentSkill == 2)
         {
+            if (weapon.activeSelf == false)
+                weapon.SetActive(true);
+
             if (Input.GetButtonDown("Skill"))
-            {
                 Melee();
-            }
+        }
+        else
+        {
+            anim.SetInteger("currentSkill", 0);
+            if (weapon.activeSelf == true)
+                weapon.SetActive(false);
         }
     }
 
     void Melee()
     {
-        animator.SetTrigger("Melee");
+        anim.SetTrigger("Melee");
     }
 }

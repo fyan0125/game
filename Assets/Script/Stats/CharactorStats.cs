@@ -16,10 +16,10 @@ public class CharactorStats : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public virtual void TakeDamage(int damage)//受到傷害
+    public virtual void TakeDamage(int damage) //受到傷害
     {
         damage -= armor.GetValue();
-        damage = Mathf.Clamp(damage, 0, int.MaxValue);//防止防禦大於傷害時補血
+        damage = Mathf.Clamp(damage, 0, int.MaxValue); //防止防禦大於傷害時補血
 
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damages.");
@@ -30,7 +30,7 @@ public class CharactorStats : MonoBehaviour
         }
     }
 
-    public virtual void Die()//某種死法
+    public virtual void Die()
     {
         Debug.Log(transform.name + " died.");
     }

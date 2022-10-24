@@ -4,29 +4,41 @@ using UnityEngine;
 
 public class SwitchSkills : MonoBehaviour
 {
-    public static int getSkill = 4;
+    public static int getSkill = 0;
     public int currentSkill = 0;
-    public GameObject RabbitSkill;
 
-    void Update()
+    GameObject GameManager;
+    SkillUI skillUI;
+
+    private Animator anim;
+
+    public void Start()
+    {
+        GameManager = GameObject.Find("GameManager");
+        skillUI = GameManager.GetComponent<SkillUI>();
+        anim = GetComponentInChildren<Animator>();
+    }
+
+    public void Update()
     {
         if (Input.GetButtonDown("SwitchSkills"))
         {
-            if (currentSkill < getSkill)
+            if (getSkill == 0)
+            {
+                currentSkill = 0;
+            }
+            else if (currentSkill < getSkill)
             {
                 currentSkill += 1;
             }
-            else currentSkill = 0;
-        }
-
-        switch (currentSkill)
-        {
-            case 1:
-                RabbitSkill.SetActive(true);
-                break;
-            default:
-                RabbitSkill.SetActive(false);
-                break;
+            else if (getSkill == 1)
+            {
+                currentSkill = 0;
+            }
+            else
+                currentSkill = 1;
+            anim.SetInteger("currentSkill", currentSkill);
+            skillUI.SkillUITransition(currentSkill);
         }
     }
 }

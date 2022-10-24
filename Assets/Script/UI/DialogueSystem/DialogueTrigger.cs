@@ -17,6 +17,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public virtual void StartConvo()
     {
-        // DialogueManager.StartConversation(convo);
+        DialogueManager.StartConversation(convo);
     }
 }

@@ -11,4 +11,9 @@ public class NotificationTrigger : MonoBehaviour
     {
         NotificationManager.StartNotice(notice);
     }
+
+    public virtual void EndNotice()
+    {
+        NotificationManager.EndNotice();
+    }
 }

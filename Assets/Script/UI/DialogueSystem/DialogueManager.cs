@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Text speakerName, dialogue;
+    public Text speakerName,
+        dialogue;
 
     public int currentIndex;
     private Conversation currentConvo;
@@ -26,6 +27,7 @@ public class DialogueManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void Update()
     {
         if (Input.GetButtonDown("Skill") && isTalking == true)
@@ -48,30 +50,38 @@ public class DialogueManager : MonoBehaviour
 
     public static bool EndConversation()
     {
-        if (instance.currentIndex > instance.currentConvo.GetLength()) return true;
-        else return false;
+        if (instance.currentIndex > instance.currentConvo.GetLength())
+        {
+            return true;
+        }
+        else
+            return false;
     }
 
     public void ReadNext()
     {
-        EndConversation();
         if (instance.currentIndex > instance.currentConvo.GetLength())
         {
             instance.isTalking = false;
             instance.anim.SetBool("isOpened", false);
+            instance.currentIndex = 0;
             return;
         }
         speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
         //dialogue.text = currentConvo.GetLineByIndex(currentIndex).dialogue;
         if (typing == null)
         {
-            typing = instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue));
+            typing = instance.StartCoroutine(
+                TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue)
+            );
         }
         else
         {
             instance.StopCoroutine(typing);
             typing = null;
-            typing = instance.StartCoroutine(TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue));
+            typing = instance.StartCoroutine(
+                TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue)
+            );
         }
         currentIndex++;
     }
