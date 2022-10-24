@@ -18,7 +18,8 @@ public class MoveToNextLevel : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (SceneManager.GetActiveScene().buildIndex == 3) /* < Change this int value to whatever your
+            Debug.Log("You Completed ALL Levels");
+            if (SceneManager.GetActiveScene().buildIndex == 7) /* < Change this int value to whatever your
                                                                    last level build index is on your
                                                                    build settings */
             {

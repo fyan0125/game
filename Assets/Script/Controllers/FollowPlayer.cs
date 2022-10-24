@@ -35,7 +35,7 @@ public class FollowPlayer : MonoBehaviour
             playerFollow();
             npc[i].SetBool("isWalking", true);
         }
-        else if (playerInSightRange)
+        else
         {
             npc[i].SetBool("isWalking", false);
         }
