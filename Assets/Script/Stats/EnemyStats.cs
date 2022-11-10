@@ -7,10 +7,17 @@ public class EnemyStats : CharactorStats
 {
     public string sound;
     public GameObject floatingTextPrefab;
+    public EnemyHealthBar enemyHealthBar;
+
+    private void Start()
+    {
+        enemyHealthBar.SetMaxHealth(maxHealth);
+    }
 
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+        enemyHealthBar.SetHealth(currentHealth);
 
         if (floatingTextPrefab != null)
         {
