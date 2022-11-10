@@ -26,6 +26,7 @@ public class ThirdPersonChar : MonoBehaviour
     private float jumpHeight = 1.2f;
     private float verticalVelocity;
     private float terminalVelocity = 53.0f;
+    private bool canDoubleJump = true;
 
     // timeout deltatime
     private float jumpTimeoutDelta;
@@ -154,6 +155,7 @@ public class ThirdPersonChar : MonoBehaviour
         {
             jumpHeight = normalJumpHeight;
         }
+
         if (grounded)
         {
             // reset the fall timeout timer
@@ -177,12 +179,27 @@ public class ThirdPersonChar : MonoBehaviour
 
                 // update animator if using character
                 anim.SetBool(animIDJump, true);
+
+                canDoubleJump = true;
             }
 
             // jump timeout
             if (jumpTimeoutDelta >= 0.0f)
             {
                 jumpTimeoutDelta -= Time.deltaTime;
+            }
+        }
+        else if (canDoubleJump)
+        {
+            // Jump
+            if (Input.GetButtonDown("Jump") && jumpTimeoutDelta <= 0.0f)
+            {
+                canDoubleJump = false;
+                // the square root of H * -2 * G = how much velocity needed to reach desired height
+                verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+
+                // update animator if using character
+                anim.SetBool(animIDJump, true);
             }
         }
         else
