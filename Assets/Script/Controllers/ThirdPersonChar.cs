@@ -242,7 +242,10 @@ public class ThirdPersonChar : MonoBehaviour
 
     private void TalkToNPC()
     {
-        npcCollider.GetComponent<DialogueTrigger>().StartConvo();
+        if (npcCollider)
+        {
+            npcCollider.GetComponent<DialogueTrigger>().StartConvo();
+        }
     }
 
     public void SetRotateOnMove(bool newRotateOnMove)

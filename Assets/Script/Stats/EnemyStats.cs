@@ -19,6 +19,15 @@ public class EnemyStats : CharactorStats
         base.TakeDamage(damage);
         enemyHealthBar.SetHealth(currentHealth);
 
+        if (transform.name.Contains("Lantern"))
+        {
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("LanternHurt");
+        }
+        else if (transform.name.Contains("Umbrella"))
+        {
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("UmbrellaHurt");
+        }
+
         if (floatingTextPrefab != null)
         {
             ShowFloatingText();

@@ -18,5 +18,6 @@ public class FloatingText : MonoBehaviour
             Random.Range(-randomizeIntensity.y, randomizeIntensity.y),
             Random.Range(-randomizeIntensity.z, randomizeIntensity.z)
         );
+        transform.localRotation = Quaternion.Euler(0, 180, Random.Range(-15, 15));
     }
 }
