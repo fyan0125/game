@@ -60,19 +60,23 @@ public class MobController : MonoBehaviour
             ChasePlayer();
         if (playerInSightRange && playerInAttackRange)
             AttackPlayer();
-        
+    }
+
+    public void dropItem()
+    {
         randomIndex = Random.Range(0, items.Length);
 
         Vector3 position = transform.position;
-        if (stats.currentHealth <= 0)
-        {
-            Instantiate(
-                items[randomIndex], 
-                position + new Vector3(0.0f, 2, 0.0f), 
-                Quaternion.identity);
-        }
-
+        Debug.Log("die");
+        GameObject item = GameObject.Instantiate(
+        items[randomIndex], 
+        position + new Vector3(0.0f, 1, 0.0f),
+        Quaternion.identity
+        );
+        // item.transform.Rotate (0f, 0f, 90f);
+        // item.transform.rotation=Quaternion.identity;
     }
+    
 
     private void Patroling()
     {
