@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class InventorySlot_UI : MonoBehaviour
 {
     [SerializeField] private Image itemSprite;
-    [SerializeField] public Text itemCount;
+    [SerializeField] private Text itemCount;
     [SerializeField] private InventorySlot assignedInventorySlot;
 
     public InventorySlot AssignedInventorySlot => assignedInventorySlot;

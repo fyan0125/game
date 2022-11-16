@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class CompoundArea : MonoBehaviour
 {
-    public Text displayName, intro, formula, stackSize1, stackSize2;
+    public Text displayName, intro, formula, stackSize1, stackSize2, stack;
+    public int size1, size2;
     public Image image, craftingElement1, craftingElement2;
     //public List<InventorySlot> craftingElement;
     public Button compoundButton;
@@ -23,6 +24,7 @@ public class CompoundArea : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        crafting = GetComponent<CraftingRecipe>();
     }
 
     public static void ChangeProp(InventoryItemData item)
@@ -30,7 +32,7 @@ public class CompoundArea : MonoBehaviour
         instance.image.sprite = item.Icon;
         instance.displayName.text = item.DisplayName;
         instance.intro.text = item.Description;
-        Text stack = crafting.RefreshAmount(item);
+        (instance.size1, instance.size2) = crafting.RefreshAmount(item);
         
         if (item.Formula == "")
         {
@@ -46,8 +48,8 @@ public class CompoundArea : MonoBehaviour
             // }
             instance.craftingElement1.sprite = item.craftingElement[0].ItemData.Icon;
             instance.craftingElement2.sprite = item.craftingElement[1].ItemData.Icon;
-            instance.stackSize1.text = item.craftingElement[0].StackSize.ToString();
-            instance.stackSize2.text = item.craftingElement[1].StackSize.ToString();
+            instance.stackSize1.text = instance.size1.ToString();
+            instance.stackSize2.text = instance.size2.ToString();
         }
     }
 }
