@@ -34,7 +34,6 @@ public class CraftingRecipe : MonoBehaviour
                 Debug.Log("棉花糖");
                 stackSize1 = inventorySlot[4];
                 stackSize2 = inventorySlot[2];
-                Debug.Log(inventorySlot[0]);
                 break;
             case("鯛魚燒"):
                 stackSize1 = inventorySlot[0];
@@ -53,27 +52,6 @@ public class CraftingRecipe : MonoBehaviour
                 stackSize2 = inventorySlot[7];
                 break;
         }
-    //    if(item.DisplayName == "棉花糖"){
-    //     Debug.Log("棉花糖");
-    //     //crafting.stackSize1 = inventorySlot[0].ToString();
-    //     Debug.Log(inventorySlot[0]);
-        
-    //    }
-    //    else if(item.DisplayName == "鯛魚燒"){
-    //     Debug.Log("鯛魚燒");
-    //     //crafting.stackSize1 = inventorySlot_UI.AssignedInventorySlot.StackSize.ToString();
-    //    }
-    //    else if(item.DisplayName == "蘋果糖"){
-    //     Debug.Log("蘋果糖");
-    //     //crafting.stackSize1 = inventorySlot_UI.AssignedInventorySlot.StackSize.ToString();
-    //    }
-    //    else if(item.DisplayName == "章魚燒"){
-    //     Debug.Log("章魚燒");
-    //     //crafting.stackSize1 = inventorySlot_UI.AssignedInventorySlot.StackSize.ToString();
-    //    }
-    //    else{
-    //     //crafting.stackSize1 = inventorySlot_UI.AssignedInventorySlot.StackSize.ToString();
-    //    }
        return(stackSize1, stackSize2);
     }
 }

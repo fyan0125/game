@@ -43,9 +43,6 @@ public class CompoundArea : MonoBehaviour
         {
             instance.compoundButton.interactable = true;
             instance.formula.text = item.Formula;
-            // for (int i=0; i<2; i++){
-            //     instance.craftingElement[i] = item.craftingElement[0];
-            // }
             instance.craftingElement1.sprite = item.craftingElement[0].ItemData.Icon;
             instance.craftingElement2.sprite = item.craftingElement[1].ItemData.Icon;
             instance.stackSize1.text = instance.size1.ToString();
