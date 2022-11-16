@@ -17,7 +17,6 @@ public class npcRabbit : DialogueTrigger
     public GameObject SendPoint;
     private showPortal sP;
 
-
     private void Awake()
     {
         sP = SendPoint.GetComponent<showPortal>();
