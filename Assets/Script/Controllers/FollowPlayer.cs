@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Animator[] npc = new Animator[7];
+    public Animator[] npc = new Animator[3];
     public GameObject gameManager;
     public Transform player;
     public LayerMask whatIsPlayer;

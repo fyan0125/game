@@ -7364,9 +7364,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryHolder: {fileID: 777624596}
-  item1: {fileID: 11400000, guid: c24b6efc359e72e4b9a24ecfc26f4dd6, type: 2}
-  item2: {fileID: 11400000, guid: dd3ae50408c78bd43b00058435eee437, type: 2}
-  item3: {fileID: 11400000, guid: 57eeb5eedeaff7a42902d5aebaed1e99, type: 2}
+  inventoryItem:
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
 --- !u!114 &629103539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8089,9 +8093,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryHolder: {fileID: 777624596}
-  item1: {fileID: 11400000, guid: c24b6efc359e72e4b9a24ecfc26f4dd6, type: 2}
-  item2: {fileID: 11400000, guid: dd3ae50408c78bd43b00058435eee437, type: 2}
-  item3: {fileID: 11400000, guid: 57eeb5eedeaff7a42902d5aebaed1e99, type: 2}
+  inventoryItem:
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
 --- !u!114 &660892750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8682,12 +8690,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaae94724e575413fae9b24865e8f846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compoundItems: {fileID: 0}
-  inventorySlot: 0000000000000000000000000000000000000000000000000000000000000000
+  inventoryStackSize: 0000000000000000000000000000000000000000000000000000000000000000
+  inventoryItem:
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
   player: {fileID: 0}
   inventoryHolder: {fileID: 0}
-  stackSize1: 0
-  stackSize2: 0
+  itemData: {fileID: 11400000, guid: 34104318db4e6964c9c5b516060c1594, type: 2}
 --- !u!1 &690272624
 GameObject:
   m_ObjectHideFlags: 0
