@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Animator[] npc = new Animator[7];
+    public Animator[] npc;
     public GameObject gameManager;
     public Transform player;
     public LayerMask whatIsPlayer;
@@ -41,7 +41,7 @@ public class FollowPlayer : MonoBehaviour
         }
     }
     public void nowFollowing(){
-        if(aM.rabbitArea.activeSelf ){
+        if(aM.rabbitArea.activeSelf){
             i=0;
         }
         else if(aM.wolfArea.activeSelf){

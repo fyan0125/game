@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ThirdPersonChar : MonoBehaviour
 {
@@ -46,6 +47,7 @@ public class ThirdPersonChar : MonoBehaviour
     private PlayerStats playerStats;
     private SwitchSkills switchSkill;
     private Collider npcCollider;
+    private Collider chickenCollider;
 
     private Animator anim;
 
@@ -75,6 +77,13 @@ public class ThirdPersonChar : MonoBehaviour
         if (Input.GetButtonDown("Talk"))
         {
             TalkToNPC();
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            if (Input.GetButtonDown("Skill") && chickenCollider)
+            {
+                chickenCollider.GetComponent<chicken>().CatchChicken();
+            }
         }
     }
 
@@ -237,6 +246,10 @@ public class ThirdPersonChar : MonoBehaviour
         if (other.GetComponent<Collider>().CompareTag("NPC"))
         {
             npcCollider = other;
+        }
+        if (other.GetComponent<Collider>().CompareTag("Chicken"))
+        {
+            chickenCollider = other;
         }
     }
 

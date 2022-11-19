@@ -6,29 +6,38 @@ public class Compound : MonoBehaviour
 {
     protected InventorySystem inventorySystem;
     [SerializeField] private InventoryHolder inventoryHolder;
+    
+    private GameObject compoundArea;
+    private CraftingRecipe craftingRecipe;
 
-    public InventoryItemData item1;
-    public InventoryItemData item2;
-    public InventoryItemData item3;
+    public InventorySlot[] inventoryItem = new InventorySlot[3];
 
     private void Start()
     {
         inventorySystem = inventoryHolder.InventorySystem;
+        compoundArea = GameObject.Find("CompoundArea");
+        craftingRecipe = compoundArea.GetComponent<CraftingRecipe>();
+    }
+
+    public void updateItem(InventorySlot item1,InventorySlot item2,InventorySlot item3)
+    {
+        inventoryItem[0] = item1;
+        inventoryItem[1] = item2;
+        inventoryItem[2] = item3;
     }
 
     public void CompoundButton()
     {
-        if (inventorySystem.ContainItem(item1, out List<InventorySlot> invSlot))
+        
+        if (inventoryItem[1].StackSize > 0 && inventoryItem[2].StackSize > 0)
         {
-            foreach (var slot in invSlot)
-            {
-                if (slot.RoomLeftInStack(1))
-                {
-                    inventorySystem.RemoveFromInventory(item1, 1);
-                    return;
-                }
-            }
+            inventorySystem.AddToInventory(inventoryItem[0].ItemData, 1);
+            inventorySystem.RemoveFromInventory(inventoryItem[1].ItemData, 1);
+            inventorySystem.RemoveFromInventory(inventoryItem[2].ItemData, 1);
+            return;
         }
-        Debug.Log("Don't have enough items.");
+        else{ 
+            Debug.Log("Don't have enough items."); 
+        }
     }
 }
