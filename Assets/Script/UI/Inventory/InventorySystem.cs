@@ -54,7 +54,7 @@ public class InventorySystem
         {
             foreach (var slot in invSlot)
             {
-                if (slot.StackSize > 1)
+                if (slot.StackSize > 0)
                 {
                     slot.RemoveFromStack(amountToRemove);
                     OnInventorySlotChanged?.Invoke(slot);

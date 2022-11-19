@@ -13,6 +13,7 @@ public class CompoundArea : MonoBehaviour
 
     private static CompoundArea instance;
     private static CraftingRecipe crafting;
+    private static InventoryItemData itemData;
 
     private void Awake()
     {
@@ -26,13 +27,17 @@ public class CompoundArea : MonoBehaviour
         }
         crafting = GetComponent<CraftingRecipe>();
     }
+    void Update()
+    {
+    }
 
     public static void ChangeProp(InventoryItemData item)
     {
+        itemData = item;
         instance.image.sprite = item.Icon;
         instance.displayName.text = item.DisplayName;
         instance.intro.text = item.Description;
-        (instance.size1, instance.size2) = crafting.RefreshAmount(item);
+        crafting.getItem(item);
         
         if (item.Formula == "")
         {
@@ -45,8 +50,8 @@ public class CompoundArea : MonoBehaviour
             instance.formula.text = item.Formula;
             instance.craftingElement1.sprite = item.craftingElement[0].ItemData.Icon;
             instance.craftingElement2.sprite = item.craftingElement[1].ItemData.Icon;
-            instance.stackSize1.text = instance.size1.ToString();
-            instance.stackSize2.text = instance.size2.ToString();
+            // instance.stackSize1.text = instance.size1.ToString();
+            // instance.stackSize2.text = instance.size2.ToString();
         }
     }
 }
