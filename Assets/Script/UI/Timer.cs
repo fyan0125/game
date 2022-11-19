@@ -15,6 +15,7 @@ public class Timer : MonoBehaviour
     public GameObject Level4UI;
     public GameObject TimerUI;
     public GameObject BillBoardUI;
+    public GameObject billBoard;
 
     private void Start()
     {
@@ -36,6 +37,7 @@ public class Timer : MonoBehaviour
                 timerIsRunning = false;
                 gameObject.SetActive(false);
                 timeText.text = "";
+                billBoard.SetActive(true);
                 if (SceneManager.GetActiveScene().buildIndex == 4)
                 {
                     GameObject[] chickens = GameObject.FindGameObjectsWithTag("Chicken");

@@ -80,7 +80,7 @@ public class ThirdPersonChar : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 4)
         {
-            if (Input.GetButtonDown("Skill"))
+            if (Input.GetButtonDown("Skill") && chickenCollider)
             {
                 chickenCollider.GetComponent<chicken>().CatchChicken();
             }

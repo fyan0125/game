@@ -38,7 +38,6 @@ public class chicken : MonoBehaviour
                 navMeshAgent.speed = 0;
             }
         }
-        Debug.Log(isNearTarget);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -55,6 +54,7 @@ public class chicken : MonoBehaviour
         {
             Debug.Log("Catch");
             isCatched = true;
+            animator.SetTrigger("Jump");
         }
     }
 

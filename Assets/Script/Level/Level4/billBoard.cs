@@ -43,5 +43,6 @@ public class billBoard : MonoBehaviour
                 Quaternion.identity
             );
         }
+        gameObject.SetActive(false);
     }
 }
