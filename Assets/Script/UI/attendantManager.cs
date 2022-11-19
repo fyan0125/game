@@ -12,10 +12,13 @@ public class attendantManager : MonoBehaviour
     public GameObject wolf;
     public GameObject foxArea;
     public GameObject fox;
+    private GameObject followPlayer;
 
     private void Start()
     {
         chooseBT.onClick.AddListener(ChangeAttendant);
+        followPlayer = GameObject.Find("Following");
+        followPlayer.SetActive(false);
     }
 
     public void ChangeAttendant()
@@ -26,6 +29,7 @@ public class attendantManager : MonoBehaviour
             rabbit.SetActive(true);
             wolf.SetActive(false);
             fox.SetActive(false);
+            followPlayer.SetActive(true);
         }
         else if (wolfArea.activeSelf)
         {
@@ -33,6 +37,7 @@ public class attendantManager : MonoBehaviour
             rabbit.SetActive(false);
             wolf.SetActive(true);
             fox.SetActive(false);
+            followPlayer.SetActive(true);
         }
         else if (foxArea.activeSelf)
         {
@@ -40,6 +45,7 @@ public class attendantManager : MonoBehaviour
             rabbit.SetActive(false);
             wolf.SetActive(false);
             fox.SetActive(true);
+            followPlayer.SetActive(true);
         }
         else
         {
@@ -47,6 +53,7 @@ public class attendantManager : MonoBehaviour
             rabbit.SetActive(false);
             wolf.SetActive(false);
             fox.SetActive(false);
+            followPlayer.SetActive(true);
         }
     }
 }
