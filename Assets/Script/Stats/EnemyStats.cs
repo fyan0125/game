@@ -13,10 +13,11 @@ public class EnemyStats : CharactorStats
     private void Start()
     {
         enemyHealthBar.SetMaxHealth(maxHealth);
-        mob =  GetComponent<MobController>();
+        mob = GetComponent<MobController>();
     }
 
-    void Update(){
+    void Update()
+    {
         //damageSelf();
         if (currentHealth <= 0)
         {
@@ -24,12 +25,15 @@ public class EnemyStats : CharactorStats
         }
     }
 
-    private void damageSelf(){
-        if (currentHealth>0){
-            currentHealth-=1;
+    private void damageSelf()
+    {
+        if (currentHealth > 0)
+        {
+            currentHealth -= 1;
             waiter();
         }
     }
+
     IEnumerator waiter()
     {
         yield return new WaitForSeconds(100);
@@ -63,7 +67,7 @@ public class EnemyStats : CharactorStats
             Quaternion.identity,
             transform
         );
-        text.GetComponent<TMP_Text>().text = sound;
+        text.GetComponent<TextMeshProUGUI>().text = sound;
     }
 
     public override void Die()
@@ -75,7 +79,7 @@ public class EnemyStats : CharactorStats
         NotificationManager.instance.count++;
         NotificationManager.instance.UpdateCount();
         mob.dropItem();
-        
+
         Destroy(gameObject);
     }
 }

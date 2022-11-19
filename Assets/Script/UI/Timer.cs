@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     public float time = 10;
     private float timeRemaining;
     public bool timerIsRunning = false;
-    public Text timeText;
+    private TextMeshProUGUI timeText;
 
     [Header("Level4")]
     public GameObject Level4UI;
@@ -20,6 +20,7 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         timeRemaining = time;
+        timeText = gameObject.GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
