@@ -14,7 +14,7 @@ public class InventoryDisplay : MonoBehaviour
     [SerializeField] private InventoryHolder inventoryHolder;
     [SerializeField] private InventorySlot_UI[] slots;
 
-    protected void Start()
+    protected void Update()
     {
         if (inventoryHolder != null)
         {
