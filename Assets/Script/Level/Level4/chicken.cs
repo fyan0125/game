@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class chicken : MonoBehaviour
 {
     public bool isCatched = false;
+    private GameObject level4Manager;
 
     private NavMeshAgent navMeshAgent;
     public LayerMask whatIsGround;
@@ -21,6 +22,7 @@ public class chicken : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         target = GameObject.Find("Target").transform;
+        level4Manager = GameObject.Find("Level4Manager");
     }
 
     private void Update()
@@ -52,9 +54,9 @@ public class chicken : MonoBehaviour
     {
         if (!isCatched)
         {
-            Debug.Log("Catch");
             isCatched = true;
             animator.SetTrigger("Jump");
+            level4Manager.GetComponent<billBoard>().CatchedChicken();
         }
     }
 

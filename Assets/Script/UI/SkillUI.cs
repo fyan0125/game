@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SkillUI : MonoBehaviour
 {
@@ -26,6 +27,19 @@ public class SkillUI : MonoBehaviour
         {
             WolfSkillIcon.SetActive(true);
             WolfSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            if (RabbitSkillIcon.activeSelf == false)
+            {
+                RabbitSkillIcon.SetActive(true);
+            }
+            if (WolfSkillIcon.activeSelf == false)
+            {
+                WolfSkillIcon.SetActive(true);
+            }
+            WolfSkillIcon.SetActive(true);
         }
     }
 

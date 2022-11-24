@@ -8,12 +8,12 @@ public class Timer : MonoBehaviour
 {
     public float time = 10;
     private float timeRemaining;
-    public bool timerIsRunning = false;
+    public static bool timerIsRunning = false;
     private TextMeshProUGUI timeText;
 
     [Header("Level4")]
     public GameObject Level4UI;
-    public GameObject TimerUI;
+    public GameObject GameUI;
     public GameObject BillBoardUI;
     public GameObject billBoard;
 
@@ -36,8 +36,7 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining = time;
                 timerIsRunning = false;
-                gameObject.SetActive(false);
-                timeText.text = "";
+                timeText.text = "00:00";
                 billBoard.SetActive(true);
                 if (SceneManager.GetActiveScene().buildIndex == 4)
                 {
@@ -45,7 +44,7 @@ public class Timer : MonoBehaviour
                     foreach (GameObject chicken in chickens)
                         GameObject.Destroy(chicken);
                     Level4UI.SetActive(false);
-                    TimerUI.SetActive(true);
+                    GameUI.SetActive(false);
                     BillBoardUI.SetActive(true);
                 }
             }
@@ -60,8 +59,13 @@ public class Timer : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    public void setTimeToDisplay()
+    public static void setTimeToDisplay()
     {
         timerIsRunning = true;
+    }
+
+    public static void setTimeToPause()
+    {
+        timerIsRunning = false;
     }
 }
