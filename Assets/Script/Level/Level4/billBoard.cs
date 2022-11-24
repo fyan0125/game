@@ -5,33 +5,41 @@ using TMPro;
 
 public class billBoard : MonoBehaviour
 {
-    public GameObject Level4UI;
+    public GameObject BillBoardUI;
     public GameObject chickenPrefab;
     public int generateChickenNum;
     public int chickenNum = 10;
+    public float time = 90;
 
     [Header("遊戲進行中")]
     public int catchedChickenNum = 0;
     public TextMeshProUGUI message;
 
+    private ThirdPersonChar player;
+
     public GameObject[] places;
 
     private void Start()
     {
-        Level4UI.SetActive(false);
+        BillBoardUI.SetActive(false);
         SwitchSkills.getSkill = 0;
+        player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
+        Timer.time = time;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Collider>().CompareTag("Player") && Level4UI.activeSelf == false)
+        if (other.GetComponent<Collider>().CompareTag("Player") && BillBoardUI.activeSelf == false)
         {
-            Level4UI.SetActive(true);
+            BillBoardUI.SetActive(true);
         }
     }
 
     public void GameStart()
     {
+        player.MoveToTarget(new Vector3(17, -9, -24));
+
+        //隨機生成雞
         List<int> listNumbers = new List<int>();
         int number;
         for (int i = 0; i < generateChickenNum; i++)
@@ -64,7 +72,6 @@ public class billBoard : MonoBehaviour
         if (catchedChickenNum == chickenNum)
         {
             Timer.setTimeToPause();
-            Level4UI.SetActive(false);
         }
     }
 }

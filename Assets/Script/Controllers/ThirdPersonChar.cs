@@ -271,4 +271,11 @@ public class ThirdPersonChar : MonoBehaviour
     {
         rotateOnMove = newRotateOnMove;
     }
+
+    public void MoveToTarget(Vector3 target)
+    {
+        controller.enabled = false;
+        transform.position = target;
+        controller.enabled = true;
+    }
 }

@@ -6,16 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    public float time = 10;
+    public static float time = 10;
     private float timeRemaining;
     public static bool timerIsRunning = false;
     private TextMeshProUGUI timeText;
 
     [Header("Level4")]
-    public GameObject Level4UI;
     public GameObject GameUI;
     public GameObject BillBoardUI;
     public GameObject billBoard;
+    public GameObject FailUI;
 
     private void Start()
     {
@@ -37,15 +37,17 @@ public class Timer : MonoBehaviour
                 timeRemaining = time;
                 timerIsRunning = false;
                 timeText.text = "00:00";
-                billBoard.SetActive(true);
+
+                //第四關
                 if (SceneManager.GetActiveScene().buildIndex == 4)
                 {
                     GameObject[] chickens = GameObject.FindGameObjectsWithTag("Chicken");
                     foreach (GameObject chicken in chickens)
                         GameObject.Destroy(chicken);
-                    Level4UI.SetActive(false);
+                    billBoard.SetActive(true);
                     GameUI.SetActive(false);
-                    BillBoardUI.SetActive(true);
+                    BillBoardUI.SetActive(false);
+                    FailUI.SetActive(true);
                 }
             }
         }
