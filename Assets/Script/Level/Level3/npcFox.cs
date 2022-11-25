@@ -26,6 +26,8 @@ public class npcFox : DialogueTrigger
         base.Start();
         SwitchSkills.getSkill = 2;
         sP = SendPoint.GetComponent<showPortal>();
+        counter.SetActive(true);
+        notice.SetActive(false);
     }
 
     private void Update()

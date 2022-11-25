@@ -38,7 +38,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
 
         //控制玩家是否跟著滑鼠游標面向
-        if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill == 2)
+        if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill == 3)
         {
             boosted = true;
         }
@@ -47,26 +47,16 @@ public class ThirdPersonShooterController : MonoBehaviour
             boosted = false;
             thirdPersonChar.SetRotateOnMove(true);
         }
-        /*-------------------------------------------------*/
-        // if (boosted)
-        // {
-        //     thirdPersonChar.SetRotateOnMove(false);
+        if (boosted)
+        {
+            thirdPersonChar.SetRotateOnMove(false);
 
-        //     Vector3 worldAimTarget = mouseWorldPosition;
-        //     worldAimTarget.y = transform.position.y;
-        //     Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
+            Vector3 worldAimTarget = mouseWorldPosition;
+            worldAimTarget.y = transform.position.y;
+            Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
 
-        //     transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
-        // }
-
-        thirdPersonChar.SetRotateOnMove(false);
-
-        Vector3 worldAimTarget = mouseWorldPosition;
-        worldAimTarget.y = transform.position.y;
-        Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
-
-        transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
-        /*-------------------------------------------------*/
+            transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
+        }
 
         if (switchSkills.currentSkill == 3)
         {
