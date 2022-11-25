@@ -47,7 +47,7 @@ public class Level4Manager : MonoBehaviour
     {
         Resume();
         player.MoveToTarget(new Vector3(17, -9, -24));
-
+        catchedChickenNum = 0;
         //隨機生成雞
         List<int> listNumbers = new List<int>();
         int number;
@@ -65,7 +65,7 @@ public class Level4Manager : MonoBehaviour
             Instantiate(
                 chickenPrefab,
                 places[listNumbers[i]].transform.position,
-                Quaternion.identity
+                Quaternion.Euler(0, Random.Range(0f, 360f), 0)
             );
         }
         gameObject.SetActive(false);
