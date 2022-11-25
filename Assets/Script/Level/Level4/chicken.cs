@@ -56,7 +56,7 @@ public class chicken : MonoBehaviour
         {
             isCatched = true;
             animator.SetTrigger("Jump");
-            level4Manager.GetComponent<billBoard>().CatchedChicken();
+            level4Manager.GetComponent<Level4Manager>().CatchedChicken();
         }
     }
 

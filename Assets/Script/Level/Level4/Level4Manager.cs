@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class billBoard : MonoBehaviour
+public class Level4Manager : MonoBehaviour
 {
     public GameObject BillBoardUI;
     public GameObject chickenPrefab;
@@ -27,6 +27,14 @@ public class billBoard : MonoBehaviour
         Timer.time = time;
     }
 
+    private void Update()
+    {
+        if (BillBoardUI.activeSelf == true)
+        {
+            Pause();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Collider>().CompareTag("Player") && BillBoardUI.activeSelf == false)
@@ -37,6 +45,7 @@ public class billBoard : MonoBehaviour
 
     public void GameStart()
     {
+        Resume();
         player.MoveToTarget(new Vector3(17, -9, -24));
 
         //隨機生成雞
@@ -72,6 +81,26 @@ public class billBoard : MonoBehaviour
         if (catchedChickenNum == chickenNum)
         {
             Timer.setTimeToPause();
+            GameComplete();
         }
+    }
+
+    public static void Resume()
+    {
+        Time.timeScale = 1f;
+        Cursor.visible = false;
+    }
+
+    public static void Pause()
+    {
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+    }
+
+    public void GameComplete()
+    {
+        Debug.Log("Level4 Complete");
+        SwitchSkills.getSkill = 2;
+        npcChicken.gameComplete = true;
     }
 }

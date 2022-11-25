@@ -2696,7 +2696,7 @@ MonoBehaviour:
   - name: Theme
     clip: {fileID: 8300000, guid: 9277b789337f64e469144c999fa888b0, type: 3}
     audioMixerGroup: {fileID: -289885603926785815, guid: ba3f8d2c403bfd54491d6b82545bda42, type: 2}
-    volume: 1
+    volume: 0.8
     loop: 1
     source: {fileID: 0}
   - name: LanternHurt
@@ -4285,6 +4285,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!64 &300575931
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300575928}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5495902117074765545, guid: 34da67246560e2948b7ce7afeb452508, type: 3}
 --- !u!224 &312207546 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2033698176224118783, guid: 386c9ab11bb7f144ab7023b03fbb334f, type: 3}
@@ -7241,7 +7255,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532272835}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.22899985, z: 0.35100007}
+  m_LocalPosition: {x: 0, y: 0.63, z: 1.004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 611017810}
@@ -8076,7 +8090,6 @@ GameObject:
   m_Component:
   - component: {fileID: 611017810}
   - component: {fileID: 611017809}
-  - component: {fileID: 611017808}
   - component: {fileID: 611017807}
   - component: {fileID: 611017806}
   - component: {fileID: 611017804}
@@ -8156,20 +8169,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!136 &611017808
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 611017803}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.13
-  m_Height: 1.7386518
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.86067414, z: 0}
 --- !u!135 &611017809
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17443,7 +17442,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500893931}
   m_LocalRotation: {x: -0, y: -0, z: 3.5527137e-15, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.025568273}
+  m_LocalPosition: {x: 0, y: -0, z: -0.056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1889446017}

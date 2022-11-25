@@ -31,15 +31,23 @@ public class SkillUI : MonoBehaviour
 
         if (SceneManager.GetActiveScene().buildIndex == 4)
         {
-            if (RabbitSkillIcon.activeSelf == false)
+            if (SwitchSkills.getSkill == 0)
             {
-                RabbitSkillIcon.SetActive(true);
-            }
-            if (WolfSkillIcon.activeSelf == false)
-            {
+                if (RabbitSkillIcon.activeSelf == false)
+                {
+                    RabbitSkillIcon.SetActive(true);
+                }
+                if (WolfSkillIcon.activeSelf == false)
+                {
+                    WolfSkillIcon.SetActive(true);
+                }
                 WolfSkillIcon.SetActive(true);
             }
-            WolfSkillIcon.SetActive(true);
+            else
+            {
+                RabbitSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                WolfSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            }
         }
     }
 

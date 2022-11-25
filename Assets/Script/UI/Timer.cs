@@ -48,8 +48,14 @@ public class Timer : MonoBehaviour
                     GameUI.SetActive(false);
                     BillBoardUI.SetActive(false);
                     FailUI.SetActive(true);
+                    Level4Manager.Pause();
                 }
             }
+        }
+        else
+        {
+            //完成第四關
+            GameUI.SetActive(false);
         }
     }
 
