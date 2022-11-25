@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class NotificationManager : MonoBehaviour
 {
-    public Text notification;
+    public TextMeshProUGUI notification;
     public static NotificationManager instance;
-    public Text count_text;
+    public TextMeshProUGUI count_text;
 
     [HideInInspector]
     public int count;

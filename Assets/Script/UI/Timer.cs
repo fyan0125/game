@@ -1,25 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    public float time = 10;
+    public static float time = 10;
     private float timeRemaining;
-    public bool timerIsRunning = false;
-    public Text timeText;
+    public static bool timerIsRunning = false;
+    private TextMeshProUGUI timeText;
 
     [Header("Level4")]
-    public GameObject Level4UI;
-    public GameObject TimerUI;
+    public GameObject GameUI;
     public GameObject BillBoardUI;
     public GameObject billBoard;
+    public GameObject FailUI;
 
     private void Start()
     {
         timeRemaining = time;
+        timeText = gameObject.GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
@@ -35,19 +36,26 @@ public class Timer : MonoBehaviour
             {
                 timeRemaining = time;
                 timerIsRunning = false;
-                gameObject.SetActive(false);
-                timeText.text = "";
-                billBoard.SetActive(true);
+                timeText.text = "00:00";
+
+                //第四關
                 if (SceneManager.GetActiveScene().buildIndex == 4)
                 {
                     GameObject[] chickens = GameObject.FindGameObjectsWithTag("Chicken");
                     foreach (GameObject chicken in chickens)
                         GameObject.Destroy(chicken);
-                    Level4UI.SetActive(false);
-                    TimerUI.SetActive(true);
-                    BillBoardUI.SetActive(true);
+                    billBoard.SetActive(true);
+                    GameUI.SetActive(false);
+                    BillBoardUI.SetActive(false);
+                    FailUI.SetActive(true);
+                    Level4Manager.Pause();
                 }
             }
+        }
+        else
+        {
+            //完成第四關
+            GameUI.SetActive(false);
         }
     }
 
@@ -59,8 +67,13 @@ public class Timer : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    public void setTimeToDisplay()
+    public static void setTimeToDisplay()
     {
         timerIsRunning = true;
+    }
+
+    public static void setTimeToPause()
+    {
+        timerIsRunning = false;
     }
 }
