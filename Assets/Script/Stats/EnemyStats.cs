@@ -61,13 +61,13 @@ public class EnemyStats : CharactorStats
 
     private void ShowFloatingText()
     {
-        var text = Instantiate(
+        var floatText = Instantiate(
             floatingTextPrefab,
             transform.position,
             Quaternion.identity,
             transform
         );
-        text.GetComponent<TextMeshProUGUI>().text = sound;
+        floatText.GetComponent<TextMeshPro>().text = sound;
     }
 
     public override void Die()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SkillUI : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class SkillUI : MonoBehaviour
     public GameObject RabbitSkillIcon;
     public GameObject WolfSkillUI;
     public GameObject WolfSkillIcon;
+    public GameObject ChickenSkillUI;
+    public GameObject ChickenSkillIcon;
 
     private void Update()
     {
@@ -22,10 +25,43 @@ public class SkillUI : MonoBehaviour
             RabbitSkillIcon.SetActive(true);
             RabbitSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
         }
+
         if (WolfSkillUI && WolfSkillIcon && !WolfSkillIcon.activeSelf && SwitchSkills.getSkill >= 2)
         {
             WolfSkillIcon.SetActive(true);
             WolfSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
+
+        if (
+            ChickenSkillUI
+            && ChickenSkillIcon
+            && !ChickenSkillIcon.activeSelf
+            && SwitchSkills.getSkill >= 3
+        )
+        {
+            ChickenSkillIcon.SetActive(true);
+            ChickenSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 4)
+        {
+            if (SwitchSkills.getSkill == 0)
+            {
+                if (RabbitSkillIcon.activeSelf == false)
+                {
+                    RabbitSkillIcon.SetActive(true);
+                }
+                if (WolfSkillIcon.activeSelf == false)
+                {
+                    WolfSkillIcon.SetActive(true);
+                }
+                WolfSkillIcon.SetActive(true);
+            }
+            else
+            {
+                RabbitSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                WolfSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            }
         }
     }
 
@@ -47,7 +83,7 @@ public class SkillUI : MonoBehaviour
                         .setEase(LeanTweenType.easeOutBounce);
                 }
                 break;
-            case 2:
+            default:
                 if (currentSkill == 1)
                 {
                     LeanTween
@@ -55,6 +91,9 @@ public class SkillUI : MonoBehaviour
                         .setEase(LeanTweenType.easeOutBounce);
                     LeanTween
                         .scale(WolfSkillUI, new Vector3(0.45f, 0.45f, 0.45f), 0.5f)
+                        .setEase(LeanTweenType.easeOutBounce);
+                    LeanTween
+                        .scale(ChickenSkillUI, new Vector3(0.45f, 0.45f, 0.45f), 0.5f)
                         .setEase(LeanTweenType.easeOutBounce);
                 }
                 else if (currentSkill == 2)
@@ -65,11 +104,22 @@ public class SkillUI : MonoBehaviour
                     LeanTween
                         .scale(WolfSkillUI, new Vector3(1.0f, 1.0f, 1.0f), 0.5f)
                         .setEase(LeanTweenType.easeOutBounce);
+                    LeanTween
+                        .scale(ChickenSkillUI, new Vector3(0.45f, 0.45f, 0.45f), 0.5f)
+                        .setEase(LeanTweenType.easeOutBounce);
                 }
-                break;
-            case 3:
-                break;
-            case 4:
+                else if (currentSkill == 3)
+                {
+                    LeanTween
+                        .scale(WolfSkillUI, new Vector3(0.45f, 0.45f, 0.45f), 0.5f)
+                        .setEase(LeanTweenType.easeOutBounce);
+                    LeanTween
+                        .scale(WolfSkillUI, new Vector3(0.45f, 0.45f, 0.45f), 0.5f)
+                        .setEase(LeanTweenType.easeOutBounce);
+                    LeanTween
+                        .scale(ChickenSkillUI, new Vector3(1.0f, 1.0f, 1.0f), 0.5f)
+                        .setEase(LeanTweenType.easeOutBounce);
+                }
                 break;
         }
     }

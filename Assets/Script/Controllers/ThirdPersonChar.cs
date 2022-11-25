@@ -24,6 +24,7 @@ public class ThirdPersonChar : MonoBehaviour
 
     // player
     private float speed;
+    private float targetRotation = 0.0f;
     private float jumpHeight = 1.2f;
     private float verticalVelocity;
     private float terminalVelocity = 53.0f;
@@ -41,7 +42,7 @@ public class ThirdPersonChar : MonoBehaviour
     private CharacterController controller;
     private float turnSmoothTime = 0.1f;
     private float turnSmoothVelocity;
-    private bool rotateOnMOve = true;
+    private bool rotateOnMove = true;
     private Vector3 SpherePosition; //Check Grouned(with offset)
 
     private PlayerStats playerStats;
@@ -80,9 +81,14 @@ public class ThirdPersonChar : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 4)
         {
-            if (Input.GetButtonDown("Skill") && chickenCollider)
+            if (Input.GetButtonDown("Skill"))
             {
-                chickenCollider.GetComponent<chicken>().CatchChicken();
+                if (chickenCollider)
+                {
+                    chickenCollider.GetComponent<chicken>().CatchChicken();
+                    anim.SetTrigger("Shock");
+                    chickenCollider = null;
+                }
             }
         }
     }
@@ -125,32 +131,36 @@ public class ThirdPersonChar : MonoBehaviour
         speed = moveSpeed;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        if (Input.GetKey(KeyCode.W))
+        Vector3 inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if (inputDirection.magnitude >= 0.1f)
+        {
+            targetRotation =
+                Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(
+                transform.eulerAngles.y,
+                targetRotation,
+                ref turnSmoothVelocity,
+                turnSmoothTime
+            );
+            if (rotateOnMove)
+            {
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            }
+            Vector3 moveDir = Quaternion.Euler(0f, targetRotation, 0f) * Vector3.forward;
+            controller.Move(
+                moveDir.normalized * speed * Time.deltaTime
+                    + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
+            );
+        }
+
+        if (horizontal != 0 || vertical != 0)
         {
             anim.SetBool("isRunning", true);
         }
         else
         {
             anim.SetBool("isRunning", false);
-        }
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-
-        if (direction.magnitude >= 0.1f)
-        {
-            float targetAngle =
-                Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(
-                transform.eulerAngles.y,
-                targetAngle,
-                ref turnSmoothVelocity,
-                turnSmoothTime
-            );
-            if (rotateOnMOve)
-            {
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
-            }
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
     }
 
@@ -258,11 +268,19 @@ public class ThirdPersonChar : MonoBehaviour
         if (npcCollider)
         {
             npcCollider.GetComponent<DialogueTrigger>().StartConvo();
+            npcCollider = null;
         }
     }
 
     public void SetRotateOnMove(bool newRotateOnMove)
     {
-        rotateOnMOve = newRotateOnMove;
+        rotateOnMove = newRotateOnMove;
+    }
+
+    public void MoveToTarget(Vector3 target)
+    {
+        controller.enabled = false;
+        transform.position = target;
+        controller.enabled = true;
     }
 }
