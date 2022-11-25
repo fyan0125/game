@@ -25125,14 +25125,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1857498533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fece896a83c2504286c2c8e17389967, type: 3}
+  m_Script: {fileID: 11500000, guid: ad4129fba258e498ca530e78ad5b2889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   aimTarget: {fileID: 1718480339}
   lookTrans: {fileID: 1177861677}
   multiAimConstraint: {fileID: 1617231368}
   aimSpeed: 4
-  headTrans: {fileID: 426733521}
+  headTrans: {fileID: 1596283899}
+  player: {fileID: 777624595}
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  sightRange: 3
+  playerInSightRange: 0
+  NpcLooking: 0
 --- !u!114 &1857498543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27289,7 +27296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097543279}
   m_LocalRotation: {x: 0.32326594, y: -0, z: -0, w: 0.94630814}
-  m_LocalPosition: {x: -0.72162056, y: 4.1796083, z: 10.283333}
+  m_LocalPosition: {x: -0.40192223, y: 4.1796083, z: 10.248962}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 523797101}
