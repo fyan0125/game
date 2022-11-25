@@ -20,18 +20,21 @@ public class GenerateEnemy : MonoBehaviour
         StartCoroutine(EnemyDrop());
         yPos = Random.Range(7, 10);
     }
-    void Update(){
-        randomIndex = Random.Range(0, theEnemy.Length);
-    } 
 
-    IEnumerator EnemyDrop(){
-        while(enemyCount < maxEnemyCount){
-            xPos = Random.Range(-110, 105);
-            zPos = Random.Range(-110, 80);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 8, zPos), Quaternion.identity);
-            yield return new WaitForSeconds(0.1f);
-            enemyCount += 1; 
-        }
+    void Update()
+    {
+        randomIndex = Random.Range(0, theEnemy.Length);
     }
 
+    IEnumerator EnemyDrop()
+    {
+        while (enemyCount < maxEnemyCount)
+        {
+            xPos = Random.Range(-85, 85);
+            zPos = Random.Range(-85, 85);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 8, zPos), Quaternion.identity);
+            yield return new WaitForSeconds(0.1f);
+            enemyCount += 1;
+        }
+    }
 }

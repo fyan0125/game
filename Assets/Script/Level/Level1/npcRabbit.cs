@@ -22,8 +22,20 @@ public class npcRabbit : DialogueTrigger
         sP = SendPoint.GetComponent<showPortal>();
     }
 
+    private void Start()
+    {
+        base.Start();
+        notificationTrigger.Notice();
+        NotificationManager.instance.notification.text = "靠近神使時，使用R鍵可開啟對話。";
+    }
+
     private void Update()
     {
+        if (Input.GetButtonDown("Talk") && npcState < 3)
+        {
+            notificationTrigger.EndNotice();
+        }
+
         if (npcState == 3 && DialogueManager.EndConversation())
         {
             rabbitbtn.interactable = true;
