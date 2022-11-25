@@ -14,7 +14,7 @@ public class NPCController : MonoBehaviour
     public Transform player;
     public LayerMask whatIsPlayer;
     public float sightRange;
-    public bool playerInSightRange;
+    public bool playerInSightRange, NpcLooking;
     Transform target;
 
     private void Start()
@@ -23,23 +23,7 @@ public class NPCController : MonoBehaviour
         target = player.transform;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            lookTrans = other.transform.Find("LookTrans");
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            lookTrans = null;
-        }
-    }
-
-    private void LateUpdate()
+    private void Update()
     {
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         if (lookTrans && !playerInSightRange)
@@ -48,18 +32,15 @@ public class NPCController : MonoBehaviour
             multiAimConstraint.weight = Mathf.Clamp01(
                 multiAimConstraint.weight + aimSpeed * Time.deltaTime
             );
+            NpcLooking=true;
         }
-        else
+        else if(playerInSightRange)
         {
             multiAimConstraint.weight = Mathf.Clamp01(
                 multiAimConstraint.weight - aimSpeed * Time.deltaTime
             );
+            NpcLooking=false;
         }
 
-        Debug.DrawLine(
-            headTrans.position,
-            headTrans.position + 3.5f * headTrans.forward,
-            Color.red
-        );
     }
 }
