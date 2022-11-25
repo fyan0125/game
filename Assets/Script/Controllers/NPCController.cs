@@ -11,15 +11,21 @@ public class NPCController : MonoBehaviour
     public float aimSpeed = 4f; //发现玩家时瞄准速度（调节权重）
 
     public Transform headTrans; //画线相关
+    public Transform player;
+    public LayerMask whatIsPlayer;
+    public float sightRange;
+    public bool playerInSightRange;
+    Transform target;
 
     private void Start()
     {
         multiAimConstraint.weight = 0;
+        target = player.transform;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player-head"))
+        if (other.CompareTag("Player"))
         {
             lookTrans = other.transform.Find("LookTrans");
         }
@@ -27,7 +33,7 @@ public class NPCController : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player-head"))
+        if (other.CompareTag("Player"))
         {
             lookTrans = null;
         }
@@ -35,7 +41,8 @@ public class NPCController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (lookTrans)
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        if (lookTrans && !playerInSightRange)
         {
             aimTarget.SetPositionAndRotation(lookTrans.position, lookTrans.rotation);
             multiAimConstraint.weight = Mathf.Clamp01(
