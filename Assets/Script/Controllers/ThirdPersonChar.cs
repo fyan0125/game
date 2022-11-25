@@ -84,7 +84,11 @@ public class ThirdPersonChar : MonoBehaviour
             if (Input.GetButtonDown("Skill"))
             {
                 if (chickenCollider)
+                {
                     chickenCollider.GetComponent<chicken>().CatchChicken();
+                    anim.SetTrigger("Shock");
+                    chickenCollider = null;
+                }
             }
         }
     }
@@ -264,6 +268,7 @@ public class ThirdPersonChar : MonoBehaviour
         if (npcCollider)
         {
             npcCollider.GetComponent<DialogueTrigger>().StartConvo();
+            npcCollider = null;
         }
     }
 

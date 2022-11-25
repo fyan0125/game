@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8800011642180698974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbeb21ec72adee940b94ee4c6e5bb3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfAnims: 4
+  minIdleTime: 1
+  maxIdleTime: 3
+  minBoredTime: 3
+  maxBoredTime: 6
 --- !u!1102 &-7468723525613927761
 AnimatorState:
   serializedVersion: 6
@@ -49,6 +66,22 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!114 &-5023110826121214971
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1539a2f95aab66f4a91f803c15b35848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeUntilIdle: 0
+  numberOfIdleAnims: 0
+  isIdle: 0
+  idleTime: 0
 --- !u!1101 &-4310684608515423096
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -148,6 +181,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: BoredAnimation
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -161,6 +200,18 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!114 &1800829319710560077
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3794900326b8449a3baf3b078349f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1101 &2361276036768284999
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -186,6 +237,61 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!206 &3494138531794543238
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Blend Tree
+  m_Childs:
+  - serializedVersion: 2
+    m_Motion: {fileID: -103382799783492583, guid: ff3fad5ee4a51ec48be06b08a578aa2d, type: 3}
+    m_Threshold: 0
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: BoredAnimation
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: -4953140615331322227, guid: ff3fad5ee4a51ec48be06b08a578aa2d, type: 3}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: BoredAnimation
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 6988165041060689856, guid: ff3fad5ee4a51ec48be06b08a578aa2d, type: 3}
+    m_Threshold: 2
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: BoredAnimation
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 8253421156439343644, guid: ff3fad5ee4a51ec48be06b08a578aa2d, type: 3}
+    m_Threshold: 3
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: BoredAnimation
+    m_Mirror: 0
+  - serializedVersion: 2
+    m_Motion: {fileID: 110524726064978278, guid: ff3fad5ee4a51ec48be06b08a578aa2d, type: 3}
+    m_Threshold: 4
+    m_Position: {x: 0, y: 0}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: BoredAnimation
+    m_Mirror: 0
+  m_BlendParameter: BoredAnimation
+  m_BlendParameterY: BoredAnimation
+  m_MinThreshold: 0
+  m_MaxThreshold: 4
+  m_UseAutomaticThresholds: 0
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
 --- !u!1102 &6481062478435531314
 AnimatorState:
   serializedVersion: 6
@@ -220,13 +326,14 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\u9AA8\u67B6|normal_breath"
+  m_Name: Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -682556284733029318}
   - {fileID: -4310684608515423096}
-  m_StateMachineBehaviours: []
+  m_StateMachineBehaviours:
+  - {fileID: -8800011642180698974}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -235,7 +342,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -103382799783492583, guid: ff3fad5ee4a51ec48be06b08a578aa2d, type: 3}
+  m_Motion: {fileID: 3494138531794543238}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
