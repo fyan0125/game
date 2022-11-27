@@ -115,7 +115,7 @@ public class ThirdPersonChar : MonoBehaviour
             groundLayers,
             QueryTriggerInteraction.Ignore
         );
-
+        PlayerSound.soundGrounded = grounded;
         anim.SetBool(animIDGrounded, grounded);
     }
 

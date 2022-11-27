@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerSound : MonoBehaviour
 {
+    public static bool soundGrounded;
+
     private void Step()
     {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Step");
+        if (soundGrounded)
+        {
+            GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Step");
+        }
+        Debug.Log(soundGrounded);
     }
 
     private void Swing()
