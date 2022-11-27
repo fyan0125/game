@@ -65,6 +65,7 @@ public class DialogueManager : MonoBehaviour
             isTalking = false;
             instance.anim.SetBool("isOpened", false);
             instance.currentIndex = 0;
+            Debug.Log("4");
             return;
         }
         speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
@@ -74,6 +75,7 @@ public class DialogueManager : MonoBehaviour
             typing = instance.StartCoroutine(
                 TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue)
             );
+            Debug.Log("5");
         }
         else
         {
@@ -82,6 +84,7 @@ public class DialogueManager : MonoBehaviour
             typing = instance.StartCoroutine(
                 TypeText(currentConvo.GetLineByIndex(currentIndex).dialogue)
             );
+            Debug.Log("6");
         }
         currentIndex++;
     }

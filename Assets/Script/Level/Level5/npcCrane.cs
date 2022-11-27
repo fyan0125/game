@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class npcCrane : DialogueTrigger
 {
     public static bool gameComplete = false;
-    public Conversation convo1;
-    public Conversation convo2;
+    public bool talking;
+    public Conversation convo1, convo2, convo3;
     public UnityEngine.AI.NavMeshAgent agent;
 
     public Button cranebtn;
@@ -33,11 +33,16 @@ public class npcCrane : DialogueTrigger
         if(npcState == 2 && DialogueManager.isTalking == false && !gameComplete){
             Level5Manager.GameStart();
             Timer.setTimeToDisplay();
-            npcState = 4;
+            npcState += 1;
         }
         if(gameComplete){
-            npcState = 5;
+            npcState = 4;
         }
+        talking = DialogueManager.isTalking;
+        // if(npcState == 2 && DialogueManager.isTalking == false && !gameComplete){
+        //     Level5Manager.GameStart();
+        //     Timer.setTimeToDisplay();
+        // }
         if (npcState == 5 && DialogueManager.EndConversation())
         {
             cranebtn.interactable = true;
@@ -69,12 +74,12 @@ public class npcCrane : DialogueTrigger
                 convo = convo1;
                 npcState += 1;
                 break;
-            case 5:
-                convo = convo2;
-                npcState = 6;
+            case 4:
+                convo = convo3;
+                npcState += 1;
                 break;
             default:
-                convo = convo2;
+                convo = convo1;
                 break;
         }
         DialogueManager.StartConversation(convo);

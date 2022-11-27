@@ -62,6 +62,7 @@ public class level5Manager : MonoBehaviour
         targetObject = assetToHide.transform.GetChild(Random.Range(0, childCount)).gameObject.transform;
         targetObject.transform.parent = gameObject.transform;
         targetObject.gameObject.AddComponent<craneObject>();
+        targetObject.gameObject.tag = "HiddingObject";
         craneObject = targetObject.GetComponent<craneObject>();
         craneAnim.SetBool("isWalking", false);
     }
@@ -83,7 +84,7 @@ public class level5Manager : MonoBehaviour
         Debug.Log("Level5 Complete");
         Timer.setTimeToPause();
         GameUI.SetActive(false);
-        Crane.transform.position = new Vector3(20, 3, -10);
+        //Crane.transform.position = new Vector3(20, 3, -10);
         npcCrane.agent.destination = new Vector3(20, 3, -10);
         Crane.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
