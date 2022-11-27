@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CompoundArea : MonoBehaviour
 {
-    public Text displayName, intro, formula, stackSize1, stackSize2, stack;
+    public TextMeshProUGUI displayName, intro, stackSize1, stackSize2, stack;
+    public Text formula;
     public int size1, size2;
     public Image image, craftingElement1, craftingElement2;
     //public List<InventorySlot> craftingElement;
@@ -43,6 +45,8 @@ public class CompoundArea : MonoBehaviour
         {
             instance.compoundButton.interactable = false;
             instance.formula.text = "-  僅能透過任務取得 -";
+            instance.craftingElement1.sprite=null;
+            instance.craftingElement2.sprite=null;
         }
         else
         {
