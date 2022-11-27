@@ -95,7 +95,7 @@ public class MobController : MonoBehaviour
         {
             agent.SetDestination(walkPoint);
             walkPointSet = false;
-            StartCoroutine(waiter());
+            StartCoroutine(waiter(100));
             anim.SetBool("isWalking", true);
         }
 
@@ -109,9 +109,10 @@ public class MobController : MonoBehaviour
         }
     }
 
-    IEnumerator waiter()
+    public IEnumerator waiter(int time)
     {
-        yield return new WaitForSeconds(100);
+        yield return new WaitForSeconds(time);
+        Debug.Log(time);
     }
 
     private void SearchWalkPoint()
