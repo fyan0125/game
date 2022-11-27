@@ -43,7 +43,8 @@ public class EnemyStats : CharactorStats
     {
         base.TakeDamage(damage);
         enemyHealthBar.SetHealth(currentHealth);
-
+        mob.anim.SetBool("beAttacked", true);
+        mob.transform.position = new Vector3(mob.transform.position.x, mob.transform.position.y, mob.transform.position.z-1); 
         if (transform.name.Contains("Lantern"))
         {
             GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("LanternHurt");
