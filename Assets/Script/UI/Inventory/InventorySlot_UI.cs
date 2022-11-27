@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventorySlot_UI : MonoBehaviour
 {
     [SerializeField] private Image itemSprite;
-    [SerializeField] private Text itemCount;
+    [SerializeField] private TextMeshProUGUI itemCount;
     [SerializeField] private InventorySlot assignedInventorySlot;
 
     public InventorySlot AssignedInventorySlot => assignedInventorySlot;
