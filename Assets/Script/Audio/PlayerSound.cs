@@ -12,7 +12,6 @@ public class PlayerSound : MonoBehaviour
         {
             GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Step");
         }
-        Debug.Log(soundGrounded);
     }
 
     private void Swing()
