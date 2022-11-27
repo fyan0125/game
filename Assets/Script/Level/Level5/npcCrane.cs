@@ -30,15 +30,15 @@ public class npcCrane : DialogueTrigger
 
     private void Update()
     {
-        if(npcState == 2){
+        if(npcState == 2 && DialogueManager.isTalking == false && !gameComplete){
             Level5Manager.GameStart();
             Timer.setTimeToDisplay();
-            npcState++;
+            npcState = 4;
         }
-        if(npcState == 3){
-            
+        if(gameComplete){
+            npcState = 5;
         }
-        if (npcState == 4 && DialogueManager.EndConversation())
+        if (npcState == 5 && DialogueManager.EndConversation())
         {
             cranebtn.interactable = true;
             craneIcon.SetActive(false);
@@ -57,32 +57,24 @@ public class npcCrane : DialogueTrigger
     {
         if (other.GetComponent<Collider>().CompareTag("Player") && npcState == 1)
         {
-            notificationTrigger.Notice();
+            StartConvo();
         }
     }
     
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<Collider>().CompareTag("Player") && npcState == 1)
-        {
-            notificationTrigger.EndNotice();
-            npcState = 2;
-        }
-    }
-
     public override void StartConvo()
     {
         switch (npcState)
         {
-            case 3:
+            case 1:
                 convo = convo1;
-                break;
-            case 4:
-                convo = convo2;
                 npcState += 1;
                 break;
+            case 5:
+                convo = convo2;
+                npcState = 6;
+                break;
             default:
-                convo = convo1;
+                convo = convo2;
                 break;
         }
         DialogueManager.StartConversation(convo);
