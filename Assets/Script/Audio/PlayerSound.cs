@@ -23,4 +23,9 @@ public class PlayerSound : MonoBehaviour
     {
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Fall");
     }
+
+    private void Shock()
+    {
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Shock");
+    }
 }
