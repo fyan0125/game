@@ -43,7 +43,7 @@ public class EnemyStats : CharactorStats
     {
         base.TakeDamage(damage);
         enemyHealthBar.SetHealth(currentHealth);
-
+        //mob.anim.SetBool("beAttacked", true);
         if (transform.name.Contains("Lantern"))
         {
             GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("LanternHurt");

@@ -54,12 +54,18 @@ public class MobController : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange)
+        if (!playerInSightRange && !playerInAttackRange){
             Patroling();
-        if (playerInSightRange && !playerInAttackRange)
+            anim.SetBool("isAttacking", false);
+        }
+        if (playerInSightRange && !playerInAttackRange){
             ChasePlayer();
-        if (playerInSightRange && playerInAttackRange)
+            anim.SetBool("isAttacking", false);
+        }
+        if (playerInSightRange && playerInAttackRange){
             AttackPlayer();
+            anim.SetBool("isAttacking", true);
+        }
     }
 
     public void dropItem()
@@ -145,8 +151,7 @@ public class MobController : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            anim.SetBool("isWalking", false);
-            anim.SetBool("isAttacking", true);
+            Debug.Log("Attack");
             //Attack Code
             height = 0.3f;
             attackPoint = new Vector3(
