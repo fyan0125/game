@@ -13,6 +13,9 @@ public class level5Manager : MonoBehaviour
     [Header("遊戲進行中")]
 
     private ThirdPersonChar player;
+    private craneObject craneObject;
+
+    public Animator craneAnim;
 
     public GameObject assetToHide;
     public Transform targetObject;
@@ -27,6 +30,7 @@ public class level5Manager : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         Crane = GameObject.Find("NPC");
         npcCrane = Crane.GetComponent<npcCrane>();
+        craneAnim = Crane.transform.GetChild(1).gameObject.GetComponent<Animator>();
 
         //變身物件
         turnIntoObject();
@@ -40,13 +44,6 @@ public class level5Manager : MonoBehaviour
             if(targetObjectInSightRange){
                 Crane.transform.GetChild(1).gameObject.SetActive(false);
             }
-        }
-        else{
-            Timer.setTimeToPause();
-            GameComplete();
-            Crane.transform.position = new Vector3(20, 3, -10);
-            Crane.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
-            Crane.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 
@@ -65,6 +62,8 @@ public class level5Manager : MonoBehaviour
         targetObject = assetToHide.transform.GetChild(Random.Range(0, childCount)).gameObject.transform;
         targetObject.transform.parent = gameObject.transform;
         targetObject.gameObject.AddComponent<craneObject>();
+        craneObject = targetObject.GetComponent<craneObject>();
+        craneAnim.SetBool("isWalking", false);
     }
 
     public static void Resume()
@@ -82,6 +81,12 @@ public class level5Manager : MonoBehaviour
     public void GameComplete()
     {
         Debug.Log("Level5 Complete");
+        Timer.setTimeToPause();
+        GameUI.SetActive(false);
+        Crane.transform.position = new Vector3(20, 3, -10);
+        npcCrane.agent.destination = new Vector3(20, 3, -10);
+        Crane.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+        Crane.transform.GetChild(1).gameObject.SetActive(true);
         SwitchSkills.getSkill = 3;
         npcCrane.gameComplete = true;
     }
@@ -90,5 +95,6 @@ public class level5Manager : MonoBehaviour
     {
         npcCrane.agent.speed = 7;
         npcCrane.agent.destination = targetObject.position;
+        craneAnim.SetBool("isWalking", true);
     }
 }
