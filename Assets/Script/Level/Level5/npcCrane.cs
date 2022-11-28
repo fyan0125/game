@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class npcCrane : DialogueTrigger
 {
     public static bool gameComplete = false;
-    public bool talking;
     public Conversation convo1, convo2, convo3;
     public UnityEngine.AI.NavMeshAgent agent;
 
@@ -20,16 +19,29 @@ public class npcCrane : DialogueTrigger
     public GameObject SendPoint;
     private showPortal sP;
 
+    private bool resetGame = false;
+    public float timee;
+
     private void Awake()
     {
         base.Start();
         sP = SendPoint.GetComponent<showPortal>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         Level5Manager = GameObject.Find("Level5Manager").GetComponent<level5Manager>();
+        timee = Timer.time;
     }
 
     private void Update()
-    {
+    {   
+        if(Timer.timerIsRunning){
+            if(Timer.timeRemaining <= 0){
+                timee = 0;
+            }                                                 
+        }
+        if(npcState == 1 && Input.GetButtonDown("Skill") && resetGame){
+            notificationTrigger.EndNotice();
+            resetGame = false;
+        }
         if(npcState == 2 && DialogueManager.isTalking == false && !gameComplete){
             Level5Manager.GameStart();
             Timer.setTimeToDisplay();
@@ -38,11 +50,13 @@ public class npcCrane : DialogueTrigger
         if(gameComplete){
             npcState = 4;
         }
-        talking = DialogueManager.isTalking;
-        // if(npcState == 2 && DialogueManager.isTalking == false && !gameComplete){
-        //     Level5Manager.GameStart();
-        //     Timer.setTimeToDisplay();
-        // }
+        if(!gameComplete && timee == 0 && npcState == 3)
+        {
+            Level5Manager.resetGame();
+            resetGame = true;
+            notificationTrigger.Notice();
+            npcState = 1;
+        }
         if (npcState == 5 && DialogueManager.EndConversation())
         {
             cranebtn.interactable = true;

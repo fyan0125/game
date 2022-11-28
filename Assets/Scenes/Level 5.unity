@@ -2524,7 +2524,7 @@ GameObject:
   - component: {fileID: 95157135}
   m_Layer: 0
   m_Name: WoodenBarrel.016
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2551,7 +2551,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95157130}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -2607,19 +2607,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95157130}
   m_Mesh: {fileID: 2927634878874648136, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &95157135
-SphereCollider:
+--- !u!54 &95157135
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 95157130}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 9.313227e-10, y: 0.000000059604645, z: 0.009987538}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &95282597
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,7 +3918,7 @@ GameObject:
   - component: {fileID: 126827241}
   m_Layer: 0
   m_Name: Cone.004
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3942,7 +3945,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126827236}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -3998,19 +4001,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126827236}
   m_Mesh: {fileID: -4746165098021687754, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &126827241
-SphereCollider:
+--- !u!54 &126827241
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 126827236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.00000000859866, y: 0.00000005960634, z: 0.010320447}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &128657877
 GameObject:
   m_ObjectHideFlags: 0
@@ -4224,7 +4230,7 @@ GameObject:
   - component: {fileID: 144172034}
   m_Layer: 0
   m_Name: WoodenBarrel.015
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4251,7 +4257,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144172029}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -4307,19 +4313,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144172029}
   m_Mesh: {fileID: 4872755659552173208, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &144172034
-SphereCollider:
+--- !u!54 &144172034
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144172029}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.00000006053597, y: -0.00000011920929, z: 0.0099875685}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &147198793
 GameObject:
   m_ObjectHideFlags: 0
@@ -4429,7 +4438,7 @@ GameObject:
   - component: {fileID: 149267124}
   m_Layer: 0
   m_Name: TrafficFence.002
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4456,7 +4465,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149267119}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -4512,19 +4521,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149267119}
   m_Mesh: {fileID: -7607695619903462941, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &149267124
-SphereCollider:
+--- !u!54 &149267124
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149267119}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000013947736, y: -0.000000002644938, z: 0.044365138}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &149430404
 GameObject:
   m_ObjectHideFlags: 0
@@ -6142,7 +6154,7 @@ GameObject:
   - component: {fileID: 186329837}
   m_Layer: 0
   m_Name: WoodenRoadBlock
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6169,7 +6181,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186329832}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -6224,19 +6236,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186329832}
   m_Mesh: {fileID: -2447393849397236566, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &186329837
-SphereCollider:
+--- !u!54 &186329837
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186329832}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.0000009461901, y: 0.0022587667, z: 0.009318292}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &187569685
 GameObject:
   m_ObjectHideFlags: 0
@@ -6252,7 +6267,7 @@ GameObject:
   - component: {fileID: 187569690}
   m_Layer: 0
   m_Name: WoodenRoadBlock.012
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6279,7 +6294,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187569685}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -6334,19 +6349,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187569685}
   m_Mesh: {fileID: 6867893916430572860, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &187569690
-SphereCollider:
+--- !u!54 &187569690
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187569685}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.00000046938658, y: 0.0022587662, z: 0.009318283}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &188869300
 GameObject:
   m_ObjectHideFlags: 0
@@ -7735,7 +7753,7 @@ GameObject:
   - component: {fileID: 235055281}
   m_Layer: 0
   m_Name: Cone.003
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7762,7 +7780,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235055276}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -7818,19 +7836,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235055276}
   m_Mesh: {fileID: 2504345457074934838, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &235055281
-SphereCollider:
+--- !u!54 &235055281
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235055276}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000000006604502, y: 1.8533548e-11, z: 0.010320444}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &241576325
 GameObject:
   m_ObjectHideFlags: 0
@@ -8522,7 +8543,7 @@ GameObject:
   - component: {fileID: 265337894}
   m_Layer: 0
   m_Name: Lantern.003
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8549,7 +8570,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265337889}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -8607,19 +8628,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265337889}
   m_Mesh: {fileID: -5052384658958430507, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &265337894
-SphereCollider:
+--- !u!54 &265337894
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265337889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.075
-  m_Center: {x: -0.0000004020514, y: -0.00023045065, z: 0.082460046}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &265744590
 GameObject:
   m_ObjectHideFlags: 0
@@ -8714,7 +8738,7 @@ GameObject:
   - component: {fileID: 266566202}
   m_Layer: 0
   m_Name: WoodenBox.005
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8741,7 +8765,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266566197}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -8798,19 +8822,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266566197}
   m_Mesh: {fileID: 8476374242984306934, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &266566202
-SphereCollider:
+--- !u!54 &266566202
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266566197}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.00000008179366, y: 0.00006492192, z: 0.018359184}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &267022550
 GameObject:
   m_ObjectHideFlags: 0
@@ -8826,7 +8853,7 @@ GameObject:
   - component: {fileID: 267022555}
   m_Layer: 0
   m_Name: WoodenBarrel.009
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8853,7 +8880,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267022550}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -8909,19 +8936,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267022550}
   m_Mesh: {fileID: 4065867062712878067, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &267022555
-SphereCollider:
+--- !u!54 &267022555
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267022550}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 9.313225e-10, y: -2.8386292e-16, z: 0.009987537}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &267332390
 GameObject:
   m_ObjectHideFlags: 0
@@ -8937,7 +8967,7 @@ GameObject:
   - component: {fileID: 267332395}
   m_Layer: 0
   m_Name: WoodenRoadBlock.009
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8964,7 +8994,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267332390}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -9019,19 +9049,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267332390}
   m_Mesh: {fileID: 2832714860136639371, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &267332395
-SphereCollider:
+--- !u!54 &267332395
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 267332390}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.00000047465764, y: 0.0022578035, z: 0.009318292}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &268129894
 GameObject:
   m_ObjectHideFlags: 0
@@ -9977,7 +10010,7 @@ GameObject:
   - component: {fileID: 288882894}
   m_Layer: 0
   m_Name: WoodenBarrel.024
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10004,7 +10037,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288882889}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -10060,19 +10093,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288882889}
   m_Mesh: {fileID: 4145189830133002339, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &288882894
-SphereCollider:
+--- !u!54 &288882894
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288882889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000000051823292, y: 0.000000036974754, z: 0.009987543}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &293560030
 GameObject:
   m_ObjectHideFlags: 0
@@ -10256,7 +10292,7 @@ GameObject:
   - component: {fileID: 301589000}
   m_Layer: 0
   m_Name: WoodenRoadBlock.003
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10283,7 +10319,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301588995}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -10338,19 +10374,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301588995}
   m_Mesh: {fileID: 1903938956253243292, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &301589000
-SphereCollider:
+--- !u!54 &301589000
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 301588995}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.00000022855772, y: 0.0022581143, z: 0.009318292}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &301835701
 GameObject:
   m_ObjectHideFlags: 0
@@ -10540,7 +10579,7 @@ GameObject:
   - component: {fileID: 304813475}
   m_Layer: 0
   m_Name: Lantern.006
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10567,7 +10606,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304813470}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -10623,19 +10662,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304813470}
   m_Mesh: {fileID: -7144218953852002511, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &304813475
-SphereCollider:
+--- !u!54 &304813475
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304813470}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.025
-  m_Center: {x: -0.000000038184226, y: 0.00000007823109, z: 0.096934855}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &310194412
 GameObject:
   m_ObjectHideFlags: 0
@@ -10748,7 +10790,7 @@ GameObject:
   - component: {fileID: 315069621}
   m_Layer: 0
   m_Name: WoodenRoadBlock.013
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10775,7 +10817,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315069616}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -10830,19 +10872,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315069616}
   m_Mesh: {fileID: -4093455375547540700, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &315069621
-SphereCollider:
+--- !u!54 &315069621
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315069616}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000000230968, y: 0.0022587662, z: 0.009318283}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &315978650
 GameObject:
   m_ObjectHideFlags: 0
@@ -12311,7 +12356,7 @@ GameObject:
   - component: {fileID: 368228718}
   m_Layer: 0
   m_Name: Billboard.007
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12338,7 +12383,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368228713}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -12393,19 +12438,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368228713}
   m_Mesh: {fileID: -8550971954126089077, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &368228718
-SphereCollider:
+--- !u!54 &368228718
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368228713}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0.007761314, y: 0.000000024016202, z: 0.05514234}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &372183307
 GameObject:
   m_ObjectHideFlags: 0
@@ -12898,7 +12946,7 @@ GameObject:
   - component: {fileID: 397825857}
   m_Layer: 0
   m_Name: WoodenBarrel.001
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12925,7 +12973,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397825852}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -12981,19 +13029,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397825852}
   m_Mesh: {fileID: 9216938414539084728, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &397825857
-SphereCollider:
+--- !u!54 &397825857
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 397825852}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.00000005879665, y: 0.000000029782194, z: 0.009987539}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &400551256
 GameObject:
   m_ObjectHideFlags: 0
@@ -13679,7 +13730,7 @@ GameObject:
   - component: {fileID: 417350916}
   m_Layer: 0
   m_Name: WoodenRoadBlock.004
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13706,7 +13757,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417350911}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -13761,19 +13812,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417350911}
   m_Mesh: {fileID: -6769696855733356405, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &417350916
-SphereCollider:
+--- !u!54 &417350916
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 417350911}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000486698, y: 0.002258174, z: 0.009318292}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &431777652
 GameObject:
   m_ObjectHideFlags: 0
@@ -14102,7 +14156,7 @@ GameObject:
   - component: {fileID: 439465009}
   m_Layer: 0
   m_Name: WoodenBox.015
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14129,7 +14183,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439465004}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -14186,19 +14240,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439465004}
   m_Mesh: {fileID: -4987453519836656501, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &439465009
-SphereCollider:
+--- !u!54 &439465009
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439465004}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.000000074505806, y: 0.000064951826, z: 0.018359244}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &440190578
 GameObject:
   m_ObjectHideFlags: 0
@@ -15372,7 +15429,7 @@ GameObject:
   - component: {fileID: 458990497}
   m_Layer: 0
   m_Name: WoodenBarrel.018
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15399,7 +15456,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458990492}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -15455,19 +15512,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458990492}
   m_Mesh: {fileID: 2467709114187654216, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &458990497
-SphereCollider:
+--- !u!54 &458990497
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458990492}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.0000000011923452, y: 1.7028362e-10, z: 0.009987539}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &459421883
 GameObject:
   m_ObjectHideFlags: 0
@@ -16574,7 +16634,7 @@ GameObject:
   - component: {fileID: 469898708}
   m_Layer: 0
   m_Name: Billboard.008
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16601,7 +16661,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469898703}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -16656,19 +16716,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469898703}
   m_Mesh: {fileID: 4498740319020227918, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &469898708
-SphereCollider:
+--- !u!54 &469898708
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469898703}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0.0077622742, y: 0.000000024824217, z: 0.05514234}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &469976488
 GameObject:
   m_ObjectHideFlags: 0
@@ -17631,7 +17694,7 @@ GameObject:
   - component: {fileID: 493921656}
   m_Layer: 0
   m_Name: WoodenBarrel.004
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17658,7 +17721,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493921651}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -17714,19 +17777,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493921651}
   m_Mesh: {fileID: 7152518348846127551, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &493921656
-SphereCollider:
+--- !u!54 &493921656
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 493921651}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 9.313226e-10, y: 0.000000059604645, z: 0.009987536}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &494000608
 GameObject:
   m_ObjectHideFlags: 0
@@ -18323,7 +18389,7 @@ GameObject:
   - component: {fileID: 506799584}
   m_Layer: 0
   m_Name: WoodenBarrel.020
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18350,7 +18416,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506799579}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -18406,19 +18472,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506799579}
   m_Mesh: {fileID: 5146330410969757308, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &506799584
-SphereCollider:
+--- !u!54 &506799584
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 506799579}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000000013374534, y: 0.000000028909367, z: 0.00998754}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &508507310
 GameObject:
   m_ObjectHideFlags: 0
@@ -18434,7 +18503,7 @@ GameObject:
   - component: {fileID: 508507315}
   m_Layer: 0
   m_Name: WoodenBarrel.002
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18461,7 +18530,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508507310}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -18517,19 +18586,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508507310}
   m_Mesh: {fileID: -7808020981976562406, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &508507315
-SphereCollider:
+--- !u!54 &508507315
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508507310}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000030733645, y: 0.00000011920929, z: 0.0099875415}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &509157783
 GameObject:
   m_ObjectHideFlags: 0
@@ -19225,7 +19297,7 @@ GameObject:
   - component: {fileID: 531121207}
   m_Layer: 0
   m_Name: Billboard
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19252,7 +19324,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531121202}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -19307,19 +19379,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531121202}
   m_Mesh: {fileID: -7850409618950385026, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &531121207
-SphereCollider:
+--- !u!54 &531121207
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531121202}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0.007760784, y: 0.00000007636843, z: 0.05514233}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &532415766
 GameObject:
   m_ObjectHideFlags: 0
@@ -19710,7 +19785,7 @@ GameObject:
   - component: {fileID: 552144805}
   m_Layer: 0
   m_Name: Lantern.005
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19737,7 +19812,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552144800}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -19795,19 +19870,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552144800}
   m_Mesh: {fileID: -3042257104775815941, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &552144805
-SphereCollider:
+--- !u!54 &552144805
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552144800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.075
-  m_Center: {x: -0.00000015087426, y: -0.00023023777, z: 0.08246003}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &558054864
 GameObject:
   m_ObjectHideFlags: 0
@@ -20086,7 +20164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0265c791bead74da424a77ac7a8ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryHolder: {fileID: 0}
+  inventoryHolder: {fileID: 30074164}
   inventoryItem:
   - itemData: {fileID: 0}
     stackSize: -1
@@ -20203,7 +20281,7 @@ GameObject:
   - component: {fileID: 563727135}
   m_Layer: 0
   m_Name: WoodenRoadBlock.016
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20230,7 +20308,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563727130}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -20285,19 +20363,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563727130}
   m_Mesh: {fileID: 9071671771362446178, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &563727135
-SphereCollider:
+--- !u!54 &563727135
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563727130}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.00000012427, y: 0.002257806, z: 0.009318223}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &566204121
 GameObject:
   m_ObjectHideFlags: 0
@@ -20501,7 +20582,7 @@ GameObject:
   - component: {fileID: 588836807}
   m_Layer: 0
   m_Name: WoodenBox.008
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20528,7 +20609,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588836802}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -20585,19 +20666,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588836802}
   m_Mesh: {fileID: 1047537125155764989, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &588836807
-SphereCollider:
+--- !u!54 &588836807
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588836802}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.000000059637074, y: 0.00006489236, z: 0.018359218}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &593345220
 GameObject:
   m_ObjectHideFlags: 0
@@ -21055,7 +21139,7 @@ GameObject:
   - component: {fileID: 618596158}
   m_Layer: 0
   m_Name: WoodenBarrel.003
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21082,7 +21166,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618596153}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -21138,19 +21222,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618596153}
   m_Mesh: {fileID: 4646201879944535867, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &618596158
-SphereCollider:
+--- !u!54 &618596158
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618596153}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000000058714665, y: 0.000000029582099, z: 0.00998754}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &629265226
 GameObject:
   m_ObjectHideFlags: 0
@@ -21166,7 +21253,7 @@ GameObject:
   - component: {fileID: 629265231}
   m_Layer: 0
   m_Name: Billboard.004
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21193,7 +21280,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629265226}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -21251,19 +21338,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629265226}
   m_Mesh: {fileID: 6086240909168745885, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &629265231
-SphereCollider:
+--- !u!54 &629265231
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629265226}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: -0.00000043213365, y: 0.001099444, z: 0.055564962}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &636172751
 GameObject:
   m_ObjectHideFlags: 0
@@ -21626,7 +21716,7 @@ GameObject:
   - component: {fileID: 647076329}
   m_Layer: 0
   m_Name: WoodenBarrel.019
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21653,7 +21743,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647076324}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -21709,19 +21799,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647076324}
   m_Mesh: {fileID: 5271824192178952012, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &647076329
-SphereCollider:
+--- !u!54 &647076329
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647076324}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -2.4037905e-10, y: 0.000000029667303, z: 0.009987542}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &649843460
 GameObject:
   m_ObjectHideFlags: 0
@@ -21786,6 +21879,7 @@ MonoBehaviour:
   npcCrane: {fileID: 0}
   time: 60
   craneAnim: {fileID: 0}
+  newMaterialRef: {fileID: 2100000, guid: 79ed4936bbd5b40f98d49ee11ad0bbcc, type: 2}
   assetToHide: {fileID: 0}
   targetObject: {fileID: 0}
   npcLayer:
@@ -21793,6 +21887,7 @@ MonoBehaviour:
     m_Bits: 1024
   sightRange: 5
   targetObjectInSightRange: 0
+  postProcessProfile: {fileID: 11400000, guid: 18b97292584fb47b489127cf6c2934d2, type: 2}
 --- !u!1 &653169192
 GameObject:
   m_ObjectHideFlags: 0
@@ -22585,7 +22680,7 @@ GameObject:
   - component: {fileID: 676427950}
   m_Layer: 0
   m_Name: Chair.003
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22612,7 +22707,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676427945}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -22668,19 +22763,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676427945}
   m_Mesh: {fileID: -5447637273788417547, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &676427950
-SphereCollider:
+--- !u!54 &676427950
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 676427945}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.00000000745058, y: -0.02605385, z: 0.19273694}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &687878086
 GameObject:
   m_ObjectHideFlags: 0
@@ -22822,7 +22920,7 @@ GameObject:
   - component: {fileID: 691341679}
   m_Layer: 0
   m_Name: WoodenRoadBlock.006
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22849,7 +22947,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691341674}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -22904,19 +23002,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691341674}
   m_Mesh: {fileID: -3519884565426057806, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &691341679
-SphereCollider:
+--- !u!54 &691341679
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691341674}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.00000011297128, y: 0.0022574475, z: 0.009318295}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &692025077
 GameObject:
   m_ObjectHideFlags: 0
@@ -23959,7 +24060,7 @@ GameObject:
   - component: {fileID: 736452421}
   m_Layer: 0
   m_Name: WoodenBarrel.011
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23986,7 +24087,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736452416}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -24042,19 +24143,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736452416}
   m_Mesh: {fileID: -3661753331660432670, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &736452421
-SphereCollider:
+--- !u!54 &736452421
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736452416}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 9.313225e-10, y: 0.00000011920929, z: 0.009987541}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &742489541
 GameObject:
   m_ObjectHideFlags: 0
@@ -24333,7 +24437,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 9ab6316903c5e4e8da69077216f3e1f8, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9ab6316903c5e4e8da69077216f3e1f8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24496,7 +24600,7 @@ GameObject:
   - component: {fileID: 761521888}
   m_Layer: 0
   m_Name: WoodenBox.002
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24523,7 +24627,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761521883}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -24580,19 +24684,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761521883}
   m_Mesh: {fileID: -1625357320910019171, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &761521888
-SphereCollider:
+--- !u!54 &761521888
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761521883}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.0000000817737, y: 0.000065041495, z: 0.018359235}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &766689359
 GameObject:
   m_ObjectHideFlags: 0
@@ -24685,7 +24792,7 @@ GameObject:
   - component: {fileID: 783879099}
   m_Layer: 0
   m_Name: Lantern.002
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24712,7 +24819,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783879094}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -24770,19 +24877,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783879094}
   m_Mesh: {fileID: -1318610871376727794, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &783879099
-SphereCollider:
+--- !u!54 &783879099
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783879094}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.07525881
-  m_Center: {x: -0.00000040554428, y: -0.00023047307, z: 0.083868176}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &790307811
 GameObject:
   m_ObjectHideFlags: 0
@@ -24798,7 +24908,7 @@ GameObject:
   - component: {fileID: 790307816}
   m_Layer: 0
   m_Name: Cone.001
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24825,7 +24935,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790307811}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -24881,19 +24991,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790307811}
   m_Mesh: {fileID: -6195245291975648998, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &790307816
-SphereCollider:
+--- !u!54 &790307816
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790307811}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000053008705, y: -4.0070954e-12, z: 0.010320447}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &796479173
 GameObject:
   m_ObjectHideFlags: 0
@@ -25081,7 +25194,7 @@ GameObject:
   - component: {fileID: 802689641}
   m_Layer: 0
   m_Name: Billboard.005
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25108,7 +25221,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802689636}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -25163,19 +25276,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802689636}
   m_Mesh: {fileID: 8107637189719684623, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &802689641
-SphereCollider:
+--- !u!54 &802689641
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802689636}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0.0077619045, y: 0.000000026760727, z: 0.05514234}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &807834910
 GameObject:
   m_ObjectHideFlags: 0
@@ -25191,7 +25307,7 @@ GameObject:
   - component: {fileID: 807834915}
   m_Layer: 0
   m_Name: Billboard.001
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25218,7 +25334,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807834910}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -25273,19 +25389,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807834910}
   m_Mesh: {fileID: 6918046471560240999, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &807834915
-SphereCollider:
+--- !u!54 &807834915
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807834910}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0.0077618035, y: 0.000000118181134, z: 0.05514234}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1001 &812923514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25870,7 +25989,7 @@ GameObject:
   - component: {fileID: 830831466}
   m_Layer: 0
   m_Name: WoodenBarrel.007
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25897,7 +26016,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830831461}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -25953,19 +26072,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830831461}
   m_Mesh: {fileID: -4537107884620856071, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &830831466
-SphereCollider:
+--- !u!54 &830831466
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830831461}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.00000006053597, y: 0.00000011920929, z: 0.009987538}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &835195641
 GameObject:
   m_ObjectHideFlags: 0
@@ -26344,7 +26466,7 @@ GameObject:
   - component: {fileID: 847447463}
   m_Layer: 0
   m_Name: WoodenBox.001
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26371,7 +26493,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847447458}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -26428,19 +26550,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847447458}
   m_Mesh: {fileID: 6210705088261339113, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &847447463
-SphereCollider:
+--- !u!54 &847447463
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847447458}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.000000044703484, y: 0.000065041226, z: 0.018359227}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &847713923
 GameObject:
   m_ObjectHideFlags: 0
@@ -26456,7 +26581,7 @@ GameObject:
   - component: {fileID: 847713928}
   m_Layer: 0
   m_Name: TrafficFence.004
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26483,7 +26608,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847713923}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -26539,19 +26664,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847713923}
   m_Mesh: {fileID: 2648141581402393052, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &847713928
-SphereCollider:
+--- !u!54 &847713928
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847713923}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000013992529, y: 0.0000000029631033, z: 0.044365138}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &848299047
 GameObject:
   m_ObjectHideFlags: 0
@@ -26838,7 +26966,7 @@ GameObject:
   - component: {fileID: 854742568}
   m_Layer: 0
   m_Name: WoodenBarrel.023
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26865,7 +26993,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854742563}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -26921,19 +27049,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854742563}
   m_Mesh: {fileID: 8484361797424472539, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &854742568
-SphereCollider:
+--- !u!54 &854742568
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 854742563}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000000028871, y: 0, z: 0.009987538}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &859561778
 GameObject:
   m_ObjectHideFlags: 0
@@ -27565,7 +27696,7 @@ GameObject:
   - component: {fileID: 874737118}
   m_Layer: 0
   m_Name: WoodenBox.010
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27592,7 +27723,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874737113}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -27649,19 +27780,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874737113}
   m_Mesh: {fileID: 3595809629988435239, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &874737118
-SphereCollider:
+--- !u!54 &874737118
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 874737113}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.000000075833206, y: 0.00006495281, z: 0.018359479}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &875490689
 GameObject:
   m_ObjectHideFlags: 0
@@ -27677,7 +27811,7 @@ GameObject:
   - component: {fileID: 875490694}
   m_Layer: 0
   m_Name: WoodenBarrel.021
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27704,7 +27838,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875490689}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -27759,19 +27893,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875490689}
   m_Mesh: {fileID: 5693073135501959943, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &875490694
-SphereCollider:
+--- !u!54 &875490694
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875490689}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000030267984, y: -0.00000011920929, z: -0.0000006729387}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &876284991
 GameObject:
   m_ObjectHideFlags: 0
@@ -27787,7 +27924,7 @@ GameObject:
   - component: {fileID: 876284996}
   m_Layer: 0
   m_Name: Cone.005
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27814,7 +27951,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876284991}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -27870,19 +28007,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876284991}
   m_Mesh: {fileID: -787732276791324196, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &876284996
-SphereCollider:
+--- !u!54 &876284996
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876284991}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000052854706, y: -0.00000005991222, z: 0.010320453}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &879723067
 GameObject:
   m_ObjectHideFlags: 0
@@ -28346,7 +28486,7 @@ GameObject:
   - component: {fileID: 896710865}
   m_Layer: 0
   m_Name: WoodenBox.016
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28373,7 +28513,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896710860}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -28430,19 +28570,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896710860}
   m_Mesh: {fileID: -3543971983844171135, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &896710865
-SphereCollider:
+--- !u!54 &896710865
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 896710860}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.000000075075306, y: 0.000064996224, z: 0.018359235}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &912324739
 GameObject:
   m_ObjectHideFlags: 0
@@ -30186,7 +30329,7 @@ GameObject:
   - component: {fileID: 970959731}
   m_Layer: 0
   m_Name: WoodenBox.014
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30213,7 +30356,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970959726}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -30270,19 +30413,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970959726}
   m_Mesh: {fileID: 8342141429654666074, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &970959731
-SphereCollider:
+--- !u!54 &970959731
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970959726}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.0000000745058, y: 0.00006501143, z: 0.01835923}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &971968182
 GameObject:
   m_ObjectHideFlags: 0
@@ -31271,7 +31417,7 @@ GameObject:
   - component: {fileID: 1004554546}
   m_Layer: 0
   m_Name: WoodenBarrel.022
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31298,7 +31444,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004554541}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -31353,19 +31499,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004554541}
   m_Mesh: {fileID: -5503334823520765031, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1004554546
-SphereCollider:
+--- !u!54 &1004554546
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004554541}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 4.6563192e-10, y: -3.921299e-14, z: 0.00000065788487}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1007055205
 GameObject:
   m_ObjectHideFlags: 0
@@ -31649,7 +31798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca0265c791bead74da424a77ac7a8ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryHolder: {fileID: 0}
+  inventoryHolder: {fileID: 30074164}
   inventoryItem:
   - itemData: {fileID: 0}
     stackSize: -1
@@ -32472,7 +32621,7 @@ GameObject:
   - component: {fileID: 1044721139}
   m_Layer: 0
   m_Name: Lantern.008
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32499,7 +32648,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044721134}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -32555,19 +32704,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044721134}
   m_Mesh: {fileID: -5685292829115175968, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1044721139
-SphereCollider:
+--- !u!54 &1044721139
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044721134}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.025
-  m_Center: {x: -0.000000038184226, y: 0.000000057450954, z: 0.096934855}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1049216363
 GameObject:
   m_ObjectHideFlags: 0
@@ -33684,7 +33836,7 @@ GameObject:
   - component: {fileID: 1108740111}
   m_Layer: 0
   m_Name: WoodenRoadBlock.010
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33711,7 +33863,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108740106}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -33766,19 +33918,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108740106}
   m_Mesh: {fileID: -8733817542752052593, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1108740111
-SphereCollider:
+--- !u!54 &1108740111
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108740106}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.00000023132604, y: 0.0022580617, z: 0.009318284}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1116309006
 GameObject:
   m_ObjectHideFlags: 0
@@ -34134,7 +34289,7 @@ GameObject:
   - component: {fileID: 1122416396}
   m_Layer: 0
   m_Name: WoodenBarrel.008
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34161,7 +34316,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122416391}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -34217,19 +34372,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122416391}
   m_Mesh: {fileID: -1653539218382313446, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1122416396
-SphereCollider:
+--- !u!54 &1122416396
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122416391}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000015832484, y: 0.000000029802322, z: 0.0099875415}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1131233593
 GameObject:
   m_ObjectHideFlags: 0
@@ -34537,7 +34695,7 @@ GameObject:
   - component: {fileID: 1150558603}
   m_Layer: 0
   m_Name: WoodenBarrel.005
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34564,7 +34722,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150558598}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -34620,19 +34778,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150558598}
   m_Mesh: {fileID: -6368974199529483418, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1150558603
-SphereCollider:
+--- !u!54 &1150558603
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150558598}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 9.313226e-10, y: 0.000000007450581, z: 0.009987568}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1150816724
 GameObject:
   m_ObjectHideFlags: 0
@@ -34806,7 +34967,7 @@ GameObject:
   - component: {fileID: 1175141851}
   m_Layer: 0
   m_Name: TrafficFence.003
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34833,7 +34994,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175141846}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -34889,19 +35050,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175141846}
   m_Mesh: {fileID: -1828305186403593393, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1175141851
-SphereCollider:
+--- !u!54 &1175141851
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175141846}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000013962726, y: 0.0000000029631033, z: 0.044365138}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1184681801
 GameObject:
   m_ObjectHideFlags: 0
@@ -35116,7 +35280,7 @@ GameObject:
   - component: {fileID: 1186847120}
   m_Layer: 0
   m_Name: WoodenBarrel.014
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35143,7 +35307,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186847115}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -35199,19 +35363,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186847115}
   m_Mesh: {fileID: 2647624990128847933, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1186847120
-SphereCollider:
+--- !u!54 &1186847120
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186847115}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000015832484, y: -0.000000059604645, z: 0.009987553}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1188323006
 GameObject:
   m_ObjectHideFlags: 0
@@ -36503,7 +36670,7 @@ GameObject:
   - component: {fileID: 1276365491}
   m_Layer: 0
   m_Name: WoodenBarrel.010
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36530,7 +36697,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276365486}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -36586,19 +36753,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276365486}
   m_Mesh: {fileID: -2423135030958056011, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1276365491
-SphereCollider:
+--- !u!54 &1276365491
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1276365486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000015832484, y: 0.000000029802322, z: 0.009987538}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1283279855
 GameObject:
   m_ObjectHideFlags: 0
@@ -37829,7 +37999,7 @@ GameObject:
   - component: {fileID: 1336346894}
   m_Layer: 0
   m_Name: Lantern.009
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37856,7 +38026,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336346889}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -37912,19 +38082,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336346889}
   m_Mesh: {fileID: 3831225309876900807, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1336346894
-SphereCollider:
+--- !u!54 &1336346894
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1336346889}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.025
-  m_Center: {x: 0.00000003632158, y: 0.000000057450954, z: 0.096934855}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1337513900
 GameObject:
   m_ObjectHideFlags: 0
@@ -39720,7 +39893,7 @@ GameObject:
   - component: {fileID: 1409912151}
   m_Layer: 0
   m_Name: WoodenBarrel.013
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39747,7 +39920,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409912146}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -39803,19 +39976,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409912146}
   m_Mesh: {fileID: -6172019574834810295, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1409912151
-SphereCollider:
+--- !u!54 &1409912151
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409912146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000030733645, y: 0.00000016391277, z: 0.009987536}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1423621394
 GameObject:
   m_ObjectHideFlags: 0
@@ -40504,7 +40680,7 @@ GameObject:
   - component: {fileID: 1439333346}
   m_Layer: 0
   m_Name: WoodenBarrel.017
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40531,7 +40707,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439333341}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -40587,19 +40763,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439333341}
   m_Mesh: {fileID: -6750358917642334158, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1439333346
-SphereCollider:
+--- !u!54 &1439333346
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439333341}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 9.3006675e-10, y: 0.000000044554657, z: 0.009987543}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1440383115
 GameObject:
   m_ObjectHideFlags: 0
@@ -42911,7 +43090,7 @@ GameObject:
   - component: {fileID: 1497007294}
   m_Layer: 0
   m_Name: WoodenBox.006
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42938,7 +43117,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497007289}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -42995,19 +43174,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497007289}
   m_Mesh: {fileID: -108958106746601994, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1497007294
-SphereCollider:
+--- !u!54 &1497007294
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497007289}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.000000059604645, y: 0.000065041226, z: 0.018359227}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1498394706
 GameObject:
   m_ObjectHideFlags: 0
@@ -43102,7 +43284,7 @@ GameObject:
   - component: {fileID: 1499712513}
   m_Layer: 0
   m_Name: Chair.005
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43129,7 +43311,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499712508}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -43185,19 +43367,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499712508}
   m_Mesh: {fileID: 8129720142723837363, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1499712513
-SphereCollider:
+--- !u!54 &1499712513
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499712508}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000014851598, y: -0.026053904, z: 0.19273695}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1504627657
 GameObject:
   m_ObjectHideFlags: 0
@@ -44091,7 +44276,7 @@ GameObject:
   - component: {fileID: 1524805339}
   m_Layer: 0
   m_Name: WoodenRoadBlock.005
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44118,7 +44303,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524805334}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -44173,19 +44358,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524805334}
   m_Mesh: {fileID: -6509331179187154425, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1524805339
-SphereCollider:
+--- !u!54 &1524805339
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524805334}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.0000004991889, y: 0.0022577236, z: 0.009318292}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1526519222
 GameObject:
   m_ObjectHideFlags: 0
@@ -44777,7 +44965,7 @@ GameObject:
   - component: {fileID: 1552966557}
   m_Layer: 0
   m_Name: Lantern.004
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44804,7 +44992,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552966552}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -44862,19 +45050,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552966552}
   m_Mesh: {fileID: 732113404577853178, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1552966557
-SphereCollider:
+--- !u!54 &1552966557
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1552966552}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.075
-  m_Center: {x: -0.00000016577542, y: -0.00022952251, z: 0.08246004}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1555457391
 GameObject:
   m_ObjectHideFlags: 0
@@ -44965,7 +45156,7 @@ GameObject:
   - component: {fileID: 1558909167}
   m_Layer: 0
   m_Name: WoodenBox.013
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44992,7 +45183,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558909162}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -45049,19 +45240,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558909162}
   m_Mesh: {fileID: -5451557441869818455, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1558909167
-SphereCollider:
+--- !u!54 &1558909167
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558909162}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.000000089433584, y: 0.00006498192, z: 0.018359214}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1560271742
 GameObject:
   m_ObjectHideFlags: 0
@@ -45176,7 +45370,7 @@ GameObject:
   - component: {fileID: 1566861758}
   m_Layer: 0
   m_Name: WoodenRoadBlock.008
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45203,7 +45397,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566861753}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -45258,19 +45452,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566861753}
   m_Mesh: {fileID: 6638375460610482445, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1566861758
-SphereCollider:
+--- !u!54 &1566861758
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566861753}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000007450581, y: 0.0022597197, z: 0.009318282}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1578110410
 GameObject:
   m_ObjectHideFlags: 0
@@ -45710,7 +45907,7 @@ GameObject:
   - component: {fileID: 1594225194}
   m_Layer: 0
   m_Name: WoodenBox.012
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45737,7 +45934,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594225189}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -45794,19 +45991,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594225189}
   m_Mesh: {fileID: 4664356984419882192, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1594225194
-SphereCollider:
+--- !u!54 &1594225194
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1594225189}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.00000008954268, y: 0.000064981716, z: 0.018359233}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1594757198
 GameObject:
   m_ObjectHideFlags: 0
@@ -46285,7 +46485,7 @@ GameObject:
   - component: {fileID: 1617791286}
   m_Layer: 0
   m_Name: WoodenBarrel.012
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46312,7 +46512,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617791281}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -46368,19 +46568,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617791281}
   m_Mesh: {fileID: 9166685648856900236, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1617791286
-SphereCollider:
+--- !u!54 &1617791286
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617791281}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000023283064, y: 0.000000074505806, z: 0.0099875415}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1621264863
 GameObject:
   m_ObjectHideFlags: 0
@@ -46548,7 +46751,7 @@ GameObject:
   - component: {fileID: 1627853438}
   m_Layer: 0
   m_Name: Chair.001
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46575,7 +46778,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627853433}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -46631,19 +46834,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627853433}
   m_Mesh: {fileID: 4564847448827134883, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1627853438
-SphereCollider:
+--- !u!54 &1627853438
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1627853433}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000014901161, y: -0.026053604, z: 0.1927369}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1629363518
 GameObject:
   m_ObjectHideFlags: 0
@@ -46659,7 +46865,7 @@ GameObject:
   - component: {fileID: 1629363523}
   m_Layer: 0
   m_Name: WoodenRoadBlock.014
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46686,7 +46892,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629363518}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -46741,19 +46947,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629363518}
   m_Mesh: {fileID: 9177268617320280648, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1629363523
-SphereCollider:
+--- !u!54 &1629363523
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629363518}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.00000025102617, y: 0.0022587802, z: 0.009318275}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1630520105
 GameObject:
   m_ObjectHideFlags: 0
@@ -46769,7 +46978,7 @@ GameObject:
   - component: {fileID: 1630520110}
   m_Layer: 0
   m_Name: WoodenBox.007
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46796,7 +47005,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630520105}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -46853,19 +47062,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630520105}
   m_Mesh: {fileID: -368556783875623984, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1630520110
-SphereCollider:
+--- !u!54 &1630520110
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1630520105}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.00000007450386, y: 0.00006500771, z: 0.01835923}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1632509355
 GameObject:
   m_ObjectHideFlags: 0
@@ -47267,7 +47479,7 @@ GameObject:
   - component: {fileID: 1646028749}
   m_Layer: 0
   m_Name: Chair.004
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47294,7 +47506,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646028744}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -47350,19 +47562,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646028744}
   m_Mesh: {fileID: 9162622013225082336, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1646028749
-SphereCollider:
+--- !u!54 &1646028749
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646028744}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000000014851598, y: -0.026054084, z: 0.19273698}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1651519335
 GameObject:
   m_ObjectHideFlags: 0
@@ -47477,7 +47692,7 @@ GameObject:
   - component: {fileID: 1653443998}
   m_Layer: 0
   m_Name: TrafficFence.001
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47504,7 +47719,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653443993}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -47560,19 +47775,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653443993}
   m_Mesh: {fileID: -5520120283717053195, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1653443998
-SphereCollider:
+--- !u!54 &1653443998
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653443993}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000013933025, y: -0.0000000051606097, z: 0.044365134}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1656699913
 GameObject:
   m_ObjectHideFlags: 0
@@ -47988,7 +48206,7 @@ GameObject:
   - component: {fileID: 1668181758}
   m_Layer: 0
   m_Name: Billboard.009
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48015,7 +48233,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668181753}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -48070,19 +48288,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668181753}
   m_Mesh: {fileID: -2621072619720355597, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1668181758
-SphereCollider:
+--- !u!54 &1668181758
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668181753}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0.007762042, y: 0.000000118181134, z: 0.05514234}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1670239733
 GameObject:
   m_ObjectHideFlags: 0
@@ -48134,7 +48355,7 @@ GameObject:
   - component: {fileID: 1671291017}
   m_Layer: 0
   m_Name: WoodenRoadBlock.011
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48161,7 +48382,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671291012}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -48216,19 +48437,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671291012}
   m_Mesh: {fileID: -7272537489771965942, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1671291017
-SphereCollider:
+--- !u!54 &1671291017
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1671291012}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.00000023046898, y: 0.002257815, z: 0.009318287}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1671633566
 GameObject:
   m_ObjectHideFlags: 0
@@ -49844,7 +50068,7 @@ GameObject:
   - component: {fileID: 1713504451}
   m_Layer: 0
   m_Name: Cone.006
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49871,7 +50095,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713504446}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -49927,19 +50151,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713504446}
   m_Mesh: {fileID: -929961955810353325, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1713504451
-SphereCollider:
+--- !u!54 &1713504451
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713504446}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.00000005354194, y: 0.000000059455665, z: 0.010320444}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1713677534
 GameObject:
   m_ObjectHideFlags: 0
@@ -51886,7 +52113,7 @@ GameObject:
   - component: {fileID: 1776158205}
   m_Layer: 0
   m_Name: WoodenRoadBlock.002
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51913,7 +52140,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776158200}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -51968,19 +52195,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776158200}
   m_Mesh: {fileID: 4365725348386124507, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1776158205
-SphereCollider:
+--- !u!54 &1776158205
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776158200}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000007450581, y: 0.002258766, z: 0.009318282}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1780972491
 GameObject:
   m_ObjectHideFlags: 0
@@ -52361,7 +52591,7 @@ GameObject:
   - component: {fileID: 1805510777}
   m_Layer: 0
   m_Name: Billboard.003
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52388,7 +52618,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805510772}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -52443,19 +52673,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805510772}
   m_Mesh: {fileID: -5391677327476770794, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1805510777
-SphereCollider:
+--- !u!54 &1805510777
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1805510772}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0.0077621522, y: -0.00000003466542, z: 0.05514234}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!4 &1806137320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8596814704614960724, guid: 8597347b104324ac59863af77c347295, type: 3}
@@ -52992,7 +53225,7 @@ GameObject:
   - component: {fileID: 1829511549}
   m_Layer: 0
   m_Name: Lantern.007
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53019,7 +53252,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829511544}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -53075,19 +53308,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829511544}
   m_Mesh: {fileID: -5232888239775684828, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1829511549
-SphereCollider:
+--- !u!54 &1829511549
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829511544}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.025
-  m_Center: {x: -0.000000038184226, y: 0.00000007823109, z: 0.096934855}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1829550756
 GameObject:
   m_ObjectHideFlags: 0
@@ -53334,7 +53570,7 @@ GameObject:
   - component: {fileID: 1838209409}
   m_Layer: 0
   m_Name: WoodenRoadBlock.015
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53361,7 +53597,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838209404}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -53416,19 +53652,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838209404}
   m_Mesh: {fileID: 7493812467252882026, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1838209409
-SphereCollider:
+--- !u!54 &1838209409
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838209404}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.00000022809992, y: 0.0022578137, z: 0.009318277}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1839745505
 GameObject:
   m_ObjectHideFlags: 0
@@ -53677,7 +53916,7 @@ GameObject:
   - component: {fileID: 1844534471}
   m_Layer: 0
   m_Name: WoodenLog.001
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53704,7 +53943,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844534466}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -53760,19 +53999,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844534466}
   m_Mesh: {fileID: 6305652328475618089, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1844534471
-SphereCollider:
+--- !u!54 &1844534471
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844534466}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: -0.0011801178, y: 0.00080021453, z: -0.00086712843}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1853366991
 GameObject:
   m_ObjectHideFlags: 0
@@ -55273,7 +55515,7 @@ GameObject:
   - component: {fileID: 1897777532}
   m_Layer: 0
   m_Name: WoodenBox.009
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55300,7 +55542,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897777527}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -55357,19 +55599,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897777527}
   m_Mesh: {fileID: 5102683487389333077, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1897777532
-SphereCollider:
+--- !u!54 &1897777532
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897777527}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.000000075437136, y: 0.00006504142, z: 0.018359229}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1907288570
 GameObject:
   m_ObjectHideFlags: 0
@@ -55931,7 +56176,7 @@ GameObject:
   - component: {fileID: 1925445989}
   m_Layer: 0
   m_Name: WoodenBox.011
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55958,7 +56203,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925445984}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -56015,19 +56260,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925445984}
   m_Mesh: {fileID: -3152651785289952599, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1925445989
-SphereCollider:
+--- !u!54 &1925445989
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925445984}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.00000008917532, y: 0.00006504097, z: 0.01835923}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1925597929
 GameObject:
   m_ObjectHideFlags: 0
@@ -56290,7 +56538,7 @@ GameObject:
   - component: {fileID: 1928577038}
   m_Layer: 0
   m_Name: Billboard.006
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56317,7 +56565,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928577033}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -56372,19 +56620,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928577033}
   m_Mesh: {fileID: 7990892850330970393, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1928577038
-SphereCollider:
+--- !u!54 &1928577038
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928577033}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0.0077613047, y: 0.00000004323021, z: 0.05514234}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &1932325005
 GameObject:
   m_ObjectHideFlags: 0
@@ -57923,7 +58174,7 @@ GameObject:
   - component: {fileID: 1994445813}
   m_Layer: 0
   m_Name: Cone.002
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57950,7 +58201,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994445808}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -58006,19 +58257,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994445808}
   m_Mesh: {fileID: 5769486934180388862, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &1994445813
-SphereCollider:
+--- !u!54 &1994445813
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994445808}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.00000005414489, y: 0.000000029646154, z: 0.010320448}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &2000685619
 GameObject:
   m_ObjectHideFlags: 0
@@ -58704,7 +58958,7 @@ GameObject:
   - component: {fileID: 2020416986}
   m_Layer: 0
   m_Name: Cone.007
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58731,7 +58985,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020416981}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -58787,19 +59041,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020416981}
   m_Mesh: {fileID: -8335784253003298723, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &2020416986
-SphereCollider:
+--- !u!54 &2020416986
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020416981}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.000000006519257, y: -0.000000014747375, z: 0.010320415}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &2031236199
 GameObject:
   m_ObjectHideFlags: 0
@@ -59142,7 +59399,7 @@ GameObject:
   - component: {fileID: 2048835248}
   m_Layer: 0
   m_Name: WoodenRoadBlock.001
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59169,7 +59426,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048835243}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -59224,19 +59481,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048835243}
   m_Mesh: {fileID: -6771065872535879760, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &2048835248
-SphereCollider:
+--- !u!54 &2048835248
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048835243}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.0000000027188545, y: 0.00225781, z: 0.009318295}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &2051346792
 GameObject:
   m_ObjectHideFlags: 0
@@ -59557,7 +59817,7 @@ GameObject:
   - component: {fileID: 2073964185}
   m_Layer: 0
   m_Name: WoodenRoadBlock.007
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59584,7 +59844,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073964180}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -59639,19 +59899,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073964180}
   m_Mesh: {fileID: 6002523484605263220, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &2073964185
-SphereCollider:
+--- !u!54 &2073964185
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073964180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: 0.000000007450581, y: 0.0022578123, z: 0.009318282}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &2077502541
 GameObject:
   m_ObjectHideFlags: 0
@@ -59863,7 +60126,7 @@ GameObject:
   - component: {fileID: 2080413478}
   m_Layer: 0
   m_Name: Billboard.002
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59890,7 +60153,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080413473}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -59945,19 +60208,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080413473}
   m_Mesh: {fileID: 1563477519089128116, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &2080413478
-SphereCollider:
+--- !u!54 &2080413478
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080413473}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.04
-  m_Center: {x: 0.007762033, y: 0.000000057276324, z: 0.055142336}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &2099042271
 GameObject:
   m_ObjectHideFlags: 0
@@ -60225,7 +60491,7 @@ GameObject:
   - component: {fileID: 2117219654}
   m_Layer: 0
   m_Name: Chair.002
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60252,7 +60518,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117219649}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -60308,19 +60574,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117219649}
   m_Mesh: {fileID: -7292569847554373119, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &2117219654
-SphereCollider:
+--- !u!54 &2117219654
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117219649}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.0000000037252899, y: -0.026054088, z: 0.19273694}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &2119538738
 GameObject:
   m_ObjectHideFlags: 0
@@ -60873,7 +61142,7 @@ GameObject:
   - component: {fileID: 2137382216}
   m_Layer: 0
   m_Name: WoodenBox.004
-  m_TagString: HiddingObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60900,7 +61169,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137382211}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -60957,19 +61226,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137382211}
   m_Mesh: {fileID: -1098051864287733749, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!135 &2137382216
-SphereCollider:
+--- !u!54 &2137382216
+Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137382211}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.015
-  m_Center: {x: -0.00000006673822, y: 0.000065041466, z: 0.01835925}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 3
 --- !u!1 &2138392716
 GameObject:
   m_ObjectHideFlags: 0
@@ -60983,8 +61255,8 @@ GameObject:
   - component: {fileID: 2138392725}
   - component: {fileID: 2138392724}
   - component: {fileID: 2138392723}
-  - component: {fileID: 2138392722}
   - component: {fileID: 2138392719}
+  - component: {fileID: 2138392721}
   - component: {fileID: 2138392720}
   - component: {fileID: 2138392718}
   - component: {fileID: 2138392717}
@@ -61057,7 +61329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcState: 1
   convo1: {fileID: 11400000, guid: 85e8a7480e1444f86b4bd0d6420ca78c, type: 2}
-  convo2: {fileID: 11400000, guid: c617478f7ef73487899a2d72f44d3439, type: 2}
+  convo2: {fileID: 11400000, guid: 7516ee693c75747ceb6f39ea7a1ba7c2, type: 2}
+  convo3: {fileID: 11400000, guid: c617478f7ef73487899a2d72f44d3439, type: 2}
   agent: {fileID: 0}
   cranebtn: {fileID: 31144605}
   memorybtn: {fileID: 1544617458}
@@ -61065,7 +61338,8 @@ MonoBehaviour:
   memoryIcon: {fileID: 1304093527}
   Level5Manager: {fileID: 0}
   SendPoint: {fileID: 689131483}
---- !u!114 &2138392722
+  timee: 0
+--- !u!114 &2138392721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -61077,7 +61351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0858d27ebdd2884aaf5e58768acfd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notice: "\u54C7\uFF01\u4F60\u662F\u8AB0\u554A\uFF01\uFF01"
+  notice: "\u5931\u6557\n\u5728\u9644\u8FD1\u7E5E\u7E5E\u6216\u56DE\u53BB\u627E\u5915\u9DB4\u91CD\u65B0\u6311\u6230\u5427\uFF01"
 --- !u!114 &2138392723
 MonoBehaviour:
   m_ObjectHideFlags: 0
