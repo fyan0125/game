@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class npcCrane : DialogueTrigger
 {
     public static bool gameComplete = false;
-    public Conversation convo1;
-    public Conversation convo2;
+    public Conversation convo1, convo2, convo3;
     public UnityEngine.AI.NavMeshAgent agent;
 
     public Button cranebtn;
@@ -20,23 +19,43 @@ public class npcCrane : DialogueTrigger
     public GameObject SendPoint;
     private showPortal sP;
 
+    private bool resetGame = false;
+    public float timee;
+
     private void Awake()
     {
         base.Start();
         sP = SendPoint.GetComponent<showPortal>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         Level5Manager = GameObject.Find("Level5Manager").GetComponent<level5Manager>();
+        timee = Timer.time;
     }
 
     private void Update()
-    {
+    {   
+        if(Timer.timerIsRunning){
+            if(Timer.timeRemaining <= 0){
+                timee = 0;
+            }                                                 
+        }
+        if(npcState == 1 && Input.GetButtonDown("Skill") && resetGame){
+            notificationTrigger.EndNotice();
+            resetGame = false;
+        }
         if(npcState == 2 && DialogueManager.isTalking == false && !gameComplete){
             Level5Manager.GameStart();
             Timer.setTimeToDisplay();
-            npcState = 4;
+            npcState += 1;
         }
         if(gameComplete){
-            npcState = 5;
+            npcState = 4;
+        }
+        if(!gameComplete && timee == 0 && npcState == 3)
+        {
+            Level5Manager.resetGame();
+            resetGame = true;
+            notificationTrigger.Notice();
+            npcState = 1;
         }
         if (npcState == 5 && DialogueManager.EndConversation())
         {
@@ -69,12 +88,12 @@ public class npcCrane : DialogueTrigger
                 convo = convo1;
                 npcState += 1;
                 break;
-            case 5:
-                convo = convo2;
-                npcState = 6;
+            case 4:
+                convo = convo3;
+                npcState += 1;
                 break;
             default:
-                convo = convo2;
+                convo = convo1;
                 break;
         }
         DialogueManager.StartConversation(convo);

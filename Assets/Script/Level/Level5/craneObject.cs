@@ -5,7 +5,7 @@ using TMPro;
 
 public class craneObject : CharactorStats
 {
-    public string sound;
+    public string sound = "鶴";
     public level5Manager Level5Manager;
     public GameObject floatingTextPrefab;
     PlayerStats playerStats;
@@ -23,31 +23,34 @@ public class craneObject : CharactorStats
     // Update is called once per frame
     void Update()
     {   
-        if (getDamageNum == 3)
+        if (getDamageNum == 1)
         {
             Die();
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log("Enter");
-        if (
-            anim.GetCurrentAnimatorStateInfo(0).IsName("Melee")
-        )
-        {
-            TakeDamage(0);
-        }
-    }
-    public override void TakeDamage(int damage)
-    {
-        base.TakeDamage(damage);
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("LanternHurt");
-        getDamageNum += 1;
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     Debug.Log("Enter");
+    //     if (
+    //         anim.GetCurrentAnimatorStateInfo(0).IsName("Melee")
+    //     )
+    //     {
+    //         hurt();
+    //     }
+    // }
+
+    public void hurt(){
+        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("CraneHurt");
         Debug.Log(getDamageNum);
         if (floatingTextPrefab != null)
         {
             ShowFloatingText();
         }
+        getDamageNum += 1;
+    }
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
     }
 
     private void ShowFloatingText()
@@ -58,6 +61,7 @@ public class craneObject : CharactorStats
             Quaternion.identity,
             transform
         );
+        Debug.Log("floatingtext");
         floatText.GetComponent<TextMeshPro>().text = sound;
     }
 
