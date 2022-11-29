@@ -77,10 +77,10 @@ public class level5Manager : MonoBehaviour
         targetObject.gameObject.AddComponent<craneObject>();
         targetObject.gameObject.tag = "HiddingObject";
 
-        // targetObject.gameObject.layer = 11;
-        // targetObject.gameObject.GetComponent<Renderer>().material = newMaterialRef;
-        // targetObject.gameObject.AddComponent<PostProcessVolume>();
-        // targetObject.gameObject.GetComponent<PostProcessVolume>().profile = postProcessProfile;
+        targetObject.gameObject.layer = 11;
+        targetObject.gameObject.GetComponent<Renderer>().material = newMaterialRef;
+        targetObject.gameObject.AddComponent<PostProcessVolume>();
+        targetObject.gameObject.GetComponent<PostProcessVolume>().profile = postProcessProfile;
 
         craneObject = targetObject.GetComponent<craneObject>();
         craneAnim.SetBool("isWalking", false);
