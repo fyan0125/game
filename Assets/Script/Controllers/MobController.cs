@@ -54,25 +54,35 @@ public class MobController : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange)
+        if (!playerInSightRange && !playerInAttackRange){
             Patroling();
-        if (playerInSightRange && !playerInAttackRange)
+            anim.SetBool("isAttacking", false);
+        }
+        if (playerInSightRange && !playerInAttackRange){
             ChasePlayer();
-        if (playerInSightRange && playerInAttackRange)
+            anim.SetBool("isAttacking", false);
+        }
+        if (playerInSightRange && playerInAttackRange){
             AttackPlayer();
-        
+            anim.SetBool("isAttacking", true);
+        }
+    }
+
+    public void dropItem()
+    {
         randomIndex = Random.Range(0, items.Length);
 
         Vector3 position = transform.position;
-        if (stats.currentHealth <= 0)
-        {
-            Instantiate(
-                items[randomIndex], 
-                position + new Vector3(0.0f, 2, 0.0f), 
-                Quaternion.identity);
-        }
-
+        Debug.Log("die");
+        GameObject item = GameObject.Instantiate(
+        items[randomIndex], 
+        position + new Vector3(0.0f, 1, 0.0f),
+        Quaternion.identity
+        );
+        // item.transform.Rotate (0f, 0f, 90f);
+        // item.transform.rotation=Quaternion.identity;
     }
+    
 
     private void Patroling()
     {
@@ -85,7 +95,7 @@ public class MobController : MonoBehaviour
         {
             agent.SetDestination(walkPoint);
             walkPointSet = false;
-            StartCoroutine(waiter());
+            StartCoroutine(waiter(100));
             anim.SetBool("isWalking", true);
         }
 
@@ -99,9 +109,10 @@ public class MobController : MonoBehaviour
         }
     }
 
-    IEnumerator waiter()
+    public IEnumerator waiter(int time)
     {
-        yield return new WaitForSeconds(100);
+        yield return new WaitForSeconds(time);
+        Debug.Log(time);
     }
 
     private void SearchWalkPoint()
@@ -141,8 +152,7 @@ public class MobController : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            anim.SetBool("isWalking", false);
-            anim.SetBool("isAttacking", true);
+            Debug.Log("Attack");
             //Attack Code
             height = 0.3f;
             attackPoint = new Vector3(

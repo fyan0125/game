@@ -16,6 +16,7 @@ public class npcFox : DialogueTrigger
     public GameObject memoryIcon;
     public GameObject notice;
     public GameObject counter;
+    public GameObject compoundLock;
 
     //傳送門
     public GameObject SendPoint;
@@ -26,6 +27,8 @@ public class npcFox : DialogueTrigger
         base.Start();
         SwitchSkills.getSkill = 2;
         sP = SendPoint.GetComponent<showPortal>();
+        counter.SetActive(true);
+        notice.SetActive(false);
     }
 
     private void Update()
@@ -54,6 +57,7 @@ public class npcFox : DialogueTrigger
                 foxIcon.SetActive(false);
                 memorybtn.interactable = true;
                 memoryIcon.SetActive(true);
+                compoundLock.SetActive(false);
                 NpcReward.GetReward();
                 npcState++;
                 sP.isClear = true;

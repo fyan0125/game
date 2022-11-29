@@ -7,17 +7,32 @@ public class MeleePoint : MonoBehaviour
     public int baseDamage = 5;
     PlayerStats playerStats;
 
+    private Animator anim;
+
     private void Awake()
     {
         GameObject player = GameObject.Find("Player");
         playerStats = player.GetComponent<PlayerStats>();
+        anim = player.GetComponentInChildren<Animator>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Collider>().CompareTag("Enemy"))
+        if (
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Melee")
+            && other.GetComponent<Collider>().CompareTag("Enemy")
+        )
         {
             other.GetComponent<EnemyStats>().TakeDamage(baseDamage + playerStats.damage.GetValue());
+        }
+        else if(
+
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Melee")
+            && other.GetComponent<Collider>().CompareTag("HiddingObject")
+        )
+        {
+            Debug.Log("Hurt");
+            other.GetComponent<craneObject>().hurt();
         }
     }
 }

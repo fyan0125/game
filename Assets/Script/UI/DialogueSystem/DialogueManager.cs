@@ -1,17 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Text speakerName,
+    public TextMeshProUGUI speakerName,
         dialogue;
 
     public int currentIndex;
     private Conversation currentConvo;
     private static DialogueManager instance;
-    public bool isTalking;
+    public static bool isTalking;
 
     public Animator anim;
     private Coroutine typing;
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
         instance.currentConvo = convo;
         instance.speakerName.text = "";
         instance.dialogue.text = "";
-        instance.isTalking = true;
+        isTalking = true;
 
         instance.ReadNext();
     }
@@ -62,7 +62,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (instance.currentIndex > instance.currentConvo.GetLength())
         {
-            instance.isTalking = false;
+            isTalking = false;
             instance.anim.SetBool("isOpened", false);
             instance.currentIndex = 0;
             return;

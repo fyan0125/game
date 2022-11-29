@@ -11,6 +11,7 @@ public class InventoryItemData : ScriptableObject
     public string Description;
     [TextArea(4, 4)]
     public string Formula;
+    public List<InventorySlot> craftingElement;
     public bool synthetic;
     public int MaxStackSize;
 
