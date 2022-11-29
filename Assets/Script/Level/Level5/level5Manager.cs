@@ -12,7 +12,6 @@ public class level5Manager : MonoBehaviour
     public float time = 90;
 
     [Header("遊戲進行中")]
-
     private ThirdPersonChar player;
     private craneObject craneObject;
 
@@ -28,7 +27,6 @@ public class level5Manager : MonoBehaviour
     int childCount;
     public PostProcessProfile postProcessProfile;
 
-
     private void Start()
     {
         Timer.time = time;
@@ -37,16 +35,22 @@ public class level5Manager : MonoBehaviour
         Crane = GameObject.Find("NPC");
         npcCrane = Crane.GetComponent<npcCrane>();
         craneAnim = Crane.transform.GetChild(1).gameObject.GetComponent<Animator>();
-  
+
         //變身物件
         turnIntoObject();
     }
 
     private void Update()
     {
-        if(targetObject != null){
-            targetObjectInSightRange = Physics.CheckSphere(targetObject.position, sightRange, npcLayer);
-            if(targetObjectInSightRange){
+        if (targetObject != null)
+        {
+            targetObjectInSightRange = Physics.CheckSphere(
+                targetObject.position,
+                sightRange,
+                npcLayer
+            );
+            if (targetObjectInSightRange)
+            {
                 Crane.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
@@ -56,15 +60,19 @@ public class level5Manager : MonoBehaviour
     {
         Resume();
         GameUI.SetActive(true);
-        if(targetObject != null){
+        if (targetObject != null)
+        {
             runToTarget();
         }
     }
-    
-    public void turnIntoObject(){
+
+    public void turnIntoObject()
+    {
         assetToHide = GameObject.Find("Assets");
         childCount = assetToHide.transform.childCount;
-        targetObject = assetToHide.transform.GetChild(Random.Range(0, childCount)).gameObject.transform;
+        targetObject = assetToHide.transform
+            .GetChild(Random.Range(0, childCount))
+            .gameObject.transform;
         targetObject.transform.parent = gameObject.transform;
         targetObject.gameObject.AddComponent<craneObject>();
         targetObject.gameObject.tag = "HiddingObject";

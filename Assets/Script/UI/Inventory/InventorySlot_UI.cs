@@ -15,6 +15,7 @@ public class InventorySlot_UI : MonoBehaviour
     {
         ClearSlot();
         ParentDisplay = transform.parent.GetComponent<InventoryDisplay>();
+        itemCount = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void Init(InventorySlot slot)
