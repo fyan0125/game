@@ -25,5 +25,14 @@ public class MeleePoint : MonoBehaviour
         {
             other.GetComponent<EnemyStats>().TakeDamage(baseDamage + playerStats.damage.GetValue());
         }
+        else if(
+
+            anim.GetCurrentAnimatorStateInfo(0).IsName("Melee")
+            && other.GetComponent<Collider>().CompareTag("HiddingObject")
+        )
+        {
+            Debug.Log("Hurt");
+            other.GetComponent<craneObject>().hurt();
+        }
     }
 }
