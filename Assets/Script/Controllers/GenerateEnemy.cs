@@ -17,24 +17,22 @@ public class GenerateEnemy : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(EnemyDrop());
+        EnemyDrop();
         yPos = Random.Range(7, 10);
     }
 
     void Update()
     {
-        randomIndex = Random.Range(0, theEnemy.Length);
+        
     }
 
-    IEnumerator EnemyDrop()
+    void EnemyDrop()
     {
-        while (enemyCount < maxEnemyCount)
-        {
+        for(int enemyCount = 0; enemyCount < maxEnemyCount; enemyCount++){
+            randomIndex = Random.Range(0, theEnemy.Length);
             xPos = Random.Range(-85, 85);
             zPos = Random.Range(-85, 85);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 8, zPos), Quaternion.identity);
-            yield return new WaitForSeconds(0.1f);
-            enemyCount += 1;
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 20 , zPos), Quaternion.identity);
         }
     }
 }
