@@ -32,7 +32,7 @@ public class GenerateEnemy : MonoBehaviour
             randomIndex = Random.Range(0, theEnemy.Length);
             xPos = Random.Range(-85, 85);
             zPos = Random.Range(-85, 85);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 20 , zPos), Quaternion.identity);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 10, zPos), Quaternion.identity);
         }
     }
 }
