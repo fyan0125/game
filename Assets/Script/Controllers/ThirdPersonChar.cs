@@ -8,6 +8,7 @@ public class ThirdPersonChar : MonoBehaviour
     public Transform cam;
 
     public float moveSpeed = 5.0f;
+    public float sprintSpeed = 8.0f;
     public float normalJumpHeight = 1.2f;
     public float superJumpHeight = 3.6f;
     public float gravity = -15.0f; //The character uses its own gravity value. The engine default is -9.81f
@@ -24,6 +25,7 @@ public class ThirdPersonChar : MonoBehaviour
 
     // player
     private float speed;
+    private float animationBlend;
     private float targetRotation = 0.0f;
     private float jumpHeight = 1.2f;
     private float verticalVelocity;
@@ -35,9 +37,11 @@ public class ThirdPersonChar : MonoBehaviour
     private float fallTimeoutDelta;
 
     // animation IDs
+    private int animIDSpeed;
     private int animIDGrounded;
     private int animIDJump;
     private int animIDFreeFall;
+    private int animIDMotionSpeed;
 
     private CharacterController controller;
     private float turnSmoothTime = 0.1f;
@@ -95,9 +99,11 @@ public class ThirdPersonChar : MonoBehaviour
 
     private void AssignAnimationIDs()
     {
+        animIDSpeed = Animator.StringToHash("Speed");
         animIDGrounded = Animator.StringToHash("Grounded");
         animIDJump = Animator.StringToHash("Jump");
         animIDFreeFall = Animator.StringToHash("FreeFall");
+        animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
     }
 
     private void GroundedCheck()
@@ -128,10 +134,13 @@ public class ThirdPersonChar : MonoBehaviour
 
     private void Move()
     {
-        speed = moveSpeed;
+        float targetSpeed = Input.GetButton("Sprint") ? sprintSpeed : moveSpeed;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if (inputDirection.magnitude < 0.1f)
+            targetSpeed = 0.0f;
 
         if (inputDirection.magnitude >= 0.1f)
         {
@@ -149,19 +158,16 @@ public class ThirdPersonChar : MonoBehaviour
             }
             Vector3 moveDir = Quaternion.Euler(0f, targetRotation, 0f) * Vector3.forward;
             controller.Move(
-                moveDir.normalized * speed * Time.deltaTime
+                moveDir.normalized * targetSpeed * Time.deltaTime
                     + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
             );
         }
 
-        if (horizontal != 0 || vertical != 0)
-        {
-            anim.SetBool("isRunning", true);
-        }
-        else
-        {
-            anim.SetBool("isRunning", false);
-        }
+        animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * 10);
+        if (animationBlend < 0.01f)
+            animationBlend = 0f;
+
+        anim.SetFloat(animIDSpeed, animationBlend);
     }
 
     private void JumpAndGravity()
