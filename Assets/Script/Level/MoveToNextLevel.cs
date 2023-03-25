@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-/* SUBSCRIBING TO MY YOUTUBE CHANNEL: 'VIN CODES' WILL HELP WITH MORE VIDEOS AND CODE SHARING IN THE FUTURE :) THANK YOU */
 
 public class MoveToNextLevel : MonoBehaviour
 {
@@ -18,7 +17,6 @@ public class MoveToNextLevel : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("You Completed ALL Levels");
             if (SceneManager.GetActiveScene().buildIndex == 7) /* < Change this int value to whatever your
                                                                    last level build index is on your
                                                                    build settings */

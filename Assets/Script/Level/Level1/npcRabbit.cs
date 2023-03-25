@@ -7,6 +7,7 @@ public class npcRabbit : DialogueTrigger
 {
     public Conversation convo1;
     public Conversation convo2;
+    public Conversation defaultConvo;
 
     // UI介面控制
     public Button rabbitbtn;
@@ -17,6 +18,8 @@ public class npcRabbit : DialogueTrigger
     public GameObject SendPoint;
     private showPortal sP;
 
+    private bool hasNotice = false; // 提醒重新回去找兔子
+
     private void Awake()
     {
         sP = SendPoint.GetComponent<showPortal>();
@@ -25,16 +28,24 @@ public class npcRabbit : DialogueTrigger
     private void Start()
     {
         base.Start();
-        notificationTrigger.Notice();
-        NotificationManager.instance.notification.text = "靠近神使時，使用R鍵可開啟對話。";
+        notificationTrigger.Notice("靠近神使時，使用R鍵可開啟對話。");
     }
 
     private void Update()
     {
-        if (Input.GetButtonDown("Talk") && npcState < 3)
+        if (Input.GetButtonDown("Talk") && npcState <= 3)
         {
             notificationTrigger.EndNotice();
         }
+
+        if (npcState == 2 && DialogueManager.EndConversation() && !hasNotice)
+        {
+            hasNotice = !hasNotice;
+            Invoke("StartConvo", 5.0f); //延遲3秒後執行setTimeOut
+        }
+
+        if (npcState == 3)
+            CancelInvoke();
 
         if (npcState == 3 && DialogueManager.EndConversation())
         {
@@ -68,7 +79,7 @@ public class npcRabbit : DialogueTrigger
                 npcState += 1;
                 break;
             default:
-                convo = convo1;
+                convo = defaultConvo;
                 break;
         }
         DialogueManager.StartConversation(convo);
