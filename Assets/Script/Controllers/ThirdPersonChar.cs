@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ThirdPersonChar : MonoBehaviour
 {
-    public Transform cam;
+    private Transform cam;
 
     public float moveSpeed = 5.0f;
     public float sprintSpeed = 8.0f;
@@ -55,6 +55,14 @@ public class ThirdPersonChar : MonoBehaviour
     private Collider chickenCollider;
 
     private Animator anim;
+
+    private void Awake()
+    {
+        if (cam == null)
+        {
+            cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        }
+    }
 
     void Start()
     {
@@ -125,13 +133,6 @@ public class ThirdPersonChar : MonoBehaviour
         anim.SetBool(animIDGrounded, grounded);
     }
 
-    void OnDrawGizmos()
-    {
-        // Draw a yellow sphere at the transform's position
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(SpherePosition, groundedRadius);
-    }
-
     private void Move()
     {
         float targetSpeed = Input.GetButton("Sprint") ? sprintSpeed : moveSpeed;
@@ -146,7 +147,7 @@ public class ThirdPersonChar : MonoBehaviour
         {
             targetRotation =
                 Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(
+            float rotation = Mathf.SmoothDampAngle(
                 transform.eulerAngles.y,
                 targetRotation,
                 ref turnSmoothVelocity,
@@ -154,14 +155,15 @@ public class ThirdPersonChar : MonoBehaviour
             );
             if (rotateOnMove)
             {
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+                transform.rotation = Quaternion.Euler(0f, rotation, 0f);
             }
-            Vector3 moveDir = Quaternion.Euler(0f, targetRotation, 0f) * Vector3.forward;
-            controller.Move(
-                moveDir.normalized * targetSpeed * Time.deltaTime
-                    + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
-            );
         }
+
+        Vector3 targetDirection = Quaternion.Euler(0f, targetRotation, 0f) * Vector3.forward;
+        controller.Move(
+            targetDirection.normalized * (targetSpeed * Time.deltaTime)
+                + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
+        );
 
         animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * 10);
         if (animationBlend < 0.01f)
@@ -249,8 +251,6 @@ public class ThirdPersonChar : MonoBehaviour
         {
             verticalVelocity += gravity * Time.deltaTime;
         }
-
-        controller.Move(new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)

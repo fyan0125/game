@@ -14,11 +14,17 @@ public class NPCController : MonoBehaviour
     public Transform player;
     public LayerMask whatIsPlayer;
     public float sightRange;
-    public bool playerInSightRange, NpcLooking;
+    public bool playerInSightRange,
+        NpcLooking;
     Transform target;
 
     private void Start()
     {
+        if (player == null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         multiAimConstraint.weight = 0;
         target = player.transform;
     }
@@ -32,15 +38,14 @@ public class NPCController : MonoBehaviour
             multiAimConstraint.weight = Mathf.Clamp01(
                 multiAimConstraint.weight + aimSpeed * Time.deltaTime
             );
-            NpcLooking=true;
+            NpcLooking = true;
         }
-        else if(playerInSightRange)
+        else if (playerInSightRange)
         {
             multiAimConstraint.weight = Mathf.Clamp01(
                 multiAimConstraint.weight - aimSpeed * Time.deltaTime
             );
-            NpcLooking=false;
+            NpcLooking = false;
         }
-
     }
 }
