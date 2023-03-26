@@ -80,6 +80,11 @@ public class ThirdPersonChar : MonoBehaviour
 
     void Update()
     {
+        if (cam == null)
+        {
+            cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        }
+
         JumpAndGravity();
         GroundedCheck();
         Move();
@@ -283,10 +288,21 @@ public class ThirdPersonChar : MonoBehaviour
         rotateOnMove = newRotateOnMove;
     }
 
-    public void MoveToTarget(Vector3 target)
+    public void MoveToTarget(Vector3 position, Vector3 rotation = default(Vector3))
     {
         controller.enabled = false;
-        transform.position = target;
+        transform.position = position;
+        if (rotation != default(Vector3))
+        {
+            transform.eulerAngles = rotation;
+        }
+        controller.enabled = true;
+    }
+
+    public void RotateToTarget(Vector3 rotation)
+    {
+        controller.enabled = false;
+        transform.eulerAngles = rotation;
         controller.enabled = true;
     }
 }

@@ -9,11 +9,7 @@ public class npcRabbit : DialogueTrigger
     public Conversation convo2;
     public Conversation defaultConvo;
 
-    // UI介面控制
-    public Button rabbitbtn;
-    public Button memorybtn;
-    public GameObject rabbitIcon;
-    public GameObject memoryIcon;
+    private SkillUI skillUI;
 
     public GameObject SendPoint;
     private showPortal sP;
@@ -23,6 +19,7 @@ public class npcRabbit : DialogueTrigger
     private void Awake()
     {
         sP = SendPoint.GetComponent<showPortal>();
+        skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
     }
 
     private void Start()
@@ -49,10 +46,7 @@ public class npcRabbit : DialogueTrigger
 
         if (npcState == 3 && DialogueManager.EndConversation())
         {
-            rabbitbtn.interactable = true;
-            rabbitIcon.SetActive(false);
-            memorybtn.interactable = true;
-            memoryIcon.SetActive(true);
+            skillUI.ClearLevel(1);
             SwitchSkills.getSkill = 1;
             NpcReward.GetReward();
             notificationTrigger.Notice();
