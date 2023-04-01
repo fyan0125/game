@@ -23,24 +23,24 @@ public class GenerateEnemy : MonoBehaviour
 
     void EnemyDrop()
     {
-        for(int enemyCount1 = 0; enemyCount1 < maxEnemyCount; enemyCount++){
+         for(int enemyCount = 0; enemyCount < maxEnemyCount; enemyCount++){
             randomIndex = Random.Range(0, theEnemy.Length);
-            xPos = Random.Range(30, 80);
-            zPos = Random.Range(-85, 37);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 10, zPos), Quaternion.identity);
+            xPos = Random.Range(40, 80);
+            zPos = Random.Range(-30, 85);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 12, zPos), Quaternion.identity);
         }
-        for(int enemyCount2 = 0; enemyCount2 < maxEnemyCount; enemyCount++){
+        for(int enemyCount2 = 0; enemyCount2 < maxEnemyCount; enemyCount2++){
             randomIndex = Random.Range(0, theEnemy.Length);
-            xPos = Random.Range(-85, 30);
-            zPos = Random.Range(0, 37);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 10, zPos), Quaternion.identity);
-            Debug.Log("enemy");
+            xPos = Random.Range(-85, 40);
+            zPos = Random.Range(55, 85);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 12, zPos), Quaternion.identity);
+            //Debug.Log("enemy");
         }
-        for(int enemyCount3 = 0; enemyCount3 < maxEnemyCount; enemyCount++){
+        for(int enemyCount3 = 0; enemyCount3 < maxEnemyCount; enemyCount3++){
             randomIndex = Random.Range(0, theEnemy.Length);
-            xPos = Random.Range(-85, -44);
-            zPos = Random.Range(-85, 0);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 30, zPos), Quaternion.identity);
+            xPos = Random.Range(-85, -30);
+            zPos = Random.Range(-80, 55);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 20, zPos), Quaternion.identity);
         }
     }
 }
