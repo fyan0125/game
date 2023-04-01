@@ -53,27 +53,20 @@ public class MobController : MonoBehaviour
         //Check for sight and attack range
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        
-        if(agent.isOnNavMesh)
-        {
 
-            
-            if (!playerInSightRange && !playerInAttackRange){
-                StartCoroutine(waiter(1000));
-                Patroling();
-                anim.SetBool("isAttacking", false);
-            }
-            if (playerInSightRange && !playerInAttackRange){
-                ChasePlayer();
-                anim.SetBool("isAttacking", false);
-            }
-            if (playerInSightRange && playerInAttackRange){
-                AttackPlayer();
-                anim.SetBool("isAttacking", true);
-            }
+        if (!playerInSightRange && !playerInAttackRange){
+            Patroling();
+            anim.SetBool("isAttacking", false);
+        }
+        if (playerInSightRange && !playerInAttackRange){
+            ChasePlayer();
+            anim.SetBool("isAttacking", false);
+        }
+        if (playerInSightRange && playerInAttackRange){
+            AttackPlayer();
+            anim.SetBool("isAttacking", true);
         }
     }
-
 
     public void dropItem()
     {
@@ -102,6 +95,7 @@ public class MobController : MonoBehaviour
         {
             agent.SetDestination(walkPoint);
             walkPointSet = false;
+            StartCoroutine(waiter(100));
             anim.SetBool("isWalking", true);
         }
 

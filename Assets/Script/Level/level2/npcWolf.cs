@@ -8,17 +8,16 @@ public class npcWolf : DialogueTrigger
     public Conversation convo1;
 
     // UI介面控制
-    public Button wolfbtn;
-    public Button memorybtn;
-    public GameObject wolfIcon;
-    public GameObject memoryIcon;
     public GameObject SendPoint;
     private showPortal sP;
+
+    private SkillUI skillUI;
 
     private void Start()
     {
         base.Start();
         SwitchSkills.getSkill = 1;
+        skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
         sP = SendPoint.GetComponent<showPortal>();
     }
 
@@ -26,10 +25,7 @@ public class npcWolf : DialogueTrigger
     {
         if (npcState == 2 && DialogueManager.EndConversation())
         {
-            wolfbtn.interactable = true;
-            wolfIcon.SetActive(false);
-            memorybtn.interactable = true;
-            memoryIcon.SetActive(true);
+            skillUI.ClearLevel(2);
             SwitchSkills.getSkill = 2;
             NpcReward.GetReward();
             notificationTrigger.Notice();

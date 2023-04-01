@@ -9,10 +9,7 @@ public class npcChicken : DialogueTrigger
     public Conversation convo1;
     public Conversation convo2;
 
-    public Button chickenbtn;
-    public Button memorybtn;
-    public GameObject chickenIcon;
-    public GameObject memoryIcon;
+    private SkillUI skillUI;
 
     public GameObject SendPoint;
     private showPortal sP;
@@ -20,6 +17,7 @@ public class npcChicken : DialogueTrigger
     private void Awake()
     {
         sP = SendPoint.GetComponent<showPortal>();
+        skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
     }
 
     private void Update()
@@ -31,10 +29,7 @@ public class npcChicken : DialogueTrigger
 
         if (npcState == 3 && DialogueManager.EndConversation())
         {
-            chickenbtn.interactable = true;
-            chickenIcon.SetActive(false);
-            memorybtn.interactable = true;
-            memoryIcon.SetActive(true);
+            skillUI.ClearLevel(4);
             NpcReward.GetReward();
             SwitchSkills.getSkill = 3;
             notificationTrigger.Notice();

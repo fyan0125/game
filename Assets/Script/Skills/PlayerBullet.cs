@@ -17,7 +17,7 @@ public class PlayerBullet : MonoBehaviour
 
     private void Start()
     {
-        float speed = 100f;
+        float speed = 50f;
         bulletRigidbody.velocity = transform.forward * speed;
     }
 
