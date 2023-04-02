@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
 
 public class Level4Manager : MonoBehaviour
 {
-    public GameObject BillBoardUI;
+    private GameObject BillBoardUI;
+    private GameObject FailUI;
+    private TextMeshProUGUI message;
+
     public GameObject chickenPrefab;
     public int generateChickenNum;
     public int chickenNum = 10;
@@ -13,7 +17,6 @@ public class Level4Manager : MonoBehaviour
 
     [Header("遊戲進行中")]
     public int catchedChickenNum = 0;
-    public TextMeshProUGUI message;
 
     private ThirdPersonChar player;
 
@@ -21,25 +24,28 @@ public class Level4Manager : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("start");
+        BillBoardUI = GameObject.Find("/ObjectToNextLevel/Canvas/Level4UI/BillBoardUI");
+        FailUI = GameObject.Find("/ObjectToNextLevel/Canvas/Level4UI/FailUI");
+        message = GameObject
+            .Find("/ObjectToNextLevel/Canvas/Level4UI/GameUI/Message")
+            .GetComponent<TextMeshProUGUI>();
+        SetUpButton();
+
         BillBoardUI.SetActive(false);
         SwitchSkills.getSkill = 0;
-        player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         Timer.time = time;
+        player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
+        player.MoveToTarget(new Vector3(17f, -9.4f, 13.7f), new Vector3(0, 180, 0));
     }
 
-    private void Update()
-    {
-        if (BillBoardUI.activeSelf == true)
-        {
-            Pause();
-        }
-    }
-
+    // 玩家碰到告示牌
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Collider>().CompareTag("Player") && BillBoardUI.activeSelf == false)
         {
             BillBoardUI.SetActive(true);
+            Pause();
         }
     }
 
@@ -99,8 +105,18 @@ public class Level4Manager : MonoBehaviour
 
     public void GameComplete()
     {
-        Debug.Log("Level4 Complete");
+        Debug.Log("Level 4 Complete");
         SwitchSkills.getSkill = 2;
         npcChicken.gameComplete = true;
+    }
+
+    private void SetUpButton()
+    {
+        Button BillBoardUIStart = BillBoardUI.transform.GetChild(1).GetComponent<Button>();
+        Button FailUIStart = FailUI.transform.GetChild(1).GetComponent<Button>();
+        Button FailUICancel = FailUI.transform.GetChild(2).GetComponent<Button>();
+        BillBoardUIStart.onClick.AddListener(GameStart);
+        FailUIStart.onClick.AddListener(GameStart);
+        FailUICancel.onClick.AddListener(Resume);
     }
 }

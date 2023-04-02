@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwitchSkills : MonoBehaviour
@@ -38,7 +36,10 @@ public class SwitchSkills : MonoBehaviour
             else
                 currentSkill = 1;
             anim.SetInteger("currentSkill", currentSkill);
-            skillUI.SkillUITransition(currentSkill);
+            if (getSkill != 0)
+            {
+                skillUI.SkillUITransition(currentSkill);
+            }
         }
     }
 }

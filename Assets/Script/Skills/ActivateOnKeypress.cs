@@ -16,16 +16,16 @@ public class ActivateOnKeypress : MonoBehaviour
         switchSkills = player.GetComponent<SwitchSkills>();
     }
 
-    void Update()
+    void LateUpdate()
     {
-        if (vcam != null)
+        if (vcam != null && Input.GetButtonDown("SwitchSkills"))
         {
-            if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill == 3 && !boosted)
+            if (switchSkills.currentSkill == 3 && !boosted)
             {
                 vcam.Priority += PriorityBoostAmount;
                 boosted = true;
             }
-            else if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill != 3 && boosted)
+            else if (switchSkills.currentSkill != 3 && boosted)
             {
                 vcam.Priority -= PriorityBoostAmount;
                 boosted = false;

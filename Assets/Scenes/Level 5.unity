@@ -792,8 +792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e616ad2ef5b790c4ea1c543c1660a1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1116309007}
-  moveSpeed: 6
+  moveSpeed: 8
+  sprintSpeed: 10
   normalJumpHeight: 0.6
   superJumpHeight: 2
   gravity: -15
@@ -804,7 +804,7 @@ MonoBehaviour:
   groundedRadius: 0.4
   groundLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 4160
 --- !u!114 &30074168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1105,7 +1105,7 @@ GameObject:
   - component: {fileID: 38080377}
   - component: {fileID: 38080376}
   - component: {fileID: 38080375}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.050
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1482,7 +1482,7 @@ GameObject:
   - component: {fileID: 49784463}
   - component: {fileID: 49784462}
   - component: {fileID: 49784461}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   - component: {fileID: 82041362}
   - component: {fileID: 82041361}
   - component: {fileID: 82041360}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1980,7 +1980,7 @@ GameObject:
   - component: {fileID: 91428549}
   - component: {fileID: 91428548}
   - component: {fileID: 91428547}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 94545209}
   - component: {fileID: 94545208}
   - component: {fileID: 94545207}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2386,7 +2386,7 @@ GameObject:
   - component: {fileID: 104766472}
   - component: {fileID: 104766471}
   - component: {fileID: 104766470}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2655,7 +2655,7 @@ GameObject:
   - component: {fileID: 107276075}
   - component: {fileID: 107276074}
   - component: {fileID: 107276073}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3291,7 +3291,7 @@ GameObject:
   - component: {fileID: 128657881}
   - component: {fileID: 128657880}
   - component: {fileID: 128657879}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3499,7 +3499,7 @@ GameObject:
   - component: {fileID: 140786748}
   - component: {fileID: 140786747}
   - component: {fileID: 140786746}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4290,7 +4290,7 @@ GameObject:
   - component: {fileID: 161810224}
   - component: {fileID: 161810223}
   - component: {fileID: 161810222}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4389,7 +4389,7 @@ GameObject:
   - component: {fileID: 170776418}
   - component: {fileID: 170776417}
   - component: {fileID: 170776416}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5127,7 +5127,7 @@ GameObject:
   - component: {fileID: 188869304}
   - component: {fileID: 188869303}
   - component: {fileID: 188869302}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5301,7 +5301,7 @@ GameObject:
   - component: {fileID: 199742808}
   - component: {fileID: 199742807}
   - component: {fileID: 199742806}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5797,7 +5797,7 @@ GameObject:
   - component: {fileID: 213782618}
   - component: {fileID: 213782617}
   - component: {fileID: 213782616}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5896,7 +5896,7 @@ GameObject:
   - component: {fileID: 215004829}
   - component: {fileID: 215004828}
   - component: {fileID: 215004827}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6485,7 +6485,7 @@ GameObject:
   - component: {fileID: 232163211}
   - component: {fileID: 232163210}
   - component: {fileID: 232163209}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6696,7 +6696,7 @@ GameObject:
   - component: {fileID: 244730803}
   - component: {fileID: 244730802}
   - component: {fileID: 244730801}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7023,7 +7023,7 @@ GameObject:
   - component: {fileID: 250379039}
   - component: {fileID: 250379038}
   - component: {fileID: 250379037}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8021,7 +8021,7 @@ GameObject:
   - component: {fileID: 271208763}
   - component: {fileID: 271208762}
   - component: {fileID: 271208761}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8139,7 +8139,7 @@ GameObject:
   - component: {fileID: 276829076}
   - component: {fileID: 276829075}
   - component: {fileID: 276829074}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8404,7 +8404,7 @@ GameObject:
   - component: {fileID: 282085038}
   - component: {fileID: 282085037}
   - component: {fileID: 282085036}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8977,7 +8977,7 @@ GameObject:
   - component: {fileID: 301835705}
   - component: {fileID: 301835704}
   - component: {fileID: 301835703}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9297,7 +9297,7 @@ GameObject:
   - component: {fileID: 310194416}
   - component: {fileID: 310194415}
   - component: {fileID: 310194414}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9755,7 +9755,7 @@ GameObject:
   - component: {fileID: 316213374}
   - component: {fileID: 316213373}
   - component: {fileID: 316213372}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10689,7 +10689,7 @@ GameObject:
   - component: {fileID: 360042037}
   - component: {fileID: 360042036}
   - component: {fileID: 360042035}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11130,7 +11130,7 @@ GameObject:
   - component: {fileID: 372183311}
   - component: {fileID: 372183310}
   - component: {fileID: 372183309}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12831,7 +12831,7 @@ GameObject:
   - component: {fileID: 431777656}
   - component: {fileID: 431777655}
   - component: {fileID: 431777654}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13045,7 +13045,7 @@ GameObject:
   - component: {fileID: 435415777}
   - component: {fileID: 435415776}
   - component: {fileID: 435415775}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13259,7 +13259,7 @@ GameObject:
   - component: {fileID: 442481490}
   - component: {fileID: 442481489}
   - component: {fileID: 442481488}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14666,7 +14666,7 @@ GameObject:
   - component: {fileID: 460850063}
   - component: {fileID: 460850062}
   - component: {fileID: 460850061}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15120,7 +15120,7 @@ GameObject:
   - component: {fileID: 467353463}
   - component: {fileID: 467353462}
   - component: {fileID: 467353461}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15219,7 +15219,7 @@ GameObject:
   - component: {fileID: 468651553}
   - component: {fileID: 468651552}
   - component: {fileID: 468651551}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.061
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15431,7 +15431,7 @@ GameObject:
   - component: {fileID: 469976492}
   - component: {fileID: 469976491}
   - component: {fileID: 469976490}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15624,7 +15624,7 @@ GameObject:
   - component: {fileID: 473226433}
   - component: {fileID: 473226432}
   - component: {fileID: 473226431}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16462,7 +16462,7 @@ GameObject:
   - component: {fileID: 494000612}
   - component: {fileID: 494000611}
   - component: {fileID: 494000610}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16985,7 +16985,7 @@ GameObject:
   - component: {fileID: 516794643}
   - component: {fileID: 516794642}
   - component: {fileID: 516794641}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17180,7 +17180,7 @@ GameObject:
   - component: {fileID: 520689058}
   - component: {fileID: 520689057}
   - component: {fileID: 520689056}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17390,7 +17390,7 @@ GameObject:
   - component: {fileID: 532415770}
   - component: {fileID: 532415769}
   - component: {fileID: 532415768}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17929,7 +17929,7 @@ GameObject:
   - component: {fileID: 558054868}
   - component: {fileID: 558054867}
   - component: {fileID: 558054866}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18205,7 +18205,7 @@ GameObject:
   - component: {fileID: 560446803}
   - component: {fileID: 560446802}
   - component: {fileID: 560446801}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18643,7 +18643,7 @@ GameObject:
   - component: {fileID: 595770276}
   - component: {fileID: 595770275}
   - component: {fileID: 595770274}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.051
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18926,7 +18926,7 @@ GameObject:
   - component: {fileID: 606577267}
   - component: {fileID: 606577266}
   - component: {fileID: 606577265}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20180,7 +20180,7 @@ GameObject:
   - component: {fileID: 655967983}
   - component: {fileID: 655967982}
   - component: {fileID: 655967981}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20423,7 +20423,7 @@ GameObject:
   - component: {fileID: 666835661}
   - component: {fileID: 666835660}
   - component: {fileID: 666835659}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20654,7 +20654,7 @@ GameObject:
   - component: {fileID: 668820204}
   - component: {fileID: 668820203}
   - component: {fileID: 668820202}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20753,7 +20753,7 @@ GameObject:
   - component: {fileID: 672350386}
   - component: {fileID: 672350385}
   - component: {fileID: 672350384}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.059
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21730,7 +21730,7 @@ GameObject:
   - component: {fileID: 713120685}
   - component: {fileID: 713120684}
   - component: {fileID: 713120683}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22282,7 +22282,7 @@ GameObject:
   - component: {fileID: 742489545}
   - component: {fileID: 742489544}
   - component: {fileID: 742489543}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.052
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23409,7 +23409,7 @@ GameObject:
   - component: {fileID: 796479177}
   - component: {fileID: 796479176}
   - component: {fileID: 796479175}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24243,7 +24243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824819990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11, y: 0.475, z: 0.48}
+  m_LocalPosition: {x: 0, y: 1.34, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 30074162}
@@ -24317,7 +24317,7 @@ MonoBehaviour:
   m_IgnoreTag: 
   m_TransparentLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_MinimumDistanceFromTarget: 0.1
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
@@ -25785,7 +25785,7 @@ GameObject:
   - component: {fileID: 866510576}
   - component: {fileID: 866510575}
   - component: {fileID: 866510574}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27362,7 +27362,7 @@ GameObject:
   - component: {fileID: 912324743}
   - component: {fileID: 912324742}
   - component: {fileID: 912324741}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27728,7 +27728,7 @@ GameObject:
   - component: {fileID: 923828814}
   - component: {fileID: 923828813}
   - component: {fileID: 923828812}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27824,8 +27824,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 928364755}
-  - component: {fileID: 928364754}
-  - component: {fileID: 928364753}
   m_Layer: 0
   m_Name: AimPoint
   m_TagString: Untagged
@@ -27833,55 +27831,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!23 &928364753
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928364752}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &928364754
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928364752}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &928364755
 Transform:
   m_ObjectHideFlags: 0
@@ -29385,7 +29334,7 @@ GameObject:
   - component: {fileID: 982864985}
   - component: {fileID: 982864984}
   - component: {fileID: 982864983}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29598,7 +29547,7 @@ MonoBehaviour:
   m_IgnoreTag: 
   m_TransparentLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4096
   m_MinimumDistanceFromTarget: 0.1
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
@@ -30044,7 +29993,7 @@ GameObject:
   - component: {fileID: 998006713}
   - component: {fileID: 998006712}
   - component: {fileID: 998006711}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30500,7 +30449,7 @@ GameObject:
   - component: {fileID: 1007310671}
   - component: {fileID: 1007310670}
   - component: {fileID: 1007310669}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30597,7 +30546,7 @@ GameObject:
   - component: {fileID: 1007563121}
   - component: {fileID: 1007563120}
   - component: {fileID: 1007563119}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32373,7 +32322,7 @@ GameObject:
   - component: {fileID: 1077407781}
   - component: {fileID: 1077407780}
   - component: {fileID: 1077407779}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32470,7 +32419,7 @@ GameObject:
   - component: {fileID: 1078455804}
   - component: {fileID: 1078455803}
   - component: {fileID: 1078455802}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34250,7 +34199,7 @@ GameObject:
   - component: {fileID: 1136073657}
   - component: {fileID: 1136073656}
   - component: {fileID: 1136073655}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.064
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35179,7 +35128,7 @@ GameObject:
   - component: {fileID: 1184681805}
   - component: {fileID: 1184681804}
   - component: {fileID: 1184681803}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36880,7 +36829,7 @@ GameObject:
   - component: {fileID: 1258798519}
   - component: {fileID: 1258798518}
   - component: {fileID: 1258798517}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36979,7 +36928,7 @@ GameObject:
   - component: {fileID: 1263601192}
   - component: {fileID: 1263601191}
   - component: {fileID: 1263601190}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37076,7 +37025,7 @@ GameObject:
   - component: {fileID: 1268821675}
   - component: {fileID: 1268821674}
   - component: {fileID: 1268821673}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37378,7 +37327,7 @@ GameObject:
   - component: {fileID: 1274985018}
   - component: {fileID: 1274985017}
   - component: {fileID: 1274985016}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37861,7 +37810,7 @@ GameObject:
   - component: {fileID: 1288663828}
   - component: {fileID: 1288663827}
   - component: {fileID: 1288663826}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38372,7 +38321,7 @@ GameObject:
   - component: {fileID: 1311717186}
   - component: {fileID: 1311717185}
   - component: {fileID: 1311717184}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38682,7 +38631,7 @@ GameObject:
   - component: {fileID: 1327442741}
   - component: {fileID: 1327442740}
   - component: {fileID: 1327442739}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39088,7 +39037,7 @@ GameObject:
   - component: {fileID: 1337513904}
   - component: {fileID: 1337513903}
   - component: {fileID: 1337513902}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39989,7 +39938,7 @@ GameObject:
   - component: {fileID: 1380151890}
   - component: {fileID: 1380151889}
   - component: {fileID: 1380151888}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40496,7 +40445,7 @@ GameObject:
   - component: {fileID: 1406841108}
   - component: {fileID: 1406841107}
   - component: {fileID: 1406841106}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41478,7 +41427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1435301968}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41971,7 +41920,7 @@ GameObject:
   - component: {fileID: 1440383119}
   - component: {fileID: 1440383118}
   - component: {fileID: 1440383117}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42273,7 +42222,7 @@ GameObject:
   - component: {fileID: 1448501743}
   - component: {fileID: 1448501742}
   - component: {fileID: 1448501741}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42707,7 +42656,7 @@ GameObject:
   - component: {fileID: 1462244298}
   - component: {fileID: 1462244297}
   - component: {fileID: 1462244296}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43012,7 +42961,7 @@ GameObject:
   - component: {fileID: 1463839968}
   - component: {fileID: 1463839967}
   - component: {fileID: 1463839966}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43125,7 +43074,7 @@ GameObject:
   - component: {fileID: 1477981004}
   - component: {fileID: 1477981003}
   - component: {fileID: 1477981002}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.063
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43320,7 +43269,7 @@ GameObject:
   - component: {fileID: 1479330896}
   - component: {fileID: 1479330895}
   - component: {fileID: 1479330894}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44210,7 +44159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 1.6, z: 0}
+  m_TrackedObjectOffset: {x: 0, y: 1, z: 0}
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 10
   m_LookaheadIgnoreY: 0
@@ -44220,7 +44169,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.27222517
   m_ScreenY: 0.49245596
-  m_CameraDistance: 10.47
+  m_CameraDistance: 5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0.000000027939677
   m_DeadZoneDepth: 0
@@ -44993,7 +44942,7 @@ GameObject:
   - component: {fileID: 1532191549}
   - component: {fileID: 1532191548}
   - component: {fileID: 1532191547}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45482,7 +45431,7 @@ GameObject:
   - component: {fileID: 1540435871}
   - component: {fileID: 1540435870}
   - component: {fileID: 1540435869}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46221,7 +46170,7 @@ GameObject:
   - component: {fileID: 1560271746}
   - component: {fileID: 1560271745}
   - component: {fileID: 1560271744}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.053
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46662,7 +46611,7 @@ GameObject:
   - component: {fileID: 1581310532}
   - component: {fileID: 1581310531}
   - component: {fileID: 1581310530}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48622,7 +48571,7 @@ GameObject:
   - component: {fileID: 1651519339}
   - component: {fileID: 1651519338}
   - component: {fileID: 1651519337}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48969,7 +48918,7 @@ GameObject:
   - component: {fileID: 1658676297}
   - component: {fileID: 1658676296}
   - component: {fileID: 1658676295}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49177,7 +49126,7 @@ GameObject:
   - component: {fileID: 1659700867}
   - component: {fileID: 1659700866}
   - component: {fileID: 1659700865}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49631,7 +49580,7 @@ GameObject:
   - component: {fileID: 1671633570}
   - component: {fileID: 1671633569}
   - component: {fileID: 1671633568}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49878,7 +49827,7 @@ GameObject:
   - component: {fileID: 1683943980}
   - component: {fileID: 1683943979}
   - component: {fileID: 1683943978}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.056
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50551,7 +50500,7 @@ GameObject:
   - component: {fileID: 1711261504}
   - component: {fileID: 1711261503}
   - component: {fileID: 1711261502}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50648,7 +50597,7 @@ GameObject:
   - component: {fileID: 1711643924}
   - component: {fileID: 1711643923}
   - component: {fileID: 1711643922}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51057,7 +51006,7 @@ GameObject:
   - component: {fileID: 1722688213}
   - component: {fileID: 1722688212}
   - component: {fileID: 1722688211}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51154,7 +51103,7 @@ GameObject:
   - component: {fileID: 1723318976}
   - component: {fileID: 1723318975}
   - component: {fileID: 1723318974}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51756,7 +51705,7 @@ GameObject:
   - component: {fileID: 1755577154}
   - component: {fileID: 1755577153}
   - component: {fileID: 1755577152}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52003,7 +51952,7 @@ GameObject:
   - component: {fileID: 1769453337}
   - component: {fileID: 1769453336}
   - component: {fileID: 1769453335}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52609,7 +52558,7 @@ GameObject:
   - component: {fileID: 1787920284}
   - component: {fileID: 1787920283}
   - component: {fileID: 1787920282}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52706,7 +52655,7 @@ GameObject:
   - component: {fileID: 1793587173}
   - component: {fileID: 1793587172}
   - component: {fileID: 1793587171}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53800,7 +53749,7 @@ GameObject:
   - component: {fileID: 1833320866}
   - component: {fileID: 1833320865}
   - component: {fileID: 1833320864}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54049,7 +53998,7 @@ GameObject:
   - component: {fileID: 1837742911}
   - component: {fileID: 1837742910}
   - component: {fileID: 1837742909}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.054
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54604,7 +54553,7 @@ GameObject:
   - component: {fileID: 1843877734}
   - component: {fileID: 1843877733}
   - component: {fileID: 1843877732}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54951,7 +54900,7 @@ GameObject:
   - component: {fileID: 1858411819}
   - component: {fileID: 1858411818}
   - component: {fileID: 1858411817}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.060
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55050,7 +54999,7 @@ GameObject:
   - component: {fileID: 1870935499}
   - component: {fileID: 1870935498}
   - component: {fileID: 1870935497}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55587,7 +55536,7 @@ GameObject:
   - component: {fileID: 1890785149}
   - component: {fileID: 1890785148}
   - component: {fileID: 1890785147}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56119,7 +56068,7 @@ GameObject:
   - component: {fileID: 1916321667}
   - component: {fileID: 1916321666}
   - component: {fileID: 1916321665}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56218,7 +56167,7 @@ GameObject:
   - component: {fileID: 1918777731}
   - component: {fileID: 1918777730}
   - component: {fileID: 1918777729}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.057
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56392,7 +56341,7 @@ GameObject:
   - component: {fileID: 1923483638}
   - component: {fileID: 1923483637}
   - component: {fileID: 1923483636}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.058
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56606,7 +56555,7 @@ GameObject:
   - component: {fileID: 1925597933}
   - component: {fileID: 1925597932}
   - component: {fileID: 1925597931}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56816,7 +56765,7 @@ GameObject:
   - component: {fileID: 1932325009}
   - component: {fileID: 1932325008}
   - component: {fileID: 1932325007}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56915,7 +56864,7 @@ GameObject:
   - component: {fileID: 1932908831}
   - component: {fileID: 1932908830}
   - component: {fileID: 1932908829}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57751,7 +57700,7 @@ GameObject:
   - component: {fileID: 2003776227}
   - component: {fileID: 2003776226}
   - component: {fileID: 2003776225}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57850,7 +57799,7 @@ GameObject:
   - component: {fileID: 2006816393}
   - component: {fileID: 2006816392}
   - component: {fileID: 2006816391}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.055
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57949,7 +57898,7 @@ GameObject:
   - component: {fileID: 2008019942}
   - component: {fileID: 2008019941}
   - component: {fileID: 2008019940}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58455,7 +58404,7 @@ GameObject:
   - component: {fileID: 2031236203}
   - component: {fileID: 2031236202}
   - component: {fileID: 2031236201}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59911,7 +59860,7 @@ GameObject:
   - component: {fileID: 2077502545}
   - component: {fileID: 2077502544}
   - component: {fileID: 2077502543}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60425,7 +60374,7 @@ GameObject:
   - component: {fileID: 2079576154}
   - component: {fileID: 2079576153}
   - component: {fileID: 2079576152}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60637,7 +60586,7 @@ GameObject:
   - component: {fileID: 2099521815}
   - component: {fileID: 2099521814}
   - component: {fileID: 2099521813}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: TallTree.062
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61390,7 +61339,7 @@ GameObject:
   - component: {fileID: 2119538742}
   - component: {fileID: 2119538741}
   - component: {fileID: 2119538740}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tree.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
