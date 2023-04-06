@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-//npcState == 1 去找player 第一次對話
+//npcState == 1 對話 去找player
 //npcState == 2 帶玩家走到鹿群旁邊
-//npcState == 3 叫玩家選一隻鹿
+//npcState == 3 對話 叫玩家選一隻鹿
 //npcState == 4 玩家選鹿
-//npcState == 5 靈魂進入鹿
+//npcState == 5 對話
+//npcState == 6 靈魂進入鹿
 public class level6Manager : DialogueTrigger
 {
     public Conversation convo1;
@@ -32,7 +33,7 @@ public class level6Manager : DialogueTrigger
         level6UI.SetActive(false);
         firstTarget = GameObject.Find("Player").transform;
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
-        player.MoveToTarget(new Vector3(17f, -9.4f, 13.7f), new Vector3(0, 180, 0));
+        player.MoveToTarget(new Vector3(-36, 10, 61), new Vector3(0, 180, 0));
     }
 
     private void Update()
@@ -71,6 +72,19 @@ public class level6Manager : DialogueTrigger
                 StartConvo();
             }
         }
+
+        if (npcState == 6)
+        {
+            ChaseTarget(chooseDeer.transform.position, 50);
+            float distance = (
+                gameObject.transform.position - chooseDeer.transform.position
+            ).magnitude;
+            if (distance <= 0.1f)
+            {
+                navMeshAgent.speed = 0;
+                npcState = 7;
+            }
+        }
     }
 
     public override void StartConvo()
@@ -96,9 +110,9 @@ public class level6Manager : DialogueTrigger
         DialogueManager.StartConversation(convo);
     }
 
-    private void ChaseTarget(Vector3 target = default(Vector3))
+    private void ChaseTarget(Vector3 target = default(Vector3), int speed = -1)
     {
-        navMeshAgent.speed = 5;
+        navMeshAgent.speed = speed == -1 ? 5 : speed;
         navMeshAgent.destination = target;
     }
 

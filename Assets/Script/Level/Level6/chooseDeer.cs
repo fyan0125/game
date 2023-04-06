@@ -11,7 +11,11 @@ public class chooseDeer : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<Collider>().CompareTag("Player") && Input.GetButtonDown("Skill"))
+        if (
+            level6Manager.npcState <= 4
+            && other.GetComponent<Collider>().CompareTag("Player")
+            && Input.GetButtonDown("Skill")
+        )
         {
             level6Manager.ShowUI(gameObject);
         }
