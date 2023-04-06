@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,7 +7,6 @@ public class chicken : MonoBehaviour
     private GameObject level4Manager;
 
     private NavMeshAgent navMeshAgent;
-    public LayerMask whatIsGround;
     public Transform target;
     public float nearTarget;
     private bool isNearTarget;
