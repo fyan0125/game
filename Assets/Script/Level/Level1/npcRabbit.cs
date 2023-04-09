@@ -22,7 +22,7 @@ public class npcRabbit : DialogueTrigger
         skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
     }
 
-    private void Start()
+    public override void Start()
     {
         base.Start();
         notificationTrigger.Notice("靠近神使時，使用R鍵可開啟對話。");

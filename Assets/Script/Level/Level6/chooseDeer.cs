@@ -3,6 +3,7 @@ using UnityEngine;
 public class chooseDeer : MonoBehaviour
 {
     private level6Manager level6Manager;
+    public GameObject deerPrefab;
 
     private void Start()
     {
@@ -19,5 +20,21 @@ public class chooseDeer : MonoBehaviour
         {
             level6Manager.ShowUI(gameObject);
         }
+    }
+
+    public void Choose()
+    {
+        Debug.Log("玩家選擇的鹿: " + gameObject);
+        GameObject deer = Instantiate(deerPrefab);
+        deer.transform.parent = GameObject.Find("Player/Deer").transform;
+        deer.transform.position = GameObject
+            .Find("Player")
+            .transform.GetChild(0)
+            .transform.position;
+        deer.transform.rotation = GameObject
+            .Find("Player")
+            .transform.GetChild(0)
+            .transform.rotation;
+        Destroy(gameObject);
     }
 }

@@ -12,6 +12,8 @@ public class attendantManager : MonoBehaviour
     public GameObject wolf;
     public GameObject foxArea;
     public GameObject fox;
+    public GameObject deerArea;
+    private GameObject deer;
     private GameObject followPlayer;
 
     private void Start()
@@ -19,6 +21,17 @@ public class attendantManager : MonoBehaviour
         chooseBT.onClick.AddListener(ChangeAttendant);
         followPlayer = GameObject.Find("Following");
         followPlayer.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (!deer)
+        {
+            if (GameObject.Find("Player/Deer").transform.childCount > 0)
+            {
+                deer = GameObject.Find("Player/Deer").transform.GetChild(0).gameObject;
+            }
+        }
     }
 
     public void ChangeAttendant()
@@ -29,6 +42,8 @@ public class attendantManager : MonoBehaviour
             rabbit.SetActive(true);
             wolf.SetActive(false);
             fox.SetActive(false);
+            if (deer)
+                deer.SetActive(false);
             followPlayer.SetActive(true);
         }
         else if (wolfArea.activeSelf)
@@ -37,6 +52,8 @@ public class attendantManager : MonoBehaviour
             rabbit.SetActive(false);
             wolf.SetActive(true);
             fox.SetActive(false);
+            if (deer)
+                deer.SetActive(false);
             followPlayer.SetActive(true);
         }
         else if (foxArea.activeSelf)
@@ -45,7 +62,19 @@ public class attendantManager : MonoBehaviour
             rabbit.SetActive(false);
             wolf.SetActive(false);
             fox.SetActive(true);
+            if (deer)
+                deer.SetActive(false);
             followPlayer.SetActive(true);
+        }
+        else if (deerArea.activeSelf)
+        {
+            Debug.Log("deer");
+            rabbit.SetActive(false);
+            wolf.SetActive(false);
+            fox.SetActive(false);
+            if (deer)
+                deer.SetActive(true);
+            followPlayer.SetActive(false);
         }
         else
         {

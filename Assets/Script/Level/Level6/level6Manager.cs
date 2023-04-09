@@ -5,8 +5,7 @@ using UnityEngine.AI;
 //npcState == 2 帶玩家走到鹿群旁邊
 //npcState == 3 對話 叫玩家選一隻鹿
 //npcState == 4 玩家選鹿
-//npcState == 5 對話
-//npcState == 6 靈魂進入鹿
+//npcState == 5 對話 玩家騎上鹿
 public class level6Manager : DialogueTrigger
 {
     public Conversation convo1;
@@ -14,6 +13,7 @@ public class level6Manager : DialogueTrigger
     public Conversation convo3;
 
     private ThirdPersonChar player;
+    private SkillUI skillUI;
     private NavMeshAgent navMeshAgent;
 
     private Transform firstTarget;
@@ -24,16 +24,30 @@ public class level6Manager : DialogueTrigger
 
     private GameObject level6UI;
     public GameObject chooseDeer;
+    private bool getReward = false;
+
+    private Animator anim;
 
     public override void Start()
     {
+        base.Start();
         SwitchSkills.getSkill = 4;
         navMeshAgent = GetComponent<NavMeshAgent>();
         level6UI = GameObject.Find("Level6UI");
-        level6UI.SetActive(false);
+        if (level6UI != null)
+        {
+            level6UI.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("can't find level 6 UI");
+        }
+
         firstTarget = GameObject.Find("Player").transform;
+        skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         player.MoveToTarget(new Vector3(-36, 10, 61), new Vector3(0, 180, 0));
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -73,17 +87,16 @@ public class level6Manager : DialogueTrigger
             }
         }
 
-        if (npcState == 6)
+        if (npcState >= 5 && getReward == false)
         {
-            ChaseTarget(chooseDeer.transform.position, 50);
-            float distance = (
-                gameObject.transform.position - chooseDeer.transform.position
-            ).magnitude;
-            if (distance <= 0.1f)
-            {
-                navMeshAgent.speed = 0;
-                npcState = 7;
-            }
+            NpcReward.GetReward();
+            npcState++;
+            getReward = true;
+        }
+
+        if (anim != null)
+        {
+            anim.SetFloat("Speed", navMeshAgent.speed);
         }
     }
 
@@ -110,9 +123,9 @@ public class level6Manager : DialogueTrigger
         DialogueManager.StartConversation(convo);
     }
 
-    private void ChaseTarget(Vector3 target = default(Vector3), int speed = -1)
+    private void ChaseTarget(Vector3 target = default(Vector3))
     {
-        navMeshAgent.speed = speed == -1 ? 5 : speed;
+        navMeshAgent.speed = 8;
         navMeshAgent.destination = target;
     }
 
@@ -131,9 +144,16 @@ public class level6Manager : DialogueTrigger
 
     public void ConfirmDeer()
     {
-        Debug.Log("玩家選擇的鹿: " + chooseDeer);
         DisableUI(true);
         npcState = 5;
+        chooseDeer.GetComponent<chooseDeer>().Choose();
+        Destroy(gameObject.transform.GetChild(0).gameObject);
         StartConvo();
+        skillUI.ClearLevel(6);
+    }
+
+    private void Animation()
+    {
+        Debug.Log(navMeshAgent.speed);
     }
 }
