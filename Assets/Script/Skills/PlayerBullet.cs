@@ -27,6 +27,10 @@ public class PlayerBullet : MonoBehaviour
         {
             other.GetComponent<EnemyStats>().TakeDamage(baseDamage + playerStats.damage.GetValue());
         }
-        Destroy(gameObject);
+        if (!other.GetComponent<Collider>().CompareTag("Player"))
+        {
+            Debug.Log("子彈碰到" + other + " destroy");
+            Destroy(gameObject);
+        }
     }
 }

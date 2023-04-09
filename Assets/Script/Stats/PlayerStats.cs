@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class PlayerStats : CharactorStats
 {
     public HealthBar healthBar;
@@ -12,7 +8,7 @@ public class PlayerStats : CharactorStats
         GemManager.instance.onGemChanged += OnGemChanged;
     }
 
-    public override void TakeDamage(int damage)//受到傷害
+    public override void TakeDamage(int damage) //受到傷害
     {
         base.TakeDamage(damage);
         healthBar.SetHealth(currentHealth);

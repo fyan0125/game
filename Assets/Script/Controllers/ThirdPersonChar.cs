@@ -22,7 +22,6 @@ public class ThirdPersonChar : MonoBehaviour
     public LayerMask groundLayers; //What layers the character uses as ground
 
     // player
-    private float speed;
     private float animationBlend;
     private float targetRotation = 0.0f;
     private float jumpHeight = 1.2f;
@@ -175,6 +174,11 @@ public class ThirdPersonChar : MonoBehaviour
             animationBlend = 0f;
 
         anim.SetFloat(animIDSpeed, animationBlend);
+
+        if (Deer.deerActive)
+        {
+            Deer.ChangeDeerSpeed(targetSpeed);
+        }
     }
 
     private void JumpAndGravity()

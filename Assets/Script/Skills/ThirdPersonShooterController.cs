@@ -5,6 +5,8 @@ using Cinemachine;
 
 public class ThirdPersonShooterController : MonoBehaviour
 {
+    public GameObject weapon;
+
     [SerializeField]
     private LayerMask aimColliderLayerMask = new LayerMask();
 
@@ -19,9 +21,11 @@ public class ThirdPersonShooterController : MonoBehaviour
     private bool boosted = false;
     private ThirdPersonChar thirdPersonChar;
     private SwitchSkills switchSkills;
+    private Animator anim;
 
     private void Start()
     {
+        anim = GetComponentInChildren<Animator>();
         thirdPersonChar = GetComponent<ThirdPersonChar>();
         switchSkills = GetComponent<SwitchSkills>();
     }
@@ -60,9 +64,11 @@ public class ThirdPersonShooterController : MonoBehaviour
 
         if (switchSkills.currentSkill == 3)
         {
+            weapon.SetActive(true);
             debugTransform.SetActive(true);
             if (Input.GetButtonDown("Skill"))
             {
+                anim.SetTrigger("Shoot");
                 Vector3 aimDir = (mouseWorldPosition - spawnBulletPosition.position).normalized;
                 Instantiate(
                     ofBulletProjectile,
@@ -73,6 +79,7 @@ public class ThirdPersonShooterController : MonoBehaviour
         }
         else
         {
+            weapon.SetActive(false);
             debugTransform.SetActive(false);
         }
     }

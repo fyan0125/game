@@ -26,7 +26,6 @@ public class MeleeController : MonoBehaviour
         }
         else
         {
-            anim.SetInteger("currentSkill", 0);
             if (weapon.activeSelf == true)
                 weapon.SetActive(false);
         }
