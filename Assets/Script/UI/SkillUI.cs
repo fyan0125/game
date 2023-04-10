@@ -14,6 +14,11 @@ public class SkillUI : MonoBehaviour
     public GameObject CraneSkillUI;
     public GameObject CraneSkillIcon;
 
+    private Color RabbitSkillUIColor;
+    private Color WolfSkillUIColor;
+    private Color ChickenSkillUIColor;
+    private Color CraneSkillUIColor;
+
     [Header("背包互動")]
     public Button rabbitbtn;
     public GameObject rabbitIconHover;
@@ -62,10 +67,22 @@ public class SkillUI : MonoBehaviour
         WolfUIOrgin = WolfSkillUI.transform.position;
         ChickenUIOrgin = ChickenSkillUI.transform.position;
         CraneUIOrgin = CraneSkillUI.transform.position;
+        RabbitSkillUIColor = RabbitSkillUI.GetComponent<Image>().color;
+        WolfSkillUIColor = WolfSkillUI.GetComponent<Image>().color;
+        ChickenSkillUIColor = ChickenSkillUI.GetComponent<Image>().color;
+        CraneSkillUIColor = CraneSkillUI.GetComponent<Image>().color;
     }
 
     private void Update()
     {
+        if (SwitchSkills.getSkill == 0)
+        {
+            RabbitSkillUI.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
+            WolfSkillUI.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
+            ChickenSkillUI.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
+            CraneSkillUI.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
+        }
+
         if (RabbitSkillUI && RabbitSkillIcon && SwitchSkills.getSkill >= 1)
         {
             RabbitSkillIcon.SetActive(true);
@@ -82,26 +99,6 @@ public class SkillUI : MonoBehaviour
         {
             ChickenSkillIcon.SetActive(true);
             ChickenSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-        }
-
-        if (SceneManager.GetActiveScene().buildIndex == 4)
-        {
-            if (SwitchSkills.getSkill == 0)
-            {
-                if (RabbitSkillIcon.activeSelf == false)
-                {
-                    RabbitSkillIcon.SetActive(true);
-                }
-                if (WolfSkillIcon.activeSelf == false)
-                {
-                    WolfSkillIcon.SetActive(true);
-                }
-            }
-            else
-            {
-                RabbitSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-                WolfSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-            }
         }
     }
 
