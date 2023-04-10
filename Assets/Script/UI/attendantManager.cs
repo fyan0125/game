@@ -12,8 +12,11 @@ public class attendantManager : MonoBehaviour
     public GameObject wolf;
     public GameObject foxArea;
     public GameObject fox;
+    public GameObject chickenArea;
+    public GameObject craneArea;
     public GameObject deerArea;
     private GameObject deer;
+    public GameObject crowArea;
     private GameObject followPlayer;
 
     private void Start()

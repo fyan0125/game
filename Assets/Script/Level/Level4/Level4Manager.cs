@@ -5,9 +5,9 @@ using TMPro;
 
 public class Level4Manager : MonoBehaviour
 {
-    private GameObject BillBoardUI;
-    private GameObject FailUI;
-    private TextMeshProUGUI message;
+    public GameObject BillBoardUI;
+    public GameObject FailUI;
+    public TextMeshProUGUI message;
 
     public GameObject chickenPrefab;
     public int generateChickenNum;
@@ -23,12 +23,11 @@ public class Level4Manager : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log("start");
-        BillBoardUI = GameObject.Find("/ObjectToNextLevel/Canvas/Level4UI/BillBoardUI");
-        FailUI = GameObject.Find("/ObjectToNextLevel/Canvas/Level4UI/FailUI");
-        message = GameObject
-            .Find("/ObjectToNextLevel/Canvas/Level4UI/GameUI/Message")
-            .GetComponent<TextMeshProUGUI>();
+        // BillBoardUI = GameObject.Find("/ObjectToNextLevel/Canvas/Level4UI/BillBoardUI");
+        // FailUI = GameObject.Find("/ObjectToNextLevel/Canvas/Level4UI/FailUI");
+        // message = GameObject
+        //     .Find("/ObjectToNextLevel/Canvas/Level4UI/GameUI/Message")
+        //     .GetComponent<TextMeshProUGUI>();
         SetUpButton();
 
         BillBoardUI.SetActive(false);

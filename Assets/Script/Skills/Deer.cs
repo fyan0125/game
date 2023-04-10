@@ -24,6 +24,15 @@ public class Deer : MonoBehaviour
             {
                 anim = GetComponentInChildren<Animator>();
             }
+            if (deerActive)
+            {
+                getSkill = SwitchSkills.getSkill;
+                SwitchSkills.getSkill = 0;
+            }
+            else
+            {
+                SwitchSkills.getSkill = getSkill;
+            }
         }
 
         // 水加上collider
@@ -35,15 +44,6 @@ public class Deer : MonoBehaviour
         // 鹿行走、跑步動畫
         if (anim)
             anim.SetFloat("Speed", speed);
-
-        if (deerActive)
-        {
-            SwitchSkills.getSkill = 0;
-        }
-        else
-        {
-            SwitchSkills.getSkill = getSkill;
-        }
     }
 
     public static void ChangeDeerSpeed(float s)
