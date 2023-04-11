@@ -7,8 +7,8 @@ public class npcFollowing : MonoBehaviour
     public Transform player;
     private Animator anim;
     public LayerMask whatIsPlayer;
-    public float sightRange;
-    public bool playerInSightRange;
+    public float sightRange, npcDistance = 10;
+    public bool playerInSightRange, playerWithNpcDistance;
     Transform target;
     public UnityEngine.AI.NavMeshAgent agent;
     // Start is called before the first frame update
@@ -16,7 +16,7 @@ public class npcFollowing : MonoBehaviour
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
-        player =  GameObject.Find("Player").transform;
+        player = GameObject.Find("Player").transform;
         target = player.transform;
         
     }
@@ -26,6 +26,7 @@ public class npcFollowing : MonoBehaviour
     {
         //Following Player
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
+        playerWithNpcDistance = Physics.CheckSphere(transform.position, npcDistance, whatIsPlayer);
         if (!playerInSightRange)
         {
             playerFollow();
@@ -35,7 +36,7 @@ public class npcFollowing : MonoBehaviour
         {
             anim.SetBool("isWalking", false);
         }
-        
+        detectDistance();
     }
     public void playerFollow()
     {
@@ -52,6 +53,12 @@ public class npcFollowing : MonoBehaviour
         else if(target.rotation.y < 90 && target.rotation.y > 0){
             agent.destination = new Vector3(target.position.x+2, target.position.y, target.position.z-2);
         }//第三象限
+    }
+    public void detectDistance(){
+        if (!playerInSightRange)
+        {
+            this.transform.position = new Vector3(target.position.x-2, target.position.y, target.position.z-2);
+        }
     }
 }
 
