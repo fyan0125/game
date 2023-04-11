@@ -22,10 +22,20 @@ public class npcCrane : DialogueTrigger
     private bool resetGame = false;
     public float timee;
 
+    private SkillUI skillUI;
+    private ThirdPersonChar player;
+
+    public override void Start()
+    {
+        base.Start();
+        player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
+        player.MoveToTarget(new Vector3(8.12f, 4.4f, -10.534f), new Vector3(0, 90, 0));
+    }
     private void Awake()
     {
         base.Start();
         sP = SendPoint.GetComponent<showPortal>();
+        skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         Level5Manager = GameObject.Find("Level5Manager").GetComponent<level5Manager>();
         timee = Timer.time;
@@ -59,6 +69,7 @@ public class npcCrane : DialogueTrigger
         }
         if (npcState == 5 && DialogueManager.EndConversation())
         {
+            skillUI.ClearLevel(5);
             cranebtn.interactable = true;
             craneIcon.SetActive(false);
             memorybtn.interactable = true;
