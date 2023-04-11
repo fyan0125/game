@@ -132,6 +132,7 @@ public class level6Manager : DialogueTrigger
     public void ShowUI(GameObject deer)
     {
         level6UI.SetActive(true);
+        Cursor.visible = true;
         chooseDeer = deer;
     }
 
@@ -139,6 +140,7 @@ public class level6Manager : DialogueTrigger
     public void DisableUI(bool finished = false)
     {
         level6UI.SetActive(false);
+        Cursor.visible = false;
         chooseDeer = finished ? chooseDeer : null;
     }
 
