@@ -54,14 +54,16 @@ public class chooseDeer : MonoBehaviour
     public void Choose()
     {
         Debug.Log("玩家選擇的鹿: " + gameObject);
-        GameObject deer = Instantiate(deerPrefab);
-        deer.transform.parent = GameObject.Find("Player/Deer").transform;
-        Vector3 playerPosition = GameObject.Find("Player").transform.GetChild(0).transform.position;
-        deer.transform.position = new Vector3(
-            playerPosition.x,
-            playerPosition.y - 0.1f,
-            playerPosition.z
+        GameObject deer = Instantiate(
+            deerPrefab,
+            new Vector3(0, 0, 0),
+            Quaternion.identity,
+            GameObject.Find("Player/Deer").transform
         );
+        deer.transform.localPosition = GameObject
+            .Find("Player")
+            .transform.GetChild(0)
+            .transform.position;
         deer.transform.rotation = GameObject
             .Find("Player")
             .transform.GetChild(0)
