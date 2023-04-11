@@ -13,7 +13,6 @@ public class Deer : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         waters = GameObject.FindGameObjectsWithTag("Water");
         getSkill = SwitchSkills.getSkill;
-        anim.SetFloat("IdleAnimation", 1);
     }
 
     private void Update()
@@ -24,6 +23,7 @@ public class Deer : MonoBehaviour
             if (!anim)
             {
                 anim = GetComponentInChildren<Animator>();
+                anim.SetFloat("IdleAnimation", 1);
             }
             if (deerActive)
             {
