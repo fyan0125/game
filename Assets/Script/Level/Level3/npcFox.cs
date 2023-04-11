@@ -21,7 +21,7 @@ public class npcFox : DialogueTrigger
 
     private ThirdPersonChar player;
 
-    private void Start()
+    public override void Start()
     {
         base.Start();
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();

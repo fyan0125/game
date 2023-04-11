@@ -13,7 +13,7 @@ public class npcWolf : DialogueTrigger
 
     private SkillUI skillUI;
 
-    private void Start()
+    public override void Start()
     {
         base.Start();
         SwitchSkills.getSkill = 1;

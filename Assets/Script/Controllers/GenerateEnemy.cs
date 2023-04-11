@@ -5,7 +5,6 @@ using UnityEngine;
 public class GenerateEnemy : MonoBehaviour
 {
     public GameObject[] theEnemy;
-    public GameObject portal;
     public int xPos;
     public int zPos;
     public int yPos;

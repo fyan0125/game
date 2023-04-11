@@ -8,11 +8,15 @@ public class UserUI : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject packageUI;
     public GameObject settingUI;
+    public GameObject mapUI;
     public Transform itemsParent;
 
     private void Awake()
     {
+        mapUI = GameObject.Find("Map");
         packageUI.SetActive(false);
+        settingUI.SetActive(false);
+        mapUI.SetActive(false);
     }
 
     void Update()
@@ -21,15 +25,29 @@ public class UserUI : MonoBehaviour
         {
             packageUI.SetActive(!packageUI.activeSelf);
 
-            if (GameIsPaused) Resume();
-            else Pause();
+            if (GameIsPaused)
+                Resume();
+            else
+                Pause();
         }
         if (Input.GetButtonDown("Pause"))
         {
             settingUI.SetActive(!settingUI.activeSelf);
 
-            if (GameIsPaused) Resume();
-            else Pause();
+            if (GameIsPaused)
+                Resume();
+            else
+                Pause();
+        }
+
+        if (Input.GetButtonDown("Map"))
+        {
+            mapUI.SetActive(!mapUI.activeSelf);
+
+            if (GameIsPaused)
+                Resume();
+            else
+                Pause();
         }
     }
 
