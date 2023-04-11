@@ -20,6 +20,7 @@ public class chooseDeer : MonoBehaviour
         anim = GetComponent<Animator>();
         level6Manager = GameObject.Find("Level6Manager").GetComponent<level6Manager>();
         SetNextDestination();
+        anim.SetFloat("IdleAnimation", 1);
     }
 
     private void Update()
