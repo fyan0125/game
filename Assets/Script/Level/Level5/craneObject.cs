@@ -71,9 +71,16 @@ public class craneObject : CharactorStats
         //Add ragdoll affect / death animation
 
         //For level 3
-        NotificationManager.instance.count++;
-        NotificationManager.instance.UpdateCount();
-        Level5Manager.GameComplete();
+        if (Level5Manager.i==0 || Level5Manager.i ==1)
+        {
+            Level5Manager.MissionComplete();
+            Debug.Log(Level5Manager.npcCrane.npcState);
+        }
+        else{
+            NotificationManager.instance.count++;
+            NotificationManager.instance.UpdateCount();
+            Level5Manager.GameComplete();
+        }
 
         Destroy(gameObject);
     }

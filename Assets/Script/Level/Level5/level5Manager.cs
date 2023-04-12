@@ -6,8 +6,7 @@ using TMPro;
 
 public class level5Manager : MonoBehaviour
 {
-    public GameObject GameUI;
-    public GameObject Crane;
+    public GameObject GameUI, Crane, assetToHide;
     public npcCrane npcCrane;
     public float time = 90;
 
@@ -19,12 +18,11 @@ public class level5Manager : MonoBehaviour
 
     public Material newMaterialRef;
 
-    public GameObject assetToHide;
-    public Transform targetObject;
+    public Transform[] targetObject = new Transform[3];
     public LayerMask npcLayer;
     public float sightRange;
     public bool targetObjectInSightRange;
-    int childCount;
+    public int childCount, i = 0;
     public PostProcessProfile postProcessProfile;
 
     private void Start()
@@ -33,6 +31,7 @@ public class level5Manager : MonoBehaviour
         SwitchSkills.getSkill = 2;
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         Crane = GameObject.Find("NPC");
+        GameUI = GameObject.Find("Level5UI").transform.GetChild(0).gameObject;
         npcCrane = Crane.GetComponent<npcCrane>();
         craneAnim = Crane.transform.GetChild(1).gameObject.GetComponent<Animator>();
 
@@ -42,10 +41,10 @@ public class level5Manager : MonoBehaviour
 
     private void Update()
     {
-        if (targetObject != null)
+        if (targetObject[i] != null)
         {
             targetObjectInSightRange = Physics.CheckSphere(
-                targetObject.position,
+                targetObject[i].position,
                 sightRange,
                 npcLayer
             );
@@ -54,13 +53,18 @@ public class level5Manager : MonoBehaviour
                 Crane.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
+        else{
+
+        }
     }
 
     public void GameStart()
     {
         Resume();
+        changeMaterial();
         GameUI.SetActive(true);
-        if (targetObject != null)
+        Crane.transform.GetChild(1).gameObject.SetActive(true);
+        if (targetObject[i] != null)
         {
             runToTarget();
         }
@@ -69,21 +73,26 @@ public class level5Manager : MonoBehaviour
     public void turnIntoObject()
     {
         assetToHide = GameObject.Find("Assets");
-        childCount = assetToHide.transform.childCount;
-        targetObject = assetToHide.transform
-            .GetChild(Random.Range(0, childCount))
-            .gameObject.transform;
-        targetObject.transform.parent = gameObject.transform;
-        targetObject.gameObject.AddComponent<craneObject>();
-        targetObject.gameObject.tag = "HiddingObject";
+        for(int j=0; j<3; j++){
+            childCount = assetToHide.transform.childCount;
+            targetObject[j] = assetToHide.transform
+                .GetChild(Random.Range(0, childCount))
+                .gameObject.transform;
+            targetObject[j].transform.parent = gameObject.transform;
+            targetObject[j].gameObject.AddComponent<craneObject>();
+            targetObject[j].gameObject.tag = "HiddingObject";
+            craneObject = targetObject[j].GetComponent<craneObject>();
+        }
 
-        targetObject.gameObject.layer = 11;
-        targetObject.gameObject.GetComponent<Renderer>().material = newMaterialRef;
-        targetObject.gameObject.AddComponent<PostProcessVolume>();
-        targetObject.gameObject.GetComponent<PostProcessVolume>().profile = postProcessProfile;
-
-        craneObject = targetObject.GetComponent<craneObject>();
         craneAnim.SetBool("isWalking", false);
+    }
+
+    private void changeMaterial()
+    {
+        targetObject[i].gameObject.layer = 11;
+        targetObject[i].gameObject.GetComponent<Renderer>().material = newMaterialRef;
+        targetObject[i].gameObject.AddComponent<PostProcessVolume>();
+        targetObject[i].gameObject.GetComponent<PostProcessVolume>().profile = postProcessProfile;
     }
 
     public static void Resume()
@@ -98,12 +107,19 @@ public class level5Manager : MonoBehaviour
         Cursor.visible = true;
     }
 
+    public void MissionComplete()
+    {
+        Debug.Log("Mission Complete");
+        npcCrane.missionComplete = true;
+        Timer.setTimeToPause();
+        GameUI.SetActive(false);
+    }
+
     public void GameComplete()
     {
         Debug.Log("Level5 Complete");
         Timer.setTimeToPause();
         GameUI.SetActive(false);
-        //Crane.transform.position = new Vector3(20, 3, -10);
         npcCrane.agent.destination = new Vector3(20, 3, -10);
         Crane.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
@@ -124,7 +140,7 @@ public class level5Manager : MonoBehaviour
     public void runToTarget()
     {
         npcCrane.agent.speed = 7;
-        npcCrane.agent.destination = targetObject.position;
+        npcCrane.agent.destination = targetObject[i].position;
         craneAnim.SetBool("isWalking", true);
     }
 }
