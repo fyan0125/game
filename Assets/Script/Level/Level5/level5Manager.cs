@@ -110,6 +110,7 @@ public class level5Manager : MonoBehaviour
     public void MissionComplete()
     {
         Debug.Log("Mission Complete");
+        npcCrane.npcState = 6;
         npcCrane.missionComplete = true;
         Timer.setTimeToPause();
         GameUI.SetActive(false);
@@ -121,7 +122,7 @@ public class level5Manager : MonoBehaviour
         Timer.setTimeToPause();
         GameUI.SetActive(false);
         npcCrane.agent.destination = new Vector3(20, 3, -10);
-        Crane.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
+        //Crane.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
         SwitchSkills.getSkill = 3;
         npcCrane.gameComplete = true;

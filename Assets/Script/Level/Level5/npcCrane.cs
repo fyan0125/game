@@ -59,11 +59,10 @@ public class npcCrane : DialogueTrigger
             Timer.setTimeToDisplay();
         }
         if(missionComplete){//分次任務完成
-            npcState = 2;
+            StartConvo();
             Timer.timeRemaining = Timer.time;
             Level5Manager.i +=1 ;
             missionComplete = false;
-            //StartConvo();
         }
         if(gameComplete){
             npcState = 4;
@@ -106,14 +105,14 @@ public class npcCrane : DialogueTrigger
                 convo = convo1;
                 npcState += 1;
                 break;
+            case 6:
+                convo = convo2;
+                npcState = 2;
+                break;
             case 4:
                 convo = convo3;
                 npcState += 1;
                 break;
-            // case 6:
-            //     convo = convo2;
-            //     npcState = 2;
-            //     break;
             default:
                 convo = convo1;
                 break;

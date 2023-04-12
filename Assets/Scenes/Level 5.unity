@@ -27596,7 +27596,6 @@ GameObject:
   - component: {fileID: 927701732}
   - component: {fileID: 927701736}
   - component: {fileID: 927701735}
-  - component: {fileID: 927701734}
   - component: {fileID: 927701733}
   m_Layer: 0
   m_Name: Following
@@ -27642,28 +27641,6 @@ MonoBehaviour:
   gameManager: {fileID: 438547060}
   player: {fileID: 1611886964}
   choosed: 00000000000000
---- !u!195 &927701734
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 927701731}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.3
-  m_Speed: 4
-  m_Acceleration: 12
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!136 &927701735
 CapsuleCollider:
   m_ObjectHideFlags: 0
