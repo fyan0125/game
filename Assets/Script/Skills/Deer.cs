@@ -6,7 +6,7 @@ public class Deer : MonoBehaviour
     private GameObject[] waters;
     private Animator anim;
     public static float speed;
-    public int getSkill;
+    private int getSkill;
 
     private void Start()
     {
@@ -20,9 +20,21 @@ public class Deer : MonoBehaviour
         if (gameObject.transform.childCount >= 1)
         {
             deerActive = gameObject.transform.GetChild(0).gameObject.activeSelf;
+            Vector3 deerPosition = gameObject.transform
+                .GetChild(0)
+                .gameObject.transform.localPosition;
+            if (deerPosition != new Vector3(0, -1.2f, 0))
+            {
+                gameObject.transform.GetChild(0).gameObject.transform.localPosition = new Vector3(
+                    0,
+                    -1.2f,
+                    0
+                );
+            }
             if (!anim)
             {
                 anim = GetComponentInChildren<Animator>();
+                anim.SetFloat("IdleAnimation", 1);
             }
             if (deerActive)
             {

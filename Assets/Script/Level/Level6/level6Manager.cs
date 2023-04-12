@@ -48,6 +48,7 @@ public class level6Manager : DialogueTrigger
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         player.MoveToTarget(new Vector3(-36, 10, 61), new Vector3(0, 180, 0));
         anim = GetComponentInChildren<Animator>();
+        anim.SetFloat("IdleAnimation", 1);
     }
 
     private void Update()
@@ -132,6 +133,7 @@ public class level6Manager : DialogueTrigger
     public void ShowUI(GameObject deer)
     {
         level6UI.SetActive(true);
+        Cursor.visible = true;
         chooseDeer = deer;
     }
 
@@ -139,6 +141,7 @@ public class level6Manager : DialogueTrigger
     public void DisableUI(bool finished = false)
     {
         level6UI.SetActive(false);
+        Cursor.visible = false;
         chooseDeer = finished ? chooseDeer : null;
     }
 
@@ -150,10 +153,5 @@ public class level6Manager : DialogueTrigger
         Destroy(gameObject.transform.GetChild(0).gameObject);
         StartConvo();
         skillUI.ClearLevel(6);
-    }
-
-    private void Animation()
-    {
-        Debug.Log(navMeshAgent.speed);
     }
 }

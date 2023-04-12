@@ -19,6 +19,7 @@ public class PlayerBullet : MonoBehaviour
     {
         float speed = 50f;
         bulletRigidbody.velocity = transform.forward * speed;
+        Crow();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,5 +33,10 @@ public class PlayerBullet : MonoBehaviour
             Debug.Log("子彈碰到" + other + " destroy");
             Destroy(gameObject);
         }
+    }
+
+    private void Crow()
+    {
+        gameObject.GetComponent<AudioSource>().Play();
     }
 }
