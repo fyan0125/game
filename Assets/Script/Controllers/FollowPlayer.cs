@@ -24,14 +24,20 @@ public class FollowPlayer : MonoBehaviour
         aM = gameManager.GetComponent<attendantManager>();
     }
 
+    void Awake() 
+    {
+        this.transform.position = new Vector3(0,0,0);
+    }
+
     // Update is called once per frame
     void Update()
     {
     }
 
     public void startFollowing(){
-        godManager = Instantiate (npc[i], new Vector3(player.position.x-5,0, player.position.z-5) , Quaternion.identity);
+        godManager = Instantiate (npc[i], new Vector3(player.position.x-2,player.position.y, player.position.z-2) , Quaternion.identity);
         godManager.transform.parent = gameObject.transform;
+        Debug.Log("Following");
     }
 
     public void nowFollowing(){
@@ -41,7 +47,6 @@ public class FollowPlayer : MonoBehaviour
         else if(aM.wolfArea.activeSelf && choosed[1]){
             i=1;       
         }
-        
         else if(aM.foxArea.activeSelf && !choosed[2]){
             i=2;
         }

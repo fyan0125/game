@@ -55,7 +55,7 @@ public class npcFollowing : MonoBehaviour
         }//第三象限
     }
     public void detectDistance(){
-        if (!playerInSightRange)
+        if (!playerWithNpcDistance)
         {
             this.transform.position = new Vector3(target.position.x-2, target.position.y, target.position.z-2);
         }
