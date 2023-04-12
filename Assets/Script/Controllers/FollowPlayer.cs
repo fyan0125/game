@@ -37,7 +37,6 @@ public class FollowPlayer : MonoBehaviour
     public void startFollowing(){
         godManager = Instantiate (npc[i], new Vector3(player.position.x-2,player.position.y, player.position.z-2) , Quaternion.identity);
         godManager.transform.parent = gameObject.transform;
-        Debug.Log("Following");
     }
 
     public void nowFollowing(){

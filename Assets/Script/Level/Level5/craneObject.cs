@@ -28,17 +28,6 @@ public class craneObject : CharactorStats
             Die();
         }
     }
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     Debug.Log("Enter");
-    //     if (
-    //         anim.GetCurrentAnimatorStateInfo(0).IsName("Melee")
-    //     )
-    //     {
-    //         hurt();
-    //     }
-    // }
-
     public void hurt(){
         GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("CraneHurt");
         Debug.Log(getDamageNum);
@@ -74,7 +63,6 @@ public class craneObject : CharactorStats
         if (Level5Manager.i==0 || Level5Manager.i ==1)
         {
             Level5Manager.MissionComplete();
-            Debug.Log(Level5Manager.npcCrane.npcState);
         }
         else{
             NotificationManager.instance.count++;
