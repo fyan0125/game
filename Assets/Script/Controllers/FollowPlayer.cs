@@ -36,7 +36,6 @@ public class FollowPlayer : MonoBehaviour
             Quaternion.identity
         );
         godManager.transform.parent = gameObject.transform;
-        Debug.Log("Following");
     }
 
     public void nowFollowing()

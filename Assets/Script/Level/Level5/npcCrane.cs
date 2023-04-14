@@ -77,15 +77,10 @@ public class npcCrane : DialogueTrigger
         if (npcState == 4 && DialogueManager.EndConversation())
         {
             skillUI.ClearLevel(5);
-            // cranebtn.interactable = true;
-            // craneIcon.SetActive(false);
-            // memorybtn.interactable = true;
-            // memoryIcon.SetActive(true);
             NpcReward.GetReward();
             SwitchSkills.getSkill = 4;
             npcState++;
             sP.isClear = true;
-            Debug.Log("完成");
         }
     }
 
