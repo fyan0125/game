@@ -1582,6 +1582,24 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3487609368157926506, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
   m_PrefabInstance: {fileID: 114263362}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &114263367 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 741608537983741990, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_PrefabInstance: {fileID: 114263362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &114263368
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114263367}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0016
+  m_Center: {x: 0, y: 0.0013, z: 0}
 --- !u!1 &116864085
 GameObject:
   m_ObjectHideFlags: 0
@@ -5014,6 +5032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 291040830}
+  - component: {fileID: 291040831}
   m_Layer: 7
   m_Name: Deer
   m_TagString: Untagged
@@ -5035,6 +5054,18 @@ Transform:
   m_Father: {fileID: 691527451}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &291040831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291040829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddd510a231812694a87e6697b37f78b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &301429862
 PrefabInstance:
   m_ObjectHideFlags: 0
