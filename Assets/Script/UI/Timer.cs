@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     [Header("Level4")]
     public GameObject GameUI;
     public GameObject BillBoardUI;
-    public GameObject billBoard;
+    public GameObject level4Manager;
     public GameObject FailUI;
 
     private void Start()
@@ -44,7 +44,7 @@ public class Timer : MonoBehaviour
                     GameObject[] chickens = GameObject.FindGameObjectsWithTag("Chicken");
                     foreach (GameObject chicken in chickens)
                         GameObject.Destroy(chicken);
-                    billBoard.SetActive(true);
+                    level4Manager.SetActive(true);
                     GameUI.SetActive(false);
                     BillBoardUI.SetActive(false);
                     FailUI.SetActive(true);
