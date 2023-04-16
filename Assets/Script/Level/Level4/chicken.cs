@@ -61,6 +61,6 @@ public class chicken : MonoBehaviour
     {
         navMeshAgent.speed = 2;
         navMeshAgent.destination = target.transform.position;
-        animator.SetBool("Running", true);
+        animator.SetBool("isWalking", true);
     }
 }

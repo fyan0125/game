@@ -120,6 +120,14 @@ public class ThirdPersonChar : MonoBehaviour
 
     private void GroundedCheck()
     {
+        if (Deer.deerActive)
+        {
+            groundLayers |= (1 << LayerMask.NameToLayer("Water"));
+        }
+        else
+        {
+            groundLayers &= ~(1 << LayerMask.NameToLayer("Water"));
+        }
         // set sphere position, with offset
         Vector3 spherePosition = new Vector3(
             transform.position.x,
