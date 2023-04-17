@@ -10,10 +10,7 @@ public class npcFox : DialogueTrigger
     public Conversation convo3;
 
     // UI介面控制
-    public Button foxbtn;
-    public Button memorybtn;
-    public GameObject foxIcon;
-    public GameObject memoryIcon;
+    private SkillUI skillUI;
     public GameObject notice;
     public GameObject counter;
     public GameObject compoundLock;
@@ -22,11 +19,20 @@ public class npcFox : DialogueTrigger
     public GameObject SendPoint;
     private showPortal sP;
 
-    private void Start()
+    private ThirdPersonChar player;
+
+    public override void Start()
     {
         base.Start();
+        player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
+        player.MoveToTarget(new Vector3(-18.7f, 8f, 83.69f), new Vector3(0, 180, 0));
+
         SwitchSkills.getSkill = 2;
         sP = SendPoint.GetComponent<showPortal>();
+        skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
+        notice = GameObject.Find("/ObjectToNextLevel/Canvas/Notification/Notice");
+        counter = GameObject.Find("/ObjectToNextLevel/Canvas/Notification/Counter");
+        compoundLock = GameObject.Find("/ObjectToNextLevel/Canvas/Package/Panel/Compound/lock");
         counter.SetActive(true);
         notice.SetActive(false);
     }
@@ -52,11 +58,7 @@ public class npcFox : DialogueTrigger
             notificationTrigger.EndNotice();
             if (DialogueManager.EndConversation())
             {
-                Debug.Log("Complete");
-                foxbtn.interactable = true;
-                foxIcon.SetActive(false);
-                memorybtn.interactable = true;
-                memoryIcon.SetActive(true);
+                skillUI.ClearLevel(3);
                 compoundLock.SetActive(false);
                 NpcReward.GetReward();
                 npcState++;

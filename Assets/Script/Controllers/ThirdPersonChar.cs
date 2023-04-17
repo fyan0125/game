@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ThirdPersonChar : MonoBehaviour
 {
-    public Transform cam;
+    private Transform cam;
 
     public float moveSpeed = 5.0f;
+    public float sprintSpeed = 8.0f;
     public float normalJumpHeight = 1.2f;
     public float superJumpHeight = 3.6f;
     public float gravity = -15.0f; //The character uses its own gravity value. The engine default is -9.81f
@@ -23,7 +22,7 @@ public class ThirdPersonChar : MonoBehaviour
     public LayerMask groundLayers; //What layers the character uses as ground
 
     // player
-    private float speed;
+    private float animationBlend;
     private float targetRotation = 0.0f;
     private float jumpHeight = 1.2f;
     private float verticalVelocity;
@@ -35,9 +34,11 @@ public class ThirdPersonChar : MonoBehaviour
     private float fallTimeoutDelta;
 
     // animation IDs
+    private int animIDSpeed;
     private int animIDGrounded;
     private int animIDJump;
     private int animIDFreeFall;
+    private int animIDMotionSpeed;
 
     private CharacterController controller;
     private float turnSmoothTime = 0.1f;
@@ -51,6 +52,14 @@ public class ThirdPersonChar : MonoBehaviour
     private Collider chickenCollider;
 
     private Animator anim;
+
+    private void Awake()
+    {
+        if (cam == null)
+        {
+            cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        }
+    }
 
     void Start()
     {
@@ -68,6 +77,11 @@ public class ThirdPersonChar : MonoBehaviour
 
     void Update()
     {
+        if (cam == null)
+        {
+            cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+        }
+
         JumpAndGravity();
         GroundedCheck();
         Move();
@@ -91,17 +105,29 @@ public class ThirdPersonChar : MonoBehaviour
                 }
             }
         }
+
+        anim.SetBool("Riding", Deer.deerActive);
     }
 
     private void AssignAnimationIDs()
     {
+        animIDSpeed = Animator.StringToHash("Speed");
         animIDGrounded = Animator.StringToHash("Grounded");
         animIDJump = Animator.StringToHash("Jump");
         animIDFreeFall = Animator.StringToHash("FreeFall");
+        animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
     }
 
     private void GroundedCheck()
     {
+        if (Deer.deerActive)
+        {
+            groundLayers |= (1 << LayerMask.NameToLayer("Water"));
+        }
+        else
+        {
+            groundLayers &= ~(1 << LayerMask.NameToLayer("Water"));
+        }
         // set sphere position, with offset
         Vector3 spherePosition = new Vector3(
             transform.position.x,
@@ -119,25 +145,21 @@ public class ThirdPersonChar : MonoBehaviour
         anim.SetBool(animIDGrounded, grounded);
     }
 
-    void OnDrawGizmos()
-    {
-        // Draw a yellow sphere at the transform's position
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(SpherePosition, groundedRadius);
-    }
-
     private void Move()
     {
-        speed = moveSpeed;
+        float targetSpeed = Input.GetButton("Sprint") ? sprintSpeed : moveSpeed;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 inputDirection = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if (inputDirection.magnitude < 0.1f)
+            targetSpeed = 0.0f;
 
         if (inputDirection.magnitude >= 0.1f)
         {
             targetRotation =
                 Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(
+            float rotation = Mathf.SmoothDampAngle(
                 transform.eulerAngles.y,
                 targetRotation,
                 ref turnSmoothVelocity,
@@ -145,22 +167,25 @@ public class ThirdPersonChar : MonoBehaviour
             );
             if (rotateOnMove)
             {
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+                transform.rotation = Quaternion.Euler(0f, rotation, 0f);
             }
-            Vector3 moveDir = Quaternion.Euler(0f, targetRotation, 0f) * Vector3.forward;
-            controller.Move(
-                moveDir.normalized * speed * Time.deltaTime
-                    + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
-            );
         }
 
-        if (horizontal != 0 || vertical != 0)
+        Vector3 targetDirection = Quaternion.Euler(0f, targetRotation, 0f) * Vector3.forward;
+        controller.Move(
+            targetDirection.normalized * (targetSpeed * Time.deltaTime)
+                + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
+        );
+
+        animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * 10);
+        if (animationBlend < 0.01f)
+            animationBlend = 0f;
+
+        anim.SetFloat(animIDSpeed, animationBlend);
+
+        if (Deer.deerActive)
         {
-            anim.SetBool("isRunning", true);
-        }
-        else
-        {
-            anim.SetBool("isRunning", false);
+            Deer.ChangeDeerSpeed(targetSpeed);
         }
     }
 
@@ -243,8 +268,6 @@ public class ThirdPersonChar : MonoBehaviour
         {
             verticalVelocity += gravity * Time.deltaTime;
         }
-
-        controller.Move(new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -277,10 +300,21 @@ public class ThirdPersonChar : MonoBehaviour
         rotateOnMove = newRotateOnMove;
     }
 
-    public void MoveToTarget(Vector3 target)
+    public void MoveToTarget(Vector3 position, Vector3 rotation = default(Vector3))
     {
         controller.enabled = false;
-        transform.position = target;
+        transform.position = position;
+        if (rotation != default(Vector3))
+        {
+            transform.eulerAngles = rotation;
+        }
+        controller.enabled = true;
+    }
+
+    public void RotateToTarget(Vector3 rotation)
+    {
+        controller.enabled = false;
+        transform.eulerAngles = rotation;
         controller.enabled = true;
     }
 }
