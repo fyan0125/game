@@ -26,26 +26,26 @@ public class GenerateEnemy : MonoBehaviour
             randomIndex = Random.Range(0, theEnemy.Length);
             xPos = Random.Range(40, 80);
             zPos = Random.Range(-30, 85);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 12, zPos), Quaternion.identity);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 12, zPos), Quaternion.identity).transform.parent = GameObject.Find("Mobs").transform;
         }
         for(int enemyCount2 = 0; enemyCount2 < maxEnemyCount; enemyCount2++){
             randomIndex = Random.Range(0, theEnemy.Length);
             xPos = Random.Range(-85, 40);
             zPos = Random.Range(55, 85);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 12, zPos), Quaternion.identity);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 12, zPos), Quaternion.identity).transform.parent = GameObject.Find("Mobs").transform;
             //Debug.Log("enemy");
         }
         for(int enemyCount3 = 0; enemyCount3 < maxEnemyCount; enemyCount3++){
             randomIndex = Random.Range(0, theEnemy.Length);
             xPos = Random.Range(-85, -30);
             zPos = Random.Range(-45, 55);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 15, zPos), Quaternion.identity);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 15, zPos), Quaternion.identity).transform.parent = GameObject.Find("Mobs").transform;
         }
         for(int enemyCount4 = 0; enemyCount4 < maxEnemyCount; enemyCount4++){
             randomIndex = Random.Range(0, theEnemy.Length);
             xPos = Random.Range(-85, 40);
             zPos = Random.Range(-80, -45);
-            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 20, zPos), Quaternion.identity);
+            Instantiate(theEnemy[randomIndex], new Vector3(xPos, 20, zPos), Quaternion.identity).transform.parent = GameObject.Find("Mobs").transform;
         }
     }
 }

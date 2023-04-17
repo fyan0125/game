@@ -49,30 +49,30 @@ public class npcCrane : DialogueTrigger
                 timee = 0;
             }                                                 
         }
-        if(npcState == 1 && Input.GetButtonDown("Skill") && resetGame){
-            notificationTrigger.EndNotice();
-            resetGame = false;
-        }
-        if(npcState == 2 && DialogueManager.isTalking == false && !gameComplete){//對話後遊戲開始
-            npcState += 1;
+        if(npcState == 2 && DialogueManager.isTalking == false && !gameComplete) //對話後遊戲開始
+        {
+            timee = Timer.time;
+            Debug.Log("Start");
+            Level5Manager.i = 0;
             Level5Manager.GameStart();
             Timer.setTimeToDisplay();
+            npcState += 1;
         }
-        if(missionComplete){//分次任務完成
-            StartConvo();
+        if(missionComplete) //分次任務完成
+        {
             Timer.timeRemaining = Timer.time;
             Level5Manager.i +=1 ;
+            StartConvo();
             missionComplete = false;
         }
         if(gameComplete){
             npcState = 4;
         }
-        if(!gameComplete && timee == 0) //時間到未完成遊戲
+        if(npcState == 3 && !gameComplete && timee == 0) //時間到未完成遊戲
         {
             Level5Manager.resetGame();
             resetGame = true;
             notificationTrigger.Notice();
-            npcState = 1;
         }
         if (npcState == 4 && DialogueManager.EndConversation())
         {
@@ -81,6 +81,12 @@ public class npcCrane : DialogueTrigger
             SwitchSkills.getSkill = 4;
             npcState++;
             sP.isClear = true;
+        }
+        if(npcState == 5 && Input.GetButtonDown("Skill")) //關閉失敗通知
+        { 
+            npcState = 1;
+            notificationTrigger.EndNotice();
+            resetGame = false;
         }
     }
 
