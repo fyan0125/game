@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ThirdPersonChar : MonoBehaviour
 {
@@ -51,6 +52,9 @@ public class ThirdPersonChar : MonoBehaviour
     private Collider npcCollider;
     private Collider chickenCollider;
 
+    public GameObject hint;
+    private GameObject newHint;
+
     private Animator anim;
 
     private void Awake()
@@ -59,10 +63,7 @@ public class ThirdPersonChar : MonoBehaviour
         {
             cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
         }
-    }
 
-    void Start()
-    {
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
         playerStats = GetComponent<PlayerStats>();
@@ -89,7 +90,7 @@ public class ThirdPersonChar : MonoBehaviour
         if (playerStats.currentHealth <= 0)
             Destroy(gameObject);
 
-        if (Input.GetButtonDown("Talk"))
+        if (Input.GetButtonDown("Talk") && !DialogueManager.isTalking)
         {
             TalkToNPC();
         }
@@ -279,10 +280,28 @@ public class ThirdPersonChar : MonoBehaviour
         if (other.GetComponent<Collider>().CompareTag("NPC"))
         {
             npcCollider = other;
+            Hint(npcCollider, "npc");
         }
         if (other.GetComponent<Collider>().CompareTag("Chicken"))
         {
             chickenCollider = other;
+            Hint(chickenCollider, "chicken");
+        }
+        if (other.GetComponent<Collider>().CompareTag("Deer"))
+        {
+            Hint(other, "deer");
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (
+            other.GetComponent<Collider>().CompareTag("NPC")
+            || other.GetComponent<Collider>().CompareTag("Chicken")
+            || other.GetComponent<Collider>().CompareTag("Deer")
+        )
+        {
+            Destroy(newHint);
         }
     }
 
@@ -292,6 +311,7 @@ public class ThirdPersonChar : MonoBehaviour
         {
             npcCollider.GetComponent<DialogueTrigger>().StartConvo();
             npcCollider = null;
+            Destroy(newHint);
         }
     }
 
@@ -316,5 +336,23 @@ public class ThirdPersonChar : MonoBehaviour
         controller.enabled = false;
         transform.eulerAngles = rotation;
         controller.enabled = true;
+    }
+
+    private void Hint(Collider other, string otherName)
+    {
+        newHint = Instantiate(hint, new Vector3(0, 0, 0), Quaternion.identity);
+        newHint.transform.SetParent(other.transform, false);
+        newHint.transform.localPosition = new Vector3(0, 2.3f, 0);
+        newHint.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "R";
+        if (otherName == "chicken")
+        {
+            newHint.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "技能鍵";
+            newHint.transform.localPosition = new Vector3(0, 1, 0);
+        }
+        else if (otherName == "deer")
+        {
+            newHint.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "技能鍵";
+            newHint.transform.localPosition = new Vector3(0, 2.3f, 0);
+        }
     }
 }

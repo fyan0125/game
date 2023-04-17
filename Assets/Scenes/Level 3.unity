@@ -9028,6 +9028,7 @@ MonoBehaviour:
   groundLayers:
     serializedVersion: 2
     m_Bits: 4160
+  hint: {fileID: 904643461437033893, guid: 328a3a0f921b6a14c93d411c81aed1fc, type: 3}
 --- !u!114 &691527457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22618,7 +22619,6 @@ GameObject:
   - component: {fileID: 1857498535}
   - component: {fileID: 1857498534}
   - component: {fileID: 1857498542}
-  - component: {fileID: 1857498541}
   - component: {fileID: 1857498544}
   - component: {fileID: 1857498543}
   m_Layer: 0
@@ -22722,7 +22722,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1857498540
 Transform:
@@ -22740,19 +22740,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1857498541
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857498533}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1857498542
 MonoBehaviour:
   m_ObjectHideFlags: 0

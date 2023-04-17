@@ -69,7 +69,8 @@ public class Level4Manager : MonoBehaviour
             Instantiate(
                 chickenPrefab,
                 places[listNumbers[i]].transform.position,
-                Quaternion.Euler(0, Random.Range(0f, 360f), 0)
+                Quaternion.Euler(0, Random.Range(0f, 360f), 0),
+                GameObject.Find("Chicken").transform
             );
         }
         gameObject.SetActive(false);
