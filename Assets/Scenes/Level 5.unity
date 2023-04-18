@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 3
-    agentSlope: 50
-    agentClimb: 0.4
+    agentRadius: 0.1
+    agentHeight: 2
+    agentSlope: 60
+    agentClimb: 0.6
     ledgeDropHeight: 50
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.033333335
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: b9c386602b1d34cf0b7398a8d81f776d, type: 2}
 --- !u!1 &774525
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,8 +139,8 @@ GameObject:
   m_Name: Screen.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &774526
 Transform:
@@ -1133,8 +1133,8 @@ GameObject:
   m_Name: TallTree.050
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &38080374
 Transform:
@@ -1300,8 +1300,8 @@ GameObject:
   m_Name: Stele
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &44377723
 Transform:
@@ -1315,7 +1315,7 @@ Transform:
   m_LocalScale: {x: 169.89148, y: 232.4831, z: 20.063608}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &44377724
 MeshCollider:
@@ -1398,8 +1398,8 @@ GameObject:
   m_Name: Railing.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &44773764
 Transform:
@@ -1494,8 +1494,8 @@ GameObject:
   m_Name: Tree.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &49784460
 Transform:
@@ -1717,7 +1717,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &51528013
 Transform:
@@ -1812,8 +1812,8 @@ GameObject:
   m_Name: Fence.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &58653465
 Transform:
@@ -2113,8 +2113,8 @@ GameObject:
   m_Name: Railing.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &69910139
 Transform:
@@ -2377,8 +2377,8 @@ GameObject:
   m_Name: Tree.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &82041359
 Transform:
@@ -2458,6 +2458,43 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82041358}
   m_Mesh: {fileID: 6244694576616464692, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
+--- !u!1 &85413720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 85413721}
+  m_Layer: 5
+  m_Name: PlayerStatus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &85413721
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85413720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 657150930}
+  - {fileID: 1044665188}
+  m_Father: {fileID: 1145445527}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &91428545
 GameObject:
   m_ObjectHideFlags: 0
@@ -2474,8 +2511,8 @@ GameObject:
   m_Name: TallTree.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &91428546
 Transform:
@@ -2573,8 +2610,8 @@ GameObject:
   m_Name: Tree.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &94545206
 Transform:
@@ -2671,8 +2708,8 @@ GameObject:
   m_Name: WoodenBarrel.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &95157131
 Transform:
@@ -2784,8 +2821,8 @@ GameObject:
   m_Name: Railing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &95282598
 Transform:
@@ -3014,8 +3051,8 @@ GameObject:
   m_Name: Tree.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &104766469
 Transform:
@@ -3122,7 +3159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 106573556}
   m_LocalRotation: {x: 0.13258898, y: 0.6945647, z: 0.62205476, w: -0.33622602}
-  m_LocalPosition: {x: 23.07488, y: 1.066379, z: 49.593895}
+  m_LocalPosition: {x: 22.954357, y: 1.0285624, z: 49.627068}
   m_LocalScale: {x: 61.322052, y: 64.03449, z: 33.644302}
   m_Children: []
   m_Father: {fileID: 327742809}
@@ -3207,8 +3244,8 @@ GameObject:
   m_Name: TallTree.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &107276072
 Transform:
@@ -3306,8 +3343,8 @@ GameObject:
   m_Name: Screen.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &115933504
 Transform:
@@ -3405,8 +3442,8 @@ GameObject:
   m_Name: Fence.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &125044813
 Transform:
@@ -3502,8 +3539,8 @@ GameObject:
   m_Name: Cone.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &126827237
 Transform:
@@ -3517,7 +3554,7 @@ Transform:
   m_LocalScale: {x: 83.15875, y: 83.15875, z: 83.15874}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 81
+  m_RootOrder: 78
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &126827238
 MeshCollider:
@@ -3615,8 +3652,8 @@ GameObject:
   m_Name: TallTree.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &128657878
 Transform:
@@ -3938,8 +3975,8 @@ GameObject:
   m_Name: TallTree.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &140786745
 Transform:
@@ -4038,8 +4075,8 @@ GameObject:
   m_Name: WoodenBarrel.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &144172030
 Transform:
@@ -4152,8 +4189,8 @@ GameObject:
   m_Name: TrafficFence.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &149267120
 Transform:
@@ -4167,7 +4204,7 @@ Transform:
   m_LocalScale: {x: 234.08008, y: 9.998832, z: 22.48172}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 57
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &149267121
 MeshCollider:
@@ -4443,8 +4480,8 @@ GameObject:
   m_Name: TallTree.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &161810221
 Transform:
@@ -4542,8 +4579,8 @@ GameObject:
   m_Name: Tree.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &170776415
 Transform:
@@ -4639,8 +4676,8 @@ GameObject:
   m_Name: Railing.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &171042869
 Transform:
@@ -4810,8 +4847,8 @@ GameObject:
   m_Name: FenceBottom.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &181532864
 Transform:
@@ -4907,8 +4944,8 @@ GameObject:
   m_Name: WoodenRoadBlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &186329833
 Transform:
@@ -4922,7 +4959,7 @@ Transform:
   m_LocalScale: {x: 5.9169664, y: 3.6718194, z: 50.464874}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 39
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &186329834
 MeshCollider:
@@ -5145,8 +5182,8 @@ GameObject:
   m_Name: WoodenRoadBlock.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &187569686
 Transform:
@@ -5156,11 +5193,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187569685}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 15.19534, y: 3.2607915, z: 21.598991}
+  m_LocalPosition: {x: 15.19534, y: 3.24, z: 22.83}
   m_LocalScale: {x: 3.5236506, y: 2.1866279, z: 30.052656}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 51
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &187569687
 MeshCollider:
@@ -5257,8 +5294,8 @@ GameObject:
   m_Name: TallTree.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &188869301
 Transform:
@@ -5431,8 +5468,8 @@ GameObject:
   m_Name: TallTree.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &199742805
 Transform:
@@ -5531,7 +5568,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &201512880
 Transform:
@@ -5626,8 +5663,8 @@ GameObject:
   m_Name: HandWaterSpoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &203694950
 Transform:
@@ -5733,7 +5770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212123890}
   m_LocalRotation: {x: -0.40994614, y: 0.6283731, z: 0.66062933, w: 0.025697611}
-  m_LocalPosition: {x: 22.278767, y: 0.78917813, z: 49.593895}
+  m_LocalPosition: {x: 22.158243, y: 0.7513616, z: 49.627068}
   m_LocalScale: {x: 31.576101, y: 40.48778, z: 21.449402}
   m_Children: []
   m_Father: {fileID: 327742809}
@@ -5818,8 +5855,8 @@ GameObject:
   m_Name: TallTree.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &213782615
 Transform:
@@ -5917,8 +5954,8 @@ GameObject:
   m_Name: Tree.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &215004826
 Transform:
@@ -6014,8 +6051,8 @@ GameObject:
   m_Name: FenceBottom.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &221330478
 Transform:
@@ -6110,8 +6147,8 @@ GameObject:
   m_Name: Railing.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &224585864
 Transform:
@@ -6680,8 +6717,8 @@ GameObject:
   m_Name: Tree.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &232163208
 Transform:
@@ -6778,8 +6815,8 @@ GameObject:
   m_Name: Cone.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &235055277
 Transform:
@@ -6793,7 +6830,7 @@ Transform:
   m_LocalScale: {x: 76.41086, y: 76.41086, z: 76.41085}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 80
+  m_RootOrder: 77
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &235055278
 MeshCollider:
@@ -7155,8 +7192,8 @@ GameObject:
   m_Name: Tree.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &244730800
 Transform:
@@ -7252,8 +7289,8 @@ GameObject:
   m_Name: FenceBottom.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &248077003
 Transform:
@@ -7348,8 +7385,8 @@ GameObject:
   m_Name: TallTree.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &250379036
 Transform:
@@ -7572,8 +7609,8 @@ GameObject:
   m_Name: Screen.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &253098929
 Transform:
@@ -7672,8 +7709,8 @@ GameObject:
   m_Name: Lantern.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &265337890
 Transform:
@@ -7687,7 +7724,7 @@ Transform:
   m_LocalScale: {x: 39.977047, y: 3.3444571, z: 34.86311}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 61
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &265337891
 MeshCollider:
@@ -7788,8 +7825,8 @@ GameObject:
   m_Name: WoodenBox.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &266566198
 Transform:
@@ -7799,11 +7836,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266566197}
   m_LocalRotation: {x: -0.70687985, y: -0.01791152, z: 0.1964782, w: 0.6792616}
-  m_LocalPosition: {x: 22.518524, y: 0.5398165, z: 49.66683}
+  m_LocalPosition: {x: 22.398, y: 0.502, z: 49.7}
   m_LocalScale: {x: 147.13193, y: 91.38359, z: 29.918785}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 26
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &266566199
 MeshCollider:
@@ -7903,8 +7940,8 @@ GameObject:
   m_Name: WoodenBarrel.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &267022551
 Transform:
@@ -8017,8 +8054,8 @@ GameObject:
   m_Name: WoodenRoadBlock.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &267332391
 Transform:
@@ -8032,7 +8069,7 @@ Transform:
   m_LocalScale: {x: 5.9169664, y: 3.671819, z: 50.464874}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 48
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &267332392
 MeshCollider:
@@ -8129,8 +8166,8 @@ GameObject:
   m_Name: TallTree.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &271208760
 Transform:
@@ -8353,8 +8390,8 @@ GameObject:
   m_Name: TallTree.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &276829073
 Transform:
@@ -8484,8 +8521,8 @@ GameObject:
   m_Name: Tree.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &282085035
 Transform:
@@ -8582,8 +8619,8 @@ GameObject:
   m_Name: WoodenBarrel.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &288882890
 Transform:
@@ -8597,7 +8634,7 @@ Transform:
   m_LocalScale: {x: 70.498924, y: 70.498924, z: 86.37661}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 22
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &288882891
 MeshCollider:
@@ -8792,8 +8829,8 @@ GameObject:
   m_Name: WoodenRoadBlock.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &301588996
 Transform:
@@ -8807,7 +8844,7 @@ Transform:
   m_LocalScale: {x: 5.9169664, y: 3.671819, z: 50.464874}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 42
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &301588997
 MeshCollider:
@@ -8904,8 +8941,8 @@ GameObject:
   m_Name: Tree.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &301835702
 Transform:
@@ -9077,8 +9114,8 @@ GameObject:
   m_Name: Lantern.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &304813471
 Transform:
@@ -9092,7 +9129,7 @@ Transform:
   m_LocalScale: {x: 77.70148, y: 77.70147, z: 16.43017}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 64
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &304813472
 MeshCollider:
@@ -9190,8 +9227,8 @@ GameObject:
   m_Name: Tree.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &310194413
 Transform:
@@ -9288,8 +9325,8 @@ GameObject:
   m_Name: WoodenRoadBlock.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &315069617
 Transform:
@@ -9299,11 +9336,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315069616}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 9.971289, y: 3.2607915, z: 17.402199}
+  m_LocalPosition: {x: 9.971289, y: 3.24, z: 16.33}
   m_LocalScale: {x: 3.5236506, y: 2.1866279, z: 30.052656}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 52
+  m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &315069618
 MeshCollider:
@@ -9400,8 +9437,8 @@ GameObject:
   m_Name: Tree.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &316213371
 Transform:
@@ -9910,8 +9947,8 @@ GameObject:
   m_Name: 05_Suwa_Taisha
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &334668160
 Transform:
@@ -10212,11 +10249,8 @@ Transform:
   - {fileID: 144172030}
   - {fileID: 95157131}
   - {fileID: 1439333342}
-  - {fileID: 458990493}
   - {fileID: 647076325}
   - {fileID: 506799580}
-  - {fileID: 875490690}
-  - {fileID: 1004554542}
   - {fileID: 854742564}
   - {fileID: 288882890}
   - {fileID: 847447459}
@@ -10416,7 +10450,7 @@ Transform:
   - {fileID: 1611886964}
   - {fileID: 1322259086}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354484601
 GameObject:
@@ -10622,8 +10656,8 @@ GameObject:
   m_Name: Tree.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &360042034
 Transform:
@@ -10763,8 +10797,8 @@ GameObject:
   m_Name: HandWaterBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &365275768
 Transform:
@@ -10861,8 +10895,8 @@ GameObject:
   m_Name: Billboard.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &368228714
 Transform:
@@ -10876,7 +10910,7 @@ Transform:
   m_LocalScale: {x: 7.4794693, y: 52.803535, z: 40.722958}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 75
+  m_RootOrder: 72
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &368228715
 MeshCollider:
@@ -10973,8 +11007,8 @@ GameObject:
   m_Name: TallTree.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &372183308
 Transform:
@@ -11439,7 +11473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393982528}
   m_LocalRotation: {x: 0.32326594, y: -0, z: -0, w: 0.94630814}
-  m_LocalPosition: {x: -14.304073, y: -15.258102, z: 75.15676}
+  m_LocalPosition: {x: -14.304213, y: -15.258102, z: 75.15678}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 139042190}
@@ -11544,8 +11578,8 @@ GameObject:
   m_Name: WoodenBarrel.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &397825853
 Transform:
@@ -11797,8 +11831,8 @@ GameObject:
   m_Name: Railing.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &404506758
 Transform:
@@ -12064,8 +12098,8 @@ GameObject:
   m_Name: WoodenRoadBlock.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &417350912
 Transform:
@@ -12079,7 +12113,7 @@ Transform:
   m_LocalScale: {x: 5.9169664, y: 3.671819, z: 50.464874}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 43
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &417350913
 MeshCollider:
@@ -12254,8 +12288,8 @@ GameObject:
   m_Name: TallTree.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &431777653
 Transform:
@@ -12464,8 +12498,8 @@ GameObject:
   m_Name: TallTree.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &435415774
 Transform:
@@ -12709,8 +12743,8 @@ GameObject:
   m_Name: WoodenBox.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &439465005
 Transform:
@@ -12724,7 +12758,7 @@ Transform:
   m_LocalScale: {x: 89.67638, y: 55.69796, z: 18.235388}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 36
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &439465006
 MeshCollider:
@@ -12823,8 +12857,8 @@ GameObject:
   m_Name: Tree.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &442481487
 Transform:
@@ -12947,6 +12981,7 @@ Transform:
   - {fileID: 448175568}
   - {fileID: 1068205108}
   - {fileID: 1435301968}
+  - {fileID: 458990493}
   - {fileID: 1940568215}
   - {fileID: 1286387831}
   - {fileID: 496474164}
@@ -13147,8 +13182,8 @@ GameObject:
   m_Name: Fence.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &453509604
 Transform:
@@ -13244,8 +13279,8 @@ GameObject:
   m_Name: WoodenBarrel.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &458990493
 Transform:
@@ -13255,10 +13290,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 458990492}
   m_LocalRotation: {x: -0.69191045, y: -0.14580813, z: -0.14580815, w: 0.6919103}
-  m_LocalPosition: {x: -44.174515, y: 2.3000157, z: 35.254192}
-  m_LocalScale: {x: 48.54248, y: 48.542484, z: 59.475166}
+  m_LocalPosition: {x: -55.145687, y: 2.8750196, z: -0.20764}
+  m_LocalScale: {x: 48.815723, y: 60.256504, z: 74.343956}
   m_Children: []
-  m_Father: {fileID: 348271283}
+  m_Father: {fileID: 447792519}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &458990494
@@ -13372,7 +13407,7 @@ Transform:
   m_LocalScale: {x: 49.68567, y: 230.68143, z: 68.70245}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &459725642
 MeshCollider:
@@ -13535,8 +13570,8 @@ GameObject:
   m_Name: TallTree.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &460850060
 Transform:
@@ -13634,8 +13669,8 @@ GameObject:
   m_Name: SacredPillarFence.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &461893380
 Transform:
@@ -13781,6 +13816,18 @@ MonoBehaviour:
     volume: 1
     loop: 0
     source: {fileID: 0}
+  - name: Shock
+    clip: {fileID: 8300000, guid: 2b4de0fd1668cd74a99e91702093864a, type: 3}
+    audioMixerGroup: {fileID: -2297357421473616156, guid: ba3f8d2c403bfd54491d6b82545bda42, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerHurt
+    clip: {fileID: 8300000, guid: e90ca551cc9ae9145aa09f1a10082db1, type: 3}
+    audioMixerGroup: {fileID: -2297357421473616156, guid: ba3f8d2c403bfd54491d6b82545bda42, type: 2}
+    volume: 0.8
+    loop: 0
+    source: {fileID: 0}
   - name: CraneHurt
     clip: {fileID: 8300000, guid: 1a3454e1e411b48a5b5aff19063dd685, type: 3}
     audioMixerGroup: {fileID: -2297357421473616156, guid: ba3f8d2c403bfd54491d6b82545bda42, type: 2}
@@ -13817,8 +13864,8 @@ GameObject:
   m_Name: Railing.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &465078236
 Transform:
@@ -13913,8 +13960,8 @@ GameObject:
   m_Name: TallTree.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &467353460
 Transform:
@@ -14012,8 +14059,8 @@ GameObject:
   m_Name: TallTree.061
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &468651550
 Transform:
@@ -14112,8 +14159,8 @@ GameObject:
   m_Name: Billboard.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &469898704
 Transform:
@@ -14127,7 +14174,7 @@ Transform:
   m_LocalScale: {x: 7.47947, y: 52.803524, z: 40.722958}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 76
+  m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &469898705
 MeshCollider:
@@ -14224,8 +14271,8 @@ GameObject:
   m_Name: Tree.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &469976489
 Transform:
@@ -14321,8 +14368,8 @@ GameObject:
   m_Name: Railing.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &472777898
 Transform:
@@ -14417,8 +14464,8 @@ GameObject:
   m_Name: TallTree.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &473226430
 Transform:
@@ -14802,7 +14849,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &492545355
 Transform:
@@ -14994,8 +15041,8 @@ GameObject:
   m_Name: WoodenBarrel.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &493921652
 Transform:
@@ -15107,8 +15154,8 @@ GameObject:
   m_Name: TallTree.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &494000609
 Transform:
@@ -15206,8 +15253,8 @@ GameObject:
   m_Name: ClothBridgeEntrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &496474164
 Transform:
@@ -15221,7 +15268,7 @@ Transform:
   m_LocalScale: {x: -476.4009, y: -292.61154, z: -10.932667}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &496474165
 MeshCollider:
@@ -15431,8 +15478,8 @@ GameObject:
   m_Name: SteleBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &500448521
 Transform:
@@ -15446,7 +15493,7 @@ Transform:
   m_LocalScale: {x: 189.8683, y: 498.1731, z: 308.82227}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &500448522
 MeshCollider:
@@ -15728,8 +15775,8 @@ GameObject:
   m_Name: WoodenBarrel.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &506799580
 Transform:
@@ -15741,9 +15788,11 @@ Transform:
   m_LocalRotation: {x: -0.34822223, y: 0.77640575, z: 0.25460443, w: -0.45946926}
   m_LocalPosition: {x: 41.832226, y: 4.0700517, z: 46.0646}
   m_LocalScale: {x: 78.46615, y: 78.46613, z: 96.13819}
-  m_Children: []
+  m_Children:
+  - {fileID: 875490690}
+  - {fileID: 1004554542}
   m_Father: {fileID: 348271283}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &506799581
 MeshCollider:
@@ -15872,8 +15921,8 @@ GameObject:
   m_Name: WoodenBarrel.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &508507311
 Transform:
@@ -16060,8 +16109,8 @@ GameObject:
   m_Name: TallTree.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &516794640
 Transform:
@@ -16160,7 +16209,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &519721159
 Transform:
@@ -16255,8 +16304,8 @@ GameObject:
   m_Name: Tree.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &520689055
 Transform:
@@ -16589,8 +16638,8 @@ GameObject:
   m_Name: Billboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &531121203
 Transform:
@@ -16604,7 +16653,7 @@ Transform:
   m_LocalScale: {x: 7.4794693, y: 52.803528, z: 40.722954}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 68
+  m_RootOrder: 65
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &531121204
 MeshCollider:
@@ -16701,8 +16750,8 @@ GameObject:
   m_Name: TallTree.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &532415767
 Transform:
@@ -17017,8 +17066,8 @@ GameObject:
   m_Name: Lantern.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &552144801
 Transform:
@@ -17032,7 +17081,7 @@ Transform:
   m_LocalScale: {x: 39.977047, y: 3.3444571, z: 34.863106}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 63
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &552144802
 MeshCollider:
@@ -17132,8 +17181,8 @@ GameObject:
   m_Name: TallTree.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &558054865
 Transform:
@@ -17261,8 +17310,8 @@ GameObject:
   m_Name: Tree.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &560446800
 Transform:
@@ -17359,8 +17408,8 @@ GameObject:
   m_Name: WoodenRoadBlock.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &563727131
 Transform:
@@ -17370,11 +17419,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563727130}
   m_LocalRotation: {x: 0.8275517, y: 0.018909635, z: -0.31472915, w: -0.46448478}
-  m_LocalPosition: {x: 25.69437, y: 2.128308, z: 48.83788}
+  m_LocalPosition: {x: 25.91334, y: 2.1957574, z: 48.77935}
   m_LocalScale: {x: 6.6220403, y: 4.1093574, z: 56.478333}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 55
+  m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &563727132
 MeshCollider:
@@ -17472,8 +17521,8 @@ GameObject:
   m_Name: Lantern.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &586353382
 Transform:
@@ -17585,8 +17634,8 @@ GameObject:
   m_Name: WoodenBox.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &588836803
 Transform:
@@ -17600,7 +17649,7 @@ Transform:
   m_LocalScale: {x: 107.49285, y: 66.763756, z: 21.858307}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 29
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &588836804
 MeshCollider:
@@ -17833,8 +17882,8 @@ GameObject:
   m_Name: TallTree.051
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &595770273
 Transform:
@@ -17932,8 +17981,8 @@ GameObject:
   m_Name: TallTree.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &606577264
 Transform:
@@ -18032,8 +18081,8 @@ GameObject:
   m_Name: WoodenBarrel.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &618596154
 Transform:
@@ -18146,8 +18195,8 @@ GameObject:
   m_Name: Billboard.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &629265227
 Transform:
@@ -18161,7 +18210,7 @@ Transform:
   m_LocalScale: {x: 7.4794693, y: 52.803528, z: 40.722954}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 72
+  m_RootOrder: 69
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &629265228
 MeshCollider:
@@ -18467,8 +18516,8 @@ GameObject:
   m_Name: Stairs.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &637866153
 Transform:
@@ -18640,8 +18689,8 @@ GameObject:
   m_Name: Railing.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &646567281
 Transform:
@@ -18737,8 +18786,8 @@ GameObject:
   m_Name: WoodenBarrel.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &647076325
 Transform:
@@ -18752,7 +18801,7 @@ Transform:
   m_LocalScale: {x: 71.19023, y: 71.190216, z: 87.2236}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &647076326
 MeshCollider:
@@ -18879,7 +18928,7 @@ Transform:
   m_Children:
   - {fileID: 1105758675}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &649843464
 MonoBehaviour:
@@ -18897,7 +18946,7 @@ MonoBehaviour:
   Crane: {fileID: 0}
   assetToHide: {fileID: 0}
   npcCrane: {fileID: 0}
-  time: 60
+  time: 5
   craneAnim: {fileID: 0}
   newMaterialRef: {fileID: 2100000, guid: 79ed4936bbd5b40f98d49ee11ad0bbcc, type: 2}
   targetObject:
@@ -18912,6 +18961,7 @@ MonoBehaviour:
   childCount: 0
   i: 0
   postProcessProfile: {fileID: 11400000, guid: 18b97292584fb47b489127cf6c2934d2, type: 2}
+  mats: []
 --- !u!1 &650511800
 GameObject:
   m_ObjectHideFlags: 0
@@ -19254,7 +19304,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &653169193
 Transform:
@@ -19468,8 +19518,8 @@ GameObject:
   m_Name: TallTree.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &655967980
 Transform:
@@ -19562,7 +19612,7 @@ GameObject:
   - component: {fileID: 657150930}
   - component: {fileID: 657150931}
   m_Layer: 5
-  m_Name: PlayerStatus
+  m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19575,18 +19625,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657150929}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2145363362}
   - {fileID: 154757877}
-  m_Father: {fileID: 1145445527}
-  m_RootOrder: 5
+  m_Father: {fileID: 85413721}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 164, y: -87.28851}
+  m_AnchoredPosition: {x: -425.96228, y: 222.73273}
   m_SizeDelta: {x: 217.09998, y: 71.17853}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &657150931
@@ -19614,7 +19664,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &663621603
 Transform:
@@ -19709,8 +19759,8 @@ GameObject:
   m_Name: Tree.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &666835658
 Transform:
@@ -19806,8 +19856,8 @@ GameObject:
   m_Name: TallTree.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &668820201
 Transform:
@@ -19980,8 +20030,8 @@ GameObject:
   m_Name: TallTree.059
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &672350383
 Transform:
@@ -20383,8 +20433,8 @@ GameObject:
   m_Name: Railing.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &676087560
 Transform:
@@ -20480,8 +20530,8 @@ GameObject:
   m_Name: Chair.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &676427946
 Transform:
@@ -20495,7 +20545,7 @@ Transform:
   m_LocalScale: {x: 159.84418, y: 24.400415, z: 4.6776557}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 87
+  m_RootOrder: 84
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &676427947
 MeshCollider:
@@ -20988,8 +21038,8 @@ GameObject:
   m_Name: WoodenRoadBlock.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &691341675
 Transform:
@@ -21003,7 +21053,7 @@ Transform:
   m_LocalScale: {x: 5.916966, y: 3.6718187, z: 50.464878}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 45
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &691341676
 MeshCollider:
@@ -21611,7 +21661,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &704076049
 Transform:
@@ -21706,8 +21756,8 @@ GameObject:
   m_Name: SacredPillarFence.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &704320722
 Transform:
@@ -21803,8 +21853,8 @@ GameObject:
   m_Name: Tree.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &713120682
 Transform:
@@ -22201,8 +22251,8 @@ GameObject:
   m_Name: WoodenBarrel.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &736452417
 Transform:
@@ -22314,8 +22364,8 @@ GameObject:
   m_Name: TallTree.052
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &742489542
 Transform:
@@ -22865,7 +22915,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &761010485
 Transform:
@@ -22961,8 +23011,8 @@ GameObject:
   m_Name: WoodenBox.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &761521884
 Transform:
@@ -22972,11 +23022,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761521883}
   m_LocalRotation: {x: -0.70694613, y: -0.01507282, z: 0.19920425, w: 0.67846715}
-  m_LocalPosition: {x: 29.101637, y: 2.6260996, z: 48.131363}
+  m_LocalPosition: {x: 29.35, y: 2.7, z: 48.06}
   m_LocalScale: {x: 147.13196, y: 91.3836, z: 29.918781}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 24
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &761521885
 MeshCollider:
@@ -23151,8 +23201,8 @@ GameObject:
   m_Name: Lantern.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &783879095
 Transform:
@@ -23166,7 +23216,7 @@ Transform:
   m_LocalScale: {x: 39.977047, y: 3.3444571, z: 34.86311}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 60
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &783879096
 MeshCollider:
@@ -23473,8 +23523,8 @@ GameObject:
   m_Name: Cone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &790307812
 Transform:
@@ -23488,7 +23538,7 @@ Transform:
   m_LocalScale: {x: 76.41085, y: 76.41086, z: 76.41085}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 78
+  m_RootOrder: 75
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &790307813
 MeshCollider:
@@ -23586,8 +23636,8 @@ GameObject:
   m_Name: Tree.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &796479174
 Transform:
@@ -23684,8 +23734,8 @@ GameObject:
   m_Name: Billboard.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &802689637
 Transform:
@@ -23699,7 +23749,7 @@ Transform:
   m_LocalScale: {x: 7.4794703, y: 52.80353, z: 40.722958}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 73
+  m_RootOrder: 70
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &802689638
 MeshCollider:
@@ -23841,8 +23891,8 @@ GameObject:
   m_Name: Billboard.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &807834911
 Transform:
@@ -23856,7 +23906,7 @@ Transform:
   m_LocalScale: {x: 7.4794693, y: 52.803528, z: 40.722958}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 69
+  m_RootOrder: 66
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &807834912
 MeshCollider:
@@ -24029,7 +24079,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &827274840
 Transform:
@@ -24125,8 +24175,8 @@ GameObject:
   m_Name: WoodenBarrel.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &830831462
 Transform:
@@ -24455,7 +24505,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &840886026
 Transform:
@@ -24550,8 +24600,8 @@ GameObject:
   m_Name: Railing.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &841607567
 Transform:
@@ -24781,8 +24831,8 @@ GameObject:
   m_Name: WoodenBox.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &847447459
 Transform:
@@ -24796,7 +24846,7 @@ Transform:
   m_LocalScale: {x: 147.13193, y: 91.38358, z: 29.918783}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 23
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &847447460
 MeshCollider:
@@ -24896,8 +24946,8 @@ GameObject:
   m_Name: TrafficFence.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &847713924
 Transform:
@@ -24911,7 +24961,7 @@ Transform:
   m_LocalScale: {x: 234.08005, y: 9.998831, z: 22.48172}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 59
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &847713925
 MeshCollider:
@@ -25009,8 +25059,8 @@ GameObject:
   m_Name: Railing.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &848299048
 Transform:
@@ -25105,8 +25155,8 @@ GameObject:
   m_Name: StoneWall.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &854351012
 Transform:
@@ -25202,8 +25252,8 @@ GameObject:
   m_Name: WoodenBarrel.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &854742564
 Transform:
@@ -25217,7 +25267,7 @@ Transform:
   m_LocalScale: {x: 97.15949, y: 97.15949, z: 119.04165}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 21
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &854742565
 MeshCollider:
@@ -25449,8 +25499,8 @@ GameObject:
   m_Name: Tree.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &866510573
 Transform:
@@ -25546,8 +25596,8 @@ GameObject:
   m_Name: Railing.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &867889528
 Transform:
@@ -25977,8 +26027,8 @@ GameObject:
   m_Name: WoodenBox.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &874737114
 Transform:
@@ -25992,7 +26042,7 @@ Transform:
   m_LocalScale: {x: 133.8651, y: 83.143555, z: 27.221008}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 31
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &874737115
 MeshCollider:
@@ -26092,8 +26142,8 @@ GameObject:
   m_Name: WoodenBarrel.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &875490690
 Transform:
@@ -26102,12 +26152,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875490689}
-  m_LocalRotation: {x: 0.511522, y: 0.37258428, z: -0.25309968, w: 0.7317559}
-  m_LocalPosition: {x: 39.65077, y: 3.5171237, z: 44.993042}
-  m_LocalScale: {x: 78.46614, y: 78.46614, z: 96.1382}
+  m_LocalRotation: {x: 0.31115475, y: -0.7814314, z: 0.45687398, w: -0.28950644}
+  m_LocalPosition: {x: 0.007457749, y: -0.005664969, z: 0.024774225}
+  m_LocalScale: {x: 0.9936728, y: 0.84739935, z: 1.1794895}
   m_Children: []
-  m_Father: {fileID: 348271283}
-  m_RootOrder: 19
+  m_Father: {fileID: 506799580}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &875490691
 MeshCollider:
@@ -26205,8 +26255,8 @@ GameObject:
   m_Name: Cone.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &876284992
 Transform:
@@ -26220,7 +26270,7 @@ Transform:
   m_LocalScale: {x: 76.41086, y: 76.41085, z: 76.410866}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 82
+  m_RootOrder: 79
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &876284993
 MeshCollider:
@@ -26364,8 +26414,8 @@ GameObject:
   m_Name: SacredPillar.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &888636680
 Transform:
@@ -26571,8 +26621,8 @@ GameObject:
   m_Name: WoodenBox.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &896710861
 Transform:
@@ -26586,7 +26636,7 @@ Transform:
   m_LocalScale: {x: 114.82348, y: 71.316826, z: 23.348967}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 37
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &896710862
 MeshCollider:
@@ -26896,8 +26946,8 @@ GameObject:
   m_Name: TallTree.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &912324740
 Transform:
@@ -26995,8 +27045,8 @@ GameObject:
   m_Name: Fence.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &912383104
 Transform:
@@ -27091,8 +27141,8 @@ GameObject:
   m_Name: Railing.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &912697433
 Transform:
@@ -27356,8 +27406,8 @@ GameObject:
   m_Name: TallTree.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &923828811
 Transform:
@@ -27867,8 +27917,8 @@ GameObject:
   m_Name: Railing.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &939496859
 Transform:
@@ -27963,8 +28013,8 @@ GameObject:
   m_Name: HandWater.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &940933481
 Transform:
@@ -28195,8 +28245,8 @@ GameObject:
   m_Name: Torii
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &958171628
 Transform:
@@ -28210,7 +28260,7 @@ Transform:
   m_LocalScale: {x: 82.05811, y: 59.965538, z: 12.083779}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &958171629
 MeshCollider:
@@ -28522,8 +28572,8 @@ GameObject:
   m_Name: WoodenBox.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &970959727
 Transform:
@@ -28537,7 +28587,7 @@ Transform:
   m_LocalScale: {x: 114.82349, y: 71.31681, z: 23.348967}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 35
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &970959728
 MeshCollider:
@@ -28636,8 +28686,8 @@ GameObject:
   m_Name: Railing.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &971968183
 Transform:
@@ -29066,8 +29116,8 @@ GameObject:
   m_Name: TallTree.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &982864982
 Transform:
@@ -29563,7 +29613,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &995321982
 Transform:
@@ -29867,8 +29917,8 @@ GameObject:
   m_Name: TallTree.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &998006710
 Transform:
@@ -29967,8 +30017,8 @@ GameObject:
   m_Name: WoodenBarrel.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1004554542
 Transform:
@@ -29977,12 +30027,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004554541}
-  m_LocalRotation: {x: 0.35517725, y: -0.6971358, z: -0.22747229, w: 0.5797475}
-  m_LocalPosition: {x: 42.142265, y: 3.934369, z: 45.710625}
-  m_LocalScale: {x: 78.46613, y: 78.46613, z: 96.13818}
+  m_LocalRotation: {x: 0.037804857, y: -0.1410256, z: -0.010086298, w: -0.9892325}
+  m_LocalPosition: {x: -0.0024038139, y: -0.0055248225, z: -0.0013291256}
+  m_LocalScale: {x: 0.98267615, y: 0.9988353, z: 1.0155791}
   m_Children: []
-  m_Father: {fileID: 348271283}
-  m_RootOrder: 20
+  m_Father: {fileID: 506799580}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1004554543
 MeshCollider:
@@ -30248,8 +30298,8 @@ GameObject:
   m_Name: Tree.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1007310668
 Transform:
@@ -30345,8 +30395,8 @@ GameObject:
   m_Name: TallTree.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1007563118
 Transform:
@@ -30578,8 +30628,8 @@ GameObject:
   m_Name: HandWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1018513470
 Transform:
@@ -30751,8 +30801,8 @@ GameObject:
   m_Name: Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1037880540
 Transform:
@@ -30834,6 +30884,101 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1037880539}
   m_Mesh: {fileID: -1875780437015597444, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
+--- !u!1 &1044665187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1044665188}
+  - component: {fileID: 1044665191}
+  - component: {fileID: 1044665190}
+  - component: {fileID: 1044665189}
+  m_Layer: 5
+  m_Name: HurtOverlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1044665188
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044665187}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 85413721}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1179.7842, y: 620.1215}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1044665189
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044665187}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ab92693ef90c994caed5bb0eeb67a95, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1044665190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044665187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 10e341c134678074c8be7e846453a615, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1044665191
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044665187}
+  m_CullTransparentMesh: 1
 --- !u!1 &1044721134
 GameObject:
   m_ObjectHideFlags: 0
@@ -30851,8 +30996,8 @@ GameObject:
   m_Name: Lantern.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1044721135
 Transform:
@@ -30866,7 +31011,7 @@ Transform:
   m_LocalScale: {x: 77.70148, y: 77.70147, z: 16.43017}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 66
+  m_RootOrder: 63
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1044721136
 MeshCollider:
@@ -31169,8 +31314,8 @@ GameObject:
   m_Name: Railing.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1049216364
 Transform:
@@ -31650,8 +31795,8 @@ GameObject:
   m_Name: Tree.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1077407778
 Transform:
@@ -31747,8 +31892,8 @@ GameObject:
   m_Name: Tree.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1078455801
 Transform:
@@ -32115,8 +32260,8 @@ GameObject:
   m_Name: WoodenRoadBlock.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1108740107
 Transform:
@@ -32130,7 +32275,7 @@ Transform:
   m_LocalScale: {x: 6.6997766, y: 4.1575975, z: 57.141327}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 49
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1108740108
 MeshCollider:
@@ -32228,8 +32373,8 @@ GameObject:
   m_Name: WoodenBarrel.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1122416392
 Transform:
@@ -32476,7 +32621,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1131233594
 Transform:
@@ -32571,8 +32716,8 @@ GameObject:
   m_Name: TallTree.064
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1136073654
 Transform:
@@ -32950,7 +33095,7 @@ RectTransform:
   - {fileID: 1249494370}
   - {fileID: 1265634149}
   - {fileID: 1680319843}
-  - {fileID: 657150930}
+  - {fileID: 85413721}
   - {fileID: 1309256306}
   - {fileID: 1386911497}
   - {fileID: 1956355299}
@@ -33397,8 +33542,8 @@ GameObject:
   m_Name: WoodenBarrel.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1150558599
 Transform:
@@ -33792,8 +33937,8 @@ GameObject:
   m_Name: TrafficFence.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1175141847
 Transform:
@@ -33807,7 +33952,7 @@ Transform:
   m_LocalScale: {x: 234.08005, y: 9.998831, z: 22.48172}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 58
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1175141848
 MeshCollider:
@@ -33905,8 +34050,8 @@ GameObject:
   m_Name: Tree.043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1184681802
 Transform:
@@ -34003,8 +34148,8 @@ GameObject:
   m_Name: WoodenBarrel.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1186847116
 Transform:
@@ -34192,7 +34337,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1191293104
 Transform:
@@ -34617,8 +34762,8 @@ GameObject:
   m_Name: SacredPillar.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1215961510
 Transform:
@@ -34713,8 +34858,8 @@ GameObject:
   m_Name: FenceBottom.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1216017942
 Transform:
@@ -34809,8 +34954,8 @@ GameObject:
   m_Name: Fence.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1222280072
 Transform:
@@ -34905,8 +35050,8 @@ GameObject:
   m_Name: SacredPillarFence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1233530388
 Transform:
@@ -35276,8 +35421,8 @@ GameObject:
   m_Name: Fence.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1252735083
 Transform:
@@ -35481,8 +35626,8 @@ GameObject:
   m_Name: TallTree.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1258798516
 Transform:
@@ -35580,8 +35725,8 @@ GameObject:
   m_Name: Tree.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1263601189
 Transform:
@@ -35774,8 +35919,8 @@ GameObject:
   m_Name: Tree.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1268821672
 Transform:
@@ -35871,8 +36016,8 @@ GameObject:
   m_Name: Tree.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1274985015
 Transform:
@@ -36103,8 +36248,8 @@ GameObject:
   m_Name: WoodenBarrel.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1276365487
 Transform:
@@ -36257,8 +36402,8 @@ GameObject:
   m_Name: StatueRaiden
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1283279856
 Transform:
@@ -36272,7 +36417,7 @@ Transform:
   m_LocalScale: {x: 30.246635, y: 39.320625, z: 41.390137}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1283279857
 MeshCollider:
@@ -36354,8 +36499,8 @@ GameObject:
   m_Name: ClothBridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1286387831
 Transform:
@@ -36369,7 +36514,7 @@ Transform:
   m_LocalScale: {x: 210.66998, y: 305.38574, z: 14.556821}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1286387832
 MeshCollider:
@@ -36452,8 +36597,8 @@ GameObject:
   m_Name: Tree.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1288663825
 Transform:
@@ -36549,8 +36694,8 @@ GameObject:
   m_Name: FenceBottom.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1290275250
 Transform:
@@ -36881,8 +37026,8 @@ GameObject:
   m_Name: Tree.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1311717183
 Transform:
@@ -37010,8 +37155,8 @@ GameObject:
   m_Name: TallTree.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1327442738
 Transform:
@@ -37110,8 +37255,8 @@ GameObject:
   m_Name: Lantern.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1336346890
 Transform:
@@ -37125,7 +37270,7 @@ Transform:
   m_LocalScale: {x: 77.70148, y: 77.70147, z: 16.43017}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 67
+  m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1336346891
 MeshCollider:
@@ -37223,8 +37368,8 @@ GameObject:
   m_Name: TallTree.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1337513901
 Transform:
@@ -37457,7 +37602,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1362613280
 Transform:
@@ -37552,8 +37697,8 @@ GameObject:
   m_Name: Stone.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1363607398
 Transform:
@@ -37648,8 +37793,8 @@ GameObject:
   m_Name: Screen.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1365624432
 Transform:
@@ -37873,8 +38018,8 @@ GameObject:
   m_Name: Tree.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1380151887
 Transform:
@@ -38349,8 +38494,8 @@ GameObject:
   m_Name: Fence.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1400926087
 Transform:
@@ -38570,8 +38715,8 @@ GameObject:
   m_Name: Tree.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1406841105
 Transform:
@@ -38743,8 +38888,8 @@ GameObject:
   m_Name: WoodenBarrel.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1409912147
 Transform:
@@ -39137,8 +39282,8 @@ GameObject:
   m_Name: FenceBottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1423621395
 Transform:
@@ -39233,8 +39378,8 @@ GameObject:
   m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1423845062
 Transform:
@@ -39329,8 +39474,8 @@ GameObject:
   m_Name: HandWaterSpoon.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1423937609
 Transform:
@@ -39425,8 +39570,8 @@ GameObject:
   m_Name: SacredPillar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1430234921
 Transform:
@@ -39664,8 +39809,8 @@ GameObject:
   m_Name: Screen.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1436968135
 Transform:
@@ -39764,8 +39909,8 @@ GameObject:
   m_Name: WoodenBarrel.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1439333342
 Transform:
@@ -39877,8 +40022,8 @@ GameObject:
   m_Name: Tree.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1440383116
 Transform:
@@ -40088,8 +40233,8 @@ GameObject:
   m_Name: Tree.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1448501740
 Transform:
@@ -40281,8 +40426,8 @@ GameObject:
   m_Name: TallTree.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1462244295
 Transform:
@@ -40380,8 +40525,8 @@ GameObject:
   m_Name: Tree.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1463839965
 Transform:
@@ -40523,8 +40668,8 @@ GameObject:
   m_Name: TallTree.063
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1477981001
 Transform:
@@ -40718,8 +40863,8 @@ GameObject:
   m_Name: TallTree.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1479330893
 Transform:
@@ -40817,8 +40962,8 @@ GameObject:
   m_Name: Railing.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1480882016
 Transform:
@@ -41002,7 +41147,7 @@ Transform:
   - {fileID: 933134424}
   - {fileID: 2114666277}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1497007289
 GameObject:
@@ -41021,8 +41166,8 @@ GameObject:
   m_Name: WoodenBox.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1497007290
 Transform:
@@ -41036,7 +41181,7 @@ Transform:
   m_LocalScale: {x: 147.13193, y: 91.38358, z: 29.918783}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 27
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1497007291
 MeshCollider:
@@ -41136,8 +41281,8 @@ GameObject:
   m_Name: Chair.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1499712509
 Transform:
@@ -41151,7 +41296,7 @@ Transform:
   m_LocalScale: {x: 138.74028, y: 21.178871, z: 4.060074}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 89
+  m_RootOrder: 86
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1499712510
 MeshCollider:
@@ -41383,8 +41528,8 @@ GameObject:
   m_Name: Fence.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1504627658
 Transform:
@@ -41769,8 +41914,8 @@ GameObject:
   m_Name: WoodenRoadBlock.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1524805335
 Transform:
@@ -41784,7 +41929,7 @@ Transform:
   m_LocalScale: {x: 5.916967, y: 3.671819, z: 50.464874}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 44
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1524805336
 MeshCollider:
@@ -41956,8 +42101,8 @@ GameObject:
   m_Name: Entrance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1532038647
 Transform:
@@ -41971,7 +42116,7 @@ Transform:
   m_LocalScale: {x: -646.6513, y: -397.1815, z: -14.839651}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1532038648
 MeshCollider:
@@ -42055,8 +42200,8 @@ GameObject:
   m_Name: TallTree.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1532191546
 Transform:
@@ -42279,8 +42424,8 @@ GameObject:
   m_Name: Tree.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1540435868
 Transform:
@@ -42606,8 +42751,8 @@ GameObject:
   m_Name: Lantern.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1552966553
 Transform:
@@ -42621,7 +42766,7 @@ Transform:
   m_LocalScale: {x: 39.977047, y: 3.3444571, z: 34.863106}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 62
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1552966554
 MeshCollider:
@@ -42931,8 +43076,8 @@ GameObject:
   m_Name: WoodenBox.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1558909163
 Transform:
@@ -42941,13 +43086,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558909162}
-  m_LocalRotation: {x: -0.6470742, y: -0.1864056, z: -0.00771533, w: 0.7392485}
-  m_LocalPosition: {x: 20.00806, y: 0.44584617, z: 47.78959}
+  m_LocalRotation: {x: -0.7006434, y: -0.11305475, z: -0.070924856, w: 0.7009188}
+  m_LocalPosition: {x: 19.837, y: 0.094, z: 47.689}
   m_LocalScale: {x: 147.13193, y: 91.38359, z: 29.918781}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 34
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 31
+  m_LocalEulerAnglesHint: {x: -86.586, y: -97.104, z: 82.147}
 --- !u!64 &1558909164
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -43045,8 +43190,8 @@ GameObject:
   m_Name: TallTree.053
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1560271743
 Transform:
@@ -43145,8 +43290,8 @@ GameObject:
   m_Name: WoodenRoadBlock.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1566861754
 Transform:
@@ -43160,7 +43305,7 @@ Transform:
   m_LocalScale: {x: 5.9169664, y: 3.671819, z: 50.464874}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 47
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1566861755
 MeshCollider:
@@ -43479,8 +43624,8 @@ GameObject:
   m_Name: Tree.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1581310529
 Transform:
@@ -43652,8 +43797,8 @@ GameObject:
   m_Name: WoodenBox.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1594225190
 Transform:
@@ -43667,7 +43812,7 @@ Transform:
   m_LocalScale: {x: 116.00888, y: 72.05308, z: 23.590017}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 33
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1594225191
 MeshCollider:
@@ -43766,8 +43911,8 @@ GameObject:
   m_Name: SacredPillar.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1594757199
 Transform:
@@ -44108,7 +44253,7 @@ MonoBehaviour:
     baseValue: 0
   health:
     baseValue: 0
-  healthBar: {fileID: 154757875}
+  hurtFlashTime: 0.2
 --- !u!143 &1611886971
 CharacterController:
   m_ObjectHideFlags: 0
@@ -44251,8 +44396,8 @@ GameObject:
   m_Name: WoodenBarrel.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1617791282
 Transform:
@@ -44551,8 +44696,8 @@ GameObject:
   m_Name: Chair.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1627853434
 Transform:
@@ -44566,7 +44711,7 @@ Transform:
   m_LocalScale: {x: 159.84418, y: 24.400415, z: 4.677655}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 85
+  m_RootOrder: 82
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1627853435
 MeshCollider:
@@ -44665,8 +44810,8 @@ GameObject:
   m_Name: WoodenRoadBlock.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1629363519
 Transform:
@@ -44680,7 +44825,7 @@ Transform:
   m_LocalScale: {x: 5.9169664, y: 3.6718194, z: 50.464878}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 53
+  m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1629363520
 MeshCollider:
@@ -44778,8 +44923,8 @@ GameObject:
   m_Name: WoodenBox.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1630520106
 Transform:
@@ -44793,7 +44938,7 @@ Transform:
   m_LocalScale: {x: 147.13194, y: 91.38359, z: 29.918783}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 28
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1630520107
 MeshCollider:
@@ -45027,8 +45172,8 @@ GameObject:
   m_Name: Chair.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1646028745
 Transform:
@@ -45042,7 +45187,7 @@ Transform:
   m_LocalScale: {x: 159.84418, y: 24.400415, z: 4.6776557}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 88
+  m_RootOrder: 85
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1646028746
 MeshCollider:
@@ -45140,8 +45285,8 @@ GameObject:
   m_Name: TallTree.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1651519336
 Transform:
@@ -45240,8 +45385,8 @@ GameObject:
   m_Name: TrafficFence.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1653443994
 Transform:
@@ -45255,7 +45400,7 @@ Transform:
   m_LocalScale: {x: 229.09808, y: 9.786026, z: 22.003244}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 56
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1653443995
 MeshCollider:
@@ -45428,8 +45573,8 @@ GameObject:
   m_Name: TallTree.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1658676294
 Transform:
@@ -45527,8 +45672,8 @@ GameObject:
   m_Name: Tree.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1659700864
 Transform:
@@ -45890,8 +46035,8 @@ GameObject:
   m_Name: Billboard.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1668181754
 Transform:
@@ -45905,7 +46050,7 @@ Transform:
   m_LocalScale: {x: 7.4794693, y: 52.803528, z: 40.722958}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 77
+  m_RootOrder: 74
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1668181755
 MeshCollider:
@@ -46039,8 +46184,8 @@ GameObject:
   m_Name: WoodenRoadBlock.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1671291013
 Transform:
@@ -46054,7 +46199,7 @@ Transform:
   m_LocalScale: {x: 6.6997766, y: 4.157597, z: 57.141327}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 50
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1671291014
 MeshCollider:
@@ -46151,8 +46296,8 @@ GameObject:
   m_Name: Tree.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1671633567
 Transform:
@@ -46323,8 +46468,8 @@ GameObject:
   m_Name: TallTree.056
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1683943977
 Transform:
@@ -46423,8 +46568,8 @@ GameObject:
   m_Name: Lantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1684980850
 Transform:
@@ -46704,8 +46849,8 @@ GameObject:
   m_Name: Screen.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1701674947
 Transform:
@@ -46818,7 +46963,7 @@ Transform:
   m_LocalScale: {x: -459.73215, y: -282.37338, z: -10.550145}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1704229405
 MeshCollider:
@@ -47037,8 +47182,8 @@ GameObject:
   m_Name: Tree.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1711261501
 Transform:
@@ -47134,8 +47279,8 @@ GameObject:
   m_Name: Tree.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1711643921
 Transform:
@@ -47272,8 +47417,8 @@ GameObject:
   m_Name: Cone.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1713504447
 Transform:
@@ -47287,7 +47432,7 @@ Transform:
   m_LocalScale: {x: 76.41084, y: 76.41086, z: 76.41086}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 83
+  m_RootOrder: 80
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1713504448
 MeshCollider:
@@ -47519,8 +47664,8 @@ GameObject:
   m_Name: Tree.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1722688210
 Transform:
@@ -47616,8 +47761,8 @@ GameObject:
   m_Name: TallTree.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1723318973
 Transform:
@@ -47791,8 +47936,8 @@ GameObject:
   m_Name: StoneWall.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1726502986
 Transform:
@@ -48221,8 +48366,8 @@ GameObject:
   m_Name: StoneWall.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1745233035
 Transform:
@@ -48451,8 +48596,8 @@ GameObject:
   m_Name: Tree.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1755577151
 Transform:
@@ -48758,8 +48903,8 @@ GameObject:
   m_Name: TallTree.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1769453334
 Transform:
@@ -48934,7 +49079,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1771344411
 Transform:
@@ -49029,8 +49174,8 @@ GameObject:
   m_Name: StoneWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1775709578
 Transform:
@@ -49109,37 +49254,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775709577}
   m_Mesh: {fileID: -498282214495449752, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!1 &1775889311
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1775889312}
-  m_Layer: 0
-  m_Name: Nav
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1775889312
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1775889311}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.718754, y: -22.578121, z: -4.554325}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1940853490}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1776158200
 GameObject:
   m_ObjectHideFlags: 0
@@ -49157,8 +49271,8 @@ GameObject:
   m_Name: WoodenRoadBlock.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1776158201
 Transform:
@@ -49172,7 +49286,7 @@ Transform:
   m_LocalScale: {x: 5.9169664, y: 3.671819, z: 50.464874}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 41
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1776158202
 MeshCollider:
@@ -49269,8 +49383,8 @@ GameObject:
   m_Name: StoneWall.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1780972492
 Transform:
@@ -49365,8 +49479,8 @@ GameObject:
   m_Name: Tree.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1787920281
 Transform:
@@ -49462,8 +49576,8 @@ GameObject:
   m_Name: TallTree.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1793587170
 Transform:
@@ -49696,8 +49810,8 @@ GameObject:
   m_Name: Billboard.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1805510773
 Transform:
@@ -49711,7 +49825,7 @@ Transform:
   m_LocalScale: {x: 7.4794693, y: 52.803528, z: 40.722958}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 71
+  m_RootOrder: 68
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1805510774
 MeshCollider:
@@ -49808,8 +49922,8 @@ GameObject:
   m_Name: Screen.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1807339489
 Transform:
@@ -50254,8 +50368,8 @@ GameObject:
   m_Name: Lantern.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1829511545
 Transform:
@@ -50269,7 +50383,7 @@ Transform:
   m_LocalScale: {x: 77.70148, y: 77.70147, z: 16.43017}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 65
+  m_RootOrder: 62
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1829511546
 MeshCollider:
@@ -50367,8 +50481,8 @@ GameObject:
   m_Name: TallTree.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1833320863
 Transform:
@@ -50466,8 +50580,8 @@ GameObject:
   m_Name: TallTree.054
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1837742908
 Transform:
@@ -50566,8 +50680,8 @@ GameObject:
   m_Name: WoodenRoadBlock.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1838209405
 Transform:
@@ -50577,11 +50691,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838209404}
   m_LocalRotation: {x: -0.707101, y: 0.0028688074, z: 0.21635436, w: 0.67319447}
-  m_LocalPosition: {x: 26.187822, y: 1.7095056, z: 48.76118}
+  m_LocalPosition: {x: 26.406792, y: 1.7769549, z: 48.702652}
   m_LocalScale: {x: 6.62204, y: 4.109358, z: 56.478333}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 54
+  m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1838209406
 MeshCollider:
@@ -50716,8 +50830,8 @@ GameObject:
   m_Name: Railing.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1841631906
 Transform:
@@ -50963,8 +51077,8 @@ GameObject:
   m_Name: TallTree.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1843877731
 Transform:
@@ -51063,8 +51177,8 @@ GameObject:
   m_Name: WoodenLog.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1844534467
 Transform:
@@ -51078,7 +51192,7 @@ Transform:
   m_LocalScale: {x: 82.30201, y: 82.30202, z: 70.2765}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 38
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1844534468
 MeshCollider:
@@ -51176,8 +51290,8 @@ GameObject:
   m_Name: TallTree.060
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1858411816
 Transform:
@@ -51323,8 +51437,8 @@ GameObject:
   m_Name: TallTree.043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1870935496
 Transform:
@@ -51528,8 +51642,8 @@ GameObject:
   m_Name: HandWaterSpoon.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1884349850
 Transform:
@@ -51758,8 +51872,8 @@ GameObject:
   m_Name: TallTree.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1890785146
 Transform:
@@ -51857,8 +51971,8 @@ GameObject:
   m_Name: SacredPillarFence.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1897462508
 Transform:
@@ -51955,8 +52069,8 @@ GameObject:
   m_Name: WoodenBox.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1897777528
 Transform:
@@ -51970,7 +52084,7 @@ Transform:
   m_LocalScale: {x: 147.13193, y: 91.38359, z: 29.918783}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 30
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1897777529
 MeshCollider:
@@ -52164,8 +52278,8 @@ GameObject:
   m_Name: TallTree.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1916321664
 Transform:
@@ -52263,8 +52377,8 @@ GameObject:
   m_Name: TallTree.057
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1918777728
 Transform:
@@ -52362,8 +52476,8 @@ GameObject:
   m_Name: TallTree.058
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1923483635
 Transform:
@@ -52595,8 +52709,8 @@ GameObject:
   m_Name: WoodenBox.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1925445985
 Transform:
@@ -52610,7 +52724,7 @@ Transform:
   m_LocalScale: {x: 147.13194, y: 91.3836, z: 29.918783}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 32
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1925445986
 MeshCollider:
@@ -52709,8 +52823,8 @@ GameObject:
   m_Name: Tree.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1925597930
 Transform:
@@ -52882,8 +52996,8 @@ GameObject:
   m_Name: Billboard.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1928577034
 Transform:
@@ -52897,7 +53011,7 @@ Transform:
   m_LocalScale: {x: 7.4794703, y: 52.80353, z: 40.722958}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 74
+  m_RootOrder: 71
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1928577035
 MeshCollider:
@@ -52994,8 +53108,8 @@ GameObject:
   m_Name: TallTree.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1932325006
 Transform:
@@ -53093,8 +53207,8 @@ GameObject:
   m_Name: TallTree.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1932908828
 Transform:
@@ -53193,7 +53307,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1933652685
 Transform:
@@ -53369,7 +53483,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1940568215
 Transform:
@@ -53383,7 +53497,7 @@ Transform:
   m_LocalScale: {x: 187.36412, y: 965.6468, z: 62.237442}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1940568216
 MeshCollider:
@@ -53452,66 +53566,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940568214}
   m_Mesh: {fileID: 674340280032488212, guid: 6ea961b6f2a0c49298d14a33818fc469, type: 3}
---- !u!1 &1940853489
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1940853490}
-  - component: {fileID: 1940853491}
-  m_Layer: 0
-  m_Name: NavMesh
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1940853490
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940853489}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1775889312}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1940853491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940853489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 2e3853397e8d64fddba5be886adff670, type: 2}
 --- !u!1 &1944860523
 GameObject:
   m_ObjectHideFlags: 0
@@ -53926,8 +53980,8 @@ GameObject:
   m_Name: Cone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &1994445809
 Transform:
@@ -53941,7 +53995,7 @@ Transform:
   m_LocalScale: {x: 69.94632, y: 69.94632, z: 69.94631}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 79
+  m_RootOrder: 76
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1994445810
 MeshCollider:
@@ -54039,8 +54093,8 @@ GameObject:
   m_Name: Railing.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2000685620
 Transform:
@@ -54211,8 +54265,8 @@ GameObject:
   m_Name: TallTree.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2003776224
 Transform:
@@ -54310,8 +54364,8 @@ GameObject:
   m_Name: TallTree.055
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2006816390
 Transform:
@@ -54409,8 +54463,8 @@ GameObject:
   m_Name: Tree.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2008019939
 Transform:
@@ -54715,8 +54769,8 @@ GameObject:
   m_Name: Railing.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2019267370
 Transform:
@@ -54812,8 +54866,8 @@ GameObject:
   m_Name: Cone.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2020416982
 Transform:
@@ -54827,7 +54881,7 @@ Transform:
   m_LocalScale: {x: 76.41084, y: 76.41085, z: 76.41086}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 84
+  m_RootOrder: 81
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2020416983
 MeshCollider:
@@ -55180,8 +55234,8 @@ GameObject:
   m_Name: Tree.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2031236200
 Transform:
@@ -55277,8 +55331,8 @@ GameObject:
   m_Name: Fence.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2032772698
 Transform:
@@ -55705,8 +55759,8 @@ GameObject:
   m_Name: WoodenRoadBlock.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2048835244
 Transform:
@@ -55720,7 +55774,7 @@ Transform:
   m_LocalScale: {x: 5.9169664, y: 3.671819, z: 50.464878}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 40
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2048835245
 MeshCollider:
@@ -55817,8 +55871,8 @@ GameObject:
   m_Name: Torii.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2054008879
 Transform:
@@ -55832,7 +55886,7 @@ Transform:
   m_LocalScale: {x: 0.5781189, y: 0.23376973, z: 0.7515545}
   m_Children: []
   m_Father: {fileID: 447792519}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2054008880
 MeshCollider:
@@ -56123,8 +56177,8 @@ GameObject:
   m_Name: WoodenRoadBlock.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2073964181
 Transform:
@@ -56138,7 +56192,7 @@ Transform:
   m_LocalScale: {x: 5.9169664, y: 3.671819, z: 50.464874}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 46
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2073964182
 MeshCollider:
@@ -56235,8 +56289,8 @@ GameObject:
   m_Name: Tree.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2077502542
 Transform:
@@ -56407,8 +56461,8 @@ GameObject:
   m_Name: TallTree.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2079576151
 Transform:
@@ -56507,8 +56561,8 @@ GameObject:
   m_Name: Billboard.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2080413474
 Transform:
@@ -56522,7 +56576,7 @@ Transform:
   m_LocalScale: {x: 7.4794693, y: 52.803528, z: 40.722954}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 70
+  m_RootOrder: 67
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2080413475
 MeshCollider:
@@ -56619,8 +56673,8 @@ GameObject:
   m_Name: TallTree.062
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2099521812
 Transform:
@@ -56767,8 +56821,8 @@ GameObject:
   m_Name: Chair.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2117219650
 Transform:
@@ -56782,7 +56836,7 @@ Transform:
   m_LocalScale: {x: 159.84418, y: 24.400415, z: 4.6776557}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 86
+  m_RootOrder: 83
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2117219651
 MeshCollider:
@@ -56880,8 +56934,8 @@ GameObject:
   m_Name: Tree.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2119538739
 Transform:
@@ -57123,8 +57177,8 @@ GameObject:
   m_Name: WoodenBox.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_NavMeshLayer: 1
+  m_StaticEditorFlags: 40
   m_IsActive: 1
 --- !u!4 &2137382212
 Transform:
@@ -57134,11 +57188,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137382211}
   m_LocalRotation: {x: -0.7068379, y: -0.01949951, z: 0.1949517, w: 0.67970127}
-  m_LocalPosition: {x: 25.65103, y: 1.5325506, z: 48.918533}
+  m_LocalPosition: {x: 25.87, y: 1.6, z: 48.86}
   m_LocalScale: {x: 147.13193, y: 91.3836, z: 29.918781}
   m_Children: []
   m_Father: {fileID: 348271283}
-  m_RootOrder: 25
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &2137382213
 MeshCollider:
@@ -57356,7 +57410,7 @@ Transform:
   - {fileID: 935008931}
   - {fileID: 1877028164}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &2145363361
 GameObject:
