@@ -28,9 +28,9 @@ public class attendantManager : MonoBehaviour
     {
         if (!deer)
         {
-            if (GameObject.Find("Player/Deer").transform.childCount > 0)
+            if (GameObject.Find("Player/Mount").transform.childCount > 0)
             {
-                deer = GameObject.Find("Player/Deer").transform.GetChild(0).gameObject;
+                deer = GameObject.Find("Player/Mount").transform.GetChild(0).gameObject;
             }
         }
     }
@@ -43,7 +43,8 @@ public class attendantManager : MonoBehaviour
             if (deer)
                 deer.SetActive(false);
             fP.choosed[0] = !fP.choosed[0];
-            if(fP.choosed[0]){
+            if (fP.choosed[0])
+            {
                 fP.startFollowing();
             }
             fP.nowFollowing();
@@ -54,7 +55,8 @@ public class attendantManager : MonoBehaviour
             if (deer)
                 deer.SetActive(false);
             fP.choosed[1] = !fP.choosed[1];
-            if(fP.choosed[1]){
+            if (fP.choosed[1])
+            {
                 fP.startFollowing();
             }
             fP.nowFollowing();
@@ -65,7 +67,8 @@ public class attendantManager : MonoBehaviour
             if (deer)
                 deer.SetActive(false);
             fP.choosed[2] = !fP.choosed[2];
-            if(fP.choosed[2]){
+            if (fP.choosed[2])
+            {
                 fP.startFollowing();
             }
             fP.nowFollowing();
@@ -76,7 +79,8 @@ public class attendantManager : MonoBehaviour
             if (deer)
                 deer.SetActive(false);
             fP.choosed[3] = !fP.choosed[3];
-            if(fP.choosed[3]){
+            if (fP.choosed[3])
+            {
                 fP.startFollowing();
             }
             fP.nowFollowing();
@@ -87,7 +91,8 @@ public class attendantManager : MonoBehaviour
             if (deer)
                 deer.SetActive(false);
             fP.choosed[4] = !fP.choosed[4];
-            if(fP.choosed[4]){
+            if (fP.choosed[4])
+            {
                 fP.startFollowing();
             }
             fP.nowFollowing();

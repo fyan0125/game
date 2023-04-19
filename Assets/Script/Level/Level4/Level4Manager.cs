@@ -23,15 +23,10 @@ public class Level4Manager : MonoBehaviour
 
     private void Start()
     {
-        // BillBoardUI = GameObject.Find("/ObjectToNextLevel/Canvas/Level4UI/BillBoardUI");
-        // FailUI = GameObject.Find("/ObjectToNextLevel/Canvas/Level4UI/FailUI");
-        // message = GameObject
-        //     .Find("/ObjectToNextLevel/Canvas/Level4UI/GameUI/Message")
-        //     .GetComponent<TextMeshProUGUI>();
         SetUpButton();
 
         BillBoardUI.SetActive(false);
-        SwitchSkills.getSkill = 0;
+        SwitchSkills.getSkill = 2;
         Timer.time = time;
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         player.MoveToTarget(new Vector3(17f, -9.4f, 13.7f), new Vector3(0, 180, 0));
@@ -50,6 +45,7 @@ public class Level4Manager : MonoBehaviour
     public void GameStart()
     {
         Resume();
+        SwitchSkills.lockSkill = true;
         player.MoveToTarget(new Vector3(17, -9, -24));
         catchedChickenNum = 0;
         //隨機生成雞
@@ -105,6 +101,7 @@ public class Level4Manager : MonoBehaviour
     public void GameComplete()
     {
         Debug.Log("Level 4 Complete");
+        SwitchSkills.lockSkill = false;
         SwitchSkills.getSkill = 2;
         npcChicken.gameComplete = true;
     }

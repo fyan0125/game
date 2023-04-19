@@ -32347,7 +32347,6 @@ GameObject:
   - component: {fileID: 1041214520}
   - component: {fileID: 1041214519}
   - component: {fileID: 1041214518}
-  - component: {fileID: 1041214517}
   - component: {fileID: 1041214516}
   - component: {fileID: 1041214515}
   m_Layer: 7
@@ -32419,19 +32418,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSkill: 0
---- !u!114 &1041214517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041214513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dd9b2b247e8be3458cf952701d94b65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 835565779}
 --- !u!114 &1041214518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32444,7 +32430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b9fa11b3ec8634f98c531a7a712eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 835565781}
+  meleeWeapon: {fileID: 835565779}
+  shootWeapon: {fileID: 835565781}
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -64584,7 +64571,7 @@ GameObject:
   - component: {fileID: 2050929292}
   - component: {fileID: 2050929293}
   m_Layer: 7
-  m_Name: Deer
+  m_Name: Mount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

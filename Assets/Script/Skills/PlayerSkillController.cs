@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
 
-public class ThirdPersonShooterController : MonoBehaviour
+public class PlayerSkillController : MonoBehaviour
 {
-    public GameObject weapon;
+    public GameObject meleeWeapon;
+    public GameObject shootWeapon;
 
     [SerializeField]
     private LayerMask aimColliderLayerMask = new LayerMask();
@@ -18,7 +16,6 @@ public class ThirdPersonShooterController : MonoBehaviour
 
     [SerializeField]
     private Transform spawnBulletPosition;
-    private bool boosted = false;
     private ThirdPersonChar thirdPersonChar;
     private SwitchSkills switchSkills;
     private Animator anim;
@@ -41,31 +38,21 @@ public class ThirdPersonShooterController : MonoBehaviour
             mouseWorldPosition = raycastHit.point;
         }
 
-        //控制玩家是否跟著滑鼠游標面向
-        if (Input.GetButtonDown("SwitchSkills") && switchSkills.currentSkill == 3)
+        if (switchSkills.currentSkill == 2)
         {
-            boosted = true;
+            if (Input.GetButtonDown("Skill"))
+                anim.SetTrigger("Melee");
         }
-        else if (Input.GetButtonDown("SwitchSkills"))
+        else if (switchSkills.currentSkill == 3)
         {
-            boosted = false;
-            thirdPersonChar.SetRotateOnMove(true);
-        }
-        if (boosted)
-        {
-            thirdPersonChar.SetRotateOnMove(false);
-
             Vector3 worldAimTarget = mouseWorldPosition;
             worldAimTarget.y = transform.position.y;
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
-
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
-        }
 
-        if (switchSkills.currentSkill == 3)
-        {
-            weapon.SetActive(true);
+            shootWeapon.SetActive(true);
             debugTransform.SetActive(true);
+
             if (Input.GetButtonDown("Skill"))
             {
                 anim.SetTrigger("Shoot");
@@ -77,10 +64,10 @@ public class ThirdPersonShooterController : MonoBehaviour
                 );
             }
         }
-        else
-        {
-            weapon.SetActive(false);
-            debugTransform.SetActive(false);
-        }
+
+        meleeWeapon.SetActive((switchSkills.currentSkill == 2));
+        shootWeapon.SetActive((switchSkills.currentSkill == 3));
+        debugTransform.SetActive((switchSkills.currentSkill == 3));
+        thirdPersonChar.SetRotateOnMove(!(switchSkills.currentSkill == 3));
     }
 }

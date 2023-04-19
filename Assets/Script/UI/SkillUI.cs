@@ -75,30 +75,38 @@ public class SkillUI : MonoBehaviour
 
     private void Update()
     {
-        if (SwitchSkills.getSkill == 0)
+        if (SwitchSkills.getSkill == 0 || SwitchSkills.lockSkill)
         {
             RabbitSkillUI.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
             WolfSkillUI.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
             ChickenSkillUI.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
             CraneSkillUI.GetComponent<Image>().color = new Color(0.8f, 0.8f, 0.8f, 1);
         }
-
-        if (RabbitSkillUI && RabbitSkillIcon && SwitchSkills.getSkill >= 1)
+        else
         {
-            RabbitSkillIcon.SetActive(true);
-            RabbitSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-        }
+            if (RabbitSkillUI && RabbitSkillIcon && SwitchSkills.getSkill >= 1)
+            {
+                RabbitSkillIcon.SetActive(true);
+                RabbitSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            }
 
-        if (WolfSkillUI && WolfSkillIcon && SwitchSkills.getSkill >= 2)
-        {
-            WolfSkillIcon.SetActive(true);
-            WolfSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-        }
+            if (WolfSkillUI && WolfSkillIcon && SwitchSkills.getSkill >= 2)
+            {
+                WolfSkillIcon.SetActive(true);
+                WolfSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            }
 
-        if (ChickenSkillUI && ChickenSkillIcon && SwitchSkills.getSkill >= 3)
-        {
-            ChickenSkillIcon.SetActive(true);
-            ChickenSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            if (ChickenSkillUI && ChickenSkillIcon && SwitchSkills.getSkill >= 3)
+            {
+                ChickenSkillIcon.SetActive(true);
+                ChickenSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            }
+
+            if (CraneSkillUI && CraneSkillIcon && SwitchSkills.getSkill >= 4)
+            {
+                CraneSkillIcon.SetActive(true);
+                CraneSkillUI.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            }
         }
     }
 
