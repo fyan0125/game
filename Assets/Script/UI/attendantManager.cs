@@ -14,24 +14,28 @@ public class attendantManager : MonoBehaviour
     public GameObject deerArea;
     private GameObject deer;
     public GameObject crowArea;
+    private GameObject crow;
     private GameObject followPlayer;
     private FollowPlayer fP;
+    public Mount mount;
 
     private void Start()
     {
         chooseBT.onClick.AddListener(ChangeAttendant);
         followPlayer = GameObject.Find("Following");
         fP = followPlayer.GetComponent<FollowPlayer>();
+        mount = GameObject.Find("Player").GetComponentInChildren<Mount>();
     }
 
     private void Update()
     {
         if (!deer)
         {
-            if (GameObject.Find("Player/Mount").transform.childCount > 0)
-            {
-                deer = GameObject.Find("Player/Mount").transform.GetChild(0).gameObject;
-            }
+            deer = mount.Deer;
+        }
+        if (!crow)
+        {
+            crow = mount.Yatagarasu;
         }
     }
 
@@ -42,60 +46,35 @@ public class attendantManager : MonoBehaviour
             Debug.Log("rabbitArea");
             if (deer)
                 deer.SetActive(false);
-            fP.choosed[0] = !fP.choosed[0];
-            if (fP.choosed[0])
-            {
-                fP.startFollowing();
-            }
-            fP.nowFollowing();
+            changeGodManager(0);
         }
         else if (wolfArea.activeSelf)
         {
             Debug.Log("wolfArea");
             if (deer)
                 deer.SetActive(false);
-            fP.choosed[1] = !fP.choosed[1];
-            if (fP.choosed[1])
-            {
-                fP.startFollowing();
-            }
-            fP.nowFollowing();
+            changeGodManager(1);
         }
         else if (foxArea.activeSelf)
         {
             Debug.Log("foxArea");
             if (deer)
                 deer.SetActive(false);
-            fP.choosed[2] = !fP.choosed[2];
-            if (fP.choosed[2])
-            {
-                fP.startFollowing();
-            }
-            fP.nowFollowing();
+            changeGodManager(2);
         }
         else if (chickenArea.activeSelf)
         {
             Debug.Log("chickenArea");
             if (deer)
                 deer.SetActive(false);
-            fP.choosed[3] = !fP.choosed[3];
-            if (fP.choosed[3])
-            {
-                fP.startFollowing();
-            }
-            fP.nowFollowing();
+            changeGodManager(3);
         }
         else if (craneArea.activeSelf)
         {
             Debug.Log("craneArea");
             if (deer)
                 deer.SetActive(false);
-            fP.choosed[4] = !fP.choosed[4];
-            if (fP.choosed[4])
-            {
-                fP.startFollowing();
-            }
-            fP.nowFollowing();
+            changeGodManager(4);
         }
         else if (deerArea.activeSelf)
         {
@@ -108,6 +87,16 @@ public class attendantManager : MonoBehaviour
         {
             Debug.Log("nothing");
             followPlayer.SetActive(true);
+        }
+    }
+
+    public void changeGodManager(int k)
+    {
+        fP.choosed[k] = !fP.choosed[k];
+        fP.nowFollowing();
+        if (fP.choosed[k])
+        {
+            fP.startFollowing();
         }
     }
 }

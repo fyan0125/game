@@ -179,6 +179,12 @@ public class ThirdPersonChar : MonoBehaviour
             targetDirection = forward * vertical + right * horizontal;
         }
 
+        if (Mount.deerActive)
+        {
+            targetSpeed *= 1.5f;
+            Mount.ChangeMountSpeed(targetSpeed);
+        }
+
         controller.Move(
             targetDirection.normalized * (targetSpeed * Time.deltaTime)
                 + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
@@ -189,11 +195,6 @@ public class ThirdPersonChar : MonoBehaviour
             animationBlend = 0f;
 
         anim.SetFloat(animIDSpeed, animationBlend);
-
-        if (Mount.deerActive)
-        {
-            Mount.ChangeMountSpeed(targetSpeed);
-        }
     }
 
     private void JumpAndGravity()
