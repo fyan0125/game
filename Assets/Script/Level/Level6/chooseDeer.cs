@@ -58,7 +58,7 @@ public class chooseDeer : MonoBehaviour
             deerPrefab,
             new Vector3(0, 0, 0),
             Quaternion.identity,
-            GameObject.Find("Player/Deer").transform
+            GameObject.Find("Player/Mount").transform
         );
         deer.transform.localPosition = GameObject
             .Find("Player")

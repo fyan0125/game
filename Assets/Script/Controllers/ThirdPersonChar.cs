@@ -10,7 +10,7 @@ public class ThirdPersonChar : MonoBehaviour
     public float sprintSpeed = 8.0f;
     public float normalJumpHeight = 1.2f;
     public float superJumpHeight = 3.6f;
-    public float gravity = -15.0f; //The character uses its own gravity value. The engine default is -9.81f
+    public float gravity = -15.0f;
     public float jumpTimeout = 0.2f; //Time required to pass before being able to jump again. Set to 0f to instantly jump again
     public float fallTimeout = 0.15f; //Time required to pass before entering the fall state. Useful for walking down stairs
 
@@ -107,7 +107,8 @@ public class ThirdPersonChar : MonoBehaviour
             }
         }
 
-        anim.SetBool("Riding", Deer.deerActive);
+        anim.SetBool("Riding", Mount.deerActive);
+        anim.SetBool("Flying", Mount.canFly);
     }
 
     private void AssignAnimationIDs()
@@ -121,21 +122,17 @@ public class ThirdPersonChar : MonoBehaviour
 
     private void GroundedCheck()
     {
-        if (Deer.deerActive)
-        {
+        if (Mount.deerActive)
             groundLayers |= (1 << LayerMask.NameToLayer("Water"));
-        }
         else
-        {
             groundLayers &= ~(1 << LayerMask.NameToLayer("Water"));
-        }
+
         // set sphere position, with offset
         Vector3 spherePosition = new Vector3(
             transform.position.x,
             transform.position.y - groundedOffset,
             transform.position.z
         );
-        SpherePosition = spherePosition;
         grounded = Physics.CheckSphere(
             spherePosition,
             groundedRadius,
@@ -160,6 +157,7 @@ public class ThirdPersonChar : MonoBehaviour
         {
             targetRotation =
                 Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+
             float rotation = Mathf.SmoothDampAngle(
                 transform.eulerAngles.y,
                 targetRotation,
@@ -171,8 +169,16 @@ public class ThirdPersonChar : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, rotation, 0f);
             }
         }
-
         Vector3 targetDirection = Quaternion.Euler(0f, targetRotation, 0f) * Vector3.forward;
+
+        if (Mount.canFly)
+        {
+            Vector3 forward = cam.TransformDirection(Vector3.forward).normalized;
+            Vector3 right = new Vector3(forward.z, 0, -forward.x);
+
+            targetDirection = forward * vertical + right * horizontal;
+        }
+
         controller.Move(
             targetDirection.normalized * (targetSpeed * Time.deltaTime)
                 + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
@@ -184,9 +190,9 @@ public class ThirdPersonChar : MonoBehaviour
 
         anim.SetFloat(animIDSpeed, animationBlend);
 
-        if (Deer.deerActive)
+        if (Mount.deerActive)
         {
-            Deer.ChangeDeerSpeed(targetSpeed);
+            Mount.ChangeMountSpeed(targetSpeed);
         }
     }
 
@@ -201,7 +207,16 @@ public class ThirdPersonChar : MonoBehaviour
             jumpHeight = normalJumpHeight;
         }
 
-        if (grounded)
+        if (Mount.canFly)
+        {
+            float hoverSpeed = 5f;
+            verticalVelocity = Mathf.Lerp(
+                verticalVelocity,
+                Input.GetAxisRaw("Hover") * hoverSpeed,
+                2f * Time.deltaTime
+            );
+        }
+        else if (grounded)
         {
             // reset the fall timeout timer
             fallTimeoutDelta = fallTimeout;
@@ -264,8 +279,7 @@ public class ThirdPersonChar : MonoBehaviour
             }
         }
 
-        // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
-        if (verticalVelocity < terminalVelocity)
+        if (verticalVelocity < terminalVelocity && !Mount.canFly)
         {
             verticalVelocity += gravity * Time.deltaTime;
         }

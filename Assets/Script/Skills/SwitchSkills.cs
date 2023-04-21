@@ -5,6 +5,7 @@ public class SwitchSkills : MonoBehaviour
     public static int getSkill = 0;
     public int currentSkill = 0;
     public static bool lockSkill = false;
+    public static bool lockByMount = false;
 
     GameObject GameManager;
     SkillUI skillUI;
@@ -22,7 +23,7 @@ public class SwitchSkills : MonoBehaviour
     {
         if (Input.GetButtonDown("SwitchSkills"))
         {
-            if (getSkill == 0 || lockSkill)
+            if (getSkill == 0 || lockSkill || lockByMount)
             {
                 currentSkill = 0;
             }
@@ -37,7 +38,7 @@ public class SwitchSkills : MonoBehaviour
             else
                 currentSkill = 1;
             anim.SetInteger("currentSkill", currentSkill);
-            if (getSkill != 0 && !lockSkill)
+            if (getSkill != 0 && !lockSkill && !lockByMount)
             {
                 skillUI.SkillUITransition(currentSkill);
             }
