@@ -1148,7 +1148,7 @@ GameObject:
   - component: {fileID: 80188937}
   - component: {fileID: 80188936}
   - component: {fileID: 80188935}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RabbitHole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1940,7 +1940,6 @@ GameObject:
   - component: {fileID: 194765020}
   m_Layer: 7
   m_Name: Mount
-  m_Name: Mount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1972,6 +1971,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd510a231812694a87e6697b37f78b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Deer: {fileID: 0}
+  Yatagarasu: {fileID: 0}
 --- !u!1 &203948126
 GameObject:
   m_ObjectHideFlags: 0
@@ -8287,11 +8288,13 @@ MonoBehaviour:
   jumpTimeout: 0.2
   fallTimeout: 0.15
   grounded: 1
+  notOnSlide: 1
   groundedOffset: 1.15
-  groundedRadius: 0.4
   groundLayers:
     serializedVersion: 2
     m_Bits: 4160
+  slideFriction: 0.3
+  slideSpeed: 5
   hint: {fileID: 904643461437033893, guid: 328a3a0f921b6a14c93d411c81aed1fc, type: 3}
 --- !u!114 &711367323
 MonoBehaviour:
@@ -8329,11 +8332,11 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2.1
   m_Radius: 0.4
-  m_SlopeLimit: 45
-  m_StepOffset: 0.25
-  m_SkinWidth: 0.02
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.12, z: 0}
+  m_SlopeLimit: 60
+  m_StepOffset: 0.5
+  m_SkinWidth: 0.04
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &711367326
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -16012,7 +16015,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387464039}
   m_LocalRotation: {x: 0.32326594, y: -0, z: -0, w: 0.94630814}
-  m_LocalPosition: {x: -0.19164848, y: 2.231905, z: 4.8944106}
+  m_LocalPosition: {x: -0.19175541, y: 2.231905, z: 4.894422}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1219770261}
@@ -17661,37 +17664,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RabbitSkillUI: {fileID: 1621521182}
-  RabbitSkillIcon: {fileID: 1887066322}
   WolfSkillUI: {fileID: 536643155}
-  WolfSkillIcon: {fileID: 1471260281}
   ChickenSkillUI: {fileID: 1266600286}
-  ChickenSkillIcon: {fileID: 2021547308}
   CraneSkillUI: {fileID: 1233038538}
-  CraneSkillIcon: {fileID: 516102632}
   rabbitbtn: {fileID: 587714948}
-  rabbitIconHover: {fileID: 421070603}
   rabbitMemorybtn: {fileID: 2057099234}
-  rabbitMemoryIcon: {fileID: 380134743}
   wolfbtn: {fileID: 786100232}
-  wolfIconHover: {fileID: 606853428}
   wolfMemorybtn: {fileID: 1972097387}
-  wolfMemoryIcon: {fileID: 970871356}
   foxbtn: {fileID: 235103301}
-  foxIconHover: {fileID: 1690479554}
   foxMemorybtn: {fileID: 683007963}
-  foxMemoryIcon: {fileID: 1459096581}
   chickenbtn: {fileID: 1122980528}
-  chickenIconHover: {fileID: 1120706706}
   chickenMemorybtn: {fileID: 1668566687}
-  chickenMemoryIcon: {fileID: 1829640779}
   cranebtn: {fileID: 1720730516}
-  craneIconHover: {fileID: 1343491506}
   craneMemorybtn: {fileID: 520160104}
-  craneMemoryIcon: {fileID: 930010163}
   deerbtn: {fileID: 673153205}
-  deerIconHover: {fileID: 1081986652}
   deerMemorybtn: {fileID: 1272336448}
-  deerMemoryIcon: {fileID: 1719278723}
   bg: {fileID: 21300000, guid: 0b04a5fcb322261438a386d3aaf7a340, type: 3}
   bgActive: {fileID: 21300000, guid: 90704bfc97d4d8645ac3a00086bdc70f, type: 3}
 --- !u!114 &1501701271
@@ -17714,6 +17701,7 @@ MonoBehaviour:
   craneArea: {fileID: 1658336321}
   deerArea: {fileID: 1082022452}
   crowArea: {fileID: 1644579329}
+  mount: {fileID: 0}
 --- !u!1 &1508682903
 GameObject:
   m_ObjectHideFlags: 0
@@ -26147,7 +26135,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!33 &8523397116506205796
 MeshFilter:

@@ -8304,6 +8304,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1611886964}
     m_Modifications:
+    - target: {fileID: 741608537983741990, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+      propertyPath: m_TagString
+      value: PlayerHead
+      objectReference: {fileID: 0}
     - target: {fileID: 8443798700977822700, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8374,6 +8378,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3487609368157926506, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
   m_PrefabInstance: {fileID: 276610292}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &276610297 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 741608537983741990, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_PrefabInstance: {fileID: 276610292}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &276610298
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276610297}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1 &276829072
 GameObject:
   m_ObjectHideFlags: 0
@@ -11473,7 +11498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393982528}
   m_LocalRotation: {x: 0.32326594, y: -0, z: -0, w: 0.94630814}
-  m_LocalPosition: {x: -14.304008, y: -15.258102, z: 75.15675}
+  m_LocalPosition: {x: -14.304116, y: -15.258102, z: 75.15676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 139042190}
@@ -12622,6 +12647,7 @@ MonoBehaviour:
   craneArea: {fileID: 655316797}
   deerArea: {fileID: 805439161}
   crowArea: {fileID: 361413594}
+  mount: {fileID: 0}
 --- !u!114 &438547062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12635,37 +12661,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RabbitSkillUI: {fileID: 1399781785}
-  RabbitSkillIcon: {fileID: 1881387746}
   WolfSkillUI: {fileID: 958634564}
-  WolfSkillIcon: {fileID: 174159474}
   ChickenSkillUI: {fileID: 2121133910}
-  ChickenSkillIcon: {fileID: 975546158}
   CraneSkillUI: {fileID: 478893691}
-  CraneSkillIcon: {fileID: 1584189289}
   rabbitbtn: {fileID: 784424746}
-  rabbitIconHover: {fileID: 1543428850}
   rabbitMemorybtn: {fileID: 62602064}
-  rabbitMemoryIcon: {fileID: 199556822}
   wolfbtn: {fileID: 20107413}
-  wolfIconHover: {fileID: 1956279618}
   wolfMemorybtn: {fileID: 756117855}
-  wolfMemoryIcon: {fileID: 2022947235}
   foxbtn: {fileID: 1416990522}
-  foxIconHover: {fileID: 1098727869}
   foxMemorybtn: {fileID: 1215365905}
-  foxMemoryIcon: {fileID: 766970512}
   chickenbtn: {fileID: 1161917516}
-  chickenIconHover: {fileID: 674602336}
   chickenMemorybtn: {fileID: 651677403}
-  chickenMemoryIcon: {fileID: 1418323174}
   cranebtn: {fileID: 692888383}
-  craneIconHover: {fileID: 1727443756}
   craneMemorybtn: {fileID: 230037520}
-  craneMemoryIcon: {fileID: 670424976}
   deerbtn: {fileID: 393539656}
-  deerIconHover: {fileID: 654103013}
   deerMemorybtn: {fileID: 1814382266}
-  deerMemoryIcon: {fileID: 335291760}
   bg: {fileID: 21300000, guid: 0b04a5fcb322261438a386d3aaf7a340, type: 3}
   bgActive: {fileID: 21300000, guid: 90704bfc97d4d8645ac3a00086bdc70f, type: 3}
 --- !u!114 &438547063
@@ -44227,11 +44237,13 @@ MonoBehaviour:
   jumpTimeout: 0.2
   fallTimeout: 0.15
   grounded: 1
+  notOnSlide: 1
   groundedOffset: 1.15
-  groundedRadius: 0.4
   groundLayers:
     serializedVersion: 2
     m_Bits: 4160
+  slideFriction: 0.3
+  slideSpeed: 5
   hint: {fileID: 904643461437033893, guid: 328a3a0f921b6a14c93d411c81aed1fc, type: 3}
 --- !u!114 &1611886970
 MonoBehaviour:
@@ -44269,11 +44281,11 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2.1
   m_Radius: 0.4
-  m_SlopeLimit: 45
-  m_StepOffset: 0.25
-  m_SkinWidth: 0.02
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.12, z: 0}
+  m_SlopeLimit: 60
+  m_StepOffset: 0.5
+  m_SkinWidth: 0.04
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &1611886972
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -16,10 +16,9 @@ public class ThirdPersonChar : MonoBehaviour
 
     [Header("Player Grounded")]
     public bool grounded = true;
+    public bool notOnSlide = true;
+    private float groundedRadius; //The radius of the grounded check.
     public float groundedOffset = 1.15f; //Useful for rough ground
-
-    [Tooltip("Should match the radius of the CharacterController")]
-    public float groundedRadius = 0.4f; //The radius of the grounded check.
     public LayerMask groundLayers; //What layers the character uses as ground
 
     // player
@@ -29,6 +28,10 @@ public class ThirdPersonChar : MonoBehaviour
     private float verticalVelocity;
     private float terminalVelocity = 53.0f;
     private bool canDoubleJump = true;
+
+    public float slideFriction = 0.3f; // ajusting the friction of the slope
+    public float slideSpeed = 5;
+    private Vector3 hitNormal; //orientation of the slope.
 
     // timeout deltatime
     private float jumpTimeoutDelta;
@@ -74,6 +77,7 @@ public class ThirdPersonChar : MonoBehaviour
         // reset our timeouts on start
         jumpTimeoutDelta = jumpTimeout;
         fallTimeoutDelta = fallTimeout;
+        groundedRadius = controller.radius;
     }
 
     void Update()
@@ -139,6 +143,9 @@ public class ThirdPersonChar : MonoBehaviour
             groundLayers,
             QueryTriggerInteraction.Ignore
         );
+
+        notOnSlide = Vector3.Angle(Vector3.up, hitNormal) <= controller.slopeLimit;
+
         PlayerSound.soundGrounded = grounded;
         anim.SetBool(animIDGrounded, grounded);
     }
@@ -178,17 +185,28 @@ public class ThirdPersonChar : MonoBehaviour
 
             targetDirection = forward * vertical + right * horizontal;
         }
-
-        if (Mount.deerActive)
+        else if (Mount.deerActive)
         {
             targetSpeed *= 1.5f;
             Mount.ChangeMountSpeed(targetSpeed);
         }
 
-        controller.Move(
-            targetDirection.normalized * (targetSpeed * Time.deltaTime)
-                + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
-        );
+        if (!notOnSlide)
+        {
+            targetDirection.x = ((1f - hitNormal.y) * hitNormal.x) * slideSpeed;
+            targetDirection.z = ((1f - hitNormal.y) * hitNormal.z) * slideSpeed;
+            controller.Move(
+                targetDirection.normalized * (Time.deltaTime)
+                    + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
+            );
+        }
+        else
+        {
+            controller.Move(
+                targetDirection.normalized * (targetSpeed * Time.deltaTime)
+                    + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
+            );
+        }
 
         animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * 10);
         if (animationBlend < 0.01f)
@@ -284,6 +302,11 @@ public class ThirdPersonChar : MonoBehaviour
         {
             verticalVelocity += gravity * Time.deltaTime;
         }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        hitNormal = hit.normal;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -26893,7 +26893,6 @@ GameObject:
   - component: {fileID: 967898267}
   m_Layer: 7
   m_Name: Mount
-  m_Name: Mount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26925,6 +26924,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddd510a231812694a87e6697b37f78b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Deer: {fileID: 0}
+  Yatagarasu: {fileID: 0}
 --- !u!1 &970712830
 GameObject:
   m_ObjectHideFlags: 0
@@ -28532,6 +28533,7 @@ MonoBehaviour:
   craneArea: {fileID: 1989203557}
   deerArea: {fileID: 1447267449}
   crowArea: {fileID: 947551574}
+  mount: {fileID: 0}
 --- !u!114 &1022858673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28545,37 +28547,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RabbitSkillUI: {fileID: 801433952}
-  RabbitSkillIcon: {fileID: 673133568}
   WolfSkillUI: {fileID: 1470084619}
-  WolfSkillIcon: {fileID: 441880673}
   ChickenSkillUI: {fileID: 641392285}
-  ChickenSkillIcon: {fileID: 331903930}
   CraneSkillUI: {fileID: 2098837723}
-  CraneSkillIcon: {fileID: 133324393}
   rabbitbtn: {fileID: 1595365488}
-  rabbitIconHover: {fileID: 1608911262}
   rabbitMemorybtn: {fileID: 163002526}
-  rabbitMemoryIcon: {fileID: 1529729967}
   wolfbtn: {fileID: 840288454}
-  wolfIconHover: {fileID: 1118208017}
   wolfMemorybtn: {fileID: 1282277050}
-  wolfMemoryIcon: {fileID: 420240932}
   foxbtn: {fileID: 1439667146}
-  foxIconHover: {fileID: 1379118292}
   foxMemorybtn: {fileID: 1566573458}
-  foxMemoryIcon: {fileID: 197076000}
   chickenbtn: {fileID: 1836210208}
-  chickenIconHover: {fileID: 709174254}
   chickenMemorybtn: {fileID: 157488461}
-  chickenMemoryIcon: {fileID: 1871814910}
   cranebtn: {fileID: 1762206045}
-  craneIconHover: {fileID: 930008823}
   craneMemorybtn: {fileID: 63220616}
-  craneMemoryIcon: {fileID: 491878575}
   deerbtn: {fileID: 2035278371}
-  deerIconHover: {fileID: 1132327824}
   deerMemorybtn: {fileID: 438503347}
-  deerMemoryIcon: {fileID: 146622926}
   bg: {fileID: 21300000, guid: 0b04a5fcb322261438a386d3aaf7a340, type: 3}
   bgActive: {fileID: 21300000, guid: 90704bfc97d4d8645ac3a00086bdc70f, type: 3}
 --- !u!114 &1022858674
@@ -50186,11 +50172,13 @@ MonoBehaviour:
   jumpTimeout: 0.2
   fallTimeout: 0.15
   grounded: 1
+  notOnSlide: 1
   groundedOffset: 1.15
-  groundedRadius: 0.4
   groundLayers:
     serializedVersion: 2
     m_Bits: 4160
+  slideFriction: 0.3
+  slideSpeed: 5
   hint: {fileID: 904643461437033893, guid: 328a3a0f921b6a14c93d411c81aed1fc, type: 3}
 --- !u!114 &1738143635
 MonoBehaviour:
@@ -50228,11 +50216,11 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2.1
   m_Radius: 0.4
-  m_SlopeLimit: 45
-  m_StepOffset: 0.25
-  m_SkinWidth: 0.02
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.12, z: 0}
+  m_SlopeLimit: 60
+  m_StepOffset: 0.5
+  m_SkinWidth: 0.04
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &1738143637
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -52578,7 +52566,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!135 &1807854696
 SphereCollider:
@@ -56265,7 +56253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925816342}
   m_LocalRotation: {x: 0.32326594, y: -0, z: -0, w: 0.94630814}
-  m_LocalPosition: {x: -14.304008, y: -15.258102, z: 75.15675}
+  m_LocalPosition: {x: -14.304116, y: -15.258102, z: 75.15676}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 889838562}
@@ -58852,7 +58840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08b6efd17f6f254abed62a33c144d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stayTime: 3
+  stayTime: 1
   hurtRepeatTime: 1
   damage: 5
 --- !u!224 &2026280859 stripped

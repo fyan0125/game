@@ -15055,6 +15055,7 @@ MonoBehaviour:
   craneArea: {fileID: 1664159354}
   deerArea: {fileID: 544450155}
   crowArea: {fileID: 1445167008}
+  mount: {fileID: 0}
 --- !u!114 &403436395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15068,37 +15069,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RabbitSkillUI: {fileID: 1610665966}
-  RabbitSkillIcon: {fileID: 1079731743}
   WolfSkillUI: {fileID: 857620945}
-  WolfSkillIcon: {fileID: 1006985967}
   ChickenSkillUI: {fileID: 138324237}
-  ChickenSkillIcon: {fileID: 514158865}
   CraneSkillUI: {fileID: 1324492543}
-  CraneSkillIcon: {fileID: 1672799040}
   rabbitbtn: {fileID: 1188647754}
-  rabbitIconHover: {fileID: 1054937962}
   rabbitMemorybtn: {fileID: 318335994}
-  rabbitMemoryIcon: {fileID: 1595802085}
   wolfbtn: {fileID: 1644967408}
-  wolfIconHover: {fileID: 1285434636}
   wolfMemorybtn: {fileID: 73670477}
-  wolfMemoryIcon: {fileID: 54695686}
   foxbtn: {fileID: 1205069682}
-  foxIconHover: {fileID: 1121131518}
   foxMemorybtn: {fileID: 221055408}
-  foxMemoryIcon: {fileID: 55473533}
   chickenbtn: {fileID: 577120453}
-  chickenIconHover: {fileID: 1613968959}
   chickenMemorybtn: {fileID: 1722084799}
-  chickenMemoryIcon: {fileID: 1328148755}
   cranebtn: {fileID: 1087138034}
-  craneIconHover: {fileID: 2103132551}
   craneMemorybtn: {fileID: 1861265147}
-  craneMemoryIcon: {fileID: 214810498}
   deerbtn: {fileID: 165733242}
-  deerIconHover: {fileID: 1987437725}
   deerMemorybtn: {fileID: 2016170516}
-  deerMemoryIcon: {fileID: 2105135372}
   bg: {fileID: 21300000, guid: 0b04a5fcb322261438a386d3aaf7a340, type: 3}
   bgActive: {fileID: 21300000, guid: 90704bfc97d4d8645ac3a00086bdc70f, type: 3}
 --- !u!114 &403436396
@@ -25692,7 +25677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08b6efd17f6f254abed62a33c144d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stayTime: 3
+  stayTime: 1
   hurtRepeatTime: 1
   damage: 5
 --- !u!65 &734107260
@@ -26889,7 +26874,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 0
 --- !u!1 &835697304
 GameObject:
@@ -32458,11 +32443,13 @@ MonoBehaviour:
   jumpTimeout: 0.2
   fallTimeout: 0.15
   grounded: 1
+  notOnSlide: 1
   groundedOffset: 1.15
-  groundedRadius: 0.4
   groundLayers:
     serializedVersion: 2
     m_Bits: 4160
+  slideFriction: 0.3
+  slideSpeed: 5
   hint: {fileID: 904643461437033893, guid: 328a3a0f921b6a14c93d411c81aed1fc, type: 3}
 --- !u!114 &1041214520
 MonoBehaviour:
@@ -32500,11 +32487,11 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2.1
   m_Radius: 0.4
-  m_SlopeLimit: 45
-  m_StepOffset: 0.25
-  m_SkinWidth: 0.02
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.12, z: 0}
+  m_SlopeLimit: 60
+  m_StepOffset: 0.5
+  m_SkinWidth: 0.04
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &1041214522
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -47911,7 +47898,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8643041769963566295, guid: 835ce0a94690245f9ab04fd9dc8bf196, type: 3}
 --- !u!23 &1504704629
@@ -48566,7 +48553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08b6efd17f6f254abed62a33c144d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stayTime: 3
+  stayTime: 1
   hurtRepeatTime: 1
   damage: 5
 --- !u!65 &1519545106
