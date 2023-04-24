@@ -29,6 +29,7 @@ public class MoveToNextLevel : MonoBehaviour
             {
                 //Move to next level
                 SceneManager.LoadScene(nextSceneLoad);
+                Mount.GetWater();
 
                 //Setting Int for Index
                 if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))

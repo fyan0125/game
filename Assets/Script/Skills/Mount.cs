@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Mount : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class Mount : MonoBehaviour
     private Animator flyAnim;
     public static bool canFly = false;
 
-    private GameObject[] waters;
+    private static GameObject[] waters;
     public static float speed;
 
     private void Start()
     {
-        waters = GameObject.FindGameObjectsWithTag("Water");
+        GetWater();
     }
 
     private void Update()
@@ -42,7 +43,8 @@ public class Mount : MonoBehaviour
 
         deerActive = Deer ? Deer.activeSelf : false;
         canFly = Yatagarasu ? Yatagarasu.activeSelf : false;
-        if (!SwitchSkills.lockSkill){
+        if (!SwitchSkills.lockSkill)
+        {
             SwitchSkills.lockByMount = deerActive || canFly;
         }
 
@@ -60,6 +62,11 @@ public class Mount : MonoBehaviour
             deerAnim.SetFloat("Speed", speed);
         if (flyAnim)
             flyAnim.SetFloat("Speed", speed);
+    }
+
+    public static void GetWater()
+    {
+        waters = GameObject.FindGameObjectsWithTag("Water");
     }
 
     public static void ChangeMountSpeed(float s)
