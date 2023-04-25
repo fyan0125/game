@@ -1,25 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    private Rigidbody bulletRigidbody;
     public int baseDamage = 3;
-    PlayerStats playerStats;
+    public GameObject particlePrefab;
 
-    private void Awake()
+    private Rigidbody bulletRigidbody;
+    private PlayerStats playerStats;
+    private AudioSource audioSource;
+    private bool isCollide = false;
+
+    private void Start()
     {
         bulletRigidbody = GetComponent<Rigidbody>();
         GameObject player = GameObject.Find("Player");
         playerStats = player.GetComponent<PlayerStats>();
-    }
+        audioSource = GetComponent<AudioSource>();
 
-    private void Start()
-    {
         float speed = 50f;
         bulletRigidbody.velocity = transform.forward * speed;
-        Crow();
+        audioSource.Play();
+    }
+
+    private void Update()
+    {
+        if (isCollide)
+        {
+            if (!audioSource.isPlaying)
+                Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,15 +37,16 @@ public class PlayerBullet : MonoBehaviour
         {
             other.GetComponent<EnemyStats>().TakeDamage(baseDamage + playerStats.damage.GetValue());
         }
+        else if (other.GetComponent<Collider>().CompareTag("HiddingObject"))
+        {
+            other.GetComponent<craneObject>().hurt();
+        }
+
         if (!other.GetComponent<Collider>().CompareTag("Player"))
         {
             Debug.Log("子彈碰到" + other + " destroy");
-            Destroy(gameObject);
+            Instantiate(particlePrefab, transform.position, Quaternion.identity);
+            isCollide = true;
         }
-    }
-
-    private void Crow()
-    {
-        gameObject.GetComponent<AudioSource>().Play();
     }
 }
