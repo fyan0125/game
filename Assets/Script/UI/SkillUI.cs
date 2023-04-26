@@ -38,6 +38,9 @@ public class SkillUI : MonoBehaviour
     private GameObject chickenMemoryIcon;
     private GameObject craneIconHover;
     private GameObject craneMemoryIcon;
+
+    [HideInInspector]
+    public GameObject deerIcon;
     private GameObject deerIconHover;
     private GameObject deerMemoryIcon;
 
@@ -242,6 +245,7 @@ public class SkillUI : MonoBehaviour
         chickenMemoryIcon = chickenMemorybtn.transform.GetChild(0).gameObject;
         craneIconHover = cranebtn.transform.GetChild(1).gameObject;
         craneMemoryIcon = craneMemorybtn.transform.GetChild(0).gameObject;
+        deerIcon = deerbtn.transform.GetChild(0).gameObject;
         deerIconHover = deerbtn.transform.GetChild(1).gameObject;
         deerMemoryIcon = deerMemorybtn.transform.GetChild(0).gameObject;
     }

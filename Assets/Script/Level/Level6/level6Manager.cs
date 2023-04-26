@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 //npcState == 1 對話 去找player
 //npcState == 2 帶玩家走到鹿群旁邊
@@ -23,7 +24,8 @@ public class level6Manager : DialogueTrigger
     public LayerMask targetLayer;
 
     private GameObject level6UI;
-    public GameObject chooseDeer;
+    public chooseDeer chooseDeer;
+    public AnimalDiscription animalDiscription;
     private bool getReward = false;
 
     private Animator anim;
@@ -134,7 +136,7 @@ public class level6Manager : DialogueTrigger
     {
         level6UI.SetActive(true);
         Cursor.visible = true;
-        chooseDeer = deer;
+        chooseDeer = deer.GetComponent<chooseDeer>();
     }
 
     // finished 是否完成選擇
@@ -149,7 +151,13 @@ public class level6Manager : DialogueTrigger
     {
         DisableUI(true);
         npcState = 5;
-        chooseDeer.GetComponent<chooseDeer>().Choose();
+        animalDiscription.Image = chooseDeer.deerImage;
+        GameObject
+            .Find("GameManager")
+            .GetComponent<SkillUI>()
+            .deerIcon.GetComponent<Image>()
+            .sprite = chooseDeer.deerIcon;
+        chooseDeer.Choose();
         Destroy(gameObject.transform.GetChild(0).gameObject);
         StartConvo();
         skillUI.ClearLevel(6);

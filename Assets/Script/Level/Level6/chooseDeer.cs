@@ -5,6 +5,8 @@ public class chooseDeer : MonoBehaviour
 {
     private level6Manager level6Manager;
     public GameObject deerPrefab;
+    public Sprite deerImage;
+    public Sprite deerIcon;
 
     private Animator anim;
     private float idleAnimation;
