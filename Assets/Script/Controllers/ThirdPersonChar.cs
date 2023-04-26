@@ -184,6 +184,8 @@ public class ThirdPersonChar : MonoBehaviour
             Vector3 right = new Vector3(forward.z, 0, -forward.x);
 
             targetDirection = forward * vertical + right * horizontal;
+            targetSpeed *= 1.5f;
+            Mount.ChangeMountSpeed(targetSpeed);
         }
         else if (Mount.deerActive)
         {
