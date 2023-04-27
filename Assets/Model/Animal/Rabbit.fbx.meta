@@ -1,23 +1,17 @@
 fileFormatVersion: 2
-guid: 378bff2cbf09741c584917b096654a8d
+guid: e8f4f1251ecde43c6ab7eacf49d54475
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -8073548218240031878
-    second: norml
+      74: -398680199318951423
+    second: run1
   - first:
-      74: -3419257869308726280
-    second: walk
+      74: -530921431979962035
+    second: sit_breath
   - first:
-      74: -8286124155729591310
-    second: norml_breath
-  - first:
-      74: 5933159798710268479
-    second: "\u9AA8\u67B6|norml_breath"
-  - first:
-      74: -5470399900910255137
-    second: "\u9AA8\u67B6|walk"
+      74: 5128389309265931517
+    second: run2
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -47,11 +41,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: norml_breath
-      takeName: norml_breath
+      name: run1
+      takeName: run1
       internalID: 0
       firstFrame: 0
-      lastFrame: 59
+      lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -76,11 +70,40 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: walk
-      takeName: walk
+      name: sit_breath
+      takeName: sit_breath
       internalID: 0
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run2
+      takeName: run2
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 23
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
