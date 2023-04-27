@@ -33,7 +33,7 @@ public class chicken : MonoBehaviour
             }
             else
             {
-                animator.SetBool("Running", false);
+                animator.SetBool("isWalking", false);
                 navMeshAgent.speed = 0;
             }
         }

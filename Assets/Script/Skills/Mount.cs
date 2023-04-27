@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Mount : MonoBehaviour
 {
@@ -12,7 +11,12 @@ public class Mount : MonoBehaviour
     public static bool canFly = false;
 
     private static GameObject[] waters;
+
     public static float speed;
+    public static float vertical;
+    public static float horizontal;
+    public static float rise;
+    public static bool grounded = true;
 
     private void Start()
     {
@@ -61,7 +65,13 @@ public class Mount : MonoBehaviour
         if (deerAnim)
             deerAnim.SetFloat("Speed", speed);
         if (flyAnim)
+        {
             flyAnim.SetFloat("Speed", speed);
+            flyAnim.SetFloat("Vertical", vertical);
+            flyAnim.SetFloat("Horizontal", horizontal);
+            flyAnim.SetBool("Grounded", grounded);
+            flyAnim.SetFloat("Rise", rise);
+        }
     }
 
     public static void GetWater()
@@ -72,5 +82,17 @@ public class Mount : MonoBehaviour
     public static void ChangeMountSpeed(float s)
     {
         speed = s;
+    }
+
+    public static void GetDirectionAndGrounded(float v, float h, bool g)
+    {
+        vertical = v;
+        horizontal = h;
+        grounded = g;
+    }
+
+    public static void ChangeRise(float r)
+    {
+        rise = r;
     }
 }

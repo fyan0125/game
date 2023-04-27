@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class ThirdPersonChar : MonoBehaviour
 {
@@ -185,6 +184,7 @@ public class ThirdPersonChar : MonoBehaviour
 
             targetDirection = forward * vertical + right * horizontal;
             targetSpeed *= 1.5f;
+            Mount.GetDirectionAndGrounded(targetDirection.y, horizontal, grounded);
             Mount.ChangeMountSpeed(targetSpeed);
         }
         else if (Mount.deerActive)
@@ -236,6 +236,7 @@ public class ThirdPersonChar : MonoBehaviour
                 Input.GetAxisRaw("Hover") * hoverSpeed,
                 2f * Time.deltaTime
             );
+            Mount.ChangeRise(verticalVelocity);
         }
         else if (grounded)
         {
@@ -320,16 +321,16 @@ public class ThirdPersonChar : MonoBehaviour
         if (other.GetComponent<Collider>().CompareTag("NPC"))
         {
             npcCollider = other;
-            Hint(npcCollider, "npc");
+            Hint(npcCollider);
         }
         if (other.GetComponent<Collider>().CompareTag("Chicken"))
         {
             chickenCollider = other;
-            Hint(chickenCollider, "chicken");
+            Hint(chickenCollider);
         }
         if (other.GetComponent<Collider>().CompareTag("Deer"))
         {
-            Hint(other, "deer");
+            Hint(other);
         }
     }
 
@@ -378,21 +379,39 @@ public class ThirdPersonChar : MonoBehaviour
         controller.enabled = true;
     }
 
-    private void Hint(Collider other, string otherName)
+    private void Hint(Collider other)
     {
+        Destroy(newHint);
         newHint = Instantiate(hint, new Vector3(0, 0, 0), Quaternion.identity);
         newHint.transform.SetParent(other.transform, false);
-        newHint.transform.localPosition = new Vector3(0, 2.3f, 0);
-        newHint.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "R";
-        if (otherName == "chicken")
+
+        if (other.GetComponent<Collider>().CompareTag("Chicken"))
         {
-            newHint.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "技能鍵";
+            newHint.GetComponent<Hint>().talkHint = false;
             newHint.transform.localPosition = new Vector3(0, 1, 0);
+            return;
         }
-        else if (otherName == "deer")
+
+        if (other.GetComponent<Collider>().CompareTag("Deer"))
         {
-            newHint.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "技能鍵";
+            newHint.GetComponent<Hint>().talkHint = false;
             newHint.transform.localPosition = new Vector3(0, 2.3f, 0);
+            return;
+        }
+
+        if (
+            SceneManager.GetActiveScene().buildIndex == 1
+            || SceneManager.GetActiveScene().buildIndex == 3
+            || SceneManager.GetActiveScene().buildIndex == 4
+        )
+        {
+            newHint.transform.localPosition = new Vector3(0, 1.5f, 0);
+            newHint.GetComponent<Hint>().talkHint = true;
+        }
+        else
+        {
+            newHint.transform.localPosition = new Vector3(0, 2.5f, 0);
+            newHint.GetComponent<Hint>().talkHint = true;
         }
     }
 }
