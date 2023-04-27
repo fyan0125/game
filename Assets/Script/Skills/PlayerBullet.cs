@@ -42,7 +42,10 @@ public class PlayerBullet : MonoBehaviour
             other.GetComponent<craneObject>().hurt();
         }
 
-        if (!other.GetComponent<Collider>().CompareTag("Player"))
+        if (
+            !other.GetComponent<Collider>().CompareTag("Player")
+            && !other.GetComponent<Collider>().CompareTag("PlayerHead")
+        )
         {
             Debug.Log("子彈碰到" + other + " destroy");
             Instantiate(particlePrefab, transform.position, Quaternion.identity);
