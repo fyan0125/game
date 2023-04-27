@@ -41,7 +41,6 @@ public class ThirdPersonChar : MonoBehaviour
     private int animIDGrounded;
     private int animIDJump;
     private int animIDFreeFall;
-    private int animIDMotionSpeed;
 
     private CharacterController controller;
     private float turnSmoothTime = 0.1f;
@@ -120,7 +119,6 @@ public class ThirdPersonChar : MonoBehaviour
         animIDGrounded = Animator.StringToHash("Grounded");
         animIDJump = Animator.StringToHash("Jump");
         animIDFreeFall = Animator.StringToHash("FreeFall");
-        animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
     }
 
     private void GroundedCheck()
@@ -185,6 +183,9 @@ public class ThirdPersonChar : MonoBehaviour
             targetDirection = forward * vertical + right * horizontal;
             targetSpeed *= 1.5f;
             Mount.GetDirectionAndGrounded(targetDirection.y, horizontal, grounded);
+            anim.SetFloat("Vertical", targetDirection.y);
+            anim.SetFloat("Horizontal", horizontal);
+            anim.SetFloat("FlyGrounded", grounded ? 1 : 0);
             Mount.ChangeMountSpeed(targetSpeed);
         }
         else if (Mount.deerActive)
@@ -237,6 +238,7 @@ public class ThirdPersonChar : MonoBehaviour
                 2f * Time.deltaTime
             );
             Mount.ChangeRise(verticalVelocity);
+            anim.SetFloat("FlyRise", verticalVelocity);
         }
         else if (grounded)
         {

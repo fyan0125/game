@@ -40,7 +40,7 @@ public class Mount : MonoBehaviour
                 {
                     Yatagarasu = child.gameObject;
                     flyAnim = Yatagarasu.GetComponent<Animator>();
-                    Yatagarasu.transform.localPosition = new Vector3(0, -1.2f, 0);
+                    Yatagarasu.transform.localPosition = new Vector3(0, -1.1f, 0);
                 }
             }
         }
