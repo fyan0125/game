@@ -9,16 +9,15 @@ public class ThirdPersonChar : MonoBehaviour
     public float sprintSpeed = 8.0f;
     public float normalJumpHeight = 1.2f;
     public float superJumpHeight = 3.6f;
-    public float gravity = -15.0f; //The character uses its own gravity value. The engine default is -9.81f
+    public float gravity = -15.0f;
     public float jumpTimeout = 0.2f; //Time required to pass before being able to jump again. Set to 0f to instantly jump again
     public float fallTimeout = 0.15f; //Time required to pass before entering the fall state. Useful for walking down stairs
 
     [Header("Player Grounded")]
     public bool grounded = true;
+    public bool notOnSlide = true;
+    private float groundedRadius; //The radius of the grounded check.
     public float groundedOffset = 1.15f; //Useful for rough ground
-
-    [Tooltip("Should match the radius of the CharacterController")]
-    public float groundedRadius = 0.4f; //The radius of the grounded check.
     public LayerMask groundLayers; //What layers the character uses as ground
 
     // player
@@ -29,6 +28,10 @@ public class ThirdPersonChar : MonoBehaviour
     private float terminalVelocity = 53.0f;
     private bool canDoubleJump = true;
 
+    public float slideFriction = 0.3f; // ajusting the friction of the slope
+    public float slideSpeed = 5;
+    private Vector3 hitNormal; //orientation of the slope.
+
     // timeout deltatime
     private float jumpTimeoutDelta;
     private float fallTimeoutDelta;
@@ -38,7 +41,6 @@ public class ThirdPersonChar : MonoBehaviour
     private int animIDGrounded;
     private int animIDJump;
     private int animIDFreeFall;
-    private int animIDMotionSpeed;
 
     private CharacterController controller;
     private float turnSmoothTime = 0.1f;
@@ -51,6 +53,9 @@ public class ThirdPersonChar : MonoBehaviour
     private Collider npcCollider;
     private Collider chickenCollider;
 
+    public GameObject hint;
+    private GameObject newHint;
+
     private Animator anim;
 
     private void Awake()
@@ -59,10 +64,7 @@ public class ThirdPersonChar : MonoBehaviour
         {
             cam = GameObject.FindGameObjectWithTag("MainCamera").transform;
         }
-    }
 
-    void Start()
-    {
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
         playerStats = GetComponent<PlayerStats>();
@@ -73,6 +75,7 @@ public class ThirdPersonChar : MonoBehaviour
         // reset our timeouts on start
         jumpTimeoutDelta = jumpTimeout;
         fallTimeoutDelta = fallTimeout;
+        groundedRadius = controller.radius;
     }
 
     void Update()
@@ -89,7 +92,7 @@ public class ThirdPersonChar : MonoBehaviour
         if (playerStats.currentHealth <= 0)
             Destroy(gameObject);
 
-        if (Input.GetButtonDown("Talk"))
+        if (Input.GetButtonDown("Talk") && !DialogueManager.isTalking)
         {
             TalkToNPC();
         }
@@ -106,7 +109,8 @@ public class ThirdPersonChar : MonoBehaviour
             }
         }
 
-        anim.SetBool("Riding", Deer.deerActive);
+        anim.SetBool("Riding", Mount.deerActive);
+        anim.SetBool("Flying", Mount.canFly);
     }
 
     private void AssignAnimationIDs()
@@ -115,32 +119,30 @@ public class ThirdPersonChar : MonoBehaviour
         animIDGrounded = Animator.StringToHash("Grounded");
         animIDJump = Animator.StringToHash("Jump");
         animIDFreeFall = Animator.StringToHash("FreeFall");
-        animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
     }
 
     private void GroundedCheck()
     {
-        if (Deer.deerActive)
-        {
+        if (Mount.deerActive)
             groundLayers |= (1 << LayerMask.NameToLayer("Water"));
-        }
         else
-        {
             groundLayers &= ~(1 << LayerMask.NameToLayer("Water"));
-        }
+
         // set sphere position, with offset
         Vector3 spherePosition = new Vector3(
             transform.position.x,
             transform.position.y - groundedOffset,
             transform.position.z
         );
-        SpherePosition = spherePosition;
         grounded = Physics.CheckSphere(
             spherePosition,
             groundedRadius,
             groundLayers,
             QueryTriggerInteraction.Ignore
         );
+
+        notOnSlide = Vector3.Angle(Vector3.up, hitNormal) <= controller.slopeLimit;
+
         PlayerSound.soundGrounded = grounded;
         anim.SetBool(animIDGrounded, grounded);
     }
@@ -159,6 +161,7 @@ public class ThirdPersonChar : MonoBehaviour
         {
             targetRotation =
                 Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+
             float rotation = Mathf.SmoothDampAngle(
                 transform.eulerAngles.y,
                 targetRotation,
@@ -170,23 +173,49 @@ public class ThirdPersonChar : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, rotation, 0f);
             }
         }
-
         Vector3 targetDirection = Quaternion.Euler(0f, targetRotation, 0f) * Vector3.forward;
-        controller.Move(
-            targetDirection.normalized * (targetSpeed * Time.deltaTime)
-                + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
-        );
+
+        if (Mount.canFly)
+        {
+            Vector3 forward = cam.TransformDirection(Vector3.forward).normalized;
+            Vector3 right = new Vector3(forward.z, 0, -forward.x);
+
+            targetDirection = forward * vertical + right * horizontal;
+            targetSpeed *= 1.5f;
+            Mount.GetDirectionAndGrounded(targetDirection.y, horizontal, grounded);
+            anim.SetFloat("Vertical", targetDirection.y);
+            anim.SetFloat("Horizontal", horizontal);
+            anim.SetFloat("FlyGrounded", grounded ? 1 : 0);
+            Mount.ChangeMountSpeed(targetSpeed);
+        }
+        else if (Mount.deerActive)
+        {
+            targetSpeed *= 1.5f;
+            Mount.ChangeMountSpeed(targetSpeed);
+        }
+
+        if (!notOnSlide)
+        {
+            targetDirection.x = ((1f - hitNormal.y) * hitNormal.x) * slideSpeed;
+            targetDirection.z = ((1f - hitNormal.y) * hitNormal.z) * slideSpeed;
+            controller.Move(
+                targetDirection.normalized * (Time.deltaTime)
+                    + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
+            );
+        }
+        else
+        {
+            controller.Move(
+                targetDirection.normalized * (targetSpeed * Time.deltaTime)
+                    + new Vector3(0.0f, verticalVelocity, 0.0f) * Time.deltaTime
+            );
+        }
 
         animationBlend = Mathf.Lerp(animationBlend, targetSpeed, Time.deltaTime * 10);
         if (animationBlend < 0.01f)
             animationBlend = 0f;
 
         anim.SetFloat(animIDSpeed, animationBlend);
-
-        if (Deer.deerActive)
-        {
-            Deer.ChangeDeerSpeed(targetSpeed);
-        }
     }
 
     private void JumpAndGravity()
@@ -200,7 +229,18 @@ public class ThirdPersonChar : MonoBehaviour
             jumpHeight = normalJumpHeight;
         }
 
-        if (grounded)
+        if (Mount.canFly)
+        {
+            float hoverSpeed = 5f;
+            verticalVelocity = Mathf.Lerp(
+                verticalVelocity,
+                Input.GetAxisRaw("Hover") * hoverSpeed,
+                2f * Time.deltaTime
+            );
+            Mount.ChangeRise(verticalVelocity);
+            anim.SetFloat("FlyRise", verticalVelocity);
+        }
+        else if (grounded)
         {
             // reset the fall timeout timer
             fallTimeoutDelta = fallTimeout;
@@ -263,11 +303,15 @@ public class ThirdPersonChar : MonoBehaviour
             }
         }
 
-        // apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
-        if (verticalVelocity < terminalVelocity)
+        if (verticalVelocity < terminalVelocity && !Mount.canFly)
         {
             verticalVelocity += gravity * Time.deltaTime;
         }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        hitNormal = hit.normal;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -279,10 +323,28 @@ public class ThirdPersonChar : MonoBehaviour
         if (other.GetComponent<Collider>().CompareTag("NPC"))
         {
             npcCollider = other;
+            Hint(npcCollider);
         }
         if (other.GetComponent<Collider>().CompareTag("Chicken"))
         {
             chickenCollider = other;
+            Hint(chickenCollider);
+        }
+        if (other.GetComponent<Collider>().CompareTag("Deer"))
+        {
+            Hint(other);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (
+            other.GetComponent<Collider>().CompareTag("NPC")
+            || other.GetComponent<Collider>().CompareTag("Chicken")
+            || other.GetComponent<Collider>().CompareTag("Deer")
+        )
+        {
+            Destroy(newHint);
         }
     }
 
@@ -292,6 +354,7 @@ public class ThirdPersonChar : MonoBehaviour
         {
             npcCollider.GetComponent<DialogueTrigger>().StartConvo();
             npcCollider = null;
+            Destroy(newHint);
         }
     }
 
@@ -316,5 +379,41 @@ public class ThirdPersonChar : MonoBehaviour
         controller.enabled = false;
         transform.eulerAngles = rotation;
         controller.enabled = true;
+    }
+
+    private void Hint(Collider other)
+    {
+        Destroy(newHint);
+        newHint = Instantiate(hint, new Vector3(0, 0, 0), Quaternion.identity);
+        newHint.transform.SetParent(other.transform, false);
+
+        if (other.GetComponent<Collider>().CompareTag("Chicken"))
+        {
+            newHint.GetComponent<Hint>().talkHint = false;
+            newHint.transform.localPosition = new Vector3(0, 1, 0);
+            return;
+        }
+
+        if (other.GetComponent<Collider>().CompareTag("Deer"))
+        {
+            newHint.GetComponent<Hint>().talkHint = false;
+            newHint.transform.localPosition = new Vector3(0, 2.3f, 0);
+            return;
+        }
+
+        if (
+            SceneManager.GetActiveScene().buildIndex == 1
+            || SceneManager.GetActiveScene().buildIndex == 3
+            || SceneManager.GetActiveScene().buildIndex == 4
+        )
+        {
+            newHint.transform.localPosition = new Vector3(0, 1.5f, 0);
+            newHint.GetComponent<Hint>().talkHint = true;
+        }
+        else
+        {
+            newHint.transform.localPosition = new Vector3(0, 2.5f, 0);
+            newHint.GetComponent<Hint>().talkHint = true;
+        }
     }
 }

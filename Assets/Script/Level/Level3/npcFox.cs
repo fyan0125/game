@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class npcFox : DialogueTrigger
 {
@@ -21,11 +19,18 @@ public class npcFox : DialogueTrigger
 
     private ThirdPersonChar player;
 
+    private NavMeshAgent navMeshAgent;
+    public Transform target;
+    public LayerMask playerLayer;
+    public LayerMask targetLayer;
+    public float nearTarget = 3f;
+
     public override void Start()
     {
         base.Start();
+        navMeshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
-        player.MoveToTarget(new Vector3(-18.7f, 8f, 83.69f), new Vector3(0, 180, 0));
+        player.MoveToTarget(new Vector3(-38f, 19.7f, -25.8f), new Vector3(0, 180, 0));
 
         SwitchSkills.getSkill = 2;
         sP = SendPoint.GetComponent<showPortal>();
@@ -39,6 +44,11 @@ public class npcFox : DialogueTrigger
 
     private void Update()
     {
+        bool isNearTarget =
+            npcState == 1
+                ? Physics.CheckSphere(transform.position, nearTarget, playerLayer)
+                : Physics.CheckSphere(transform.position, nearTarget, targetLayer);
+
         //任務條件
         if (NotificationManager.instance.count >= 10)
         {
@@ -48,10 +58,29 @@ public class npcFox : DialogueTrigger
             NotificationManager.instance.count = -100;
         }
 
-        //關卡階段
+        if (npcState == 1)
+        {
+            if (!isNearTarget)
+            {
+                ChaseTarget(player.transform.position);
+            }
+            else
+            {
+                navMeshAgent.speed = 0;
+            }
+        }
+
         if (npcState == 2 && DialogueManager.EndConversation())
         {
             notificationTrigger.Notice();
+            if (!isNearTarget)
+            {
+                ChaseTarget(target.position);
+            }
+            else
+            {
+                navMeshAgent.speed = 0;
+            }
         }
         else if (npcState == 4)
         {
@@ -87,5 +116,11 @@ public class npcFox : DialogueTrigger
                 break;
         }
         DialogueManager.StartConversation(convo);
+    }
+
+    private void ChaseTarget(Vector3 target = default(Vector3))
+    {
+        navMeshAgent.speed = 5;
+        navMeshAgent.destination = target;
     }
 }

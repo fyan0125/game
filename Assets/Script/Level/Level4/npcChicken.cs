@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class npcChicken : DialogueTrigger
 {
@@ -18,12 +15,14 @@ public class npcChicken : DialogueTrigger
     {
         sP = SendPoint.GetComponent<showPortal>();
         skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
+        gameObject.tag = null;
     }
 
     private void Update()
     {
         if (gameComplete && npcState == 1)
         {
+            gameObject.tag = "NPC";
             npcState = 2;
         }
 

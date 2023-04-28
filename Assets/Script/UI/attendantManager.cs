@@ -14,24 +14,28 @@ public class attendantManager : MonoBehaviour
     public GameObject deerArea;
     private GameObject deer;
     public GameObject crowArea;
+    private GameObject crow;
     private GameObject followPlayer;
     private FollowPlayer fP;
+    public Mount mount;
 
     private void Start()
     {
         chooseBT.onClick.AddListener(ChangeAttendant);
         followPlayer = GameObject.Find("Following");
         fP = followPlayer.GetComponent<FollowPlayer>();
+        mount = GameObject.Find("Player").GetComponentInChildren<Mount>();
     }
 
     private void Update()
     {
         if (!deer)
         {
-            if (GameObject.Find("Player/Deer").transform.childCount > 0)
-            {
-                deer = GameObject.Find("Player/Deer").transform.GetChild(0).gameObject;
-            }
+            deer = mount.Deer;
+        }
+        if (!crow)
+        {
+            crow = mount.Yatagarasu;
         }
     }
 
@@ -90,7 +94,8 @@ public class attendantManager : MonoBehaviour
     {
         fP.choosed[k] = !fP.choosed[k];
         fP.nowFollowing();
-        if(fP.choosed[k]){
+        if (fP.choosed[k])
+        {
             fP.startFollowing();
         }
     }

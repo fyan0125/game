@@ -5,6 +5,8 @@ public class chooseDeer : MonoBehaviour
 {
     private level6Manager level6Manager;
     public GameObject deerPrefab;
+    public Sprite deerImage;
+    public Sprite deerIcon;
 
     private Animator anim;
     private float idleAnimation;
@@ -58,7 +60,7 @@ public class chooseDeer : MonoBehaviour
             deerPrefab,
             new Vector3(0, 0, 0),
             Quaternion.identity,
-            GameObject.Find("Player/Deer").transform
+            GameObject.Find("Player/Mount").transform
         );
         deer.transform.localPosition = GameObject
             .Find("Player")

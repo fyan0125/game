@@ -1,21 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class firstDialog : DialogueTrigger
 {
     public Conversation convo1;
     private ThirdPersonChar player;
 
-    private void Awake()
+    public override void Start()
     {
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         player.MoveToTarget(new Vector3(17, 5, 77), new Vector3(0, 187, 0));
-    }
-
-    public override void Start()
-    {
         StartConvo();
         notificationTrigger = GetComponent<NotificationTrigger>();
     }
