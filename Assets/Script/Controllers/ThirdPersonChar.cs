@@ -410,6 +410,11 @@ public class ThirdPersonChar : MonoBehaviour
             newHint.transform.localPosition = new Vector3(0, 1.5f, 0);
             newHint.GetComponent<Hint>().talkHint = true;
         }
+        else if (SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            newHint.transform.localPosition = new Vector3(0, 4.2f, 0);
+            newHint.GetComponent<Hint>().talkHint = true;
+        }
         else
         {
             newHint.transform.localPosition = new Vector3(0, 2.5f, 0);
