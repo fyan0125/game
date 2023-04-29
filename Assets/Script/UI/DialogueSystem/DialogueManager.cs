@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI speakerName,
+    private TextMeshProUGUI speakerName,
         dialogue;
 
     public int currentIndex;
@@ -26,6 +25,8 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        speakerName = anim.transform.Find("Name").GetComponent<TextMeshProUGUI>();
+        dialogue = anim.transform.Find("Text").GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
