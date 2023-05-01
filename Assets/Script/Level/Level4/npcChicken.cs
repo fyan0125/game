@@ -15,7 +15,6 @@ public class npcChicken : DialogueTrigger
     {
         sP = SendPoint.GetComponent<showPortal>();
         skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
-        gameObject.tag = null;
     }
 
     private void Update()

@@ -7,6 +7,9 @@ public class Level4Manager : MonoBehaviour
 {
     public GameObject BillBoardUI;
     public GameObject FailUI;
+    public Button BillBoardUIStart;
+    public Button FailUIStart;
+    public Button FailUICancel;
     public TextMeshProUGUI message;
 
     public GameObject chickenPrefab;
@@ -108,9 +111,6 @@ public class Level4Manager : MonoBehaviour
 
     private void SetUpButton()
     {
-        Button BillBoardUIStart = BillBoardUI.transform.GetChild(1).GetComponent<Button>();
-        Button FailUIStart = FailUI.transform.GetChild(1).GetComponent<Button>();
-        Button FailUICancel = FailUI.transform.GetChild(2).GetComponent<Button>();
         BillBoardUIStart.onClick.AddListener(GameStart);
         FailUIStart.onClick.AddListener(GameStart);
         FailUICancel.onClick.AddListener(Resume);
