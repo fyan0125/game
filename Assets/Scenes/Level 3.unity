@@ -1431,7 +1431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &114263364 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1210458673787297798, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5849597409027071718, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
   m_PrefabInstance: {fileID: 114263362}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &114263365 stripped
@@ -1441,7 +1441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &114263366 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9158525115759097454, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4537383257635489934, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
   m_PrefabInstance: {fileID: 114263362}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &116864085
@@ -8794,6 +8794,7 @@ MonoBehaviour:
   debugTransform: {fileID: 1965862193}
   ofBulletProjectile: {fileID: 4677909101982601173, guid: 7009d83bb550fe2419786f67b4fb197a, type: 3}
   spawnBulletPosition: {fileID: 114263365}
+  ghostTexture: {fileID: 2800000, guid: ff6bb5b8ef5c0844e9bda9cdc0f846b9, type: 3}
 --- !u!114 &691527456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10368,9 +10369,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 128
   health: 5
   items:
   - {fileID: 3800119003940613619, guid: cfc051a51d7395745861f531ff336b36, type: 3}
@@ -18520,9 +18518,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 128
   health: 5
   items:
   - {fileID: 3800119003940613619, guid: cfc051a51d7395745861f531ff336b36, type: 3}

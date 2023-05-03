@@ -2590,7 +2590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67920803}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -36.1, y: 11.545956, z: 64.4}
+  m_LocalPosition: {x: -36.1, y: 10.545956, z: 64.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17558,11 +17558,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2033698176224118783, guid: 386c9ab11bb7f144ab7023b03fbb334f, type: 3}
   m_PrefabInstance: {fileID: 472695127}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &474995901 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1210458673787297798, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
-  m_PrefabInstance: {fileID: 835565777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &476258674
 GameObject:
   m_ObjectHideFlags: 0
@@ -21447,11 +21442,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &597272514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9158525115759097454, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
-  m_PrefabInstance: {fileID: 835565777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &597958742
 GameObject:
   m_ObjectHideFlags: 0
@@ -26792,6 +26782,16 @@ PrefabInstance:
 --- !u!4 &835565778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8443798700977822700, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_PrefabInstance: {fileID: 835565777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &835565779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5849597409027071718, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_PrefabInstance: {fileID: 835565777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &835565780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4537383257635489934, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
   m_PrefabInstance: {fileID: 835565777}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &835697304
@@ -32199,14 +32199,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b9fa11b3ec8634f98c531a7a712eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeWeapon: {fileID: 474995901}
-  shootWeapon: {fileID: 597272514}
+  meleeWeapon: {fileID: 835565779}
+  shootWeapon: {fileID: 835565780}
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 64
   debugTransform: {fileID: 1835029751}
   ofBulletProjectile: {fileID: 4677909101982601173, guid: 7009d83bb550fe2419786f67b4fb197a, type: 3}
   spawnBulletPosition: {fileID: 90337137}
+  ghostTexture: {fileID: 2800000, guid: ff6bb5b8ef5c0844e9bda9cdc0f846b9, type: 3}
 --- !u!114 &1041214519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32413,7 +32414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051555616}
   m_LocalRotation: {x: -0, y: 0.9263838, z: -0, w: 0.37658083}
-  m_LocalPosition: {x: 53.07, y: 20.935955, z: -50.702717}
+  m_LocalPosition: {x: 53.07, y: 19.935955, z: -50.702717}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1071999709}
