@@ -76,7 +76,7 @@ public class MobController : MonoBehaviour
         randomIndex = Random.Range(0, items.Length);
 
         Vector3 position = transform.position;
-        Debug.Log("die");
+        // Debug.Log("die");
         GameObject item = GameObject.Instantiate(
             items[randomIndex],
             position + new Vector3(0.0f, 1, 0.0f),

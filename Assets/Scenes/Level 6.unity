@@ -5825,7 +5825,6 @@ GameObject:
   - component: {fileID: 166030757}
   - component: {fileID: 166030756}
   - component: {fileID: 166030755}
-  - component: {fileID: 166030754}
   m_Layer: 5
   m_Name: UseButton
   m_TagString: Untagged
@@ -5853,26 +5852,6 @@ RectTransform:
   m_AnchoredPosition: {x: 39.999252, y: -105.69996}
   m_SizeDelta: {x: 68.7274, y: 28.1157}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &166030754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166030752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0265c791bead74da424a77ac7a8ac6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryHolder: {fileID: 1041214515}
-  inventoryItem:
-  - itemData: {fileID: 0}
-    stackSize: -1
-  - itemData: {fileID: 0}
-    stackSize: -1
-  - itemData: {fileID: 0}
-    stackSize: -1
 --- !u!114 &166030755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5917,9 +5896,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 166030754}
+      - m_Target: {fileID: 670553125}
         m_TargetAssemblyTypeName: Compound, Assembly-CSharp
-        m_MethodName: CompoundButton
+        m_MethodName: UseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -20960,6 +20939,14 @@ MonoBehaviour:
     stackSize: -1
   - itemData: {fileID: 0}
     stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
   player: {fileID: 1041214513}
   inventoryHolder: {fileID: 1041214515}
   itemData: {fileID: 11400000, guid: 34104318db4e6964c9c5b516060c1594, type: 2}
@@ -32220,8 +32207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e616ad2ef5b790c4ea1c543c1660a1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  sprintSpeed: 10
   normalJumpHeight: 0.6
   superJumpHeight: 2.4
   gravity: -15
@@ -32255,7 +32240,7 @@ MonoBehaviour:
   armor:
     baseValue: 0
   speed:
-    baseValue: 0
+    baseValue: 8
   health:
     baseValue: 0
   hurtFlashTime: 0.2
@@ -53619,7 +53604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1651271879
 RectTransform:
   m_ObjectHideFlags: 0

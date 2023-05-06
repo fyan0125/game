@@ -21,6 +21,11 @@ public class PlayerStats : CharactorStats
         healthBar.SetMaxHealth(maxHealth);
     }
 
+    private void Update()
+    {
+        healthBar.SetMaxHealth(maxHealth + health.GetValue());
+    }
+
     public override void TakeDamage(int damage) //受到傷害
     {
         base.TakeDamage(damage);
@@ -50,7 +55,6 @@ public class PlayerStats : CharactorStats
     public override void Die()
     {
         base.Die();
-
         Destroy(gameObject);
     }
 }

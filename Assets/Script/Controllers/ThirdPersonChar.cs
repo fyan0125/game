@@ -5,8 +5,6 @@ public class ThirdPersonChar : MonoBehaviour
 {
     private Transform cam;
 
-    public float moveSpeed = 5.0f;
-    public float sprintSpeed = 8.0f;
     public float normalJumpHeight = 1.2f;
     public float superJumpHeight = 3.6f;
     public float gravity = -15.0f;
@@ -149,7 +147,9 @@ public class ThirdPersonChar : MonoBehaviour
 
     private void Move()
     {
-        float targetSpeed = Input.GetButton("Sprint") ? sprintSpeed : moveSpeed;
+        float targetSpeed = Input.GetButton("Sprint")
+            ? playerStats.speed.GetValue() + 2
+            : playerStats.speed.GetValue();
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 inputDirection = new Vector3(horizontal, 0f, vertical).normalized;

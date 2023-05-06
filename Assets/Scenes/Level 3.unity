@@ -960,7 +960,6 @@ GameObject:
   - component: {fileID: 90939238}
   - component: {fileID: 90939237}
   - component: {fileID: 90939236}
-  - component: {fileID: 90939235}
   m_Layer: 5
   m_Name: UseButton
   m_TagString: Untagged
@@ -988,26 +987,6 @@ RectTransform:
   m_AnchoredPosition: {x: 39.999252, y: -105.69996}
   m_SizeDelta: {x: 68.7274, y: 28.1157}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &90939235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 90939233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0265c791bead74da424a77ac7a8ac6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryHolder: {fileID: 691527452}
-  inventoryItem:
-  - itemData: {fileID: 0}
-    stackSize: -1
-  - itemData: {fileID: 0}
-    stackSize: -1
-  - itemData: {fileID: 0}
-    stackSize: -1
 --- !u!114 &90939236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,9 +1031,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 90939235}
+      - m_Target: {fileID: 232341966}
         m_TargetAssemblyTypeName: Compound, Assembly-CSharp
-        m_MethodName: CompoundButton
+        m_MethodName: UseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8807,8 +8786,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e616ad2ef5b790c4ea1c543c1660a1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  sprintSpeed: 10
   normalJumpHeight: 0.6
   superJumpHeight: 2.4
   gravity: -15
@@ -8842,7 +8819,7 @@ MonoBehaviour:
   armor:
     baseValue: 0
   speed:
-    baseValue: 0
+    baseValue: 8
   health:
     baseValue: 0
   hurtFlashTime: 0.2
@@ -25933,6 +25910,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryStackSize: 0000000000000000000000000000000000000000000000000000000000000000
   inventoryItem:
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
   - itemData: {fileID: 0}
     stackSize: -1
   - itemData: {fileID: 0}

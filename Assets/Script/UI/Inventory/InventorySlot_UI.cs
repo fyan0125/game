@@ -54,10 +54,10 @@ public class InventorySlot_UI : MonoBehaviour
         // itemCount.text = "0";
     }
 
-    public void OnUISlotClick()
-    {
-        this.assignedInventorySlot.ItemData.Use();
-    }
+    // public void OnUISlotClick()
+    // {
+    //     this.assignedInventorySlot.ItemData.Use();
+    // }
 
     public void OnCompoundSlotClick()
     {
