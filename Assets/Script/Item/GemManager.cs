@@ -5,6 +5,7 @@ using UnityEngine;
 public class GemManager : MonoBehaviour
 {
     public static GemManager instance;
+
     void Awake()
     {
         instance = this;

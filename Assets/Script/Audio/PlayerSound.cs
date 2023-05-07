@@ -10,22 +10,22 @@ public class PlayerSound : MonoBehaviour
     {
         if (soundGrounded)
         {
-            GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Step");
+            AudioManager.instance.Play("Step");
         }
     }
 
     private void Swing()
     {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Swing");
+        AudioManager.instance.Play("Swing");
     }
 
     private void Fall()
     {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Fall");
+        AudioManager.instance.Play("Fall");
     }
 
     private void Shock()
     {
-        GameObject.Find("AudioManager").GetComponent<AudioManager>().Play("Shock");
+        AudioManager.instance.Play("Shock");
     }
 }
