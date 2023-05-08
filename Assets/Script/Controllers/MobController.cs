@@ -7,8 +7,8 @@ public class MobController : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
-    public LayerMask whatIsGround,
-        whatIsPlayer;
+    public LayerMask whatIsGround;
+    public static LayerMask whatIsPlayer;
     public float health;
     Transform target;
     public GameObject[] items = new GameObject[3];
@@ -44,7 +44,7 @@ public class MobController : MonoBehaviour
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         target = player.transform;
-        stats =  GetComponent<EnemyStats>();
+        stats = GetComponent<EnemyStats>();
         // int_enemyCount = generate.GetComponent<GenerateEnemy>();
     }
 
@@ -54,15 +54,18 @@ public class MobController : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if (!playerInSightRange && !playerInAttackRange){
+        if (!playerInSightRange && !playerInAttackRange)
+        {
             Patroling();
             anim.SetBool("isAttacking", false);
         }
-        if (playerInSightRange && !playerInAttackRange){
+        if (playerInSightRange && !playerInAttackRange)
+        {
             ChasePlayer();
             anim.SetBool("isAttacking", false);
         }
-        if (playerInSightRange && playerInAttackRange){
+        if (playerInSightRange && playerInAttackRange)
+        {
             AttackPlayer();
             anim.SetBool("isAttacking", true);
         }
@@ -73,16 +76,15 @@ public class MobController : MonoBehaviour
         randomIndex = Random.Range(0, items.Length);
 
         Vector3 position = transform.position;
-        Debug.Log("die");
+        // Debug.Log("die");
         GameObject item = GameObject.Instantiate(
-        items[randomIndex], 
-        position + new Vector3(0.0f, 1, 0.0f),
-        Quaternion.identity
+            items[randomIndex],
+            position + new Vector3(0.0f, 1, 0.0f),
+            Quaternion.identity
         );
         // item.transform.Rotate (0f, 0f, 90f);
         // item.transform.rotation=Quaternion.identity;
     }
-    
 
     private void Patroling()
     {
@@ -191,5 +193,17 @@ public class MobController : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
+    }
+
+    public static void AttackPlayer(bool canAttack)
+    {
+        if (canAttack)
+        {
+            whatIsPlayer |= (1 << LayerMask.NameToLayer("Player"));
+        }
+        else
+        {
+            whatIsPlayer &= ~(1 << LayerMask.NameToLayer("Player"));
+        }
     }
 }

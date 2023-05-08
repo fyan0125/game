@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15906909, g: 0.51760596, b: 1.0386382, a: 1}
+  m_IndirectSpecularColor: {r: 0.15902618, g: 0.517622, b: 1.0392601, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8292,7 +8292,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
 --- !u!1 &276610293 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1210458673787297798, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5849597409027071718, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
   m_PrefabInstance: {fileID: 276610292}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &276610294 stripped
@@ -8307,7 +8307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &276610296 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 9158525115759097454, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4537383257635489934, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
   m_PrefabInstance: {fileID: 276610292}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &276829072
@@ -13503,6 +13503,12 @@ MonoBehaviour:
     volume: 0.8
     loop: 0
     source: {fileID: 0}
+  - name: Eat
+    clip: {fileID: 8300000, guid: a0776e22877c7fe478de70e4841fa1b5, type: 3}
+    audioMixerGroup: {fileID: -2297357421473616156, guid: ba3f8d2c403bfd54491d6b82545bda42, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
   - name: CraneHurt
     clip: {fileID: 8300000, guid: 1a3454e1e411b48a5b5aff19063dd685, type: 3}
     audioMixerGroup: {fileID: -2297357421473616156, guid: ba3f8d2c403bfd54491d6b82545bda42, type: 2}
@@ -15594,7 +15600,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8e00cb37ffed73e4eb50073a2f530ac9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2643266b2b9a7544ba466c40a41b6b43, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -33649,7 +33655,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8fd0a9ae7d9f16e4a83ee84d78addf34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a046d2c2ea52c154794667676e580e66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -35962,7 +35968,6 @@ GameObject:
   - component: {fileID: 1303047909}
   - component: {fileID: 1303047908}
   - component: {fileID: 1303047907}
-  - component: {fileID: 1303047906}
   m_Layer: 5
   m_Name: UseButton
   m_TagString: Untagged
@@ -35990,26 +35995,6 @@ RectTransform:
   m_AnchoredPosition: {x: 39.999252, y: -105.69996}
   m_SizeDelta: {x: 68.7274, y: 28.1157}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1303047906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303047904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0265c791bead74da424a77ac7a8ac6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryHolder: {fileID: 1611886965}
-  inventoryItem:
-  - itemData: {fileID: 0}
-    stackSize: -1
-  - itemData: {fileID: 0}
-    stackSize: -1
-  - itemData: {fileID: 0}
-    stackSize: -1
 --- !u!114 &1303047907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36054,9 +36039,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1303047906}
+      - m_Target: {fileID: 1546598816}
         m_TargetAssemblyTypeName: Compound, Assembly-CSharp
-        m_MethodName: CompoundButton
+        m_MethodName: UseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42853,6 +42838,14 @@ MonoBehaviour:
     stackSize: -1
   - itemData: {fileID: 0}
     stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
   player: {fileID: 1611886963}
   inventoryHolder: {fileID: 1611886965}
   itemData: {fileID: 11400000, guid: 34104318db4e6964c9c5b516060c1594, type: 2}
@@ -43577,6 +43570,7 @@ MonoBehaviour:
   debugTransform: {fileID: 139042189}
   ofBulletProjectile: {fileID: 4677909101982601173, guid: 7009d83bb550fe2419786f67b4fb197a, type: 3}
   spawnBulletPosition: {fileID: 276610295}
+  ghostTexture: {fileID: 2800000, guid: ff6bb5b8ef5c0844e9bda9cdc0f846b9, type: 3}
 --- !u!114 &1611886969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43589,8 +43583,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e616ad2ef5b790c4ea1c543c1660a1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  sprintSpeed: 10
   normalJumpHeight: 0.6
   superJumpHeight: 2.4
   gravity: -15
@@ -43624,7 +43616,7 @@ MonoBehaviour:
   armor:
     baseValue: 0
   speed:
-    baseValue: 0
+    baseValue: 8
   health:
     baseValue: 0
   hurtFlashTime: 0.2

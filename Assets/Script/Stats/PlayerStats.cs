@@ -9,15 +9,12 @@ public class PlayerStats : CharactorStats, IDataPersistence
     private float hurtFlashTime = 0.2f;
     private Animator hurtOverlayAnim;
 
-    private AudioManager audioManager;
-
     private void Start()
     {
         GemManager.instance.onGemChanged += OnGemChanged;
 
         hurtOverlayAnim = GameObject.Find("PlayerStatus/HurtOverlay").GetComponent<Animator>();
         healthBar = GameObject.Find("PlayerStatus/Health/HealthBar").GetComponent<HealthBar>();
-        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         healthBar.SetMaxHealth(maxHealth);
     }
 
@@ -28,10 +25,20 @@ public class PlayerStats : CharactorStats, IDataPersistence
         healthBar.SetHealth(currentHealth);
     }
 
+    public void Regen(int h) //回血
+    {
+        currentHealth += h;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        healthBar.SetHealth(currentHealth);
+    }
+
     IEnumerator HurtFlash()
     {
         hurtOverlayAnim.SetBool("Hurt", true);
-        audioManager.Play("PlayerHurt");
+        AudioManager.instance.Play("PlayerHurt");
         yield return new WaitForSeconds(hurtFlashTime);
         hurtOverlayAnim.SetBool("Hurt", false);
     }
@@ -44,13 +51,14 @@ public class PlayerStats : CharactorStats, IDataPersistence
             damage.AddModifier(newItem.damageModifier);
             speed.AddModifier(newItem.speedModifier);
             health.AddModifier(newItem.healthModifier);
+
+            healthBar.SetMaxHealth(maxHealth + health.GetValue());
         }
     }
 
     public override void Die()
     {
         base.Die();
-
         Destroy(gameObject);
     }
 

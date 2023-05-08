@@ -2011,7 +2011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deerPrefab: {fileID: 4482577902218313252, guid: bdf50614e08978b49ab97715dc73d576, type: 3}
   deerImage: {fileID: 21300000, guid: c4b8b9281a062ed4ea1b1062f2994851, type: 3}
-  deerIcon: {fileID: 0}
+  deerIcon: {fileID: 21300000, guid: c4b8b9281a062ed4ea1b1062f2994851, type: 3}
   range: 15
   centrePoint: {fileID: 1670044568}
 --- !u!195 &60407142
@@ -2590,7 +2590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67920803}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -36.1, y: 11.545956, z: 64.4}
+  m_LocalPosition: {x: -36.1, y: 10.545956, z: 64.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5825,7 +5825,6 @@ GameObject:
   - component: {fileID: 166030757}
   - component: {fileID: 166030756}
   - component: {fileID: 166030755}
-  - component: {fileID: 166030754}
   m_Layer: 5
   m_Name: UseButton
   m_TagString: Untagged
@@ -5853,26 +5852,6 @@ RectTransform:
   m_AnchoredPosition: {x: 39.999252, y: -105.69996}
   m_SizeDelta: {x: 68.7274, y: 28.1157}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &166030754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166030752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca0265c791bead74da424a77ac7a8ac6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryHolder: {fileID: 1041214515}
-  inventoryItem:
-  - itemData: {fileID: 0}
-    stackSize: -1
-  - itemData: {fileID: 0}
-    stackSize: -1
-  - itemData: {fileID: 0}
-    stackSize: -1
 --- !u!114 &166030755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5917,9 +5896,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 166030754}
+      - m_Target: {fileID: 670553125}
         m_TargetAssemblyTypeName: Compound, Assembly-CSharp
-        m_MethodName: CompoundButton
+        m_MethodName: UseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6552,7 +6531,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8fd0a9ae7d9f16e4a83ee84d78addf34, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a046d2c2ea52c154794667676e580e66, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17558,11 +17537,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2033698176224118783, guid: 386c9ab11bb7f144ab7023b03fbb334f, type: 3}
   m_PrefabInstance: {fileID: 472695127}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &474995901 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1210458673787297798, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
-  m_PrefabInstance: {fileID: 835565777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &476258674
 GameObject:
   m_ObjectHideFlags: 0
@@ -18031,7 +18005,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8e00cb37ffed73e4eb50073a2f530ac9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2643266b2b9a7544ba466c40a41b6b43, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20965,6 +20939,14 @@ MonoBehaviour:
     stackSize: -1
   - itemData: {fileID: 0}
     stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
+  - itemData: {fileID: 0}
+    stackSize: -1
   player: {fileID: 1041214513}
   inventoryHolder: {fileID: 1041214515}
   itemData: {fileID: 11400000, guid: 34104318db4e6964c9c5b516060c1594, type: 2}
@@ -21447,11 +21429,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &597272514 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9158525115759097454, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
-  m_PrefabInstance: {fileID: 835565777}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &597958742
 GameObject:
   m_ObjectHideFlags: 0
@@ -26792,6 +26769,16 @@ PrefabInstance:
 --- !u!4 &835565778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8443798700977822700, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_PrefabInstance: {fileID: 835565777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &835565779 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5849597409027071718, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_PrefabInstance: {fileID: 835565777}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &835565780 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4537383257635489934, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
   m_PrefabInstance: {fileID: 835565777}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &835697304
@@ -32199,14 +32186,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b9fa11b3ec8634f98c531a7a712eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeWeapon: {fileID: 474995901}
-  shootWeapon: {fileID: 597272514}
+  meleeWeapon: {fileID: 835565779}
+  shootWeapon: {fileID: 835565780}
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 64
   debugTransform: {fileID: 1835029751}
   ofBulletProjectile: {fileID: 4677909101982601173, guid: 7009d83bb550fe2419786f67b4fb197a, type: 3}
   spawnBulletPosition: {fileID: 90337137}
+  ghostTexture: {fileID: 2800000, guid: ff6bb5b8ef5c0844e9bda9cdc0f846b9, type: 3}
 --- !u!114 &1041214519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32219,8 +32207,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e616ad2ef5b790c4ea1c543c1660a1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  sprintSpeed: 10
   normalJumpHeight: 0.6
   superJumpHeight: 2.4
   gravity: -15
@@ -32254,7 +32240,7 @@ MonoBehaviour:
   armor:
     baseValue: 0
   speed:
-    baseValue: 0
+    baseValue: 8
   health:
     baseValue: 0
   hurtFlashTime: 0.2
@@ -32413,7 +32399,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051555616}
   m_LocalRotation: {x: -0, y: 0.9263838, z: -0, w: 0.37658083}
-  m_LocalPosition: {x: 53.07, y: 20.935955, z: -50.702717}
+  m_LocalPosition: {x: 53.07, y: 19.935955, z: -50.702717}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1071999709}
@@ -43946,7 +43932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 14322e668d57334449113c77796b6a0a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -50604,6 +50590,12 @@ MonoBehaviour:
     volume: 0.8
     loop: 0
     source: {fileID: 0}
+  - name: Eat
+    clip: {fileID: 8300000, guid: a0776e22877c7fe478de70e4841fa1b5, type: 3}
+    audioMixerGroup: {fileID: -2297357421473616156, guid: ba3f8d2c403bfd54491d6b82545bda42, type: 2}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
   - name: CraneHurt
     clip: {fileID: 8300000, guid: 1a3454e1e411b48a5b5aff19063dd685, type: 3}
     audioMixerGroup: {fileID: -2297357421473616156, guid: ba3f8d2c403bfd54491d6b82545bda42, type: 2}
@@ -53618,7 +53610,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1651271879
 RectTransform:
   m_ObjectHideFlags: 0

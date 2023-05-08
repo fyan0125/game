@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 public class PlayerSkillController : MonoBehaviour
 {
@@ -20,11 +22,21 @@ public class PlayerSkillController : MonoBehaviour
     private SwitchSkills switchSkills;
     private Animator anim;
 
+    private SkinnedMeshRenderer[] allMesh;
+    private List<Material> playerMaterial = new List<Material>();
+    public Texture ghostTexture;
+
     private void Start()
     {
         anim = GetComponentInChildren<Animator>();
         thirdPersonChar = GetComponent<ThirdPersonChar>();
         switchSkills = GetComponent<SwitchSkills>();
+
+        allMesh = GetComponentsInChildren<SkinnedMeshRenderer>();
+        foreach (SkinnedMeshRenderer mesh in allMesh)
+        {
+            playerMaterial.AddRange(mesh.materials);
+        }
     }
 
     private void Update()
@@ -65,9 +77,32 @@ public class PlayerSkillController : MonoBehaviour
             }
         }
 
+        foreach (Material m in playerMaterial)
+        {
+            if (switchSkills.currentSkill == 4)
+            {
+                m.SetFloat("_Mode", 3); // Transparent
+                m.mainTexture = ghostTexture;
+                m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+                m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+                m.SetInt("_ZWrite", 0);
+                // m.DisableKeyword("_ALPHATEST_ON"); // 正常陰影
+                m.EnableKeyword("_ALPHABLEND_ON"); // 沒有任何陰影
+                m.DisableKeyword("_ALPHAPREMULTIPLY_ON"); // 透明時的陰影
+                // m.renderQueue = 3000; // 透出原本的顏色
+            }
+            else
+            {
+                m.SetFloat("_Mode", 0); // Opaque
+                m.mainTexture = null;
+                m.SetInt("_ZWrite", 1);
+            }
+        }
+
         meleeWeapon.SetActive((switchSkills.currentSkill == 2));
         shootWeapon.SetActive((switchSkills.currentSkill == 3));
         debugTransform.SetActive((switchSkills.currentSkill == 3));
         thirdPersonChar.SetRotateOnMove(!(switchSkills.currentSkill == 3));
+        MobController.AttackPlayer(!(switchSkills.currentSkill == 4));
     }
 }

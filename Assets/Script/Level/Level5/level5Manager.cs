@@ -30,7 +30,7 @@ public class level5Manager : MonoBehaviour
     private void Start()
     {
         Timer.time = time;
-        SwitchSkills.getSkill = 2;
+        SwitchSkills.getSkill = 3;
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         Crane = GameObject.Find("NPC");
         GameUI = GameObject.Find("Level5UI").transform.GetChild(0).gameObject;
@@ -135,7 +135,7 @@ public class level5Manager : MonoBehaviour
         GameUI.SetActive(false);
         npcCrane.agent.destination = new Vector3(20, 3, -10);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
-        SwitchSkills.getSkill = 3;
+        SwitchSkills.getSkill = 4;
         npcCrane.gameComplete = true;
     }
 
