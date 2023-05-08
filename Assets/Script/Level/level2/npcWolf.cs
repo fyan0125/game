@@ -13,12 +13,15 @@ public class npcWolf : DialogueTrigger
 
     private SkillUI skillUI;
 
+    private DataPersistenceManager dataPersistenceManager;
+
     public override void Start()
     {
         base.Start();
         SwitchSkills.getSkill = 1;
         skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
         sP = SendPoint.GetComponent<showPortal>();
+        dataPersistenceManager =  GameObject.Find("DataPersistenceManager").GetComponent<DataPersistenceManager>();
     }
 
     private void Update()
@@ -31,6 +34,7 @@ public class npcWolf : DialogueTrigger
             notificationTrigger.Notice();
             npcState++;
             sP.isClear = true;
+            dataPersistenceManager.SaveGame();
         }
         else if (npcState == 3 && Input.GetButtonDown("SwitchSkills"))
         {
