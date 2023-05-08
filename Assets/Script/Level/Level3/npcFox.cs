@@ -17,7 +17,7 @@ public class npcFox : DialogueTrigger
     public GameObject SendPoint;
     private showPortal sP;
 
-    private ThirdPersonChar player;
+    public ThirdPersonChar player;
 
     private NavMeshAgent navMeshAgent;
     public Transform target;

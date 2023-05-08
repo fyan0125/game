@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerStats : CharactorStats
+public class PlayerStats : CharactorStats, IDataPersistence
 {
     private HealthBar healthBar;
 
@@ -52,5 +52,15 @@ public class PlayerStats : CharactorStats
         base.Die();
 
         Destroy(gameObject);
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.currentHealth = data.currentHealth;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.currentHealth = this.currentHealth;
     }
 }
