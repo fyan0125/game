@@ -30,7 +30,7 @@ public class npcFox : DialogueTrigger
         base.Start();
         navMeshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
-        player.MoveToTarget(new Vector3(-38f, 19.7f, -25.8f), new Vector3(0, 180, 0));
+        player.MoveToTarget(new Vector3(-77.5f, 6.2f, 20f), new Vector3(0, 180, 0));
 
         SwitchSkills.getSkill = 2;
         sP = SendPoint.GetComponent<showPortal>();
