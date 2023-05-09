@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15906909, g: 0.51760596, b: 1.0386382, a: 1}
+  m_IndirectSpecularColor: {r: 0.15902618, g: 0.517622, b: 1.0392601, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8509,7 +8509,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1128560813642917393, guid: e0187dcf917594ccd9929235f356092f, type: 3}
 --- !u!23 &333146262
@@ -18875,7 +18875,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5567943314056772199, guid: e0187dcf917594ccd9929235f356092f, type: 3}
 --- !u!23 &810830648
@@ -42406,6 +42406,7 @@ MonoBehaviour:
   debugTransform: {fileID: 105068842}
   ofBulletProjectile: {fileID: 4677909101982601173, guid: 7009d83bb550fe2419786f67b4fb197a, type: 3}
   spawnBulletPosition: {fileID: 1262267386}
+  ghostTexture: {fileID: 0}
 --- !u!114 &2041890139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42418,8 +42419,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e616ad2ef5b790c4ea1c543c1660a1ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  sprintSpeed: 8
   normalJumpHeight: 0.6
   superJumpHeight: 2.4
   gravity: -15

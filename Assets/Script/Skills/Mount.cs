@@ -47,6 +47,14 @@ public class Mount : MonoBehaviour
 
         deerActive = Deer ? Deer.activeSelf : false;
         canFly = Yatagarasu ? Yatagarasu.activeSelf : false;
+        if (deerActive)
+        {
+            Deer.transform.localPosition = new Vector3(0, -1.2f, 0);
+        }
+        if (canFly)
+        {
+            Yatagarasu.transform.localPosition = new Vector3(0, -1.1f, 0);
+        }
         if (!SwitchSkills.lockSkill)
         {
             SwitchSkills.lockByMount = deerActive || canFly;
