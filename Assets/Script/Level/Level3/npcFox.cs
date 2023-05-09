@@ -25,6 +25,8 @@ public class npcFox : DialogueTrigger
     public LayerMask targetLayer;
     public float nearTarget = 3f;
 
+    public Animator anim;
+
     public override void Start()
     {
         base.Start();
@@ -63,10 +65,12 @@ public class npcFox : DialogueTrigger
             if (!isNearTarget)
             {
                 ChaseTarget(player.transform.position);
+                anim.SetBool("isWalking", true);
             }
             else
             {
                 navMeshAgent.speed = 0;
+                anim.SetBool("isWalking", false);
             }
         }
 
@@ -76,10 +80,12 @@ public class npcFox : DialogueTrigger
             if (!isNearTarget)
             {
                 ChaseTarget(target.position);
+                anim.SetBool("isWalking", true);
             }
             else
             {
                 navMeshAgent.speed = 0;
+                anim.SetBool("isWalking", false);
             }
         }
         else if (npcState == 4)
