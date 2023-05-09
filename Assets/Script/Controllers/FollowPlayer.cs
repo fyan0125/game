@@ -48,7 +48,7 @@ public class FollowPlayer : MonoBehaviour
         {
             i = 1;
         }
-        else if (aM.foxArea.activeSelf && !choosed[2])
+        else if (aM.foxArea.activeSelf && choosed[2])
         {
             i = 2;
         }
@@ -56,7 +56,7 @@ public class FollowPlayer : MonoBehaviour
         {
             i = 3;
         }
-        else if (aM.craneArea.activeSelf && !choosed[4])
+        else if (aM.craneArea.activeSelf && choosed[4])
         {
             i = 4;
         }
