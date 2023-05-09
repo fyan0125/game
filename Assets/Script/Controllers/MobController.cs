@@ -90,11 +90,13 @@ public class MobController : MonoBehaviour
     {
         if (!walkPointSet)
         {
+            StartCoroutine(waiter(500));
             SearchWalkPoint();
         }
 
         if (walkPointSet)
         {
+            StartCoroutine(waiter(500));
             agent.SetDestination(walkPoint);
             walkPointSet = false;
             StartCoroutine(waiter(100));
