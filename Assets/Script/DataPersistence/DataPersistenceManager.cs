@@ -5,12 +5,17 @@ using System.Linq;
 
 public class DataPersistenceManager : MonoBehaviour
 {
+    [Header("File Storage Config")]
+    [SerializeField] private string fileName;
+    [SerializeField] private bool useEncryption;
+
     private GameData gameData;
+    private List<IDataPersistence> dataPersistenceObjects;
+    private FileDataHandler dataHandler;
 
     //可以取用但不能更改這裡的值
     public static DataPersistenceManager instance { get; private set;} 
-
-    private List<IDataPersistence> dataPersistenceObjects;
+    
 
     private void Awake() 
     {
@@ -23,6 +28,8 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Start() 
     {
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
+        Debug.Log(Application.persistentDataPath);
         this.dataPersistenceObjects = FingAllDataPersistenceObjects();
         LoadGame();
     }
@@ -34,7 +41,9 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
-        // TO-DO - Load any saved data from a file using the data handler
+        // Load any saved data from a file using the data handler
+        this.gameData = dataHandler.Load();
+
         // if no data can be loaded, initialize to a new game
         if(this.gameData == null)
         {
@@ -58,7 +67,9 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObj.SaveData(ref gameData);
         }  
         Debug.Log("Saved current health = " + gameData.currentHealth);
-        // TO-DO - save that data to a flie using the data handler 
+
+        // Save that data to a flie using the data handler 
+        dataHandler.Save(gameData);
     }
 
     private void OnApplicationQuit()
