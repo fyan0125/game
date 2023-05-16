@@ -2,35 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MoveToNextLevel : MonoBehaviour
 {
     public int nextSceneLoad;
     private DataPersistenceManager dataPersistenceManager;
+    public GameObject loadingScreen;
+    public Slider slider;
 
     // Start is called before the first frame update
     void Start()
     {
         nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
-        dataPersistenceManager =  GameObject.Find("DataPersistenceManager").GetComponent<DataPersistenceManager>();
+        dataPersistenceManager = GameObject
+            .Find("DataPersistenceManager")
+            .GetComponent<DataPersistenceManager>();
+        loadingScreen = GameObject.Find("LoadingScreen");
+        slider = loadingScreen.transform.Find("Slider").GetComponent<Slider>();
+        loadingScreen.SetActive(false);
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            if (SceneManager.GetActiveScene().buildIndex == 7) /* < Change this int value to whatever your
-                                                                   last level build index is on your
-                                                                   build settings */
+            if (SceneManager.GetActiveScene().buildIndex == 6)
             {
                 Debug.Log("You Completed ALL Levels");
-
-                //Show Win Screen or Somethin.
             }
             else
             {
                 //Move to next level
-                SceneManager.LoadScene(nextSceneLoad);
+                StartCoroutine(LoadAsynchronously(nextSceneLoad));
+                // SceneManager.LoadSceneAsync(nextSceneLoad);
                 Mount.GetWater();
                 dataPersistenceManager.SaveGame();
                 //Setting Int for Index
@@ -39,6 +44,18 @@ public class MoveToNextLevel : MonoBehaviour
                     PlayerPrefs.SetInt("levelAt", nextSceneLoad);
                 }
             }
+        }
+    }
+
+    IEnumerator LoadAsynchronously(int scenIndex)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(scenIndex);
+        loadingScreen.SetActive(true);
+        while (!operation.isDone)
+        {
+            float progress = Mathf.Clamp01(operation.progress / 0.9f);
+            slider.value = progress;
+            yield return null;
         }
     }
 }
