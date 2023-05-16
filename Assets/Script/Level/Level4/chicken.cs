@@ -39,14 +39,6 @@ public class chicken : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Collider>().CompareTag("Player") && Input.GetButtonDown("Skill"))
-        {
-            Debug.Log("player");
-        }
-    }
-
     public void CatchChicken()
     {
         if (!isCatched)

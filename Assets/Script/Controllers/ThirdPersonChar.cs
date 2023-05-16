@@ -139,7 +139,9 @@ public class ThirdPersonChar : MonoBehaviour
             QueryTriggerInteraction.Ignore
         );
 
-        notOnSlide = Vector3.Angle(Vector3.up, hitNormal) <= controller.slopeLimit;
+        notOnSlide = Mount.canFly
+            ? true
+            : Vector3.Angle(Vector3.up, hitNormal) <= controller.slopeLimit;
 
         PlayerSound.soundGrounded = grounded;
         anim.SetBool(animIDGrounded, grounded);

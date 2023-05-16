@@ -23,7 +23,6 @@ public class npcFox : DialogueTrigger
     public Transform target;
     public LayerMask playerLayer;
     public LayerMask targetLayer;
-    public float nearTarget = 3f;
 
     public Animator anim;
 
@@ -48,8 +47,8 @@ public class npcFox : DialogueTrigger
     {
         bool isNearTarget =
             npcState == 1
-                ? Physics.CheckSphere(transform.position, nearTarget, playerLayer)
-                : Physics.CheckSphere(transform.position, nearTarget, targetLayer);
+                ? Physics.CheckSphere(transform.position, 3, playerLayer)
+                : Physics.CheckSphere(transform.position, 1, targetLayer);
 
         //任務條件
         if (NotificationManager.instance.count >= 10)
@@ -67,14 +66,9 @@ public class npcFox : DialogueTrigger
                 ChaseTarget(player.transform.position);
                 anim.SetBool("isWalking", true);
             }
-            else
-            {
-                navMeshAgent.speed = 0;
-                anim.SetBool("isWalking", false);
-            }
         }
 
-        if (npcState == 2 && DialogueManager.EndConversation())
+        if (npcState == 2 && !DialogueManager.isTalking)
         {
             notificationTrigger.Notice();
             if (!isNearTarget)
@@ -84,8 +78,7 @@ public class npcFox : DialogueTrigger
             }
             else
             {
-                navMeshAgent.speed = 0;
-                anim.SetBool("isWalking", false);
+                transform.eulerAngles = new Vector3(0, 0, 0);
             }
         }
         else if (npcState == 4)
@@ -99,6 +92,12 @@ public class npcFox : DialogueTrigger
                 npcState++;
                 sP.isClear = true;
             }
+        }
+
+        if (isNearTarget)
+        {
+            navMeshAgent.speed = 0;
+            anim.SetBool("isWalking", false);
         }
     }
 
