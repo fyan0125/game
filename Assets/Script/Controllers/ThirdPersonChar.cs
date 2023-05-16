@@ -389,6 +389,10 @@ public class ThirdPersonChar : MonoBehaviour
 
         if (other.GetComponent<Collider>().CompareTag("Chicken"))
         {
+            if (other.GetComponent<chicken>().isCatched)
+            {
+                Destroy(newHint);
+            }
             newHint.GetComponent<Hint>().talkHint = false;
             newHint.transform.localPosition = new Vector3(0, 1, 0);
             return;
