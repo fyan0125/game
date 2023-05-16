@@ -116,7 +116,6 @@ public class MobController : MonoBehaviour
     public IEnumerator waiter(int time)
     {
         yield return new WaitForSeconds(time);
-        Debug.Log(time);
     }
 
     private void SearchWalkPoint()

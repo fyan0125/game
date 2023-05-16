@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class MoveToNextLevel : MonoBehaviour
 {
     public int nextSceneLoad;
+    private DataPersistenceManager dataPersistenceManager;
 
     // Start is called before the first frame update
     void Start()
     {
         nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        dataPersistenceManager =  GameObject.Find("DataPersistenceManager").GetComponent<DataPersistenceManager>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -30,7 +32,7 @@ public class MoveToNextLevel : MonoBehaviour
                 //Move to next level
                 SceneManager.LoadScene(nextSceneLoad);
                 Mount.GetWater();
-
+                dataPersistenceManager.SaveGame();
                 //Setting Int for Index
                 if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
                 {

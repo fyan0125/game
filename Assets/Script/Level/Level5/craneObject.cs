@@ -59,7 +59,6 @@ public class craneObject : CharactorStats
         base.Die();
         //Add ragdoll affect / death animation
 
-        //For level 3
         if (Level5Manager.i==0 || Level5Manager.i ==1)
         {
             Level5Manager.MissionComplete();

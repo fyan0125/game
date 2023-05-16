@@ -36,7 +36,7 @@ public class level5Manager : MonoBehaviour
         GameUI = GameObject.Find("Level5UI").transform.GetChild(0).gameObject;
         npcCrane = Crane.GetComponent<npcCrane>();
         craneAnim = Crane.transform.GetChild(1).gameObject.GetComponent<Animator>();
-
+        turnIntoObject();
     }
 
     private void Update()
@@ -61,7 +61,6 @@ public class level5Manager : MonoBehaviour
     public void GameStart()
     {
         //變身物件
-        turnIntoObject();
         Resume();
         changeMaterial();
         GameUI.SetActive(true);
@@ -127,6 +126,7 @@ public class level5Manager : MonoBehaviour
         npcCrane.missionComplete = true;
         Timer.setTimeToPause();
         GameUI.SetActive(false);
+        Debug.Log("non");
     }
 
     public void GameComplete()
@@ -135,7 +135,6 @@ public class level5Manager : MonoBehaviour
         GameUI.SetActive(false);
         npcCrane.agent.destination = new Vector3(20, 3, -10);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
-        SwitchSkills.getSkill = 4;
         npcCrane.gameComplete = true;
     }
 
