@@ -54,8 +54,6 @@ public class CompoundArea : MonoBehaviour
             instance.formula.text = item.Formula;
             instance.craftingElement1.sprite = item.craftingElement[0].ItemData.Icon;
             instance.craftingElement2.sprite = item.craftingElement[1].ItemData.Icon;
-            // instance.stackSize1.text = instance.size1.ToString();
-            // instance.stackSize2.text = instance.size2.ToString();
         }
     }
 }

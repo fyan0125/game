@@ -29,7 +29,6 @@ public class DataPersistenceManager : MonoBehaviour
     private void Start() 
     {
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
-        Debug.Log(Application.persistentDataPath);
         this.dataPersistenceObjects = FingAllDataPersistenceObjects();
         LoadGame();
     }
@@ -56,7 +55,6 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.LoadData(gameData);
         }  
-        Debug.Log("Loaded current health = " + gameData.currentHealth);
     }
 
     public void SaveGame()
@@ -66,7 +64,6 @@ public class DataPersistenceManager : MonoBehaviour
         {
             dataPersistenceObj.SaveData(ref gameData);
         }  
-        Debug.Log("Saved current health = " + gameData.currentHealth);
 
         // Save that data to a flie using the data handler 
         dataHandler.Save(gameData);
