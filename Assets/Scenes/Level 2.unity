@@ -13922,6 +13922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcState: 1
   convo1: {fileID: 11400000, guid: 7680bdc81b2865548b40955de763ccbe, type: 2}
+  defaultConvo: {fileID: 11400000, guid: e24c635916896164f96089d1c10939e4, type: 2}
   SendPoint: {fileID: 2057433541}
 --- !u!114 &611017805
 MonoBehaviour:
@@ -18386,8 +18387,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ab6316903c5e4e8da69077216f3e1f8, type: 3}
   m_PrefabInstance: {fileID: 1180442625}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &794062251
-MeshCollider:
+--- !u!136 &794062251
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -18396,10 +18397,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 34da67246560e2948b7ce7afeb452508, type: 3}
+  m_Radius: 0.9367237
+  m_Height: 3.1286545
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.62760353, z: -0.4367237}
 --- !u!95 &794062252
 Animator:
   serializedVersion: 3

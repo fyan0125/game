@@ -44,5 +44,6 @@ public class SwitchSkills : MonoBehaviour
                 skillUI.SkillUITransition(currentSkill);
             }
         }
+        anim.SetInteger("currentSkill", currentSkill);
     }
 }

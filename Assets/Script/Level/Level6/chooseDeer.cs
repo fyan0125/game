@@ -38,6 +38,13 @@ public class chooseDeer : MonoBehaviour
             nowAnim = Mathf.Lerp(nowAnim, 1, 0.2f);
             anim.SetFloat("IdleAnimation", nowAnim);
         }
+
+        if (level6Manager.npcState > 4 && gameObject.tag == "Deer")
+        {
+            gameObject.tag = "Untagged";
+        }
+
+        agent.speed = level6Manager.level6UI.activeSelf ? 0 : 2;
         anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 

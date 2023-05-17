@@ -18,7 +18,7 @@ public class ActivateOnKeypress : MonoBehaviour
 
     void LateUpdate()
     {
-        if (vcam != null && Input.GetButtonDown("SwitchSkills"))
+        if (vcam != null)
         {
             if (switchSkills.currentSkill == 3 && !boosted)
             {

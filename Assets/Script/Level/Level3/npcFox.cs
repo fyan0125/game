@@ -3,22 +3,29 @@ using UnityEngine.AI;
 
 public class npcFox : DialogueTrigger
 {
+    [Tooltip("通關條件")]
+    public int needToKill = 10;
+
+    [Header("對話")]
     public Conversation convo1;
     public Conversation convo2;
     public Conversation convo3;
+    public Conversation defaultConvo;
 
     // UI介面控制
     private SkillUI skillUI;
-    public GameObject notice;
-    public GameObject counter;
-    public GameObject compoundLock;
+    private GameObject notice;
+    private GameObject counter;
+    private GameObject compoundLock;
 
     //傳送門
     public GameObject SendPoint;
     private showPortal sP;
 
+    [HideInInspector]
     public ThirdPersonChar player;
 
+    [Header("移動至目標")]
     private NavMeshAgent navMeshAgent;
     public Transform target;
     public LayerMask playerLayer;
@@ -38,7 +45,11 @@ public class npcFox : DialogueTrigger
         skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
         notice = GameObject.Find("/ObjectToNextLevel/Canvas/Notification/Notice");
         counter = GameObject.Find("/ObjectToNextLevel/Canvas/Notification/Counter");
-        compoundLock = GameObject.Find("/ObjectToNextLevel/Canvas/Package/Panel/Compound/lock");
+        compoundLock = GameObject
+            .Find("ObjectToNextLevel")
+            .transform.Find("Canvas/Package/Panel/Compound/lock")
+            .gameObject;
+
         counter.SetActive(true);
         notice.SetActive(false);
     }
@@ -51,7 +62,7 @@ public class npcFox : DialogueTrigger
                 : Physics.CheckSphere(transform.position, 1, targetLayer);
 
         //任務條件
-        if (NotificationManager.instance.count >= 10)
+        if (NotificationManager.instance.count >= needToKill)
         {
             counter.SetActive(false);
             notice.SetActive(true);
@@ -117,7 +128,7 @@ public class npcFox : DialogueTrigger
                 npcState += 1;
                 break;
             default:
-                convo = convo1;
+                convo = defaultConvo;
                 break;
         }
         DialogueManager.StartConversation(convo);

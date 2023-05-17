@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using System.Collections;
 
 //npcState == 1 對話 去找player
 //npcState == 2 帶玩家走到鹿群旁邊
@@ -23,7 +24,8 @@ public class level6Manager : DialogueTrigger
     public LayerMask playerLayer;
     public LayerMask targetLayer;
 
-    private GameObject level6UI;
+    [HideInInspector]
+    public GameObject level6UI;
     public chooseDeer chooseDeer;
     public AnimalDiscription animalDiscription;
     private bool getReward = false;
@@ -36,14 +38,7 @@ public class level6Manager : DialogueTrigger
         SwitchSkills.getSkill = 4;
         navMeshAgent = GetComponent<NavMeshAgent>();
         level6UI = GameObject.Find("Level6UI");
-        if (level6UI != null)
-        {
-            level6UI.SetActive(false);
-        }
-        else
-        {
-            Debug.Log("can't find level 6 UI");
-        }
+        level6UI.SetActive(false);
 
         firstTarget = GameObject.Find("Player").transform;
         skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
@@ -92,6 +87,8 @@ public class level6Manager : DialogueTrigger
 
         if (npcState >= 5 && getReward == false)
         {
+            gameObject.tag = "Untagged";
+            StartCoroutine(Notice());
             NpcReward.GetReward();
             npcState++;
             getReward = true;
@@ -118,9 +115,6 @@ public class level6Manager : DialogueTrigger
             case 5:
                 convo = convo3;
                 npcState = 6;
-                break;
-            default:
-                convo = convo1;
                 break;
         }
         DialogueManager.StartConversation(convo);
@@ -161,5 +155,12 @@ public class level6Manager : DialogueTrigger
         Destroy(gameObject.transform.GetChild(0).gameObject);
         StartConvo();
         skillUI.ClearLevel(6);
+    }
+
+    IEnumerator Notice()
+    {
+        notificationTrigger.Notice();
+        yield return new WaitForSeconds(10);
+        notificationTrigger.EndNotice();
     }
 }

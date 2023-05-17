@@ -10456,7 +10456,7 @@ MonoBehaviour:
   message: {fileID: 1331507335}
   chickenPrefab: {fileID: 3025717751686727714, guid: 422c4b1a974da604bbed0391f8cfb7fd, type: 3}
   generateChickenNum: 20
-  chickenNum: 10
+  chickenNum: 1
   time: 90
   catchedChickenNum: 0
   places:
@@ -56354,7 +56354,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925816342}
   m_LocalRotation: {x: 0.32326594, y: -0, z: -0, w: 0.94630814}
-  m_LocalPosition: {x: -14.303835, y: -15.258102, z: 75.15673}
+  m_LocalPosition: {x: -14.3042965, y: -15.258102, z: 75.15677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 889838562}
@@ -58157,7 +58157,7 @@ Transform:
   m_Children:
   - {fileID: 249098408}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1994395382
 SphereCollider:
@@ -58170,7 +58170,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1994395383
 MonoBehaviour:
@@ -58187,6 +58187,7 @@ MonoBehaviour:
   npcState: 1
   convo1: {fileID: 11400000, guid: adf1126b3c13059458956d60110f4722, type: 2}
   convo2: {fileID: 11400000, guid: 6bc2b0b17b6ee3747952a5e42661300a, type: 2}
+  defaultConvo: {fileID: 11400000, guid: 49a7b77072d95e04fac9ddabf338abc0, type: 2}
   SendPoint: {fileID: 1643528469}
 --- !u!114 &1994395384
 MonoBehaviour:
@@ -58318,7 +58319,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2009630814
 GameObject:
