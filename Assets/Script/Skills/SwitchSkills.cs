@@ -21,13 +21,14 @@ public class SwitchSkills : MonoBehaviour
 
     public void Update()
     {
+        if (getSkill == 0 || lockSkill || lockByMount)
+        {
+            currentSkill = 0;
+            skillUI.SkillUITransition(currentSkill);
+        }
         if (Input.GetButtonDown("SwitchSkills"))
         {
-            if (getSkill == 0 || lockSkill || lockByMount)
-            {
-                currentSkill = 0;
-            }
-            else if (currentSkill < getSkill)
+            if (currentSkill < getSkill)
             {
                 currentSkill += 1;
             }
@@ -43,5 +44,6 @@ public class SwitchSkills : MonoBehaviour
                 skillUI.SkillUITransition(currentSkill);
             }
         }
+        anim.SetInteger("currentSkill", currentSkill);
     }
 }

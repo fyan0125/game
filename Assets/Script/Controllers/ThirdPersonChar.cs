@@ -139,7 +139,9 @@ public class ThirdPersonChar : MonoBehaviour
             QueryTriggerInteraction.Ignore
         );
 
-        notOnSlide = Vector3.Angle(Vector3.up, hitNormal) <= controller.slopeLimit;
+        notOnSlide = Mount.canFly
+            ? true
+            : Vector3.Angle(Vector3.up, hitNormal) <= controller.slopeLimit;
 
         PlayerSound.soundGrounded = grounded;
         anim.SetBool(animIDGrounded, grounded);
@@ -389,6 +391,10 @@ public class ThirdPersonChar : MonoBehaviour
 
         if (other.GetComponent<Collider>().CompareTag("Chicken"))
         {
+            if (other.GetComponent<chicken>().isCatched)
+            {
+                Destroy(newHint);
+            }
             newHint.GetComponent<Hint>().talkHint = false;
             newHint.transform.localPosition = new Vector3(0, 1, 0);
             return;

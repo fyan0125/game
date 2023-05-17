@@ -62,9 +62,6 @@ public class PlayerSkillController : MonoBehaviour
             Vector3 aimDirection = (worldAimTarget - transform.position).normalized;
             transform.forward = Vector3.Lerp(transform.forward, aimDirection, Time.deltaTime * 20f);
 
-            shootWeapon.SetActive(true);
-            debugTransform.SetActive(true);
-
             if (Input.GetButtonDown("Skill"))
             {
                 anim.SetTrigger("Shoot");

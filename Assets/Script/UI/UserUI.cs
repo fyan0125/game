@@ -21,33 +21,37 @@ public class UserUI : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        if (!DialogueManager.isTalking)
         {
-            packageUI.SetActive(!packageUI.activeSelf);
+            if (Input.GetButtonDown("Inventory"))
+            {
+                packageUI.SetActive(!packageUI.activeSelf);
 
-            if (GameIsPaused)
-                Resume();
-            else
-                Pause();
-        }
-        if (Input.GetButtonDown("Pause"))
-        {
-            settingUI.SetActive(!settingUI.activeSelf);
+                if (GameIsPaused)
+                    Resume();
+                else
+                    Pause();
+            }
 
-            if (GameIsPaused)
-                Resume();
-            else
-                Pause();
-        }
+            if (Input.GetButtonDown("Pause"))
+            {
+                settingUI.SetActive(!settingUI.activeSelf);
 
-        if (Input.GetButtonDown("Map"))
-        {
-            mapUI.SetActive(!mapUI.activeSelf);
+                if (GameIsPaused)
+                    Resume();
+                else
+                    Pause();
+            }
 
-            if (GameIsPaused)
-                Resume();
-            else
-                Pause();
+            if (Input.GetButtonDown("Map"))
+            {
+                mapUI.SetActive(!mapUI.activeSelf);
+
+                if (GameIsPaused)
+                    Resume();
+                else
+                    Pause();
+            }
         }
     }
 

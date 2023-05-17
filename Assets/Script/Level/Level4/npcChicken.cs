@@ -5,6 +5,7 @@ public class npcChicken : DialogueTrigger
     public static bool gameComplete = false;
     public Conversation convo1;
     public Conversation convo2;
+    public Conversation defaultConvo;
 
     private SkillUI skillUI;
 
@@ -23,9 +24,10 @@ public class npcChicken : DialogueTrigger
         {
             gameObject.tag = "NPC";
             npcState = 2;
+            notificationTrigger.Notice("任務完成！回去神社前看看神雞有甚麼話要說。");
         }
 
-        if (npcState == 3 && DialogueManager.EndConversation())
+        if (npcState == 3 && !DialogueManager.isTalking)
         {
             skillUI.ClearLevel(4);
             NpcReward.GetReward();
@@ -51,9 +53,10 @@ public class npcChicken : DialogueTrigger
             case 2:
                 convo = convo2;
                 npcState += 1;
+                notificationTrigger.EndNotice();
                 break;
             default:
-                convo = convo1;
+                convo = defaultConvo;
                 break;
         }
         DialogueManager.StartConversation(convo);

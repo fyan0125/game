@@ -45,6 +45,7 @@ public class DialogueManager : MonoBehaviour
         instance.speakerName.text = "";
         instance.dialogue.text = "";
         isTalking = true;
+        SwitchSkills.lockSkill = true;
 
         instance.ReadNext();
     }
@@ -64,6 +65,7 @@ public class DialogueManager : MonoBehaviour
         if (instance.currentIndex > instance.currentConvo.GetLength())
         {
             isTalking = false;
+            SwitchSkills.lockSkill = false;
             instance.anim.SetBool("isOpened", false);
             instance.currentIndex = 0;
             return;
