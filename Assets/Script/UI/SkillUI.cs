@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SkillUI : MonoBehaviour
 {
+    public static GameObject compoundLock;
+
     [Header("技能欄位")]
     public GameObject RabbitSkillUI;
     public GameObject WolfSkillUI;
@@ -63,6 +65,10 @@ public class SkillUI : MonoBehaviour
         WolfUIOrgin = WolfSkillUI.transform.position;
         ChickenUIOrgin = ChickenSkillUI.transform.position;
         CraneUIOrgin = CraneSkillUI.transform.position;
+        compoundLock = GameObject
+            .Find("ObjectToNextLevel")
+            .transform.Find("Canvas/Package/Compound/lock")
+            .gameObject;
     }
 
     private void Update()
