@@ -16,6 +16,8 @@ public class CompoundArea : MonoBehaviour
     private static CompoundArea instance;
     private static CraftingRecipe crafting;
     private static InventoryItemData itemData;
+    private static GameObject Template;
+    private static GameObject craftingElement;
 
     private void Awake()
     {
@@ -28,6 +30,9 @@ public class CompoundArea : MonoBehaviour
             Destroy(gameObject);
         }
         crafting = GetComponent<CraftingRecipe>();
+        Template = GameObject.Find("Template");
+        craftingElement = GameObject.Find("craftingElement");
+        Template.SetActive(false);
     }
     void Update()
     {
@@ -35,6 +40,19 @@ public class CompoundArea : MonoBehaviour
 
     public static void ChangeProp(InventoryItemData item)
     {
+        Template.SetActive(true);
+        if(item.DisplayName == "攻擊寶石"||
+            item.DisplayName == "護盾寶石"||
+            item.DisplayName == "血量寶石"||
+            item.DisplayName == "速度寶石"
+        )
+        {
+            craftingElement.SetActive(false);
+        }
+        else
+        {
+            craftingElement.SetActive(true);
+        }
         itemData = item;
         instance.image.sprite = item.Icon;
         instance.displayName.text = item.DisplayName;
