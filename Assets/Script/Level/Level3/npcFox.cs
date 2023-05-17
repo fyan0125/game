@@ -16,7 +16,6 @@ public class npcFox : DialogueTrigger
     private SkillUI skillUI;
     private GameObject notice;
     private GameObject counter;
-    private GameObject compoundLock;
 
     //傳送門
     public GameObject SendPoint;
@@ -45,10 +44,6 @@ public class npcFox : DialogueTrigger
         skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
         notice = GameObject.Find("/ObjectToNextLevel/Canvas/Notification/Notice");
         counter = GameObject.Find("/ObjectToNextLevel/Canvas/Notification/Counter");
-        compoundLock = GameObject
-            .Find("ObjectToNextLevel")
-            .transform.Find("Canvas/Package/Panel/Compound/lock")
-            .gameObject;
 
         counter.SetActive(true);
         notice.SetActive(false);
@@ -98,7 +93,7 @@ public class npcFox : DialogueTrigger
             if (DialogueManager.EndConversation())
             {
                 skillUI.ClearLevel(3);
-                compoundLock.SetActive(false);
+                SkillUI.compoundLock.SetActive(false);
                 NpcReward.GetReward();
                 npcState++;
                 sP.isClear = true;

@@ -4,7 +4,10 @@ using System.Linq;
 
 public class PlayerSkillController : MonoBehaviour
 {
+    [HideInInspector]
     public GameObject meleeWeapon;
+
+    [HideInInspector]
     public GameObject shootWeapon;
 
     [SerializeField]
@@ -37,6 +40,8 @@ public class PlayerSkillController : MonoBehaviour
         {
             playerMaterial.AddRange(mesh.materials);
         }
+        meleeWeapon = GameObject.Find("狼牙棒");
+        shootWeapon = GameObject.Find("大砲");
     }
 
     private void Update()

@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
     private TextMeshProUGUI speakerName,
         dialogue;
+    private Image speakerIcon;
 
     public int currentIndex;
     private Conversation currentConvo;
@@ -25,6 +27,7 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        speakerIcon = anim.transform.Find("Image").GetComponent<Image>();
         speakerName = anim.transform.Find("Name").GetComponent<TextMeshProUGUI>();
         dialogue = anim.transform.Find("Text").GetComponent<TextMeshProUGUI>();
     }
@@ -42,6 +45,7 @@ public class DialogueManager : MonoBehaviour
         instance.anim.SetBool("isOpened", true);
         instance.currentIndex = 0;
         instance.currentConvo = convo;
+        instance.speakerIcon.sprite = null;
         instance.speakerName.text = "";
         instance.dialogue.text = "";
         isTalking = true;
@@ -70,8 +74,8 @@ public class DialogueManager : MonoBehaviour
             instance.currentIndex = 0;
             return;
         }
+        speakerIcon.sprite = currentConvo.GetLineByIndex(currentIndex).speaker.GetIcon();
         speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
-        //dialogue.text = currentConvo.GetLineByIndex(currentIndex).dialogue;
         if (typing == null)
         {
             typing = instance.StartCoroutine(

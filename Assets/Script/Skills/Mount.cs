@@ -71,7 +71,10 @@ public class Mount : MonoBehaviour
 
         // 坐騎動畫
         if (deerAnim)
+        {
             deerAnim.SetFloat("Speed", speed);
+            deerAnim.SetFloat("IdleAnimation", 1);
+        }
         if (flyAnim)
         {
             flyAnim.SetFloat("Speed", speed);
