@@ -17770,8 +17770,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b9fa11b3ec8634f98c531a7a712eb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeWeapon: {fileID: 8260973165843139942}
-  shootWeapon: {fileID: 8260973165843139943}
+  meleeWeapon: {fileID: 1416106901}
+  shootWeapon: {fileID: 1317222610}
   aimColliderLayerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -26009,8 +26009,8 @@ RectTransform:
   - {fileID: 1706705707}
   - {fileID: 547428880}
   - {fileID: 827446616}
-  - {fileID: 275621921}
   - {fileID: 1840393256}
+  - {fileID: 1143779080}
   m_Father: {fileID: 2066069546}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27831,7 +27831,7 @@ RectTransform:
   - {fileID: 1026299167}
   - {fileID: 1363888533}
   m_Father: {fileID: 1080367588}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -31678,6 +31678,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314181540}
   m_Mesh: {fileID: 4723039540608533350, guid: 78ee3022b5b9a4ffa89137abbf8494ba, type: 3}
+--- !u!1 &1317222610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8123208259337779377, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_PrefabInstance: {fileID: 8260973165843139941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1323105431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33853,6 +33858,11 @@ Transform:
   m_Father: {fileID: 988537842}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1416106901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2264915948885077721, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
+  m_PrefabInstance: {fileID: 8260973165843139941}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1417708897
 GameObject:
   m_ObjectHideFlags: 0
@@ -45971,7 +45981,7 @@ RectTransform:
   - {fileID: 492153792}
   - {fileID: 751421712}
   m_Father: {fileID: 1080367588}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -53919,13 +53929,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
---- !u!1 &8260973165843139942 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5849597409027071718, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
-  m_PrefabInstance: {fileID: 8260973165843139941}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8260973165843139943 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4537383257635489934, guid: 2ba8dc0d60873b8448370eab24f8143a, type: 3}
-  m_PrefabInstance: {fileID: 8260973165843139941}
-  m_PrefabAsset: {fileID: 0}
