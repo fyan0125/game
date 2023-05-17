@@ -41,6 +41,16 @@ public class SkillUI : MonoBehaviour
     private GameObject craneIconHover;
     private GameObject craneMemoryIcon;
 
+    private GameObject level1Hover;
+    private GameObject level2Hover;
+    private GameObject level3Hover;
+    private GameObject level4Hover;
+    private GameObject level5Hover;
+    private GameObject level6Hover;
+    private GameObject level7Hover;
+    private GameObject Map;
+
+
     [HideInInspector]
     public GameObject deerIcon;
     private GameObject deerIconHover;
@@ -60,6 +70,7 @@ public class SkillUI : MonoBehaviour
 
     private void Start()
     {
+        Map = GameObject.Find("Map");
         GetGameObject();
         RabbitUIOrgin = RabbitSkillUI.transform.position;
         WolfUIOrgin = WolfSkillUI.transform.position;
@@ -201,22 +212,22 @@ public class SkillUI : MonoBehaviour
         switch (level)
         {
             case 1:
-                SetPackage(rabbitbtn, rabbitIconHover, rabbitMemorybtn, rabbitMemoryIcon);
+                SetPackage(rabbitbtn, rabbitIconHover, rabbitMemorybtn, rabbitMemoryIcon, level1Hover);
                 break;
             case 2:
-                SetPackage(wolfbtn, wolfIconHover, wolfMemorybtn, wolfMemoryIcon);
+                SetPackage(wolfbtn, wolfIconHover, wolfMemorybtn, wolfMemoryIcon, level2Hover);
                 break;
             case 3:
-                SetPackage(foxbtn, foxIconHover, foxMemorybtn, foxMemoryIcon);
+                SetPackage(foxbtn, foxIconHover, foxMemorybtn, foxMemoryIcon, level3Hover);
                 break;
             case 4:
-                SetPackage(chickenbtn, chickenIconHover, chickenMemorybtn, chickenMemoryIcon);
+                SetPackage(chickenbtn, chickenIconHover, chickenMemorybtn, chickenMemoryIcon, level4Hover);
                 break;
             case 5:
-                SetPackage(cranebtn, craneIconHover, craneMemorybtn, craneMemoryIcon);
+                SetPackage(cranebtn, craneIconHover, craneMemorybtn, craneMemoryIcon, level5Hover);
                 break;
             case 6:
-                SetPackage(deerbtn, deerIconHover, deerMemorybtn, deerMemoryIcon);
+                SetPackage(deerbtn, deerIconHover, deerMemorybtn, deerMemoryIcon, level6Hover);
                 break;
         }
     }
@@ -225,13 +236,15 @@ public class SkillUI : MonoBehaviour
         Button animalBtn,
         GameObject animalIconHover,
         Button memoryBtn,
-        GameObject memoryIcon
+        GameObject memoryIcon,
+        GameObject mapLevelHover
     )
     {
         animalBtn.interactable = true;
         animalIconHover.SetActive(false);
         memoryBtn.interactable = true;
         memoryIcon.SetActive(true);
+        mapLevelHover.SetActive(false);
     }
 
     private void GetGameObject()
@@ -254,5 +267,14 @@ public class SkillUI : MonoBehaviour
         deerIcon = deerbtn.transform.GetChild(0).gameObject;
         deerIconHover = deerbtn.transform.GetChild(1).gameObject;
         deerMemoryIcon = deerMemorybtn.transform.GetChild(0).gameObject;
+
+        level1Hover = GameObject.Find("level1").transform.GetChild(1).gameObject;
+        level2Hover = GameObject.Find("level2").transform.GetChild(1).gameObject;
+        level3Hover = GameObject.Find("level3").transform.GetChild(1).gameObject;
+        level4Hover = GameObject.Find("level4").transform.GetChild(1).gameObject;
+        level5Hover = GameObject.Find("level5").transform.GetChild(1).gameObject;
+        level6Hover = GameObject.Find("level6").transform.GetChild(1).gameObject;
+        level7Hover = GameObject.Find("level7").transform.GetChild(1).gameObject;
+        Map.SetActive(false);
     }
 }
