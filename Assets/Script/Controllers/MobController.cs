@@ -76,7 +76,6 @@ public class MobController : MonoBehaviour
         randomIndex = Random.Range(0, items.Length);
 
         Vector3 position = transform.position;
-        // Debug.Log("die");
         GameObject item = GameObject.Instantiate(
             items[randomIndex],
             position + new Vector3(0.0f, 1, 0.0f),
@@ -155,7 +154,6 @@ public class MobController : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            Debug.Log("Attack");
             //Attack Code
             height = 0.3f;
             attackPoint = new Vector3(
