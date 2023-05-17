@@ -51,7 +51,8 @@ public class SkillUI : MonoBehaviour
 
     private Vector3 activeScale = new Vector3(1.3125f, 1.3125f, 1.3125f);
     private Vector3 normalScale = new Vector3(1.0f, 1.0f, 1.0f);
-    private Color lockColor = new Color(0.8f, 0.8f, 0.8f, 1);
+    private Color unGetColor = new Color(1f, 1f, 1f, 1f);
+    private Color lockColor = new Color(1f, 1f, 1f, 0.5f);
     private Color unlockColor = new Color(1, 1, 1, 1);
     private Vector3 RabbitUIOrgin;
     private Vector3 WolfUIOrgin;
@@ -73,36 +74,53 @@ public class SkillUI : MonoBehaviour
 
     private void Update()
     {
+        RabbitSkillUI.GetComponent<Image>().color = unGetColor;
+        WolfSkillUI.GetComponent<Image>().color = unGetColor;
+        ChickenSkillUI.GetComponent<Image>().color = unGetColor;
+        CraneSkillUI.GetComponent<Image>().color = unGetColor;
+        RabbitSkillIcon.GetComponent<Image>().color = unGetColor;
+        WolfSkillIcon.GetComponent<Image>().color = unGetColor;
+        ChickenSkillIcon.GetComponent<Image>().color = unGetColor;
+        CraneSkillIcon.GetComponent<Image>().color = unGetColor;
+
         if (SwitchSkills.getSkill == 0 || SwitchSkills.lockSkill || SwitchSkills.lockByMount)
         {
             RabbitSkillUI.GetComponent<Image>().color = lockColor;
             WolfSkillUI.GetComponent<Image>().color = lockColor;
             ChickenSkillUI.GetComponent<Image>().color = lockColor;
             CraneSkillUI.GetComponent<Image>().color = lockColor;
+            RabbitSkillIcon.GetComponent<Image>().color = lockColor;
+            WolfSkillIcon.GetComponent<Image>().color = lockColor;
+            ChickenSkillIcon.GetComponent<Image>().color = lockColor;
+            CraneSkillIcon.GetComponent<Image>().color = lockColor;
         }
         else
         {
             if (RabbitSkillUI && RabbitSkillIcon && SwitchSkills.getSkill >= 1)
             {
                 RabbitSkillIcon.SetActive(true);
+                RabbitSkillIcon.GetComponent<Image>().color = unlockColor;
                 RabbitSkillUI.GetComponent<Image>().color = unlockColor;
             }
 
             if (WolfSkillUI && WolfSkillIcon && SwitchSkills.getSkill >= 2)
             {
                 WolfSkillIcon.SetActive(true);
+                WolfSkillIcon.GetComponent<Image>().color = unlockColor;
                 WolfSkillUI.GetComponent<Image>().color = unlockColor;
             }
 
             if (ChickenSkillUI && ChickenSkillIcon && SwitchSkills.getSkill >= 3)
             {
                 ChickenSkillIcon.SetActive(true);
+                ChickenSkillIcon.GetComponent<Image>().color = unlockColor;
                 ChickenSkillUI.GetComponent<Image>().color = unlockColor;
             }
 
             if (CraneSkillUI && CraneSkillIcon && SwitchSkills.getSkill >= 4)
             {
                 CraneSkillIcon.SetActive(true);
+                CraneSkillIcon.GetComponent<Image>().color = unlockColor;
                 CraneSkillUI.GetComponent<Image>().color = unlockColor;
             }
         }
@@ -114,22 +132,22 @@ public class SkillUI : MonoBehaviour
         {
             SetOrigin();
             SetActiveSkill(RabbitSkillUI);
-            SetMove(5, 6.6f, 3.3f, 0);
+            SetMove(5, 12f, 6f, 0);
         }
         else if (currentSkill == 2)
         {
             SetActiveSkill(WolfSkillUI);
-            SetMove(-5, -5, 0, 0);
+            SetMove(-5, -7, 4, 0);
         }
         else if (currentSkill == 3)
         {
             SetActiveSkill(ChickenSkillUI);
-            SetMove(0, -5, -5, 0);
+            SetMove(0, -14, -14, 0);
         }
         else if (currentSkill == 4)
         {
             SetActiveSkill(CraneSkillUI);
-            SetMove(0, 0, -5, -5);
+            SetMove(0, -2, -17f, -16);
         }
         else
         {

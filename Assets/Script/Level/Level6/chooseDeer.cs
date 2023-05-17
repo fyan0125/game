@@ -54,6 +54,7 @@ public class chooseDeer : MonoBehaviour
             level6Manager.npcState == 4
             && other.GetComponent<Collider>().CompareTag("Player")
             && Input.GetButtonDown("Skill")
+            && !DialogueManager.isTalking
         )
         {
             level6Manager.ShowUI(gameObject);
