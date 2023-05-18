@@ -11,7 +11,6 @@ public class GameData
     //需儲存之資料
     public int[] inventoryStackSize = new int[17];
     public int currentHealth = 100; //玩家血量
-    public Vector3 playerPosition = new Vector3(0, 0, 0);
 
     //定義在這的會是Default Value
     //當沒有data可以load，遊戲開始時會使用Default Value

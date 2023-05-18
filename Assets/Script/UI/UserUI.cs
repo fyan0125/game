@@ -16,7 +16,7 @@ public class UserUI : MonoBehaviour
         mapUI = GameObject.Find("Map");
         packageUI.SetActive(false);
         settingUI.SetActive(false);
-        mapUI.SetActive(false);
+        //mapUI.SetActive(false);
     }
 
     void Update()

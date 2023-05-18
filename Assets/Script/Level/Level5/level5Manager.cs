@@ -151,7 +151,7 @@ public class level5Manager : MonoBehaviour
 
     public void runToTarget()
     {
-        npcCrane.agent.speed = 7;
+        npcCrane.agent.speed = 10;
         npcCrane.agent.destination = targetObject[i].position;
         craneAnim.SetBool("isWalking", true);
     }
