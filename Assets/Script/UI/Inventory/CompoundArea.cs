@@ -6,8 +6,7 @@ using TMPro;
 
 public class CompoundArea : MonoBehaviour
 {
-    public TextMeshProUGUI displayName, intro, stackSize1, stackSize2, stack;
-    public Text formula;
+    public TextMeshProUGUI displayName, intro, stackSize1, stackSize2, stack, formula;
     public int size1, size2;
     public Image image, craftingElement1, craftingElement2;
     //public List<InventorySlot> craftingElement;
@@ -62,7 +61,7 @@ public class CompoundArea : MonoBehaviour
         if (item.Formula == "")
         {
             instance.compoundButton.interactable = false;
-            instance.formula.text = "-  僅能透過任務取得 -";
+            instance.formula.text = "僅能透過任務取得";
             instance.craftingElement1.sprite=null;
             instance.craftingElement2.sprite=null;
         }
