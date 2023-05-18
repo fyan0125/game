@@ -10393,7 +10393,7 @@ Transform:
   - {fileID: 1611886964}
   - {fileID: 1322259086}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &354484601
 GameObject:
@@ -27943,7 +27943,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: cbd1b72b6b7074f26a33535cec934f0c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbd1b72b6b7074f26a33535cec934f0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -52719,13 +52719,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877028163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 20.01, y: 3.25, z: -10.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2003581881}
-  m_Father: {fileID: 2138392727}
-  m_RootOrder: 2
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1881387746
 GameObject:
@@ -55381,12 +55380,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003581880}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1877028164}
-  m_RootOrder: 0
+  m_Father: {fileID: 2138392727}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003604517
 GameObject:
@@ -58609,7 +58608,7 @@ GameObject:
   - component: {fileID: 2138392720}
   m_Layer: 10
   m_Name: NPC
-  m_TagString: NPC
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58687,7 +58686,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.3
   m_Speed: 4
-  m_Acceleration: 12
+  m_Acceleration: 120
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -58724,10 +58723,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 560301463}
+  - {fileID: 2003581881}
   - {fileID: 935008931}
-  - {fileID: 1877028164}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &2145363361
 GameObject:
