@@ -22,7 +22,7 @@ public class level5Manager : MonoBehaviour
 
     public Transform[] targetObject = new Transform[3];
     public Transform Target;
-    public LayerMask npcLayer, playerLayer;
+    public LayerMask npcLayer = 10, playerLayer = 7, targetLayer = 9;
     public float sightRange;
     public bool targetObjectInSightRange, arrivedTarget;
     public int childCount,
@@ -51,21 +51,21 @@ public class level5Manager : MonoBehaviour
             targetObjectInSightRange = Physics.CheckSphere(
                 targetObject[i].position,
                 sightRange,
-                npcLayer
+                targetLayer
             );
             if (targetObjectInSightRange)
             {
                 Crane.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
-        reachTarget();
+        reachTarget(Target.position, npcLayer);
+        reachTarget(targetObject[i].position, targetLayer);
     }
 
     public void GameStart()
     {
         //變身物件
         Resume();
-        changeMaterial();
         GameUI.SetActive(true);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
         if (targetObject[i] != null)
@@ -131,7 +131,6 @@ public class level5Manager : MonoBehaviour
         npcCrane.missionComplete = true;
         Timer.setTimeToPause();
         GameUI.SetActive(false);
-        Debug.Log("non");
     }
 
     public void GameComplete()
@@ -139,7 +138,6 @@ public class level5Manager : MonoBehaviour
         Timer.setTimeToPause();
         GameUI.SetActive(false);
         npcCrane.agent.destination = new Vector3(20, 3, -10);
-        npcCrane.transform.eulerAngles = new Vector3(0, 0, 0);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
         npcCrane.gameComplete = true;
     }
@@ -162,11 +160,24 @@ public class level5Manager : MonoBehaviour
         craneAnim.SetBool("isWalking", true);
     }
 
-    public void reachTarget()
+    public void reachTarget(Vector3 targetPosition, LayerMask targetMask)
     {
         bool isNearTarget =
             npcCrane.npcState == 4
-                ? Physics.CheckSphere(transform.position, 3, playerLayer)
-                : Physics.CheckSphere(transform.position, 1, targetLayer);
+                ? Physics.CheckSphere(targetPosition, 1, targetMask)
+                : false;
+        bool reachObject = 
+            npcCrane.npcState == 3
+                ? Physics.CheckSphere(targetPosition, 1, targetMask)
+                : false;
+
+        if(isNearTarget)
+        {
+            npcCrane.transform.eulerAngles = new Vector3(0, -90, 0);
+        }
+        if(reachObject)
+        {
+            changeMaterial();
+        }
     }
 }

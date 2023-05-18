@@ -79,8 +79,8 @@ public class CraftingRecipe : MonoBehaviour
 
     public void RefreshAmount(int a, int b, int c)
     {
-        compoundArea.stackSize1.text = inventoryStackSize[b].ToString();
-        compoundArea.stackSize2.text = inventoryStackSize[c].ToString();
+        // compoundArea.stackSize1.text = inventoryStackSize[b].ToString();
+        // compoundArea.stackSize2.text = inventoryStackSize[c].ToString();
         changeTextColor(inventoryStackSize[b], inventoryStackSize[c]);
         compound.updateItem(inventoryItem[a], inventoryItem[b], inventoryItem[c]);
     }
@@ -89,21 +89,21 @@ public class CraftingRecipe : MonoBehaviour
     {
         if (item1 == 0 && item2 == 0)
         {
-            compoundArea.stackSize1.color = Color.red;
-            compoundArea.stackSize2.color = Color.red;
+            // compoundArea.stackSize1.color = Color.red;
+            // compoundArea.stackSize2.color = Color.red;
         }
-        else if (item1 > 0 && item2 == 0)
-        {
-            compoundArea.stackSize2.color = Color.red;
-        }
-        else if (item1 == 0 && item2 > 0)
-        {
-            compoundArea.stackSize1.color = Color.red;
-        }
-        else if (item1 > 0 && item2 > 0)
-        {
-            compoundArea.stackSize1.color = Color.white;
-            compoundArea.stackSize2.color = Color.white;
-        }
+        // else if (item1 > 0 && item2 == 0)
+        // {
+        //     compoundArea.stackSize2.color = Color.red;
+        // }
+        // else if (item1 == 0 && item2 > 0)
+        // {
+        //     compoundArea.stackSize1.color = Color.red;
+        // }
+        // else if (item1 > 0 && item2 > 0)
+        // {
+        //     compoundArea.stackSize1.color = Color.white;
+        //     compoundArea.stackSize2.color = Color.white;
+        // }
     }
 }
