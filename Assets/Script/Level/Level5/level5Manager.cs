@@ -6,7 +6,9 @@ using TMPro;
 
 public class level5Manager : MonoBehaviour
 {
-    public GameObject GameUI, Crane, assetToHide;
+    public GameObject GameUI,
+        Crane,
+        assetToHide;
     public npcCrane npcCrane;
     public float time = 90;
 
@@ -19,10 +21,12 @@ public class level5Manager : MonoBehaviour
     public Material newMaterialRef;
 
     public Transform[] targetObject = new Transform[3];
-    public LayerMask npcLayer;
+    public Transform Target;
+    public LayerMask npcLayer, playerLayer;
     public float sightRange;
-    public bool targetObjectInSightRange;
-    public int childCount, i = 0;
+    public bool targetObjectInSightRange, arrivedTarget;
+    public int childCount,
+        i = 0;
     public PostProcessProfile postProcessProfile;
 
     public Material[] mats;
@@ -33,6 +37,7 @@ public class level5Manager : MonoBehaviour
         SwitchSkills.getSkill = 3;
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         Crane = GameObject.Find("NPC");
+        Target = GameObject.Find("Target").transform;
         GameUI = GameObject.Find("Level5UI").transform.GetChild(0).gameObject;
         npcCrane = Crane.GetComponent<npcCrane>();
         craneAnim = Crane.transform.GetChild(1).gameObject.GetComponent<Animator>();
@@ -53,9 +58,7 @@ public class level5Manager : MonoBehaviour
                 Crane.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
-        else{
-
-        }
+        reachTarget();
     }
 
     public void GameStart()
@@ -74,7 +77,8 @@ public class level5Manager : MonoBehaviour
     public void turnIntoObject()
     {
         assetToHide = GameObject.Find("Assets");
-        for(int j=0; j<3; j++){
+        for (int j = 0; j < 3; j++)
+        {
             childCount = assetToHide.transform.childCount;
             targetObject[j] = assetToHide.transform
                 .GetChild(Random.Range(0, childCount))
@@ -90,7 +94,8 @@ public class level5Manager : MonoBehaviour
 
     private void resetObject()
     {
-        for(int j=0; j<3; j++){
+        for (int j = 0; j < 3; j++)
+        {
             targetObject[j].gameObject.layer = 0;
             targetObject[j].gameObject.GetComponent<Renderer>().materials = mats;
             Destroy(targetObject[j].gameObject.GetComponent<PostProcessVolume>());
@@ -134,6 +139,7 @@ public class level5Manager : MonoBehaviour
         Timer.setTimeToPause();
         GameUI.SetActive(false);
         npcCrane.agent.destination = new Vector3(20, 3, -10);
+        npcCrane.transform.eulerAngles = new Vector3(0, 0, 0);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
         npcCrane.gameComplete = true;
     }
@@ -151,8 +157,16 @@ public class level5Manager : MonoBehaviour
 
     public void runToTarget()
     {
-        npcCrane.agent.speed = 10;
+        npcCrane.agent.speed = 20;
         npcCrane.agent.destination = targetObject[i].position;
         craneAnim.SetBool("isWalking", true);
+    }
+
+    public void reachTarget()
+    {
+        bool isNearTarget =
+            npcCrane.npcState == 4
+                ? Physics.CheckSphere(transform.position, 3, playerLayer)
+                : Physics.CheckSphere(transform.position, 1, targetLayer);
     }
 }

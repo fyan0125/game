@@ -71,7 +71,9 @@ public class npcCrane : DialogueTrigger
             Debug.Log("Start");
             missionComplete = false;
         }
-        if(gameComplete){
+        if(gameComplete)
+        {
+            gameObject.tag = "NPC";
             npcState = 4;
         }
         if(npcState == 3 && !gameComplete && timee == 0) //時間到未完成遊戲
