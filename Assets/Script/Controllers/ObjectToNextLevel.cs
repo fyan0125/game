@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class ObjectToNextLevel : MonoBehaviour
 {
     public static ObjectToNextLevel instance;
+    public float skyboxRotate = 0.5f;
 
     private void Awake()
     {
@@ -17,5 +18,10 @@ public class ObjectToNextLevel : MonoBehaviour
         }
 
         DontDestroyOnLoad(transform.gameObject);
+    }
+
+    private void Update()
+    {
+        RenderSettings.skybox.SetFloat("_Rotation", Time.time * skyboxRotate);
     }
 }
