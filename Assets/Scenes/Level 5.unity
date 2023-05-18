@@ -10532,6 +10532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b2d45a3f4c8f84286019f45c8da66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skyboxRotate: 0.5
 --- !u!4 &352165262
 Transform:
   m_ObjectHideFlags: 0
@@ -16687,8 +16688,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 1145445528}
+        m_TargetAssemblyTypeName: UserUI, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
