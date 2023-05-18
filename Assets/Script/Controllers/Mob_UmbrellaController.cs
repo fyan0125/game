@@ -5,4 +5,5 @@ using UnityEngine.AI;
 
 public class Mob_UmbrellaController : MobController
 {
+    
 }

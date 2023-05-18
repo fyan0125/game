@@ -66,14 +66,14 @@ public class MobController : MonoBehaviour
         }
         if (playerInSightRange && playerInAttackRange)
         {
-            AttackPlayer();
+            BulletAttackPlayer();
             anim.SetBool("isAttacking", true);
         }
     }
 
     public void dropItem()
     {
-        randomIndex = Random.Range(0, items.Length);
+        randomIndex = Random.Range(0, items.Length-1);
 
         Vector3 position = transform.position;
         GameObject item = GameObject.Instantiate(
@@ -144,7 +144,7 @@ public class MobController : MonoBehaviour
         // Invoke(3);
     }
 
-    private void AttackPlayer()
+    public void BulletAttackPlayer()
     {
         //make sure enemy doesn't move
         agent.SetDestination(transform.position);
