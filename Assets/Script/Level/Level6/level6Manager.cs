@@ -46,6 +46,7 @@ public class level6Manager : DialogueTrigger
         player.MoveToTarget(new Vector3(-36, 10, 61), new Vector3(0, 180, 0));
         anim = GetComponentInChildren<Animator>();
         anim.SetFloat("IdleAnimation", 1);
+        // notificationTrigger.EndNotice();
     }
 
     private void Update()

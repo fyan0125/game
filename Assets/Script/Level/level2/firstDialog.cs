@@ -12,6 +12,7 @@ public class firstDialog : DialogueTrigger
         player.MoveToTarget(new Vector3(17, 5, 77), new Vector3(0, 187, 0));
         StartConvo();
         notificationTrigger = GetComponent<NotificationTrigger>();
+        // notificationTrigger.EndNotice();
     }
 
     private void Update()

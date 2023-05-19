@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class npcFox : DialogueTrigger
 {
     [Tooltip("通關條件")]
-    public int needToKill = 10;
+    public int needToKill = 5;
 
     [Header("對話")]
     public Conversation convo1;
@@ -47,6 +47,7 @@ public class npcFox : DialogueTrigger
 
         counter.SetActive(true);
         notice.SetActive(false);
+        notificationTrigger.EndNotice();
     }
 
     private void Update()
