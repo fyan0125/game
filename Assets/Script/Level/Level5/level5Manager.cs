@@ -22,7 +22,7 @@ public class level5Manager : MonoBehaviour
 
     public Transform[] targetObject = new Transform[3];
     public Transform Target;
-    public LayerMask npcLayer = 10, playerLayer = 7, targetLayer = 9;
+    public LayerMask npcLayer = 10, playerLayer = 7, targetLayer = 9, itemLayer = 3;
     public float sightRange;
     public bool targetObjectInSightRange, arrivedTarget;
     public int childCount,
@@ -51,15 +51,14 @@ public class level5Manager : MonoBehaviour
             targetObjectInSightRange = Physics.CheckSphere(
                 targetObject[i].position,
                 sightRange,
-                targetLayer
+                itemLayer
             );
             if (targetObjectInSightRange)
             {
                 Crane.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
-        reachTarget(Target.position, npcLayer);
-        reachTarget(targetObject[i].position, targetLayer);
+        reachTarget(targetObject[i].position, itemLayer);
     }
 
     public void GameStart()
@@ -162,19 +161,11 @@ public class level5Manager : MonoBehaviour
 
     public void reachTarget(Vector3 targetPosition, LayerMask targetMask)
     {
-        bool isNearTarget =
-            npcCrane.npcState == 4
-                ? Physics.CheckSphere(targetPosition, 1, targetMask)
-                : false;
         bool reachObject = 
             npcCrane.npcState == 3
                 ? Physics.CheckSphere(targetPosition, 1, targetMask)
                 : false;
 
-        if(isNearTarget)
-        {
-            npcCrane.transform.eulerAngles = new Vector3(0, -90, 0);
-        }
         if(reachObject)
         {
             changeMaterial();

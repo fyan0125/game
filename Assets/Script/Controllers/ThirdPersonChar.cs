@@ -322,6 +322,10 @@ public class ThirdPersonChar : MonoBehaviour
         {
             playerStats.TakeDamage(other.gameObject.GetComponent<Projectile>().damage);
         }
+        if (other.GetComponent<Collider>().CompareTag("Tougue"))
+        {
+            playerStats.TakeDamage(1);
+        }
         if (other.GetComponent<Collider>().CompareTag("NPC"))
         {
             npcCollider = other;

@@ -73,7 +73,7 @@ public class MobController : MonoBehaviour
 
     public void dropItem()
     {
-        randomIndex = Random.Range(0, items.Length-1);
+        randomIndex = Random.Range(0, items.Length);
 
         Vector3 position = transform.position;
         GameObject item = GameObject.Instantiate(
