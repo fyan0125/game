@@ -7876,6 +7876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: light
       objectReference: {fileID: 0}
+    - target: {fileID: 8012318308755871734, guid: 713b4bfce9a0946b89144db411a0b067, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 713b4bfce9a0946b89144db411a0b067, type: 3}
 --- !u!1 &224187609
@@ -8249,7 +8253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &233734760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9169,7 +9173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &251520646
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34337,30 +34341,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 828293068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a4182ebe8a6041b4aa6005788d0248a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d8184f5d5a434b138453a063de9181f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 828293073}
+  agent: {fileID: 0}
   player: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   health: 5
   items:
-  - {fileID: 3800119003940613619, guid: cfc051a51d7395745861f531ff336b36, type: 3}
-  - {fileID: 7600652808154180369, guid: 3ea8d230699a1e44cb33f45b50d63ffe, type: 3}
+  - {fileID: 3104039811662537941, guid: c180905b618cf4629b2747c9d81f8c81, type: 3}
+  - {fileID: 427765438307285033, guid: b47d642a6e9654521b1dd8c9df979716, type: 3}
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 5
+  walkPointRange: 0
   attackPoint: {x: 0, y: 0, z: 0}
-  timeBetweenAttacks: 1
-  projectile: {fileID: 399571404842117789, guid: 137c41ee2d7984f4bafa78ca1e645739, type: 3}
+  timeBetweenAttacks: 0
+  projectile: {fileID: 7649884812284250304, guid: bc405ef3f79614b29bb5eeddbdc777e0, type: 3}
   generate: {fileID: 1706823066}
   sightRange: 10
-  attackRange: 6
+  attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
   anim: {fileID: 2083979377}
-  stats: {fileID: 828293072}
+  stats: {fileID: 0}
 --- !u!54 &828293071
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34402,7 +34406,7 @@ MonoBehaviour:
   sound: "\u5443"
   floatingTextPrefab: {fileID: 6208621306191137350, guid: 0dba8aa4b9f40ad409b6438ff51680b8, type: 3}
   enemyHealthBar: {fileID: 1820510542}
-  mob: {fileID: 828293070}
+  mob: {fileID: 0}
 --- !u!195 &828293073
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -40241,6 +40245,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 973655268}
   m_Mesh: {fileID: -715337141583547158, guid: 91b7c47cb3c99429c97d1604408c8638, type: 3}
+--- !u!1 &973758213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8012318308755871734, guid: 713b4bfce9a0946b89144db411a0b067, type: 3}
+  m_PrefabInstance: {fileID: 224032367}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &973758215
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973758213}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.005
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &977056602
 GameObject:
   m_ObjectHideFlags: 0
@@ -53214,7 +53236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1297831454
 RectTransform:
   m_ObjectHideFlags: 0
@@ -63517,8 +63539,8 @@ MonoBehaviour:
     m_Bits: 64
   health: 5
   items:
-  - {fileID: 3800119003940613619, guid: cfc051a51d7395745861f531ff336b36, type: 3}
-  - {fileID: 7600652808154180369, guid: 3ea8d230699a1e44cb33f45b50d63ffe, type: 3}
+  - {fileID: 3104039811662537941, guid: c180905b618cf4629b2747c9d81f8c81, type: 3}
+  - {fileID: 427765438307285033, guid: b47d642a6e9654521b1dd8c9df979716, type: 3}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   attackPoint: {x: 0, y: 0, z: 0}
@@ -64295,7 +64317,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1571924221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -78932,7 +78954,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1890927613
 RectTransform:
   m_ObjectHideFlags: 0
