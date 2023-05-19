@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Mount : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class Mount : MonoBehaviour
 
     private void Update()
     {
+        // 體驗時的按鍵
+        // TODO: 繳交時註解掉
         if (Input.GetKeyDown(KeyCode.P))
         {
             deerActive = false;
@@ -34,8 +37,14 @@ public class Mount : MonoBehaviour
                 Deer.SetActive(false);
             }
 
-            Yatagarasu.SetActive(true);
+            Yatagarasu.SetActive(!Yatagarasu.activeSelf);
         }
+        else if (Input.GetKeyDown(KeyCode.O))
+        {
+            SceneManager.LoadSceneAsync(0);
+        }
+
+        // ---------------------------------------------------------------------
 
         if (!Deer || !Yatagarasu)
         {

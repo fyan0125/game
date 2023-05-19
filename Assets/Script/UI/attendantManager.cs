@@ -12,7 +12,7 @@ public class attendantManager : MonoBehaviour
     public GameObject chickenArea;
     public GameObject craneArea;
     public GameObject deerArea;
-    private GameObject deer;
+    public GameObject deer;
     public GameObject crowArea;
     private GameObject crow;
     private GameObject followPlayer;
@@ -80,7 +80,7 @@ public class attendantManager : MonoBehaviour
         {
             Debug.Log("deer");
             if (deer)
-                deer.SetActive(true);
+                deer.SetActive(!deer.activeSelf);
             followPlayer.SetActive(false);
         }
         else

@@ -22,6 +22,10 @@ public class ObjectToNextLevel : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Destroy(gameObject);
+        }
         RenderSettings.skybox.SetFloat("_Rotation", Time.time * skyboxRotate);
     }
 }
