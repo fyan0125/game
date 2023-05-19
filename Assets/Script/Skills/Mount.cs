@@ -25,6 +25,18 @@ public class Mount : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            deerActive = false;
+            canFly = true;
+            if (Deer)
+            {
+                Deer.SetActive(false);
+            }
+
+            Yatagarasu.SetActive(true);
+        }
+
         if (!Deer || !Yatagarasu)
         {
             foreach (Transform child in transform)
@@ -34,6 +46,7 @@ public class Mount : MonoBehaviour
                     Deer = child.gameObject;
                     deerAnim = Deer.GetComponent<Animator>();
                     deerAnim.SetFloat("IdleAnimation", 1);
+                    Deer.transform.position = new Vector3(0, -1.2f, 0);
                     Deer.transform.localPosition = new Vector3(0, -1.2f, 0);
                 }
                 else
@@ -49,6 +62,7 @@ public class Mount : MonoBehaviour
         canFly = Yatagarasu ? Yatagarasu.activeSelf : false;
         if (deerActive)
         {
+            Deer.transform.position = new Vector3(0, -1.2f, 0);
             Deer.transform.localPosition = new Vector3(0, -1.2f, 0);
         }
         if (canFly)

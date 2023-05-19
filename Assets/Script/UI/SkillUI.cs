@@ -1,6 +1,7 @@
 using System;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SkillUI : MonoBehaviour
 {
@@ -49,7 +50,6 @@ public class SkillUI : MonoBehaviour
     private GameObject level6Hover;
     private GameObject level7Hover;
     private GameObject Map;
-
 
     [HideInInspector]
     public GameObject deerIcon;
@@ -134,6 +134,11 @@ public class SkillUI : MonoBehaviour
                 CraneSkillIcon.GetComponent<Image>().color = unlockColor;
                 CraneSkillUI.GetComponent<Image>().color = unlockColor;
             }
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex >= 4)
+        {
+            compoundLock.SetActive(false);
         }
     }
 
@@ -230,7 +235,13 @@ public class SkillUI : MonoBehaviour
         switch (level)
         {
             case 1:
-                SetPackage(rabbitbtn, rabbitIconHover, rabbitMemorybtn, rabbitMemoryIcon, level1Hover);
+                SetPackage(
+                    rabbitbtn,
+                    rabbitIconHover,
+                    rabbitMemorybtn,
+                    rabbitMemoryIcon,
+                    level1Hover
+                );
                 break;
             case 2:
                 SetPackage(wolfbtn, wolfIconHover, wolfMemorybtn, wolfMemoryIcon, level2Hover);
@@ -239,7 +250,13 @@ public class SkillUI : MonoBehaviour
                 SetPackage(foxbtn, foxIconHover, foxMemorybtn, foxMemoryIcon, level3Hover);
                 break;
             case 4:
-                SetPackage(chickenbtn, chickenIconHover, chickenMemorybtn, chickenMemoryIcon, level4Hover);
+                SetPackage(
+                    chickenbtn,
+                    chickenIconHover,
+                    chickenMemorybtn,
+                    chickenMemoryIcon,
+                    level4Hover
+                );
                 break;
             case 5:
                 SetPackage(cranebtn, craneIconHover, craneMemorybtn, craneMemoryIcon, level5Hover);

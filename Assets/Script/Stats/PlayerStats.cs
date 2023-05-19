@@ -66,7 +66,7 @@ public class PlayerStats : CharactorStats, IDataPersistence
     {
         if(data.currentHealth != 100)
         {
-            data.currentHealth = 100;          
+            data.currentHealth = 100;
         }
         this.currentHealth = data.currentHealth;
     }

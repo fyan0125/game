@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15906909, g: 0.51760596, b: 1.0386382, a: 1}
+  m_IndirectSpecularColor: {r: 0.15868701, g: 0.51721454, b: 1.0390126, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5153,7 +5153,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u5E6B\u52A9\u7A3B\u8377\u72D0\u8A0E\u4F10\u5996\u602A\r\n\u5DF2\u8A0E\u4F10    
-    / 10 \u96BB"
+    / 5 \u96BB"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d5d9ec7c4eedb994485ce3e16d20cf6f, type: 2}
   m_sharedMaterial: {fileID: -787913801623667730, guid: d5d9ec7c4eedb994485ce3e16d20cf6f, type: 2}
@@ -7079,7 +7079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &204246396
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7543,7 +7543,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2089544772}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -11080,7 +11080,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291040829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.34, z: 1.25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 691527451}
@@ -14235,7 +14235,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2089544772}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -24225,15 +24225,15 @@ RectTransform:
   m_GameObject: {fileID: 613059528}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 263392547}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -15, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_AnchoredPosition: {x: -20, y: 0}
+  m_SizeDelta: {x: 24, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613059530
 MonoBehaviour:
@@ -24255,7 +24255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 49a712cf0f8521d4ca4276a6cc281d79, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -32869,8 +32869,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 882769892}
+        m_TargetAssemblyTypeName: UserUI, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -33858,6 +33858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b2d45a3f4c8f84286019f45c8da66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skyboxRotate: 0.5
 --- !u!4 &822439379
 Transform:
   m_ObjectHideFlags: 0
@@ -64401,7 +64402,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2089544772}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -77193,7 +77194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcState: 1
-  needToKill: 10
+  needToKill: 5
   convo1: {fileID: 11400000, guid: 581b25d56ea373c41a9bec9a233a78fd, type: 2}
   convo2: {fileID: 11400000, guid: 46e51ffc0aac16549877c01eff9829e5, type: 2}
   convo3: {fileID: 11400000, guid: 7725db3e93cfded43b6425ac074322e1, type: 2}
@@ -77220,7 +77221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0858d27ebdd2884aaf5e58768acfd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notice: "\u5DF2\u8A0E\u4F10 10 / 10 \u96BB\u5996\u602A\n\u5FEB\u56DE\u53BB\u627E\u7A3B\u8377\u72D0\u88FD\u4F5C\u7F8E\u5473\u7684\u860B\u679C\u7CD6~"
+  notice: "\u5DF2\u8A0E\u4F10 5 / 5 \u96BB\u5996\u602A\n\u5FEB\u56DE\u53BB\u627E\u7A3B\u8377\u72D0\u88FD\u4F5C\u7F8E\u5473\u7684\u860B\u679C\u7CD6~"
 --- !u!114 &1857498536
 MonoBehaviour:
   m_ObjectHideFlags: 0
