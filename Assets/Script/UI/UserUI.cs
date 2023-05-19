@@ -23,7 +23,7 @@ public class UserUI : MonoBehaviour
     {
         if (!DialogueManager.isTalking)
         {
-            if (Input.GetButtonDown("Inventory"))
+            if (Input.GetButtonDown("Inventory") && !settingUI.activeSelf && !mapUI.activeSelf)
             {
                 packageUI.SetActive(!packageUI.activeSelf);
 
@@ -32,8 +32,7 @@ public class UserUI : MonoBehaviour
                 else
                     Pause();
             }
-
-            if (Input.GetButtonDown("Pause"))
+            else if (Input.GetButtonDown("Pause") && !packageUI.activeSelf && !mapUI.activeSelf)
             {
                 settingUI.SetActive(!settingUI.activeSelf);
 
@@ -42,8 +41,7 @@ public class UserUI : MonoBehaviour
                 else
                     Pause();
             }
-
-            if (Input.GetButtonDown("Map"))
+            else if (Input.GetButtonDown("Map") && !packageUI.activeSelf && !settingUI.activeSelf)
             {
                 mapUI.SetActive(!mapUI.activeSelf);
 
