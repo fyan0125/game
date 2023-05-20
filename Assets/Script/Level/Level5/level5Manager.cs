@@ -6,9 +6,7 @@ using TMPro;
 
 public class level5Manager : MonoBehaviour
 {
-    public GameObject GameUI,
-        Crane,
-        assetToHide;
+    public GameObject GameUI, Crane, assetToHide;
     public npcCrane npcCrane;
     public float time = 90;
 
@@ -21,12 +19,10 @@ public class level5Manager : MonoBehaviour
     public Material newMaterialRef;
 
     public Transform[] targetObject = new Transform[3];
-    public Transform Target;
-    public LayerMask npcLayer = 10, playerLayer = 7, targetLayer = 9;
+    public LayerMask npcLayer, craneLayer;
     public float sightRange;
-    public bool targetObjectInSightRange, arrivedTarget;
-    public int childCount,
-        i = 0;
+    public bool targetObjectInSightRange;
+    public int childCount, i = 0;
     public PostProcessProfile postProcessProfile;
 
     public Material[] mats;
@@ -37,7 +33,6 @@ public class level5Manager : MonoBehaviour
         SwitchSkills.getSkill = 3;
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         Crane = GameObject.Find("NPC");
-        Target = GameObject.Find("Target").transform;
         GameUI = GameObject.Find("Level5UI").transform.GetChild(0).gameObject;
         npcCrane = Crane.GetComponent<npcCrane>();
         craneAnim = Crane.transform.GetChild(1).gameObject.GetComponent<Animator>();
@@ -51,21 +46,23 @@ public class level5Manager : MonoBehaviour
             targetObjectInSightRange = Physics.CheckSphere(
                 targetObject[i].position,
                 sightRange,
-                targetLayer
+                craneLayer
             );
             if (targetObjectInSightRange)
             {
                 Crane.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
-        reachTarget(Target.position, npcLayer);
-        reachTarget(targetObject[i].position, targetLayer);
+        else{
+
+        }
     }
 
     public void GameStart()
     {
         //變身物件
         Resume();
+        changeMaterial();
         GameUI.SetActive(true);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
         if (targetObject[i] != null)
@@ -77,8 +74,7 @@ public class level5Manager : MonoBehaviour
     public void turnIntoObject()
     {
         assetToHide = GameObject.Find("Assets");
-        for (int j = 0; j < 3; j++)
-        {
+        for(int j=0; j<3; j++){
             childCount = assetToHide.transform.childCount;
             targetObject[j] = assetToHide.transform
                 .GetChild(Random.Range(0, childCount))
@@ -94,8 +90,8 @@ public class level5Manager : MonoBehaviour
 
     private void resetObject()
     {
-        for (int j = 0; j < 3; j++)
-        {
+        for(int j=0; j<3; j++){
+            targetObject[j].gameObject.SetActive(true);
             targetObject[j].gameObject.layer = 0;
             targetObject[j].gameObject.GetComponent<Renderer>().materials = mats;
             Destroy(targetObject[j].gameObject.GetComponent<PostProcessVolume>());
@@ -148,6 +144,7 @@ public class level5Manager : MonoBehaviour
         npcCrane.agent.destination = new Vector3(20, 3, -10);
         Crane.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("reset");
         craneAnim.SetBool("isWalking", false);
         resetObject();
         npcCrane.npcState = 5;
@@ -158,26 +155,5 @@ public class level5Manager : MonoBehaviour
         npcCrane.agent.speed = 20;
         npcCrane.agent.destination = targetObject[i].position;
         craneAnim.SetBool("isWalking", true);
-    }
-
-    public void reachTarget(Vector3 targetPosition, LayerMask targetMask)
-    {
-        bool isNearTarget =
-            npcCrane.npcState == 4
-                ? Physics.CheckSphere(targetPosition, 1, targetMask)
-                : false;
-        bool reachObject = 
-            npcCrane.npcState == 3
-                ? Physics.CheckSphere(targetPosition, 1, targetMask)
-                : false;
-
-        if(isNearTarget)
-        {
-            npcCrane.transform.eulerAngles = new Vector3(0, -90, 0);
-        }
-        if(reachObject)
-        {
-            changeMaterial();
-        }
     }
 }
