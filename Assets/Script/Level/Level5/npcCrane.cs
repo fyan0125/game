@@ -71,10 +71,10 @@ public class npcCrane : DialogueTrigger
         {
             Timer.timeRemaining = Timer.time;
             Level5Manager.i += 1;
+            npcState = 3;
             StartConvo();
             Level5Manager.GameStart();
             Timer.setTimeToDisplay();
-            Debug.Log("Start");
             missionComplete = false;
         }
         if (gameComplete)
@@ -101,6 +101,7 @@ public class npcCrane : DialogueTrigger
             npcState = 1;
             notificationTrigger.EndNotice();
             resetGame = false;
+            missionOK = false;
         }
     }
 

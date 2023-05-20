@@ -69,6 +69,6 @@ public class craneObject : CharactorStats
             Level5Manager.GameComplete();
         }
 
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
