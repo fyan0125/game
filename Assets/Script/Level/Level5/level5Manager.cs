@@ -19,23 +19,23 @@ public class level5Manager : MonoBehaviour
     public Material newMaterialRef;
 
     public Transform[] targetObject = new Transform[3];
-    public LayerMask npcLayer;
+    public LayerMask npcLayer, craneLayer;
     public float sightRange;
     public bool targetObjectInSightRange;
     public int childCount, i = 0;
     public PostProcessProfile postProcessProfile;
 
+    public Material[] mats;
+
     private void Start()
     {
         Timer.time = time;
-        SwitchSkills.getSkill = 2;
+        SwitchSkills.getSkill = 3;
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
         Crane = GameObject.Find("NPC");
         GameUI = GameObject.Find("Level5UI").transform.GetChild(0).gameObject;
         npcCrane = Crane.GetComponent<npcCrane>();
         craneAnim = Crane.transform.GetChild(1).gameObject.GetComponent<Animator>();
-
-        //變身物件
         turnIntoObject();
     }
 
@@ -46,7 +46,7 @@ public class level5Manager : MonoBehaviour
             targetObjectInSightRange = Physics.CheckSphere(
                 targetObject[i].position,
                 sightRange,
-                npcLayer
+                craneLayer
             );
             if (targetObjectInSightRange)
             {
@@ -60,6 +60,7 @@ public class level5Manager : MonoBehaviour
 
     public void GameStart()
     {
+        //變身物件
         Resume();
         changeMaterial();
         GameUI.SetActive(true);
@@ -87,9 +88,22 @@ public class level5Manager : MonoBehaviour
         craneAnim.SetBool("isWalking", false);
     }
 
+    private void resetObject()
+    {
+        for(int j=0; j<3; j++){
+            targetObject[j].gameObject.SetActive(true);
+            targetObject[j].gameObject.layer = 0;
+            targetObject[j].gameObject.GetComponent<Renderer>().materials = mats;
+            Destroy(targetObject[j].gameObject.GetComponent<PostProcessVolume>());
+            Destroy(targetObject[j].gameObject.GetComponent<craneObject>());
+            targetObject[j].transform.parent = GameObject.Find("Assets").transform;
+        }
+    }
+
     private void changeMaterial()
     {
         targetObject[i].gameObject.layer = 11;
+        mats = targetObject[i].gameObject.GetComponent<Renderer>().materials;
         targetObject[i].gameObject.GetComponent<Renderer>().material = newMaterialRef;
         targetObject[i].gameObject.AddComponent<PostProcessVolume>();
         targetObject[i].gameObject.GetComponent<PostProcessVolume>().profile = postProcessProfile;
@@ -109,7 +123,6 @@ public class level5Manager : MonoBehaviour
 
     public void MissionComplete()
     {
-        Debug.Log("Mission Complete");
         npcCrane.npcState = 6;
         npcCrane.missionComplete = true;
         Timer.setTimeToPause();
@@ -118,29 +131,28 @@ public class level5Manager : MonoBehaviour
 
     public void GameComplete()
     {
-        Debug.Log("Level5 Complete");
         Timer.setTimeToPause();
         GameUI.SetActive(false);
         npcCrane.agent.destination = new Vector3(20, 3, -10);
-        //Crane.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
-        SwitchSkills.getSkill = 3;
         npcCrane.gameComplete = true;
     }
 
     public void resetGame()
     {
-        Debug.Log("Restart");
         Crane.transform.position = new Vector3(20, 3, -10);
         npcCrane.agent.destination = new Vector3(20, 3, -10);
         Crane.transform.rotation = Quaternion.Euler(0.0f, -90.0f, 0.0f);
         Crane.transform.GetChild(1).gameObject.SetActive(true);
+        Debug.Log("reset");
         craneAnim.SetBool("isWalking", false);
+        resetObject();
+        npcCrane.npcState = 5;
     }
 
     public void runToTarget()
     {
-        npcCrane.agent.speed = 7;
+        npcCrane.agent.speed = 20;
         npcCrane.agent.destination = targetObject[i].position;
         craneAnim.SetBool("isWalking", true);
     }

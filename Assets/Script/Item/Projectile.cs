@@ -35,6 +35,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         Setup();
     }
 
@@ -51,23 +52,19 @@ public class Projectile : MonoBehaviour
     private void Explode()
     {
         //Instantiate explosion
-        if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+        // if (explosion != null) Instantiate(explosion, transform.position, Quaternion.identity);
 
-        //Check for enemies 
-        Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            //Get component of enemy and call Take Damage
+        // //Check for enemies 
+        // Collider[] enemies = Physics.OverlapSphere(transform.position, explosionRange, whatIsEnemies);
+        // for (int i = 0; i < enemies.Length; i++)
+        // {
+        //     //Add explosion force (if enemy has a rigidbody)
+        //     if (enemies[i].GetComponent<Rigidbody>())
+        //         enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
+        // }
 
-            //Just an example!
-            ///enemies[i].GetComponent<ShootingAi>().TakeDamage(explosionDamage);
-
-            //Add explosion force (if enemy has a rigidbody)
-            if (enemies[i].GetComponent<Rigidbody>())
-                enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRange);
-        }
-
-        //Add a little delay, just to make sure everything works fine
+        // //Add a little delay, just to make sure everything works fine
         Invoke("Delay", 0.15f);
     }
     private void Delay()
@@ -87,6 +84,7 @@ public class Projectile : MonoBehaviour
 
         //Explode if bullet hits an enemy directly and explodeOnTouch is activated
         if (collision.collider.CompareTag("Player") && explodeOnTouch) Explode();
+        Destroy(gameObject);
     }
 
     private void Setup()
@@ -100,7 +98,7 @@ public class Projectile : MonoBehaviour
         GetComponent<SphereCollider>().material = physics_mat;
 
         //Set gravity
-        rb.useGravity = useGravity;
+       rb.useGravity = useGravity;
     }
 
     /// Just to visualize the explosion range
@@ -109,9 +107,4 @@ public class Projectile : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, explosionRange);
     }
-    // void OnCollisionEnter(Collision collision)
-    // {
-    //     Destroy(collision.gameObject);
-    //     Destroy(gameObject);
-    // }
 }

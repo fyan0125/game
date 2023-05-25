@@ -7,7 +7,7 @@ public class CraftingRecipe : MonoBehaviour
 {
     //更新素材數量
     public int[] inventoryStackSize = new int[8];
-    public InventorySlot[] inventoryItem = new InventorySlot[13];
+    public InventorySlot[] inventoryItem = new InventorySlot[17];
     public GameObject player;
     public InventoryHolder inventoryHolder;
     public InventoryItemData itemData;
@@ -27,13 +27,16 @@ public class CraftingRecipe : MonoBehaviour
         compoundBut = GameObject.Find("CompoundButton");
         compound = compoundBut.GetComponent<Compound>();
     }
+
     void Update()
     {
-        for(int i = 0; i<8; i++){
-           inventoryStackSize[i] = inventoryHolder.InventorySystem.InventorySlots[i].StackSize;
+        for (int i = 0; i < 8; i++)
+        {
+            inventoryStackSize[i] = inventoryHolder.InventorySystem.InventorySlots[i].StackSize;
         }
-        for(int i = 0; i<13 ;i++){
-           inventoryItem[i] = inventoryHolder.InventorySystem.InventorySlots[i];
+        for (int i = 0; i < 17; i++)
+        {
+            inventoryItem[i] = inventoryHolder.InventorySystem.InventorySlots[i];
         }
         getItem(itemData);
     }
@@ -41,51 +44,66 @@ public class CraftingRecipe : MonoBehaviour
     public void getItem(InventoryItemData item)
     {
         itemData = item;
-        switch(item.DisplayName){
-            case("鯛魚燒"):
+        switch (item.DisplayName)
+        {
+            case ("鯛魚燒"):
                 RefreshAmount(8, 0, 1);
                 break;
-            case("蘋果糖"):
+            case ("蘋果糖"):
                 RefreshAmount(9, 3, 2);
                 break;
-            case("章魚燒"):
+            case ("章魚燒"):
                 RefreshAmount(10, 5, 2);
                 break;
-            case("棉花糖"):
-                RefreshAmount(11, 4, 2);;
+            case ("棉花糖"):
+                RefreshAmount(11, 4, 2);
+                ;
                 break;
-            case("刨冰"):
+            case ("刨冰"):
                 RefreshAmount(12, 6, 7);
+                break;
+            case ("攻擊寶石"):
+                compound.updateItem(inventoryItem[13]);
+                break;
+            case ("速度寶石"):
+                compound.updateItem(inventoryItem[14]);
+                break;
+            case ("護盾寶石"):
+                compound.updateItem(inventoryItem[15]);
+                break;
+            case ("血量寶石"):
+                compound.updateItem(inventoryItem[16]);
                 break;
         }
     }
 
     public void RefreshAmount(int a, int b, int c)
     {
-        compoundArea.stackSize1.text = inventoryStackSize[b].ToString();
-        compoundArea.stackSize2.text = inventoryStackSize[c].ToString();
+        // compoundArea.stackSize1.text = inventoryStackSize[b].ToString();
+        // compoundArea.stackSize2.text = inventoryStackSize[c].ToString();
         changeTextColor(inventoryStackSize[b], inventoryStackSize[c]);
-        compound.updateItem(inventoryItem[a],inventoryItem[b],inventoryItem[c]);
+        compound.updateItem(inventoryItem[a], inventoryItem[b], inventoryItem[c]);
     }
-    
 
     public void changeTextColor(int item1, int item2)
     {
-        if(item1 == 0 && item2 == 0){
-            compoundArea.stackSize1.color = Color.red;
-            compoundArea.stackSize2.color = Color.red;
-        }
-        else if(item1 > 0 && item2 == 0)
+        if (item1 == 0 && item2 == 0)
         {
-            compoundArea.stackSize2.color = Color.red;
+            // compoundArea.stackSize1.color = Color.red;
+            // compoundArea.stackSize2.color = Color.red;
         }
-        else if(item1 == 0 && item2 > 0)
-        {
-            compoundArea.stackSize1.color = Color.red;
-        }
-        else if(item1 > 0 && item2 > 0){
-            compoundArea.stackSize1.color = Color.white;
-            compoundArea.stackSize2.color = Color.white;
-        }
+        // else if (item1 > 0 && item2 == 0)
+        // {
+        //     compoundArea.stackSize2.color = Color.red;
+        // }
+        // else if (item1 == 0 && item2 > 0)
+        // {
+        //     compoundArea.stackSize1.color = Color.red;
+        // }
+        // else if (item1 > 0 && item2 > 0)
+        // {
+        //     compoundArea.stackSize1.color = Color.white;
+        //     compoundArea.stackSize2.color = Color.white;
+        // }
     }
 }

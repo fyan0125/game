@@ -35,16 +35,16 @@ public class npcRabbit : DialogueTrigger
             notificationTrigger.EndNotice();
         }
 
-        if (npcState == 2 && DialogueManager.EndConversation() && !hasNotice)
+        if (npcState == 2 && !DialogueManager.isTalking && !hasNotice)
         {
             hasNotice = !hasNotice;
-            Invoke("StartConvo", 5.0f); //延遲3秒後執行setTimeOut
+            Invoke("StartConvo", 5.0f); // 延遲3秒後執行StartConvo
         }
 
         if (npcState == 3)
             CancelInvoke();
 
-        if (npcState == 3 && DialogueManager.EndConversation())
+        if (npcState == 3 && !DialogueManager.isTalking)
         {
             skillUI.ClearLevel(1);
             SwitchSkills.getSkill = 1;

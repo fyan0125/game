@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class npcWolf : DialogueTrigger
 {
     public Conversation convo1;
+    public Conversation defaultConvo;
 
     // UI介面控制
     public GameObject SendPoint;
@@ -23,7 +24,7 @@ public class npcWolf : DialogueTrigger
 
     private void Update()
     {
-        if (npcState == 2 && DialogueManager.EndConversation())
+        if (npcState == 2 && !DialogueManager.isTalking)
         {
             skillUI.ClearLevel(2);
             SwitchSkills.getSkill = 2;
@@ -41,11 +42,16 @@ public class npcWolf : DialogueTrigger
 
     public override void StartConvo()
     {
-        convo = convo1;
-        notificationTrigger.EndNotice();
-        if (npcState == 1)
+        switch (npcState)
         {
-            npcState++;
+            case 1:
+                convo = convo1;
+                npcState += 1;
+                notificationTrigger.EndNotice();
+                break;
+            default:
+                convo = defaultConvo;
+                break;
         }
         DialogueManager.StartConversation(convo);
     }

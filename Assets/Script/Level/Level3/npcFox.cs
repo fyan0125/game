@@ -1,46 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class npcFox : DialogueTrigger
 {
+    [Tooltip("通關條件")]
+    public int needToKill = 5;
+
+    [Header("對話")]
     public Conversation convo1;
     public Conversation convo2;
     public Conversation convo3;
+    public Conversation defaultConvo;
 
     // UI介面控制
     private SkillUI skillUI;
-    public GameObject notice;
-    public GameObject counter;
-    public GameObject compoundLock;
+    private GameObject notice;
+    private GameObject counter;
 
     //傳送門
     public GameObject SendPoint;
     private showPortal sP;
 
-    private ThirdPersonChar player;
+    [HideInInspector]
+    public ThirdPersonChar player;
+
+    [Header("移動至目標")]
+    private NavMeshAgent navMeshAgent;
+    public Transform target;
+    public LayerMask playerLayer;
+    public LayerMask targetLayer;
+
+    public Animator anim;
 
     public override void Start()
     {
         base.Start();
+        navMeshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
-        player.MoveToTarget(new Vector3(-18.7f, 8f, 83.69f), new Vector3(0, 180, 0));
+        player.MoveToTarget(new Vector3(-77.5f, 6.2f, 20f), new Vector3(0, 180, 0));
 
         SwitchSkills.getSkill = 2;
         sP = SendPoint.GetComponent<showPortal>();
         skillUI = GameObject.Find("GameManager").GetComponent<SkillUI>();
         notice = GameObject.Find("/ObjectToNextLevel/Canvas/Notification/Notice");
         counter = GameObject.Find("/ObjectToNextLevel/Canvas/Notification/Counter");
-        compoundLock = GameObject.Find("/ObjectToNextLevel/Canvas/Package/Panel/Compound/lock");
+
         counter.SetActive(true);
         notice.SetActive(false);
+        notificationTrigger.EndNotice();
     }
 
     private void Update()
     {
+        bool isNearTarget =
+            npcState == 1
+                ? Physics.CheckSphere(transform.position, 3, playerLayer)
+                : Physics.CheckSphere(transform.position, 1, targetLayer);
+
         //任務條件
-        if (NotificationManager.instance.count >= 10)
+        if (NotificationManager.instance.count >= needToKill)
         {
             counter.SetActive(false);
             notice.SetActive(true);
@@ -48,10 +66,27 @@ public class npcFox : DialogueTrigger
             NotificationManager.instance.count = -100;
         }
 
-        //關卡階段
-        if (npcState == 2 && DialogueManager.EndConversation())
+        if (npcState == 1)
+        {
+            if (!isNearTarget)
+            {
+                ChaseTarget(player.transform.position);
+                anim.SetBool("isWalking", true);
+            }
+        }
+
+        if (npcState == 2 && !DialogueManager.isTalking)
         {
             notificationTrigger.Notice();
+            if (!isNearTarget)
+            {
+                ChaseTarget(target.position);
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                transform.eulerAngles = new Vector3(0, 0, 0);
+            }
         }
         else if (npcState == 4)
         {
@@ -59,11 +94,17 @@ public class npcFox : DialogueTrigger
             if (DialogueManager.EndConversation())
             {
                 skillUI.ClearLevel(3);
-                compoundLock.SetActive(false);
+                SkillUI.compoundLock.SetActive(false);
                 NpcReward.GetReward();
                 npcState++;
                 sP.isClear = true;
             }
+        }
+
+        if (isNearTarget)
+        {
+            navMeshAgent.speed = 0;
+            anim.SetBool("isWalking", false);
         }
     }
 
@@ -83,9 +124,15 @@ public class npcFox : DialogueTrigger
                 npcState += 1;
                 break;
             default:
-                convo = convo1;
+                convo = defaultConvo;
                 break;
         }
         DialogueManager.StartConversation(convo);
+    }
+
+    private void ChaseTarget(Vector3 target = default(Vector3))
+    {
+        navMeshAgent.speed = 5;
+        navMeshAgent.destination = target;
     }
 }

@@ -63,10 +63,7 @@ public class ChangeAnimal : MonoBehaviour
 
     private void Change(AnimalDiscription animal)
     {
-        if (animal.Image.Length == 1)
-        {
-            image.sprite = animal.Image[0];
-        }
+        image.sprite = animal.Image;
         Name.text = animal.Name;
         Skill.text = animal.Skill;
         Habbit.text = animal.Habbit;

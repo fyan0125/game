@@ -6,7 +6,9 @@ using UnityEngine;
 public class ItemPickUp : MonoBehaviour
 {
     public InventoryItemData ItemData;
-    [SerializeField] private float rotationSpeed;
+
+    [SerializeField]
+    private float rotationSpeed;
 
     private SphereCollider myCollider;
 
@@ -24,10 +26,12 @@ public class ItemPickUp : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var inventory = other.transform.GetComponent<InventoryHolder>();
-        if (!inventory) return;
+        if (!inventory)
+            return;
 
         if (inventory.InventorySystem.AddToInventory(ItemData, 1))
         {
+            AudioManager.instance.Play("Eat");
             Destroy(this.gameObject);
         }
     }

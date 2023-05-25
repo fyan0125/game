@@ -16,38 +16,40 @@ public class UserUI : MonoBehaviour
         mapUI = GameObject.Find("Map");
         packageUI.SetActive(false);
         settingUI.SetActive(false);
-        mapUI.SetActive(false);
+        //mapUI.SetActive(false);
     }
 
     void Update()
     {
-        if (Keyboard.current.eKey.wasPressedThisFrame)
+        if (!DialogueManager.isTalking)
         {
-            packageUI.SetActive(!packageUI.activeSelf);
+            if (Input.GetButtonDown("Inventory") && !settingUI.activeSelf && !mapUI.activeSelf)
+            {
+                packageUI.SetActive(!packageUI.activeSelf);
 
-            if (GameIsPaused)
-                Resume();
-            else
-                Pause();
-        }
-        if (Input.GetButtonDown("Pause"))
-        {
-            settingUI.SetActive(!settingUI.activeSelf);
+                if (GameIsPaused)
+                    Resume();
+                else
+                    Pause();
+            }
+            else if (Input.GetButtonDown("Pause") && !packageUI.activeSelf && !mapUI.activeSelf)
+            {
+                settingUI.SetActive(!settingUI.activeSelf);
 
-            if (GameIsPaused)
-                Resume();
-            else
-                Pause();
-        }
+                if (GameIsPaused)
+                    Resume();
+                else
+                    Pause();
+            }
+            else if (Input.GetButtonDown("Map") && !packageUI.activeSelf && !settingUI.activeSelf)
+            {
+                mapUI.SetActive(!mapUI.activeSelf);
 
-        if (Input.GetButtonDown("Map"))
-        {
-            mapUI.SetActive(!mapUI.activeSelf);
-
-            if (GameIsPaused)
-                Resume();
-            else
-                Pause();
+                if (GameIsPaused)
+                    Resume();
+                else
+                    Pause();
+            }
         }
     }
 

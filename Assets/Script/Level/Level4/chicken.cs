@@ -8,7 +8,6 @@ public class chicken : MonoBehaviour
 
     private NavMeshAgent navMeshAgent;
     public Transform target;
-    public float nearTarget;
     private bool isNearTarget;
     public LayerMask targetLayer;
 
@@ -24,7 +23,7 @@ public class chicken : MonoBehaviour
 
     private void Update()
     {
-        isNearTarget = Physics.CheckSphere(transform.position, nearTarget, targetLayer);
+        isNearTarget = Physics.CheckSphere(transform.position, -3, targetLayer);
         if (isCatched)
         {
             if (!isNearTarget)
@@ -33,17 +32,9 @@ public class chicken : MonoBehaviour
             }
             else
             {
-                animator.SetBool("Running", false);
+                animator.SetBool("isWalking", false);
                 navMeshAgent.speed = 0;
             }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Collider>().CompareTag("Player") && Input.GetButtonDown("Skill"))
-        {
-            Debug.Log("player");
         }
     }
 

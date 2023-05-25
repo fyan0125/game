@@ -3,7 +3,7 @@ using UnityEngine;
 public class Water : MonoBehaviour
 {
     [Tooltip("待多久開始扣血")]
-    public float stayTime = 3;
+    public float stayTime = 1;
 
     [Tooltip("多久扣一次血")]
     public float hurtRepeatTime = 1;

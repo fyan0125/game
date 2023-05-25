@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class InventoryHolder : MonoBehaviour
 {
     [SerializeField] private int inventorySize;
-    [SerializeField] protected InventorySystem inventorySystem;
+    [SerializeField] public InventorySystem inventorySystem;
     public List<InventoryItemData> inventoryItemDatas;
 
     public InventorySystem InventorySystem => inventorySystem;
@@ -18,4 +18,19 @@ public class InventoryHolder : MonoBehaviour
     {
         inventorySystem = new InventorySystem(inventorySize, inventoryItemDatas);
     }
+    // public void LoadData(GameData data)
+    // {
+    //     for (int i = 0; i < 17; i++)
+    //     {
+    //         this.inventorySystem.InventorySlots[i].StackSize = data.inventoryStackSize[i];
+    //     }
+    // }
+
+    // public void SaveData(ref GameData data)
+    // {
+    //     for (int i = 0; i < 17; i++)
+    //     {
+    //         data.inventoryStackSize[i] = this.inventorySystem.InventorySlots[i].StackSize;
+    //     }
+    // }
 }

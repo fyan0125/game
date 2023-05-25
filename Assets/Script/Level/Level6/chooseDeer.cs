@@ -5,6 +5,8 @@ public class chooseDeer : MonoBehaviour
 {
     private level6Manager level6Manager;
     public GameObject deerPrefab;
+    public Sprite deerImage;
+    public Sprite deerIcon;
 
     private Animator anim;
     private float idleAnimation;
@@ -36,6 +38,13 @@ public class chooseDeer : MonoBehaviour
             nowAnim = Mathf.Lerp(nowAnim, 1, 0.2f);
             anim.SetFloat("IdleAnimation", nowAnim);
         }
+
+        if (level6Manager.npcState > 4 && gameObject.tag == "Deer")
+        {
+            gameObject.tag = "Untagged";
+        }
+
+        agent.speed = level6Manager.level6UI.activeSelf ? 0 : 2;
         anim.SetFloat("Speed", agent.velocity.magnitude);
     }
 
@@ -45,6 +54,7 @@ public class chooseDeer : MonoBehaviour
             level6Manager.npcState == 4
             && other.GetComponent<Collider>().CompareTag("Player")
             && Input.GetButtonDown("Skill")
+            && !DialogueManager.isTalking
         )
         {
             level6Manager.ShowUI(gameObject);
@@ -58,7 +68,7 @@ public class chooseDeer : MonoBehaviour
             deerPrefab,
             new Vector3(0, 0, 0),
             Quaternion.identity,
-            GameObject.Find("Player/Deer").transform
+            GameObject.Find("Player/Mount").transform
         );
         deer.transform.localPosition = GameObject
             .Find("Player")

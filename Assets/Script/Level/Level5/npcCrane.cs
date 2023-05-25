@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class npcCrane : DialogueTrigger
 {
-    public bool gameComplete = false, missionComplete= false;
-    public Conversation convo1, convo2, convo3;
+    public bool gameComplete = false,
+        missionComplete = false;
+    public Conversation convo1,
+        convo2,
+        convo3;
     public UnityEngine.AI.NavMeshAgent agent;
 
     // public Button cranebtn;
@@ -25,7 +28,9 @@ public class npcCrane : DialogueTrigger
     private SkillUI skillUI;
     private ThirdPersonChar player;
 
-    private void Start()
+    private bool missionOK = false;
+
+    public override void Start()
     {
         base.Start();
         player = GameObject.Find("Player").GetComponent<ThirdPersonChar>();
@@ -35,52 +40,68 @@ public class npcCrane : DialogueTrigger
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         Level5Manager = GameObject.Find("Level5Manager").GetComponent<level5Manager>();
         timee = Timer.time;
+        // notificationTrigger.EndNotice();
     }
 
     private void Update()
-    {   
+    {
         checkState();
     }
 
     public void checkState()
     {
-        if(Timer.timerIsRunning){
-            if(Timer.timeRemaining <= 0){
+        if (Timer.timerIsRunning)
+        {
+            if (Timer.timeRemaining <= 0)
+            {
                 timee = 0;
-            }                                                 
+            }
         }
-        if(npcState == 1 && Input.GetButtonDown("Skill") && resetGame){
-            notificationTrigger.EndNotice();
-            resetGame = false;
-        }
-        if(npcState == 2 && DialogueManager.isTalking == false && !gameComplete){//對話後遊戲開始
+        if (npcState == 2 && DialogueManager.isTalking == false && !gameComplete && !missionOK) //對話後遊戲開始
+        {
             npcState += 1;
+            timee = Timer.time;
+            Debug.Log("Start");
+            Level5Manager.i = 0;
             Level5Manager.GameStart();
             Timer.setTimeToDisplay();
+            missionOK = true;
         }
-        if(missionComplete){//分次任務完成
-            StartConvo();
+        if (missionComplete) //分次任務完成
+        {
             Timer.timeRemaining = Timer.time;
-            Level5Manager.i +=1 ;
+            Level5Manager.i += 1;
+            npcState = 3;
+            StartConvo();
+            Level5Manager.GameStart();
+            Timer.setTimeToDisplay();
             missionComplete = false;
         }
-        if(gameComplete){
+        if (gameComplete)
+        {
+            gameObject.tag = "NPC";
             npcState = 4;
         }
-        if(!gameComplete && timee == 0) //時間到未完成遊戲
+        if (npcState == 3 && !gameComplete && timee == 0) //時間到未完成遊戲
         {
             Level5Manager.resetGame();
             resetGame = true;
             notificationTrigger.Notice();
-            npcState = 1;
         }
         if (npcState == 4 && DialogueManager.EndConversation())
         {
             skillUI.ClearLevel(5);
-            NpcReward.GetReward();
             SwitchSkills.getSkill = 4;
             npcState++;
             sP.isClear = true;
+            NpcReward.GetReward();
+        }
+        if (npcState == 5 && Input.GetButtonDown("Skill")) //關閉失敗通知
+        {
+            npcState = 1;
+            notificationTrigger.EndNotice();
+            resetGame = false;
+            missionOK = false;
         }
     }
 
@@ -91,7 +112,7 @@ public class npcCrane : DialogueTrigger
             StartConvo();
         }
     }
-    
+
     public override void StartConvo()
     {
         switch (npcState)

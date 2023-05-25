@@ -5,9 +5,14 @@ using UnityEngine;
 public class Speaker : ScriptableObject
 {
     [SerializeField] private string speakerName;
+    [SerializeField] private Sprite Icon;
 
     public string GetName()
     {
         return speakerName;
+    }
+
+    public Sprite GetIcon(){
+        return Icon;
     }
 }

@@ -1,12 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public TextMeshProUGUI speakerName,
+    private TextMeshProUGUI speakerName,
         dialogue;
+    private Image speakerIcon;
 
     public int currentIndex;
     private Conversation currentConvo;
@@ -26,6 +27,9 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        speakerIcon = anim.transform.Find("Image").GetComponent<Image>();
+        speakerName = anim.transform.Find("Name").GetComponent<TextMeshProUGUI>();
+        dialogue = anim.transform.Find("Text").GetComponent<TextMeshProUGUI>();
     }
 
     private void Update()
@@ -41,9 +45,11 @@ public class DialogueManager : MonoBehaviour
         instance.anim.SetBool("isOpened", true);
         instance.currentIndex = 0;
         instance.currentConvo = convo;
+        instance.speakerIcon.sprite = null;
         instance.speakerName.text = "";
         instance.dialogue.text = "";
         isTalking = true;
+        SwitchSkills.lockSkill = true;
 
         instance.ReadNext();
     }
@@ -63,12 +69,13 @@ public class DialogueManager : MonoBehaviour
         if (instance.currentIndex > instance.currentConvo.GetLength())
         {
             isTalking = false;
+            SwitchSkills.lockSkill = false;
             instance.anim.SetBool("isOpened", false);
             instance.currentIndex = 0;
             return;
         }
+        speakerIcon.sprite = currentConvo.GetLineByIndex(currentIndex).speaker.GetIcon();
         speakerName.text = currentConvo.GetLineByIndex(currentIndex).speaker.GetName();
-        //dialogue.text = currentConvo.GetLineByIndex(currentIndex).dialogue;
         if (typing == null)
         {
             typing = instance.StartCoroutine(
