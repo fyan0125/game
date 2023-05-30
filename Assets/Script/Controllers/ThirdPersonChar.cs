@@ -85,7 +85,8 @@ public class ThirdPersonChar : MonoBehaviour
 
         JumpAndGravity();
         GroundedCheck();
-        Move();
+        if (!DialogueManager.isTalking)
+            Move();
 
         if (playerStats.currentHealth <= 0)
             Destroy(gameObject);

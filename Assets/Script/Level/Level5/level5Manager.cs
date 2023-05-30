@@ -6,7 +6,9 @@ using TMPro;
 
 public class level5Manager : MonoBehaviour
 {
-    public GameObject GameUI, Crane, assetToHide;
+    public GameObject GameUI,
+        Crane,
+        assetToHide;
     public npcCrane npcCrane;
     public float time = 90;
 
@@ -19,10 +21,12 @@ public class level5Manager : MonoBehaviour
     public Material newMaterialRef;
 
     public Transform[] targetObject = new Transform[3];
-    public LayerMask npcLayer, craneLayer;
+    public LayerMask npcLayer,
+        craneLayer;
     public float sightRange;
     public bool targetObjectInSightRange;
-    public int childCount, i = 0;
+    public int childCount,
+        i = 0;
     public PostProcessProfile postProcessProfile;
 
     public Material[] mats;
@@ -53,9 +57,6 @@ public class level5Manager : MonoBehaviour
                 Crane.transform.GetChild(1).gameObject.SetActive(false);
             }
         }
-        else{
-
-        }
     }
 
     public void GameStart()
@@ -74,7 +75,8 @@ public class level5Manager : MonoBehaviour
     public void turnIntoObject()
     {
         assetToHide = GameObject.Find("Assets");
-        for(int j=0; j<3; j++){
+        for (int j = 0; j < 3; j++)
+        {
             childCount = assetToHide.transform.childCount;
             targetObject[j] = assetToHide.transform
                 .GetChild(Random.Range(0, childCount))
@@ -90,7 +92,8 @@ public class level5Manager : MonoBehaviour
 
     private void resetObject()
     {
-        for(int j=0; j<3; j++){
+        for (int j = 0; j < 3; j++)
+        {
             targetObject[j].gameObject.SetActive(true);
             targetObject[j].gameObject.layer = 0;
             targetObject[j].gameObject.GetComponent<Renderer>().materials = mats;

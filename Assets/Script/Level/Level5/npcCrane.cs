@@ -77,10 +77,11 @@ public class npcCrane : DialogueTrigger
             Timer.setTimeToDisplay();
             missionComplete = false;
         }
-        if (gameComplete)
+        if (npcState == 3 && gameComplete)
         {
             gameObject.tag = "NPC";
             npcState = 4;
+            StartConvo();
         }
         if (npcState == 3 && !gameComplete && timee == 0) //時間到未完成遊戲
         {
@@ -90,11 +91,12 @@ public class npcCrane : DialogueTrigger
         }
         if (npcState == 4 && DialogueManager.EndConversation())
         {
+            Level5Manager.Crane.transform.GetChild(1).gameObject.SetActive(true);
             skillUI.ClearLevel(5);
             SwitchSkills.getSkill = 4;
-            npcState++;
             sP.isClear = true;
             NpcReward.GetReward();
+            npcState = 7;
         }
         if (npcState == 5 && Input.GetButtonDown("Skill")) //關閉失敗通知
         {
@@ -126,8 +128,8 @@ public class npcCrane : DialogueTrigger
                 npcState = 2;
                 break;
             case 4:
+                Debug.Log("convo");
                 convo = convo3;
-                npcState += 1;
                 break;
             default:
                 convo = convo1;
