@@ -55,12 +55,6 @@ public class CompoundArea : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        Debug.Log(Template);
-        Debug.Log(Template);
-    }
-
     public static void ChangeProp(InventoryItemData item)
     {
         Template.SetActive(true);

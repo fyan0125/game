@@ -6,6 +6,7 @@ public class Mount : MonoBehaviour
     public GameObject Deer;
     private Animator deerAnim;
     public static bool deerActive = false;
+    public bool crowActive = false;
 
     public GameObject Yatagarasu;
     private Animator flyAnim;
@@ -28,7 +29,7 @@ public class Mount : MonoBehaviour
     {
         // 體驗時的按鍵
         // TODO: 繳交時註解掉
-        if (Input.GetKeyDown(KeyCode.P))
+        if (crowActive)
         {
             deerActive = false;
             canFly = true;
@@ -38,6 +39,7 @@ public class Mount : MonoBehaviour
             }
 
             Yatagarasu.SetActive(!Yatagarasu.activeSelf);
+            crowActive = false;
         }
         else if (Input.GetKeyDown(KeyCode.O))
         {

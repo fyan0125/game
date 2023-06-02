@@ -83,6 +83,15 @@ public class attendantManager : MonoBehaviour
                 deer.SetActive(!deer.activeSelf);
             followPlayer.SetActive(false);
         }
+        else if (crowArea.activeSelf)
+        {
+            Debug.Log("crowArea");
+            if (deer)
+                deer.SetActive(false);
+            if(crow)
+                crow.SetActive(!crow.activeSelf);
+            followPlayer.SetActive(false);
+        }
         else
         {
             Debug.Log("nothing");

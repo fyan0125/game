@@ -26,6 +26,8 @@ public class SkillUI : MonoBehaviour
     public Button craneMemorybtn;
     public Button deerbtn;
     public Button deerMemorybtn;
+    public Button crowbtn;
+    public Button crowMemorybtn;
 
     private GameObject RabbitSkillIcon;
     private GameObject WolfSkillIcon;
@@ -55,6 +57,10 @@ public class SkillUI : MonoBehaviour
     public GameObject deerIcon;
     private GameObject deerIconHover;
     private GameObject deerMemoryIcon;
+    private GameObject crowIcon;
+    private GameObject crowIconHover;
+    private GameObject crowMemoryIcon;
+
 
     public Sprite bg;
     public Sprite bgActive;
@@ -264,6 +270,9 @@ public class SkillUI : MonoBehaviour
             case 6:
                 SetPackage(deerbtn, deerIconHover, deerMemorybtn, deerMemoryIcon, level6Hover);
                 break;
+            case 7:
+                SetPackage(crowbtn, crowIconHover, crowMemorybtn, crowMemoryIcon, level7Hover);
+                break;
         }
     }
 
@@ -302,6 +311,9 @@ public class SkillUI : MonoBehaviour
         deerIcon = deerbtn.transform.GetChild(0).gameObject;
         deerIconHover = deerbtn.transform.GetChild(1).gameObject;
         deerMemoryIcon = deerMemorybtn.transform.GetChild(0).gameObject;
+        crowIcon = crowbtn.transform.GetChild(0).gameObject;
+        crowIconHover = crowbtn.transform.GetChild(1).gameObject;
+        crowMemoryIcon = crowMemorybtn.transform.GetChild(0).gameObject;
 
         level1Hover = GameObject.Find("level1").transform.GetChild(1).gameObject;
         level2Hover = GameObject.Find("level2").transform.GetChild(1).gameObject;

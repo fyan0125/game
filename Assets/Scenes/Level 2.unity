@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15879025, g: 0.51732373, b: 1.0390713, a: 1}
+  m_IndirectSpecularColor: {r: 0.1589086, g: 0.5173418, b: 1.0383836, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -39376,6 +39376,7 @@ MonoBehaviour:
   chickenArea: {fileID: 681541153}
   craneArea: {fileID: 1808068678}
   deerArea: {fileID: 800428470}
+  deer: {fileID: 0}
   crowArea: {fileID: 1167143022}
   mount: {fileID: 0}
 --- !u!114 &1795704314
@@ -39406,6 +39407,8 @@ MonoBehaviour:
   craneMemorybtn: {fileID: 1071786676}
   deerbtn: {fileID: 1752631494}
   deerMemorybtn: {fileID: 754412944}
+  crowbtn: {fileID: 1946219703}
+  crowMemorybtn: {fileID: 154281224}
   deerIcon: {fileID: 0}
   bg: {fileID: 21300000, guid: 0b04a5fcb322261438a386d3aaf7a340, type: 3}
   bgActive: {fileID: 21300000, guid: 90704bfc97d4d8645ac3a00086bdc70f, type: 3}
@@ -39591,6 +39594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Deer: {fileID: 0}
+  crowActive: 0
   Yatagarasu: {fileID: 0}
 --- !u!1 &1801850237
 GameObject:
