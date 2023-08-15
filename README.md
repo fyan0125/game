@@ -18,4 +18,4 @@
 遊戲程式：方雁、林思彤  
 
 ## Demo 影片
-[![Demo 影片](https://img.youtube.com/vi/POHsgXLAYwQ/maxresdefault.jpg)](https://www.youtube.com/watch?=POHsgXLAYwQ)
+[![Demo 影片](https://img.youtube.com/vi/POHsgXLAYwQ/maxresdefault.jpg)](https://www.youtube.com/watch?v=POHsgXLAYwQ)
